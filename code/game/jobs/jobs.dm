@@ -48,20 +48,22 @@ var/const/LEGVEX			=(1<<12)
 var/const/LEGCENTURION		=(1<<13)
 var/const/LEGLEGAT			=(1<<14)
 
-//~~Wasteland~~
-var/const/SCAVENGER         =(1<<15)
-var/const/REGULATOR         =(1<<16)
-var/const/SETTLER         	=(1<<17)
-var/const/WASTELANDMEDIC	=(1<<18)
-var/const/RAIDER        	=(1<<19)
-
 //~~NCR~~
-var/const/NCRTROOPER        	=(1<<20)
-var/const/NCRLIEUTENANT      	=(1<<21)
-var/const/NCRVETRANGER			=(1<<22)
-var/const/NCRRECRUIT        	=(1<<23)
-var/const/NCRSERGEANT        	=(1<<24)
-var/const/NCRRANGER       		=(1<<25)
+var/const/NCRTROOPER        	=(1<<15)
+var/const/NCRLIEUTENANT      	=(1<<16)
+var/const/NCRVETRANGER			=(1<<17)
+var/const/NCRRECRUIT        	=(1<<18)
+var/const/NCRSERGEANT        	=(1<<19)
+var/const/NCRRANGER       		=(1<<20)
+
+//~~Wasteland~~
+var/const/SCAVENGER         =(1<<21)
+var/const/REGULATOR         =(1<<22)
+var/const/SETTLER         	=(1<<23)
+var/const/WASTELANDMEDIC	=(1<<24)
+var/const/RAIDER        	=(1<<25)
+
+
 
 var/list/assistant_occupations = list(
 	"Assistant",
@@ -76,8 +78,8 @@ var/list/assistant_occupations = list(
 var/list/command_positions = list(
 	"Overseer",
 	"Head of Personnel",
-//	"Head of Security",
-//	"Chief Engineer",
+	"NCR Lieutenant",
+	"NCR Sergeant",
 //	"Research Director",
 //	"Chief Medical Officer"
 )
@@ -129,7 +131,7 @@ var/list/civilian_positions = list(
 
 
 var/list/security_positions = list(
-//	"Head of Security",
+	"Head of Security",
 	"Warden",
 	"Security Officer"
 )

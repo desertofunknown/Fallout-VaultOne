@@ -4,9 +4,9 @@ Trooper
 /datum/job/ncrlieutenant
 	title = "NCR Lieutenant"
 	flag = NCRLIEUTENANT
-	department_head = list("Head of Security")
+	department_head = list("NCR Lieutenant")
 	department_flag = ENGSEC
-	faction = "Vault" // This faction is used for late joins
+	faction = "NCR" // This faction is used for late joins
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of security"
@@ -37,9 +37,9 @@ Sergeant
 /datum/job/ncrsergeant
 	title = "NCR Sergeant"
 	flag = NCRSERGEANT
-	department_head = list("Head of Security")
+	department_head = list("NCR Lieutenant")
 	department_flag = ENGSEC
-	faction = "Vault" // This faction is used for late joins
+	faction = "NCR" // This faction is used for late joins
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the head of security"
@@ -69,9 +69,9 @@ Trooper
 /datum/job/ncrtrooper
 	title = "NCR Trooper"
 	flag = NCRTROOPER
-	department_head = list("Head of Security")
+	department_head = list("NCR Sergeant")
 	department_flag = ENGSEC
-	faction = "Vault" // This faction is used for late joins
+	faction = "NCR" // This faction is used for late joins
 	total_positions = 10
 	spawn_positions = 12
 	supervisors = "the head of security"
@@ -101,9 +101,9 @@ Recruit
 /datum/job/ncrrecruit
 	title = "NCR Recruit"
 	flag = NCRRECRUIT
-	department_head = list("Head of Security")
+	department_head = list("NCR Sergeant")
 	department_flag = ENGSEC
-	faction = "Vault" // This faction is used for late joins
+	faction = "NCR" // This faction is used for late joins
 	total_positions = 10
 	spawn_positions = 12
 	supervisors = "the head of security"
@@ -133,14 +133,14 @@ Veteran Ranger
 /datum/job/ncrvetranger
 	title = "NCR Veteran Ranger"
 	flag = NCRVETRANGER
-	department_head = list("Head of Security")
+	department_head = list("NCR Sergeant")
 	department_flag = ENGSEC
-	faction = "Vault"
+	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
-	minimal_player_age = 7
+	minimal_player_age = 0
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	outfit = /datum/outfit/job/ncrvetranger
 
@@ -169,14 +169,14 @@ NCR Ranger
 /datum/job/ncrranger
 	title = "NCR Ranger"
 	flag = NCRRANGER
-	department_head = list("Head of Security")
+	department_head = list("NCR Sergeant")
 	department_flag = ENGSEC
-	faction = "Vault"
+	faction = "NCR"
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
-	minimal_player_age = 7
+	minimal_player_age = 0
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	outfit = /datum/outfit/job/ncrranger
 
@@ -201,7 +201,7 @@ NCR Ranger
 		/obj/item/weapon/storage/box/lethalshot=1)
 
 /datum/job/detective
-	title = "Wake up"
+	//title = "Wake up"
 	//flag = RANGER
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -210,7 +210,7 @@ NCR Ranger
 	spawn_positions = 0
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
-	minimal_player_age = 7
+	minimal_player_age = 0
 
 	outfit = /datum/outfit/job/ncrranger
 

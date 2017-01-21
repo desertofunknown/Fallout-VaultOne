@@ -88,6 +88,7 @@
 	var/list/civ = list()
 	var/list/bot = list()
 	var/list/leg = list() //ADDED LEGION
+	var/list/ncr = list() //ADDED NCR
 	var/list/wast = list() //ADDED WASTELAND
 	var/list/misc = list()
 	var/dat = {"
@@ -143,6 +144,9 @@
 			banner = 1
 		if(rank in legion_positions)
 			leg[name] = rank
+			department = 1
+		if(rank in ncr_positions)
+			ncr[name] = rank
 			department = 1
 		if(rank in wasteland_positions)
 			wast[name] = rank
@@ -202,6 +206,11 @@
 		dat += "<tr><th colspan=4><b>~Legion~</b></th></tr>"
 		for(var/name in leg)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[leg[name]]</td></tr>"
+			even = !even
+	if(ncr.len > 0) //Adds ncr to the manifest
+		dat += "<tr><th colspan=4><b>~NCR~</b></th></tr>"
+		for(var/name in ncr)
+			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
 			even = !even
 	if(wast.len > 0) //Adds wasteland roles to the manifest
 		dat += "<tr><th colspan=4><b>~Wasteland~</b></th></tr>"
