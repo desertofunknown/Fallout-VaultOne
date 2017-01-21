@@ -1,36 +1,36 @@
 //~~Vault 113~~
 var/const/CAPTAIN			=(1<<0)
-var/const/HOP				=(1<<0)
+var/const/HOP				=(1<<1)
 //var/const/RD				=(1<<0)
 //var/const/CMO				=(1<<3)
 
 //	Security
 var/const/WARDEN			=(1<<2)
-var/const/OFFICER			=(1<<4)
-var/const/ENGSEC			=(1<<0)
+var/const/OFFICER			=(1<<3)
+var/const/ENGSEC			=(1<<4)
 
 //	Engineering ~ Robotics
-var/const/ENGINEER			=(1<<6)
-var/const/AI				=(1<<9)
-var/const/ROBOTICIST		=(1<<8)
-var/const/CYBORG			=(1<<10)
+var/const/ENGINEER			=(1<<5)
+var/const/AI				=(1<<6)
+var/const/ROBOTICIST		=(1<<7)
+var/const/CYBORG			=(1<<8)
 
 //	Research
-var/const/SCIENTIST			=(1<<1)
-var/const/CHEMIST			=(1<<2)
-var/const/MEDSCI			=(1<<1)
+var/const/SCIENTIST			=(1<<9)
+var/const/CHEMIST			=(1<<10)
+var/const/MEDSCI			=(1<<11)
 
 //	Medical
-var/const/DOCTOR			=(1<<4)
+var/const/DOCTOR			=(1<<12)
 //var/const/GENETICIST		=(1<<5)
 //var/const/VIROLOGIST		=(1<<6)
 
 //	Civilian
-var/const/CIVILIAN			=(1<<2)
-var/const/BARTENDER			=(1<<1)
-var/const/BOTANIST			=(1<<2)
-var/const/COOK				=(1<<3)
-var/const/JANITOR			=(1<<4)
+var/const/CIVILIAN			=(1<<1)
+var/const/BARTENDER			=(1<<2)
+var/const/BOTANIST			=(1<<3)
+var/const/COOK				=(1<<4)
+var/const/JANITOR			=(1<<5)
 //var/const/LIBRARIAN		=(1<<5)
 var/const/QUARTERMASTER		=(1<<6)
 var/const/CARGOTECH			=(1<<7)
@@ -39,26 +39,29 @@ var/const/MINER				=(1<<8)
 //var/const/CHAPLAIN		=(1<<10)
 //var/const/CLOWN			=(1<<11)
 //var/const/MIME			=(1<<12)
-var/const/ASSISTANT			=(1<<13)
+var/const/ASSISTANT			=(1<<9)
 
 //~~Legion~~
-var/const/LEGRECRUIT		=(1<<1)
-var/const/LEGDECAN			=(1<<5)
-var/const/LEGVEX			=(1<<7)
-var/const/LEGCENTURION		=(1<<11)
-var/const/LEGLEGAT			=(1<<12)
+var/const/LEGRECRUIT		=(1<<10)
+var/const/LEGDECAN			=(1<<11)
+var/const/LEGVEX			=(1<<12)
+var/const/LEGCENTURION		=(1<<13)
+var/const/LEGLEGAT			=(1<<14)
 
 //~~Wasteland~~
-var/const/SCAVENGER         =(1<<14)
-var/const/REGULATOR         =(1<<15)
-var/const/SETTLER         	=(1<<16)
-var/const/WASTELANDMEDIC	=(1<<17)
-var/const/RAIDER        	=(1<<18)
+var/const/SCAVENGER         =(1<<15)
+var/const/REGULATOR         =(1<<16)
+var/const/SETTLER         	=(1<<17)
+var/const/WASTELANDMEDIC	=(1<<18)
+var/const/RAIDER        	=(1<<19)
 
 //~~NCR~~
-var/const/NCRTROOPER        	=(1<<13)
-var/const/NCRCOMMANDER       	=(1<<14)
-var/const/RANGER			=(1<<3)
+var/const/NCRTROOPER        	=(1<<20)
+var/const/NCRLIEUTENANT      	=(1<<21)
+var/const/NCRVETRANGER			=(1<<22)
+var/const/NCRRECRUIT        	=(1<<23)
+var/const/NCRSERGEANT        	=(1<<24)
+var/const/NCRRANGER       		=(1<<25)
 
 var/list/assistant_occupations = list(
 	"Assistant",
@@ -147,11 +150,14 @@ var/list/legion_positions = list(
 )
 
 var/list/ncr_positions = list(
-	"NCR Commander",
+	"NCR Lieutenant",
 	"NCR Trooper",
-	"Ranger",
-
+	"NCR Veteran Ranger",
+	"NCR Ranger",
+	"NCR Sergeant",
+	"NCR Recruit",
 )
+
 var/list/wasteland_positions = list(
 	"Regulator",
 	"Settler",

@@ -339,6 +339,13 @@
 	burn_state = FIRE_PROOF
 	//darkness_view = 8
 	//invis_view = SEE_INVISIBLE_MINIMUM
+
+/obj/item/clothing/head/helmet/f13/rangercombat/desert
+	name = "desert ranger combat helmet"
+	desc = "An old combat helmet, out of use around the time of the war."
+	icon_state = "desert_ranger"
+	item_state = "desert_ranger"
+	armor = list(melee = 65, bullet = 60, laser = 45,energy = 35, bomb = 20, bio = 0, rad = 100)
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/f13/advhelmet

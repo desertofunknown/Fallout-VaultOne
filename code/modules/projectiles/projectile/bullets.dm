@@ -70,6 +70,20 @@
 /obj/item/projectile/bullet/heavybullet
 	damage = 35
 
+/obj/item/projectile/bullet/heavybullet/ap
+	damage = 30
+	armour_penetration = 10
+
+/obj/item/projectile/bullet/heavybullet/tox
+	damage = 25
+	damage_type = TOX
+
+/obj/item/projectile/bullet/incendiary/heavybullet
+	damage = 25
+
+/obj/item/projectile/bullet/heavybullet/surplus
+	damage = 20
+
 /obj/item/projectile/bullet/rpellet
 	damage = 3
 	stamina = 25
@@ -194,3 +208,11 @@
 		weaken = 0
 		nodamage = 1
 	. = ..() // Execute the rest of the code.
+
+/obj/item/projectile/bullet/training
+	name = "dummy bullet"
+	damage = 0
+
+/obj/item/projectile/bullet/sequoia
+	name = "bullet"
+	damage = 60

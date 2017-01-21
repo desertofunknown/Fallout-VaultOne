@@ -180,35 +180,35 @@
 //WT550 Mags
 
 /datum/design/mag_oldsmg
-	name = "WT-550 Auto Gun Magazine (4.6×30mm)"
-	desc = "A 20 round magazine for the out of date security WT-550 Auto Rifle"
+	name = "20 round Magazine (5.56 Match)"
+	desc = "A 20 round magazine for 5.56 rifles."
 	id = "mag_oldsmg"
 	req_tech = list("combat" = 1, "materials" = 1)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 4000)
-	build_path = /obj/item/ammo_box/magazine/wt550m9
+	build_path = /obj/item/ammo_box/magazine/m556_20
 	category = list("Ammo")
 
 /datum/design/mag_oldsmg/ap_mag
-	name = "WT-550 Auto Gun Armour Piercing Magazine (4.6×30mm AP)"
-	desc = "A 20 round armour piercing magazine for the out of date security WT-550 Auto Rifle"
+	name = "20 round armour piercing (5.56 AP)"
+	desc = "A 20 round armour piercing magazine for 5.56 rifles."
 	id = "mag_oldsmg_ap"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600)
-	build_path = /obj/item/ammo_box/magazine/wt550m9/wtap
+	build_path = /obj/item/ammo_box/magazine/m556_20/ap
 
 /datum/design/mag_oldsmg/ic_mag
-	name = "WT-550 Auto Gun Incendiary Magazine (4.6×30mm IC)"
-	desc = "A 20 round armour piercing magazine for the out of date security WT-550 Auto Rifle"
+	name = "20 round incendiary (5.56 IC)"
+	desc = "A 20 round incendiary magazine for 5.56 rifles."
 	id = "mag_oldsmg_ic"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_GLASS = 1000)
-	build_path = /obj/item/ammo_box/magazine/wt550m9/wtic
+	build_path = /obj/item/ammo_box/magazine/m556_20/inc
 
 /datum/design/mag_oldsmg/tx_mag
-	name = "WT-550 Auto Gun Urnaium Magazine (4.6×30mm TX)"
-	desc = "A 20 round urnaium tipped magazine for the out of date security WT-550 Auto Rifle"
+	name = "20 round uranium tipped (5.56 TX)"
+	desc = "A 20 round uranium tipped magazine for 5.56 rifles."
 	id = "mag_oldsmg_tx"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000)
-	build_path = /obj/item/ammo_box/magazine/wt550m9/wttx
+	build_path = /obj/item/ammo_box/magazine/m556_20/tx
 
 //SABR Mags
 

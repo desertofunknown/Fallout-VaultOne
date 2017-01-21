@@ -450,13 +450,29 @@
 	put_on_delay = 60
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/combat/ncr
+	name = "ranger patrol armor"
+	desc = "A set of standard issue ranger patrol armor that provides defense similar to a suit of pre-war combat armor."
+	icon_state = "ncr_patrol"
+	item_state = "ncr_patrol"
+
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"
-	desc = "This armor military grade is a modification of battle armor and was originally designed for a special purpose police units in Los Angeles."
+	desc = "The NCR ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
 	icon_state = "ranger"
 	item_state = "ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 60, bullet = 60, laser = 45, energy = 20, bomb = 20, bio = 0, rad = 80)
+	put_on_delay = 60
+	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/rangercombat/desert
+	name = "desert ranger combat armor"
+	desc = "This is the original armor the NCR Ranger Combat armor was based off of. An awe inspiring suit of armor used by the legendary Desert Rangers."
+	icon_state = "desert_ranger"
+	item_state = "desert_ranger"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list(melee = 70, bullet = 70, laser = 55, energy = 30, bomb = 30, bio = 0, rad = 90)
 	put_on_delay = 60
 	strip_delay = 60
 
@@ -506,3 +522,20 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	put_on_delay = 100
 	strip_delay = 200
+
+/obj/item/clothing/suit/armor/f13/ncrarmor
+	name = "NCR vest"
+	desc = "A standard issue NCR protective vest."
+	icon_state = "ncr_vest"
+	item_state = "ncr_vest"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET
+	armor = list(melee = 30, bullet = 35, laser = 15, energy = 10, bomb = 40, bio = 0, rad = 0)
+	put_on_delay = 60
+	strip_delay = 60
+
+/obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	name = "NCR mantle vest"
+	desc = "An NCR protective vest with a hide mantle over one shoulder. Commonly issued to NCOs and COs as well."
+	icon_state = "ncr_mantle"
+	item_state = "ncr_mantle"
+	armor = list(melee = 35, bullet = 40, laser = 15, energy = 10, bomb = 40, bio = 0, rad = 0)

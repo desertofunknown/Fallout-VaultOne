@@ -165,3 +165,13 @@
 	name = "centurion bandana"
 	desc = "A fine centurion bandana."
 	icon_state = "legcenturion"
+
+/obj/item/clothing/mask/facewrap
+	name = "desert face wrap"
+	desc = "An NCR issue facewrap used to protect the wearer from the harsh desert elements."
+	icon_state = "facewrap"
+	item_state = "facewrap"
+	flags = BLOCKHAIR
+	flags_inv = HIDEFACE
+	visor_flags_inv = HIDEFACE
+	ignore_maskadjust = 1

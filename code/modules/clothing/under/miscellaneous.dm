@@ -1056,6 +1056,16 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	can_adjust = 0
 
+/obj/item/clothing/under/f13/ncr
+    name = "NCR fatigues"
+    desc = "A set of standard issue New California Republic trooper fatigues, offers slight protection."
+    icon_state = "ncr_uniform"
+    item_state = "lb_suit"
+    item_color = "ncr_uniform"
+    body_parts_covered = CHEST|GROIN|LEGS|ARMS
+    armor = list(melee = 10, bullet = 5, laser = 5,energy = 5, bomb = 5, bio = 0, rad = 5)
+    can_adjust = 0
+
 //Plasmameme
 
 /obj/item/clothing/under/plasmaman

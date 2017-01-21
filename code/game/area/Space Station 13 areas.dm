@@ -1324,6 +1324,7 @@ var/list/teleportlocs = list()
 	has_gravity = 1
 	luminosity = 1
 	lighting_use_dynamic = DYNAMIC_LIGHTING_DISABLED
+	music = list('sound/f13music/07DESERT.ogg', 'sound/f13music/08VATS.ogg', 'sound/f13music/03aWRLDMP.ogg', 'sound/f13music/03bWRLDMP.ogg')
 
 /area/awaymission/example
 	name = "Strange Station"

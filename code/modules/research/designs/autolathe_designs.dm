@@ -547,45 +547,30 @@
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("hacked", "Security")
 
+/datum/design/m50
+	name = "Magazine (.50 AE)"
+	id = "m50"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/magazine/m50
+	category = list("hacked", "Security")
+
 /datum/design/a762
-	name = "7.62mm"
+	name = "Stripper clip (7.62)"
 	id = "a762"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 1000)
-	build_path = /obj/item/ammo_casing/a762
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/a762
 	category = list("hacked", "Security")
 
-/datum/design/a762bleeding
-	name = "7.62mm bleeding"
-	id = "a762bleeding"
+/datum/design/sniper_rounds
+	name = "Magazine (.50 BMG)"
+	id = "sniper_rounds"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 1000)
-	build_path = /obj/item/ammo_casing/a762/bleeding
+	materials = list(MAT_METAL = 50000)
+	build_path = /obj/item/ammo_box/magazine/sniper_rounds
 	category = list("hacked", "Security")
 
-/datum/design/a762hollow
-	name = "7.62mm hollow"
-	id = "a762hollow"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 1000)
-	build_path = /obj/item/ammo_casing/a762/hollow
-	category = list("hacked", "Security")
-
-/datum/design/a762ap
-	name = "Ammo box (9mm)"
-	id = "7.62mm ap"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 1000)
-	build_path = /obj/item/ammo_casing/a762/ap
-	category = list("hacked", "Security")
-
-/datum/design/a762incen
-	name = "76.2 incen"
-	id = "a762incen"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 1000)
-	build_path = /obj/item/ammo_casing/a762/incen
-	category = list("hacked", "Security")
 
 /datum/design/spraycan
 	name = "Spraycan"

@@ -262,18 +262,25 @@
 	burst_size = 3
 	fire_delay = 1
 
-/obj/item/weapon/gun/projectile/automatic/service
-	name = "Service Rifle"
-	desc = "A semi-automatic medium power rifle, this rifle is chambered in the common 5.56mm."
-	icon_state = "arg"
+/obj/item/weapon/gun/projectile/automatic/marksman
+	name = "Marksman Carbine"
+	desc = "A 5.56 caliber assault rifle widely seen in use by pre-war U.S. military forces. Semi-automatic only."
+	icon_state = "marksman_rifle"
 	item_state = "arg"
 	slot_flags = 0
-	origin_tech = "combat=5;materials=1"
-	mag_type = /obj/item/ammo_box/magazine/m556
-	fire_sound = 'sound/f13weapons/ServiceRifle.ogg'
+	origin_tech = "combat=6;materials=1"
+	mag_type = /obj/item/ammo_box/magazine/m556_20
+	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
-	burst_size = 1
-	fire_delay = 0.7
+	burst_size = 0
+	fire_delay = 2
+
+/obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
+	name = "Service Rifle"
+	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
+	icon_state = "service_rifle"
+	item_state = "assault_rifle"
+	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/minigun
 	name = "Minigun"

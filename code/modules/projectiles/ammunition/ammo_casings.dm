@@ -222,6 +222,25 @@
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/heavybullet
 
+/obj/item/ammo_casing/a556ap
+	projectile_type = /obj/item/projectile/bullet/heavybullet/ap
+
+/obj/item/ammo_casing/a556inc
+	projectile_type = /obj/item/projectile/bullet/incendiary/heavybullet
+
+/obj/item/ammo_casing/a556tox
+	projectile_type = /obj/item/projectile/bullet/heavybullet/tox
+
+/obj/item/ammo_casing/a556surplus
+	projectile_type = /obj/item/projectile/bullet/heavybullet/surplus
+
+/obj/item/ammo_casing/a556training
+	projectile_type = /obj/item/projectile/bullet/training
+
+/obj/item/ammo_casing/c4570
+	caliber = "4570"
+	projectile_type = /obj/item/projectile/bullet/sequoia
+
 /obj/item/ammo_casing/caseless
 	desc = "A caseless bullet casing."
 

@@ -65,6 +65,12 @@
 	caliber = "38"
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	name = "d-tiv revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/c4570
+	caliber = "4570"
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	name = "grenade launcher internal magazine"
 	ammo_type = /obj/item/ammo_casing/a40mm
@@ -75,7 +81,7 @@
 // Shotgun internal mags
 /obj/item/ammo_box/magazine/internal/shot
 	name = "shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/beanbag
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	caliber = "shotgun"
 	max_ammo = 4
 	multiload = 0
@@ -111,7 +117,7 @@
 
 /obj/item/ammo_box/magazine/internal/shot/riot
 	name = "riot shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 6
 
 
@@ -292,6 +298,37 @@ obj/item/ammo_box/magazine/tommygunm45
 	caliber = "a556"
 	max_ammo = 30
 	multiple_sprites = 2
+
+
+/obj/item/ammo_box/magazine/m556_20
+	name = "5.56 magazine (Match Grade 5.56mm)"
+	icon_state = "75"
+	origin_tech = "combat=3"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 20
+	multiple_sprites = 2
+
+/obj/item/ammo_box/magazine/m556_20/ap
+	name = "5.56 magazine (Armour Piercing 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556ap
+
+/obj/item/ammo_box/magazine/m556_20/tx
+	name = "5.56 magazine (Toxin Tipped 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556tox
+
+/obj/item/ammo_box/magazine/m556_20/inc
+	name = "5.56 magazine (Incendiary 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556inc
+
+/obj/item/ammo_box/magazine/m556_20/surplus
+	name = "5.56 magazine (Surplus 5.56mm)"
+	ammo_type = /obj/item/ammo_casing/a556surplus
+
+/obj/item/ammo_box/magazine/m556_20/training
+	name = "5.56 training magazine (Dummy 5.56)"
+	ammo_type = /obj/item/ammo_casing/a556training
+
 
 /obj/item/ammo_box/magazine/m12g
 	name = "shotgun magazine (12g slugs)"

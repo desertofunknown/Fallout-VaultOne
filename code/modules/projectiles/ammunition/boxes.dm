@@ -12,6 +12,13 @@
 	max_ammo = 6
 	multiple_sprites = 1
 
+/obj/item/ammo_box/c4570
+	name = "speed loader (.45-70 Gov't)"
+	icon_state = "4570"
+	ammo_type = /obj/item/ammo_casing/c4570
+	max_ammo = 6
+	multiple_sprites = 1
+
 /obj/item/ammo_box/c9mm
 	name = "ammo box (9mm)"
 	icon_state = "9mmbox"

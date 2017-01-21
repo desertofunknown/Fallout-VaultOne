@@ -31,6 +31,12 @@
 	strip_delay = 70
 	burn_state = FIRE_PROOF
 
+/obj/item/clothing/shoes/combat/ncr
+	name = "NCR boots"
+	desc = "Standard issue high speed low drag NCR boots."
+	icon_state = "ncr_boots"
+	item_state = "ncr_boots"
+
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
 	name = "\improper SWAT boots"
 	desc = "High speed, no drag combat boots."

@@ -150,6 +150,14 @@
 	icon_state = "mateba"
 	origin_tech = "combat=2;materials=2"
 
+/obj/item/weapon/gun/projectile/revolver/sequoia
+	name = "Ranger Sequoia"
+	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers, and is carried only by a NCR Veteran Ranger after 20 years of service. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	icon_state = "sequoia"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	origin_tech = "combat=2;materials=2"
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.

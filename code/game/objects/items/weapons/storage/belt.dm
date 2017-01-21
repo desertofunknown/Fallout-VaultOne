@@ -268,3 +268,9 @@
 	name = "yellow fannypack"
 	icon_state = "fannypack_yellow"
 	item_state = "fannypack_yellow"
+
+/obj/item/weapon/storage/belt/ncr
+	name = "NCR duty belt"
+	desc = "A standard issue robust duty belt for all NCR troopers."
+	icon_state = "ncr_belt"
+	item_state = "ncr_belt"
