@@ -41,7 +41,7 @@ Sergeant
 	department_flag = ENGSEC
 	faction = "NCR" // This faction is used for late joins
 	total_positions = 2
-	spawn_positions = 2
+	spawn_positions = 3
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
