@@ -72,6 +72,10 @@
 				usr << "[toggle_message] \the [src]."
 				usr.update_inv_head()
 
+/obj/item/clothing/head/helmet/riot/vaultsec
+	name = "vault security helmet"
+	desc = "A standard issue vault security helmet, pretty robust."
+	armor = list(melee = 60, bullet = 25, laser = 25,energy = 10, bomb = 25, bio = 2, rad = 0)
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
@@ -342,10 +346,17 @@
 
 /obj/item/clothing/head/helmet/f13/rangercombat/desert
 	name = "desert ranger combat helmet"
-	desc = "An old combat helmet, out of use around the time of the war."
+	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 	armor = list(melee = 65, bullet = 60, laser = 45,energy = 35, bomb = 20, bio = 0, rad = 100)
+
+/obj/item/clothing/head/helmet/f13/rangercombat/eliteriot
+	name = "elite riot gear helmet"
+	desc = "An old combat helmet seen in the divide, repurposed for higher ranking Rangers."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	armor = list(melee = 70, bullet = 65, laser = 50,energy = 40, bomb = 25, bio = 0, rad = 100)
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/f13/advhelmet

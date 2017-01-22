@@ -96,7 +96,7 @@ Warden
 	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = /obj/item/clothing/suit/armor/vest/warden
+	suit = /obj/item/clothing/suit/armor/vest
 	//gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
@@ -155,14 +155,15 @@ Legion
 	head = /obj/item/clothing/head/helmet/f13/legrecruit
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
 	mask = /obj/item/clothing/mask/bandana/legrecruit
-	suit_store = /obj/item/weapon/gun/projectile/shotgun/boltaction
+	suit_store = /obj/item/weapon/gun/projectile/revolver/caravan_shotgun
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1, \
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/stack/coin/coins = 1, \
-	/obj/item/weapon/machete = 1)
+	/obj/item/weapon/machete = 1, \
+	/obj/item/weapon/storage/box/lethalshot=1)
 
 //decan
 /datum/job/legdecan
@@ -197,14 +198,15 @@ Legion
 	head = /obj/item/clothing/head/helmet/f13/legdecan
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
 	mask = /obj/item/clothing/mask/bandana/legdecan
-	suit_store = /obj/item/weapon/gun/projectile/automatic/pistol/n99
+	suit_store = /obj/item/weapon/gun/projectile/automatic/mini_uzi
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1, \
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/stack/coin/coins = 3, \
-	/obj/item/weapon/machete = 1)
+	/obj/item/weapon/machete = 1, \
+	/obj/item/ammo_box/magazine/uzim9mm=2)
 
 //vexillarius
 /datum/job/legvex
@@ -238,7 +240,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legvexil
 	head = /obj/item/clothing/head/helmet/f13/legvexil
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/shotgun/boltaction
+	suit_store = /obj/item/weapon/gun/projectile/automatic/smg10mm
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
@@ -246,7 +248,8 @@ Legion
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/stack/coin/coins = 3, \
 	/obj/item/weapon/machete = 1, \
-	/obj/item/weapon/storage/firstaid/brute=1)
+	/obj/item/weapon/storage/firstaid/brute=1, \
+	/obj/item/ammo_box/magazine/m10mm_auto=2)
 
 //centurion
 /datum/job/legcenturion
@@ -280,7 +283,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legcenturion
 	head = /obj/item/clothing/head/helmet/f13/legcenturion
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/automatic/pistol/n99
+	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
@@ -321,14 +324,15 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/leglegat
 	head = /obj/item/clothing/head/helmet/f13/leglegat
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/automatic/pistol/n99
+	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1, \
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/stack/coin/coins = 3, \
-	/obj/item/weapon/powergauntlet = 1)
+	/obj/item/weapon/powergauntlet = 1,\
+	/obj/item/ammo_box/magazine/m556_20=3)
 /*
 Security Officer
 */
@@ -363,7 +367,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	ears = /obj/item/device/radio/headset/headset_sec/alt
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	//gloves = /obj/item/clothing/gloves/color/black
-	//head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/riot/vaultsec
 	suit = /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/device/assembly/flash/handheld
