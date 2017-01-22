@@ -1025,6 +1025,14 @@
 	item_color = "roving"
 	can_adjust = 0
 
+/obj/item/clothing/under/f13/follower
+	name = "followers otufit"
+	desc = "A standard Follower's of the Apocalypse uniform."
+	icon_state = "follower"
+	item_state ="bl_suit"
+	item_color = "follower"
+	can_adjust = 0
+
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This particular jumpsuit has no number on the back."

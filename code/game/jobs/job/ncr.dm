@@ -17,9 +17,9 @@ Trooper
 	outfit = /datum/outfit/job/ncrlieutenant
 
 /datum/job/ncrc
-	title = "NCR Commander"
+	title = "NCR Colonel"
 	flag = NCRCOMMANDER
-	department_head = list("NCR Commander")
+	department_head = list("NCR Colonel")
 	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins
 	total_positions = 1
@@ -41,11 +41,11 @@ Trooper
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = /obj/item/clothing/head/beret/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
-	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
+	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/ammo_box/magazine/m556_20=2, \
+		/obj/item/ammo_box/magazine/m556_20=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/automatic/pistol/m1911=1)
+		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
 /*
 Sergeant
 */
@@ -139,7 +139,7 @@ Recruit
 	head = /obj/item/clothing/head/f13/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
 	suit_store = /obj/item/weapon/gun/projectile/shotgun/boltaction
-	backpack_contents = list(/obj/item/ammo_box/a762=1, \
+	backpack_contents = list(/obj/item/ammo_box/a762=3, \
 		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 /*

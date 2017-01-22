@@ -425,6 +425,30 @@
 		/obj/item/weapon/storage/firstaid/tactical=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 
+/datum/outfit/chief_ranger
+	name = "Chief Ranger"
+	id = /obj/item/weapon/card/id/ncr/ranger
+	uniform = /obj/item/clothing/under/f13/cowboyg
+	shoes = /obj/item/clothing/shoes/combat/swat
+	gloves = /obj/item/clothing/gloves/combat
+	suit = /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
+	r_hand = /obj/item/weapon/gun/projectile/revolver/sequoia
+	suit_store = /obj/item/weapon/gun/energy/laser/plasma_rifle
+	l_pocket = /obj/item/ammo_box/c4570
+	r_pocket = /obj/item/weapon/lighter/engraved
+	belt = /obj/item/weapon/storage/belt/ncr
+	back = /obj/item/weapon/storage/backpack/satchel
+	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/super = 2, \
+		/obj/item/ammo_box/c4570=2, \
+		/obj/item/weapon/melee/classic_baton/telescopic=1, \
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/weapon/storage/firstaid/tactical=1,\
+		/obj/item/clothing/mask/gas/syndicate=1, \
+		/obj/item/clothing/head/helmet/f13/rangercombat/eliteriot=1, \
+		/obj/item/clothing/glasses/night=1)
+	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+
+
 
 
 

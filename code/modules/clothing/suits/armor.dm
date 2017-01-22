@@ -472,9 +472,14 @@
 	icon_state = "desert_ranger"
 	item_state = "desert_ranger"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 70, laser = 55, energy = 30, bomb = 30, bio = 0, rad = 90)
-	put_on_delay = 60
-	strip_delay = 60
+	armor = list(melee = 70, bullet = 70, laser = 55, energy = 30, bomb = 30, bio = 0, rad = 900)
+
+/obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
+	name = "elite riot gear"
+	desc = "A heavily reinforced set of military grade armor, commonly seen in the Divide now repurposed and reissued to Chief Rangers."
+	icon_state = "elite_riot"
+	item_state = "elite_riot"
+	armor = list(melee = 75, bullet = 75, laser = 60, energy = 35, bomb = 35, bio = 0, rad = 100)
 
 /obj/item/clothing/suit/armor/f13/t45bpowerarmor
 	name = "NCR salvaged power armor"

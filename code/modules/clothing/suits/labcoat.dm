@@ -48,6 +48,11 @@
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox"
 
+/obj/item/clothing/suit/toggle/labcoat/follower
+	name = "followers labcoat"
+	desc = "A followers labcoat."
+	icon_state = "follower"
+
 /obj/item/clothing/suit/toggle/labcoat/fluff/emergency
 	name = "first responder jacket"
 	desc = "A high-visibility jacket worn by medical first responders."

@@ -187,7 +187,7 @@ Settler
 Wastelandmedic
 */
 /datum/job/wastelandmedic
-	title = "Wastelandmedic"
+	title = "Follower of the Apocalypse"
 	flag = WASTELANDMEDIC
 	department_flag = CIVILIAN
 	faction = "Desert" //desert faction shall disable appearing as scavenger after readying
@@ -200,7 +200,7 @@ Wastelandmedic
 	outfit = /datum/outfit/job/wastelandmedic
 
 /datum/outfit/job/wastelandmedic
-	name = "Wastelandmedic"
+	name = "Follower of the Apocalypse"
 	id = null
 	ears = null
 	belt = null
@@ -209,11 +209,12 @@ Wastelandmedic
 
 /datum/outfit/job/wastelandmedic/pre_equip(mob/living/carbon/human/H)
 	..()
-	uniform = pick(/obj/item/clothing/under/f13/doctor)
+	uniform = pick(/obj/item/clothing/under/f13/follower)
 	mask = /obj/item/clothing/mask/surgical
 	gloves = /obj/item/clothing/gloves/color/white
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
+	suit = /obj/item/clothing/suit/toggle/labcoat/follower
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/reagent_containers/pill/patch/stimpak=3, \
 	/obj/item/weapon/reagent_containers/pill/patch/radaway=2, \
