@@ -18,7 +18,7 @@ Trooper
 
 /datum/job/ncrc
 	title = "NCR Colonel"
-	flag = NCRCOMMANDER
+	flag = NCRCOLONEL
 	department_head = list("NCR Colonel")
 	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins

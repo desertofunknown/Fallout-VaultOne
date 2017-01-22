@@ -55,6 +55,7 @@ var/const/NCRVETRANGER			=(1<<2)
 var/const/NCRRECRUIT        	=(1<<3)
 var/const/NCRSERGEANT        	=(1<<4)
 var/const/NCRRANGER       		=(1<<5)
+var/const/NCRCOLONEL			=(1<<7)
 
 //~~Wasteland~~
 var/const/SCAVENGER         =(1<<21)
@@ -63,7 +64,6 @@ var/const/SETTLER         	=(1<<23)
 var/const/WASTELANDMEDIC	=(1<<24)
 var/const/RAIDER        	=(1<<25)
 var/const/NCR        		=(1<<26)
-var/const/NCRCOMMANDER     =(1<<7)
 
 
 var/list/assistant_occupations = list(
@@ -153,7 +153,7 @@ var/list/legion_positions = list(
 )
 
 var/list/ncr_positions = list(
-	"NCR Commander",
+	"NCR Colonel",
 	"NCR Lieutenant",
 	"NCR Trooper",
 	"NCR Veteran Ranger",
