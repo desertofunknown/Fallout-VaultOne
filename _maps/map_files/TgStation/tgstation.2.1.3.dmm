@@ -2628,7 +2628,7 @@
 "aYB" = (/obj/machinery/door/poddoor/shutters/preopen{id = "garage"},/turf/simulated/floor/grass{tag = "icon-horizontalinnermain0"; name = "concrete road"; icon = 'icons/turf/floors3.dmi'; icon_state = "horizontalinnermain0"},/area/janitor)
 "aYC" = (/obj/structure/flora/bush{tag = "icon-tall_grass_1"; name = "grass"; icon = 'icons/obj/flora/wasteland.dmi'; icon_state = "tall_grass_1"},/turf/simulated/floor/wasteland{tag = "icon-wasteland11"; icon_state = "wasteland11"},/area/awaymission)
 "aYD" = (/obj/structure/closet/cardboard,/turf/simulated/floor/wood{tag = "icon-housewood1"; icon = 'icons/turf/floors3.dmi'; icon_state = "housewood1"},/area/janitor)
-"aYE" = (/obj/structure/rack,/turf/simulated/floor/wood{tag = "icon-housewood1"; icon = 'icons/turf/floors3.dmi'; icon_state = "housewood1"},/area/janitor)
+"aYE" = (/obj/structure/rack,/obj/item/weapon/lipstick/random,/obj/item/weapon/lipstick/random,/obj/item/weapon/lipstick/random,/turf/simulated/floor/wood{tag = "icon-housewood1"; icon = 'icons/turf/floors3.dmi'; icon_state = "housewood1"},/area/janitor)
 "aYF" = (/turf/simulated/wall{tag = "icon-supermart13"; icon = 'icons/turf/walls.dmi'; icon_state = "supermart13"},/area/janitor)
 "aYG" = (/turf/simulated/floor/grass{tag = "icon-horizontalbottombordertop0"; name = "concrete road"; icon = 'icons/turf/floors3.dmi'; icon_state = "horizontalbottombordertop0"},/area/janitor)
 "aYH" = (/obj/item/weapon/storage/toolbox/mechanical,/turf/simulated/floor/grass{tag = "icon-horizontalbottombordertop0"; name = "concrete road"; icon = 'icons/turf/floors3.dmi'; icon_state = "horizontalbottombordertop0"},/area/janitor)
