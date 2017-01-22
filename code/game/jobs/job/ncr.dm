@@ -175,7 +175,6 @@ Veteran Ranger
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	backpack_contents = list(/obj/item/weapon/gun/projectile/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 /*
@@ -212,7 +211,6 @@ NCR Ranger
 	backpack_contents = list(/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1, \
 		/obj/item/weapon/restraints/handcuffs=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1, \
 		/obj/item/weapon/storage/box/lethalshot=1)
 
 /datum/job/detective

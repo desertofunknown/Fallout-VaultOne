@@ -411,16 +411,17 @@
 	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat/desert
 	head = /obj/item/clothing/head/helmet/f13/rangercombat/desert
-	r_hand = /obj/item/weapon/gun/projectile/shotgun/automatic/combat
+	r_hand = /obj/item/weapon/gun/projectile/revolver/max_sawn_off
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
-	l_pocket = /obj/item/ammo_box/magazine/m50
-	r_pocket = /obj/item/weapon/gun/projectile/automatic/pistol/deagle
+	l_pocket = /obj/item/ammo_box/c4570
+	r_pocket = /obj/item/ammo_box/c4570
 	glasses = /obj/item/clothing/glasses/night
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel
 	backpack_contents = list(/obj/item/weapon/storage/box/lethalshot = 2, \
-		/obj/item/ammo_box/magazine/m50=2, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1, \
+		/obj/item/ammo_box/c4570=2, \
+		/obj/item/ammo_box/magazine/m556=3, \
+		/obj/item/weapon/gun/projectile/revolver/sequoia/scoped=1, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
@@ -440,7 +441,6 @@
 	back = /obj/item/weapon/storage/backpack/satchel
 	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/super = 2, \
 		/obj/item/ammo_box/c4570=2, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1,\
 		/obj/item/clothing/mask/gas/syndicate=1, \

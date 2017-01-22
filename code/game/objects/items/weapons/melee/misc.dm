@@ -34,12 +34,13 @@
 	var/cooldown = 0
 	var/on = 1
 
+/*
 /obj/item/weapon/melee/classic_baton/attack(mob/target, mob/living/user)
 	if(on)
 		add_fingerprint(user)
 		if((CLUMSY in user.disabilities) && prob(50))
 			user << "<span class ='danger'>You club yourself over the head.</span>"
-			user.Weaken(3 * force)
+			user.Weaken(2 * force)
 			if(ishuman(user))
 				var/mob/living/carbon/human/H = user
 				H.apply_damage(2*force, BRUTE, "head")
@@ -76,7 +77,7 @@
 		return
 	else
 		return ..()
-
+*/
 
 
 /obj/item/weapon/melee/classic_baton/telescopic

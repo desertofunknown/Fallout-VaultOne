@@ -24,9 +24,9 @@
 	stamina = 80
 
 /obj/item/projectile/bullet/weakbullet2 //detective revolver instastuns, but multiple shots are better for keeping punks down
-	damage = 15
-	weaken = 3
-	stamina = 50
+	damage = 20
+//	weaken = 3
+//	stamina = 50
 
 /obj/item/projectile/bullet/weakbullet3
 	damage = 45

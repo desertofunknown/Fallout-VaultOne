@@ -71,6 +71,12 @@
 	caliber = "4570"
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev44
+	name = "d-tiv revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/m44
+	caliber = "44"
+	max_ammo = 6
+
 /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	name = "grenade launcher internal magazine"
 	ammo_type = /obj/item/ammo_casing/a40mm

@@ -150,13 +150,36 @@
 	icon_state = "mateba"
 	origin_tech = "combat=2;materials=2"
 
+/obj/item/weapon/gun/projectile/revolver/m29
+	name = "\improper S&W Model 29"
+	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
+	icon_state = "m29"
+	origin_tech = "combat=4;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+
 /obj/item/weapon/gun/projectile/revolver/sequoia
 	name = "Ranger Sequoia"
-	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers, and is carried only by a NCR Veteran Ranger after 20 years of service. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
 	icon_state = "sequoia"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
 	origin_tech = "combat=2;materials=2"
 	fire_sound = 'sound/f13weapons/sequoia.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/police
+	name = "police pistol"
+	desc = "A .38 caliber police pistol, this model is unsuitable for magnum loads."
+	icon_state = "detective_panther"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	origin_tech = "combat=2;materials=2"
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/sequoia/scoped
+	name = "Hunting Revolver"
+	desc = "A scoped double action revolver chambered in 45-70."
+	icon_state = "hunting_revolver"
+	zoomable = TRUE
+	zoom_amt = 7
 
 
 // A gun to play Russian Roulette!
