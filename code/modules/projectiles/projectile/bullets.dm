@@ -8,11 +8,11 @@
 	flag = "bullet"
 
 /obj/item/projectile/bullet/deagleAE
-	damage = 70
+	damage = 65
 	armour_penetration = 10
 
 /obj/item/projectile/bullet/magnum
-	damage = 60
+	damage = 55
 	armour_penetration = -10
 
 /obj/item/projectile/bullet/slug
@@ -215,4 +215,4 @@
 
 /obj/item/projectile/bullet/sequoia
 	name = "bullet"
-	damage = 60
+	damage = 70
