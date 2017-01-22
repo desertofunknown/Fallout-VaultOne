@@ -527,6 +527,17 @@ var/global/list/rockTurfEdgeCache
 	slowdown = 2
 	environment_type = "snow"
 
+/turf/simulated/floor/wasteland/mountain
+	name = "mountain"
+	desc = "It's rocky floor."
+	icon = 'icons/turf/floors2.dmi'
+	baseturf = /turf/simulated/floor/wasteland/mountain
+	icon_state = "mountain"
+	icon_plating = "mountain"
+	//temperature = 370
+	slowdown = 1
+	environment_type = "mountain"
+
 /turf/simulated/floor/wasteland/snow/airless
 	//temperature = TCMB
 
