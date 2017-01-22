@@ -5,7 +5,22 @@ Trooper
 	title = "NCR Lieutenant"
 	flag = NCRLIEUTENANT
 	department_head = list("NCR Lieutenant")
-	department_flag = ENGSEC
+	department_flag = NCR
+	faction = "NCR" // This faction is used for late joins
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the head of security"
+	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
+	selection_color = "#ffeeee"
+	access = list()
+	minimal_access = list()
+	outfit = /datum/outfit/job/ncrlieutenant
+
+/datum/job/ncrc
+	title = "NCR Commander"
+	flag = NCRCOMMANDER
+	department_head = list("NCR Commander")
+	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins
 	total_positions = 1
 	spawn_positions = 1
@@ -38,7 +53,7 @@ Sergeant
 	title = "NCR Sergeant"
 	flag = NCRSERGEANT
 	department_head = list("NCR Lieutenant")
-	department_flag = ENGSEC
+	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins
 	total_positions = 2
 	spawn_positions = 2
@@ -70,7 +85,7 @@ Trooper
 	title = "NCR Trooper"
 	flag = NCRTROOPER
 	department_head = list("NCR Sergeant")
-	department_flag = ENGSEC
+	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins
 	total_positions = 10
 	spawn_positions = 6
@@ -102,7 +117,7 @@ Recruit
 	title = "NCR Recruit"
 	flag = NCRRECRUIT
 	department_head = list("NCR Sergeant")
-	department_flag = ENGSEC
+	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins
 	total_positions = 10
 	spawn_positions = 6
@@ -134,7 +149,7 @@ Veteran Ranger
 	title = "NCR Veteran Ranger"
 	flag = NCRVETRANGER
 	department_head = list("NCR Sergeant")
-	department_flag = ENGSEC
+	department_flag = NCR
 	faction = "NCR"
 	total_positions = 1
 	spawn_positions = 1
@@ -170,7 +185,7 @@ NCR Ranger
 	title = "NCR Ranger"
 	flag = NCRRANGER
 	department_head = list("NCR Sergeant")
-	department_flag = ENGSEC
+	department_flag = NCR
 	faction = "NCR"
 	total_positions = 3
 	spawn_positions = 3
@@ -204,7 +219,7 @@ NCR Ranger
 	//title = "Wake up"
 	//flag = RANGER
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = NCR
 	faction = "NCR"
 	total_positions = 0
 	spawn_positions = 0

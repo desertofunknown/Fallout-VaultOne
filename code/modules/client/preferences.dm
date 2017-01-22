@@ -75,6 +75,10 @@ var/list/preferences_datums = list()
 	var/job_engsec_med = 0
 	var/job_engsec_low = 0
 
+	var/job_ncr_high = 0
+	var/job_ncr_med = 0
+	var/job_ncr_low = 0
+
 		// Want randomjob if preferences already filled - Donkie
 	var/userandomjob = 1 //defaults to 1 for fewer assistants
 
@@ -539,6 +543,7 @@ var/list/preferences_datums = list()
 		job_civilian_high = 0
 		job_engsec_high = 0
 		job_medsci_high = 0
+		job_ncr_high = 0
 
 	if (job.department_flag == CIVILIAN)
 		job_civilian_low &= ~job.flag
@@ -580,6 +585,20 @@ var/list/preferences_datums = list()
 				job_medsci_med |= job.flag
 			if (3)
 				job_medsci_low |= job.flag
+
+		return 1
+	else if (job.department_flag == NCR)
+		job_ncr_low &= ~job.flag
+		job_ncr_med &= ~job.flag
+		job_ncr_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_ncr_high |= job.flag
+			if (2)
+				job_ncr_med |= job.flag
+			if (3)
+				job_ncr_low |= job.flag
 
 		return 1
 
@@ -628,6 +647,9 @@ var/list/preferences_datums = list()
 	job_engsec_med = 0
 	job_engsec_low = 0
 
+	job_ncr_high = 0
+	job_ncr_med = 0
+	job_ncr_low = 0
 
 /datum/preferences/proc/GetJobDepartment(datum/job/job, level)
 	if(!job || !level)	return 0
@@ -656,6 +678,14 @@ var/list/preferences_datums = list()
 					return job_engsec_med
 				if(3)
 					return job_engsec_low
+		if(NCR)
+			switch(level)
+				if(1)
+					return job_ncr_high
+				if(2)
+					return job_ncr_med
+				if(3)
+					return job_ncr_low
 	return 0
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)

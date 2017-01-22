@@ -49,12 +49,12 @@ var/const/LEGCENTURION		=(1<<13)
 var/const/LEGLEGAT			=(1<<14)
 
 //~~NCR~~
-var/const/NCRTROOPER        	=(1<<15)
-var/const/NCRLIEUTENANT      	=(1<<16)
-var/const/NCRVETRANGER			=(1<<17)
-var/const/NCRRECRUIT        	=(1<<18)
-var/const/NCRSERGEANT        	=(1<<19)
-var/const/NCRRANGER       		=(1<<20)
+var/const/NCRTROOPER        	=(1<<6)
+var/const/NCRLIEUTENANT      	=(1<<1)
+var/const/NCRVETRANGER			=(1<<2)
+var/const/NCRRECRUIT        	=(1<<3)
+var/const/NCRSERGEANT        	=(1<<4)
+var/const/NCRRANGER       		=(1<<5)
 
 //~~Wasteland~~
 var/const/SCAVENGER         =(1<<21)
@@ -62,7 +62,8 @@ var/const/REGULATOR         =(1<<22)
 var/const/SETTLER         	=(1<<23)
 var/const/WASTELANDMEDIC	=(1<<24)
 var/const/RAIDER        	=(1<<25)
-
+var/const/NCR        		=(1<<26)
+var/const/NCRCOMMANDER     =(1<<7)
 
 
 var/list/assistant_occupations = list(
@@ -78,8 +79,8 @@ var/list/assistant_occupations = list(
 var/list/command_positions = list(
 	"Overseer",
 	"Head of Personnel",
-	"NCR Lieutenant",
-	"NCR Sergeant",
+//	"NCR Lieutenant",
+//	"NCR Sergeant",
 //	"Research Director",
 //	"Chief Medical Officer"
 )
@@ -152,6 +153,7 @@ var/list/legion_positions = list(
 )
 
 var/list/ncr_positions = list(
+	"NCR Commander",
 	"NCR Lieutenant",
 	"NCR Trooper",
 	"NCR Veteran Ranger",
