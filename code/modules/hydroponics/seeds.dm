@@ -410,6 +410,94 @@
 	growthstages = 3
 	mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
 
+//fallout 13
+
+/obj/item/seeds/broc
+	name = "pack of broc seeds"
+	desc = "These seeds grow into broc flower."
+	icon_state = "seed-broc"
+	species = "broc"
+	plantname = "Broc Plants"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/broc
+	lifespan = 25
+	endurance = 10
+	maturation = 8
+	production = 6
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 1
+	growthstages = 3
+	//mutatelist = list(/obj/item/seeds/geraniumseed, /obj/item/seeds/lilyseed)
+
+obj/item/seeds/xander
+	name = "pack of xander seeds"
+	desc = "These seeds grow into xander root."
+	icon_state = "seed-xander"
+	species = "xander"
+	plantname = "Xander Plants"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/xander
+	lifespan = 25
+	endurance = 10
+	maturation = 8
+	production = 3
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 1
+	growthstages = 3
+
+/obj/item/seeds/fungus
+	name = "pack of fungus seeds"
+	desc = "These seeds grow into fungus mushrooms."
+	icon_state = "seed-fungus"
+	species = "fungus"
+	plantname = "Fungus"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/fungus
+	lifespan = 50
+	endurance = 10
+	maturation = 8
+	production = 3
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 1
+	growthstages = 3
+
+/obj/item/seeds/mutfruit
+	name = "pack of mutfruit seeds"
+	desc = "These seeds grow into mutfruit."
+	icon_state = "seed-mutfruit"
+	species = "mutfruit"
+	plantname = "Mutfruit"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/mutfruit
+	lifespan = 30
+	endurance = 20
+	maturation = 8
+	production = 2
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 0
+	growthstages = 3
+
+/obj/item/seeds/feracactus
+	name = "pack of feracactus seeds"
+	desc = "These seeds grow into feracactus."
+	icon_state = "seed-feracactus"
+	species = "feracactus"
+	plantname = "Feracactus"
+	product = /obj/item/weapon/reagent_containers/food/snacks/grown/feracactus
+	lifespan = 50
+	endurance = 20
+	maturation = 8
+	production = 2
+	yield = 6
+	potency = 20
+	plant_type = 0
+	oneharvest = 0
+	growthstages = 3
+
 /obj/item/seeds/geraniumseed
 	name = "pack of geranium seeds"
 	desc = "These seeds grow into geranium."

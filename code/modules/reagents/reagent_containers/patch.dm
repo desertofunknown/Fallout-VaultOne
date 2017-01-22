@@ -39,6 +39,22 @@
 	item_state = "syringe_15"
 	icon_state = "15"
 
+/obj/item/weapon/reagent_containers/pill/patch/supstimpak
+	name = "SuperStimpak"
+	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
+	list_reagents = list("styptic_powder" = 60, "silver_sulfadiazine" = 60)
+	icon = 'icons/obj/syringe.dmi'
+	item_state = "syringe_15"
+	icon_state = "superstim_15"
+
+/obj/item/weapon/reagent_containers/pill/patch/healpowder
+	name = "Healing powder"
+	desc = "Soldiers of the Legion use healing powder as their primary source of medicine and healing, since the Legion bans the use of other chems, such as stimpaks."
+	list_reagents = list("styptic_powder" = 15, "silver_sulfadiazine" = 15, "space_drugs" = 5)
+	icon = 'icons/obj/syringe.dmi'
+	item_state = "bandaid"
+	icon_state = "heal_powder"
+
 /obj/item/weapon/reagent_containers/pill/patch/radaway
 	name = "RadAway"
 	desc = "RadAway is an intravenous chemical solution that bonds with radiation particles and passes them through the body's system. It takes some time to work, and is also a potent diuretic."

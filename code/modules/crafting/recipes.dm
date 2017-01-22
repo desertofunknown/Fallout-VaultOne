@@ -333,6 +333,41 @@
 	parts = list(/obj/item/device/camera = 1)
 	category = CAT_MISC
 */
+
+/datum/table_recipe/gauze
+	name = "Medical gauze"
+	result = /obj/item/stack/medical/gauze
+	reqs = list(/obj/item/clothing/under = 1)
+	time = 20
+	category = CAT_MISC
+
+/datum/table_recipe/healpowder
+	name = "Healing powder"
+	result = /obj/item/weapon/reagent_containers/pill/patch/healpowder
+	reqs = list(/obj/item/weapon/reagent_containers/food/snacks/grown/broc = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/grown/xander = 1)
+	time = 20
+	category = CAT_MISC
+
+/datum/table_recipe/stimpak
+	name = "Stimpak"
+	result = /obj/item/weapon/reagent_containers/pill/patch/stimpak
+	reqs = list(/obj/item/weapon/reagent_containers/pill/patch/healpowder = 1,
+				/obj/item/weapon/reagent_containers/food/drinks/nukacola = 1)
+	tools = list(/obj/item/weapon/lighter, /obj/item/weapon/reagent_containers/glass/beaker)
+	time = 60
+	category = CAT_MISC
+
+/datum/table_recipe/superstimpak
+	name = "Super Stimpak"
+	result = /obj/item/weapon/reagent_containers/pill/patch/supstimpak
+	reqs = list(/obj/item/weapon/reagent_containers/pill/patch/stimpak = 1,
+				/obj/item/stack/sheet/gekkonhide = 1,
+				/obj/item/stack/cable_coil = 5)
+	tools = list(/obj/item/weapon/lighter, /obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
+	time = 90
+	category = CAT_MISC
+
 /datum/table_recipe/lizardhat
 	name = "Lizard Cloche Hat"
 	result = /obj/item/clothing/head/lizard
