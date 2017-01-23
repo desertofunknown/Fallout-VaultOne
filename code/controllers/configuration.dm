@@ -48,7 +48,7 @@
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
 	var/log_world_topic = 0
-	var/fps = 10
+	var/fps = 20
 	var/allow_holidays = 0				//toggles whether holiday-specific content should be used
 
 	var/respawn = 1
