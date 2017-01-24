@@ -128,9 +128,9 @@ Legion
 	flag = LEGRECRUIT
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
-	faction = "Legion"
+	faction = "Desert"
 	total_positions = 10
-	spawn_positions = 10
+	spawn_positions = -1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7

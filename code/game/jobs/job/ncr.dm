@@ -118,9 +118,9 @@ Recruit
 	flag = NCRRECRUIT
 	department_head = list("NCR Sergeant")
 	department_flag = NCR
-	faction = "NCR" // This faction is used for late joins
+	faction = "Desert" // This faction is used for late joins
 	total_positions = 10
-	spawn_positions = 6
+	spawn_positions = -1
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
@@ -142,6 +142,16 @@ Recruit
 	backpack_contents = list(/obj/item/ammo_box/a762=3, \
 		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/weapon/kitchen/knife/combat=1)
+
+/datum/outfit/job/ncrrecruit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/weapon/card/id/ncr/W = H.wear_id
+	W.registered_name = H.real_name
+	W.assignment = "NCR Recruit"
+	W.update_label(W.registered_name, W.assignment)
+
 /*
 Veteran Ranger
 */

@@ -425,6 +425,19 @@
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
+/*
+/datum/outfit/desert_ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/device/radio/R = H.ears
+	R.set_frequency(CENTCOM_FREQ)
+	R.freqlock = 1
+
+	var/obj/item/weapon/card/id/ncr/ranger/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name, W.assignment)
+*/
 
 /datum/outfit/chief_ranger
 	name = "Chief Ranger"
@@ -447,6 +460,20 @@
 		/obj/item/clothing/head/helmet/f13/rangercombat/eliteriot=1, \
 		/obj/item/clothing/glasses/night=1)
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+/*
+/datum/outfit/chief_ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/device/radio/R = H.ears
+	R.set_frequency(CENTCOM_FREQ)
+	R.freqlock = 1
+
+	var/obj/item/weapon/card/id/ncr/ranger/W = H.wear_id
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name, W.assignment)
+*/
+
 
 
 
