@@ -159,6 +159,8 @@ obj/dugpit/New(lnk)
 				if(istype(src, /turf/simulated/floor/wasteland))
 					user << "<span class='notice'>You dig a hole.</span>"
 					gets_dug(user)
+					new /obj/item/weapon/ore/glass(src)
+					new /obj/item/weapon/ore/glass(src)
 	else
 		//not digging
 		if (dug)

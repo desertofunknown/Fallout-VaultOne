@@ -33,6 +33,7 @@
 	spawn(1)
 		update_icon()
 
+/*
 /turf/simulated/floor/grass/attackby(obj/item/C, mob/user, params)
 	if(..())
 		return
@@ -41,6 +42,7 @@
 		new /obj/item/weapon/ore/glass(src) //Make some sand if you shovel grass
 		user << "<span class='notice'>You shovel the grass.</span>"
 		make_plating()
+*/
 
 /turf/simulated/floor/carpet
 	name = "Carpet"

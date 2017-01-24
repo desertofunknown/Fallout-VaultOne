@@ -66,3 +66,8 @@
 
 /obj/effect/decal/cleanable/oil/streak
 	random_icon_states = list("streak1", "streak2", "streak3", "streak4", "streak5")
+
+/obj/effect/decal/cleanable/remains/robot
+	desc = "They look like the remains of something mechanical. They have a strange aura about them."
+	icon = 'icons/mob/robots.dmi'
+	icon_state = "remainsrobot"
