@@ -40,6 +40,9 @@ var/const/MINER				=(1<<8)
 //var/const/CLOWN			=(1<<11)
 //var/const/MIME			=(1<<12)
 var/const/ASSISTANT			=(1<<9)
+var/const/WASTELANDWHORE	=(1<<10)
+var/const/PUSHER			=(1<<11)
+var/const/PREACHER			=(1<<12)
 
 //~~Legion~~
 var/const/LEGRECRUIT		=(1<<10)
@@ -64,8 +67,6 @@ var/const/SETTLER         	=(1<<23)
 var/const/WASTELANDMEDIC	=(1<<24)
 var/const/RAIDER        	=(1<<25)
 var/const/NCR        		=(1<<26)
-var/const/WASTELANDWHORE	=(1<<27)
-var/const/PUSHER			=(1<<28)
 
 var/list/assistant_occupations = list(
 	"Assistant",
@@ -170,7 +171,8 @@ var/list/wasteland_positions = list(
 	"Raider",
 	"Scavenger",
 	"Whore",
-	"Pusher"
+	"Pusher",
+	"Preacher",
 )
 
 /proc/guest_jobbans(job)

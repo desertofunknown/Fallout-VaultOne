@@ -232,7 +232,7 @@ Wastelandwhore
 	title = "Whore"
 	flag = WASTELANDWHORE
 	department_flag = CIVILIAN
-	faction = "Desert" //desert faction shall disable appearing as scavenger after readying
+	faction = "Vault" //desert faction shall disable appearing as scavenger after readying
 	total_positions = 3
 	spawn_positions = 3 //does not matter for late join
 	supervisors = "pusher"
@@ -257,7 +257,7 @@ Wastelandwhore
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/storage/wallet=1, \
 	/obj/item/stack/coin/coins = 1)
-		l_hand = pick(/obj/item/weapon/switchblade)
+	l_hand = /obj/item/weapon/switchblade
 
 /*
 Wastelandpusher
@@ -266,7 +266,7 @@ Wastelandpusher
 	title = "Pusher"
 	flag = PUSHER
 	department_flag = CIVILIAN
-	faction = "Desert" //desert faction shall disable appearing as scavenger after readying
+	faction = "Vault" //desert faction shall disable appearing as scavenger after readying
 	total_positions = 1
 	spawn_positions = 1 //does not matter for late join
 	supervisors = "nobody"
@@ -283,7 +283,7 @@ Wastelandpusher
 	backpack = null
 	satchel = null
 
-/datum/outfit/job/wastelandwhore/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/pusher/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(/obj/item/clothing/under/f13/merccharm)
 	back = /obj/item/weapon/storage/backpack

@@ -2,32 +2,32 @@
 /*
 Chaplain
 */
-/*
+
 /datum/job/chaplain
-	title = "Chaplain"
-	flag = CHAPLAIN
-	department_head = list("Head of Personnel")
+	title = "Preacher"
+	flag = PREACHER
+	//department_head = list("Head of Personnel")
 	department_flag = CIVILIAN
-	faction = "Station"
+	faction = "Vault"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "God"
 	selection_color = "#dddddd"
 
-	outfit = /datum/outfit/job/chaplain
+	outfit = /datum/outfit/job/preacher
 
 	access = list(access_morgue, access_chapel_office, access_crematorium, access_theatre)
 	minimal_access = list(access_morgue, access_chapel_office, access_crematorium, access_theatre)
 
-/datum/outfit/job/chaplain
-	name = "Chaplain"
+/datum/outfit/job/preacher
+	name = "Preacher"
 
 	gloves = /obj/item/clothing/gloves/pda/chaplain
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	backpack_contents = list(/obj/item/device/camera/spooky = 1)
 
 
-/datum/outfit/job/chaplain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/preacher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 
 	if(visualsOnly)
@@ -76,4 +76,3 @@ Chaplain
 		ticker.Bible_deity_name = B.deity_name
 	feedback_set_details("religion_deity","[new_deity]")
 	H.equip_to_slot_or_del(B, slot_in_backpack)
-	*/
