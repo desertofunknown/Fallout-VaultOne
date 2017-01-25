@@ -259,7 +259,7 @@
 	burn_state = FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/combat
-	name = "combat_helmet"
+	name = "combat helmet"
 	desc = "An old combat helmet, out of use around the time of the war."
 	icon_state = "combat_helmet"
 	item_state = "combat_helmet"
@@ -269,6 +269,13 @@
 	put_on_delay = 10
 	strip_delay = 50
 	burn_state = FIRE_PROOF
+
+/obj/item/clothing/head/helmet/f13/combat/brotherhood
+	name = "brotherhood combat helmet"
+	desc = "An improved combat helmet, seen commonly worn on initiates"
+	icon_state = "brotherhood_helmet"
+	item_state = "brotherhood_helmet"
+	armor = list(melee = 55, bullet = 50, laser = 35,energy = 25, bomb = 10, bio = 0, rad = 90)
 
 /obj/item/clothing/head/helmet/f13/legrecruit
 	name = "legion recruit helmet"
@@ -366,6 +373,23 @@
 	item_state = "advhelmet"
 	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
 	armor = list(melee = 90, bullet = 70, laser = 70,energy = 70, bomb = 50, bio = 100, rad = 50)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
+	put_on_delay = 20
+	strip_delay = 200
+	burn_state = FIRE_PROOF
+	unacidable = 1
+
+/obj/item/clothing/head/helmet/f13/t51bhelmet
+	name = "t51b power helmet"
+	desc = "It's a t51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
+	icon_state = "t51bhelmet"
+	item_state = "t51bhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
+	armor = list(melee = 80, bullet = 60, laser = 60,energy = 60, bomb = 40, bio = 100, rad = 60)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT

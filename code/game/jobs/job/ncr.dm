@@ -38,6 +38,7 @@ Trooper
 	uniform = /obj/item/clothing/under/f13/ncr
 	shoes = /obj/item/clothing/shoes/combat/ncr
 	belt = /obj/item/weapon/storage/belt/ncr
+	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = /obj/item/clothing/head/beret/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
@@ -71,6 +72,7 @@ Sergeant
 	uniform = /obj/item/clothing/under/f13/ncr
 	shoes = /obj/item/clothing/shoes/combat/ncr
 	belt = /obj/item/weapon/storage/belt/ncr
+	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = /obj/item/clothing/head/f13/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
@@ -103,6 +105,7 @@ Trooper
 	uniform = /obj/item/clothing/under/f13/ncr
 	shoes = /obj/item/clothing/shoes/combat/ncr
 	belt = /obj/item/weapon/storage/belt/ncr
+	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
 	head = /obj/item/clothing/head/f13/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
@@ -135,6 +138,7 @@ Recruit
 	uniform = /obj/item/clothing/under/f13/ncr
 	shoes = /obj/item/clothing/shoes/combat/ncr
 	belt = /obj/item/weapon/storage/belt/ncr
+	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor
 	head = /obj/item/clothing/head/f13/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
@@ -179,6 +183,7 @@ Veteran Ranger
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	shoes = /obj/item/clothing/shoes/combat/swat
 	belt = /obj/item/weapon/storage/belt/ncr
+	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat
 	head = /obj/item/clothing/head/helmet/f13/rangercombat
 	glasses = /obj/item/clothing/glasses/night
@@ -212,6 +217,7 @@ NCR Ranger
 	id = /obj/item/weapon/card/id/ncr/ranger
 	gloves = /obj/item/clothing/gloves/combat
 	belt = /obj/item/weapon/storage/belt/ncr
+	ears = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	shoes = /obj/item/clothing/shoes/combat/swat
 	suit = /obj/item/clothing/suit/armor/f13/combat/ncr

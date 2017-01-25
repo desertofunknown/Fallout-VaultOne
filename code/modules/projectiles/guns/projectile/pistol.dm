@@ -23,6 +23,12 @@
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = 0
 
+/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact
+	name = "\improper M1911 Compact"
+	desc = "A classic .45 handgun with a small magazine capacity. This model can easily fit in your pocket"
+	icon_state = "m1911c"
+	w_class = 2
+
 // 10-mm pistol
 /obj/item/weapon/gun/projectile/automatic/pistol/n99
 	name = "10-mm pistol"

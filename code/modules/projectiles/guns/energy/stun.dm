@@ -16,6 +16,16 @@
 	pin = null
 	ammo_x_offset = 1
 
+/obj/item/weapon/gun/energy/stunrevolver/pin
+	name = "stun revolver"
+	desc = "A high-tech revolver that fires internal, reusable taser cartridges in a revolving cylinder. The cartridges can be recharged using conventional rechargers."
+	icon_state = "stunrevolver"
+	item_state = "gun"
+	ammo_type = list(/obj/item/ammo_casing/energy/electrode/gun)
+	can_flashlight = 0
+	pin = /obj/item/device/firing_pin
+	ammo_x_offset = 1
+
 /obj/item/weapon/gun/energy/gun/advtaser
 	name = "hybrid taser"
 	desc = "A dual-mode taser designed to fire both short-range high-power electrodes and long-range disabler beams."

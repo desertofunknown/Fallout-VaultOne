@@ -456,6 +456,13 @@
 	icon_state = "ncr_patrol"
 	item_state = "ncr_patrol"
 
+/obj/item/clothing/suit/armor/f13/combat/brotherhood
+	name = "brotherhood combat armor"
+	desc = "A superior combat armor set made by the Brotherhood of Steel, standard issue for all initiates."
+	icon_state = "brotherhood_armor"
+	item_state = "brotherhood_armor"
+	armor = list(melee = 60, bullet = 60, laser = 45, energy = 20, bomb = 20, bio = 0, rad = 80)
+
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"
 	desc = "The NCR ranger combat armor, or black armor consists of a pre-war L.A.P.D. riot suit under a duster with rodeo jeans. Considered one of the most prestigious suits of armor to earn and wear while in service of the NCR Rangers."
@@ -527,6 +534,23 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
 	put_on_delay = 100
 	strip_delay = 200
+
+/obj/item/clothing/suit/armor/f13/t51bpowerarmor
+	name = "t51b power armor"
+	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	icon_state = "t51bpowerarmor"
+	item_state = "t51bpowerarmor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	slowdown = 1
+	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
+	flags = STOPSPRESSUREDMAGE
+	flags_inv = HIDEJUMPSUIT
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
+	put_on_delay = 100
+	strip_delay = 200
+
 
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR vest"

@@ -181,6 +181,14 @@
 	zoomable = TRUE
 	zoom_amt = 7
 
+/obj/item/weapon/gun/projectile/revolver/that_gun
+	name = ".223 pistol"
+	desc = "A modified .223 rifle that was cut down to a pistol. It has two triggers, two red LEDs, and an ammunition capacity of five .223 rounds, granting it excellent firepower."
+	icon_state = "that_gun"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev556
+	origin_tech = "combat=4;materials=3"
+	fire_sound = 'sound/f13weapons/that_gun.ogg'
+
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.

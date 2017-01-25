@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/shotgun
-	name = "shotgun"
+	name = "hunting shotgun"
 	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "shotgun"
 	item_state = "shotgun"
@@ -272,7 +272,6 @@
 		return
 	else
 		sawn_state = SAWN_INTACT
-
 
 // Bulldog shotgun //
 

@@ -77,6 +77,12 @@
 	caliber = "44"
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/rev556
+	name = "d-tiv revolver cylinder"
+	ammo_type = /obj/item/ammo_casing/a556
+	caliber = "a556"
+	max_ammo = 5
+
 /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	name = "grenade launcher internal magazine"
 	ammo_type = /obj/item/ammo_casing/a40mm
