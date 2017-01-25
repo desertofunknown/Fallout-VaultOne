@@ -64,7 +64,8 @@ var/const/SETTLER         	=(1<<23)
 var/const/WASTELANDMEDIC	=(1<<24)
 var/const/RAIDER        	=(1<<25)
 var/const/NCR        		=(1<<26)
-
+var/const/WASTELANDWHORE	=(1<<27)
+var/const/PUSHER			=(1<<28)
 
 var/list/assistant_occupations = list(
 	"Assistant",
@@ -167,7 +168,9 @@ var/list/wasteland_positions = list(
 	"Settler",
 	"Wastelandmedic",
 	"Raider",
-	"Scavenger"
+	"Scavenger",
+	"Whore",
+	"Pusher"
 )
 
 /proc/guest_jobbans(job)

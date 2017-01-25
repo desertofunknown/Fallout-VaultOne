@@ -224,3 +224,70 @@ Wastelandmedic
 		glasses = /obj/item/clothing/glasses/sunglasses
 	if (prob(80))
 		l_hand = pick(/obj/item/weapon/kitchen/knife)
+
+/*
+Wastelandwhore
+*/
+/datum/job/wastelandwhore
+	title = "Whore"
+	flag = WASTELANDWHORE
+	department_flag = CIVILIAN
+	faction = "Desert" //desert faction shall disable appearing as scavenger after readying
+	total_positions = 3
+	spawn_positions = 3 //does not matter for late join
+	supervisors = "pusher"
+	selection_color = "#dddddd"
+	access = list()
+	minimal_access = list()
+	outfit = /datum/outfit/job/wastelandwhore
+
+/datum/outfit/job/wastelandwhore
+	name = "Whore"
+	id = null
+	ears = null
+	belt = null
+	backpack = null
+	satchel = null
+
+/datum/outfit/job/wastelandwhore/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = pick(/obj/item/clothing/under/f13/female/flapper)
+	back = /obj/item/weapon/storage/backpack
+	backpack = /obj/item/weapon/storage/backpack
+	satchel = /obj/item/weapon/storage/backpack/satchel_norm
+	backpack_contents = list(/obj/item/weapon/storage/wallet=1, \
+	/obj/item/stack/coin/coins = 1)
+		l_hand = pick(/obj/item/weapon/switchblade)
+
+/*
+Wastelandpusher
+*/
+/datum/job/pusher
+	title = "Pusher"
+	flag = PUSHER
+	department_flag = CIVILIAN
+	faction = "Desert" //desert faction shall disable appearing as scavenger after readying
+	total_positions = 1
+	spawn_positions = 1 //does not matter for late join
+	supervisors = "nobody"
+	selection_color = "#dddddd"
+	access = list()
+	minimal_access = list()
+	outfit = /datum/outfit/job/wastelandwhore
+
+/datum/outfit/job/pusher
+	name = "Pusher"
+	id = null
+	ears = null
+	belt = null
+	backpack = null
+	satchel = null
+
+/datum/outfit/job/wastelandwhore/pre_equip(mob/living/carbon/human/H)
+	..()
+	uniform = pick(/obj/item/clothing/under/f13/merccharm)
+	back = /obj/item/weapon/storage/backpack
+	backpack = /obj/item/weapon/storage/backpack
+	satchel = /obj/item/weapon/storage/backpack/satchel_norm
+	backpack_contents = list(/obj/item/weapon/storage/wallet=1, \
+	/obj/item/stack/coin/coins = 4)
