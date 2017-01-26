@@ -233,8 +233,8 @@ Wastelandwhore
 	flag = WASTELANDWHORE
 	department_flag = CIVILIAN
 	faction = "Vault" //desert faction shall disable appearing as scavenger after readying
-	total_positions = 4
-	spawn_positions = 4 //does not matter for late join
+	total_positions = 3
+	spawn_positions = 3 //does not matter for late join
 	supervisors = "pusher"
 	selection_color = "#dddddd"
 	access = list()
