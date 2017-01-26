@@ -485,6 +485,7 @@ var/list/teleportlocs = list()
 /area/hallway/secondary/entry
 	name = "Vault Entry"
 	icon_state = "entry"
+	ambientsounds = list('sound/f13music/22VCITY.ogg')
 
 //Command
 
@@ -702,6 +703,7 @@ var/list/teleportlocs = list()
 	power_equip = 0
 	power_light = 0
 	power_environ = 0
+	ambientsounds = list('sound/f13music/10LABONE.ogg')
 
 //Teleporter
 
@@ -926,6 +928,7 @@ var/list/teleportlocs = list()
 /area/janitor/
 	name = "Custodial Closet"
 	icon_state = "janitor"
+	ambientsounds = list('sound/f13music/12JUNKTN.ogg')
 
 /area/hydroponics
 	name = "Hydroponics"
@@ -1324,11 +1327,21 @@ var/list/teleportlocs = list()
 	has_gravity = 1
 	luminosity = 1
 	lighting_use_dynamic = DYNAMIC_LIGHTING_DISABLED
-	music = list('sound/f13music/07DESERT.ogg', 'sound/f13music/08VATS.ogg', 'sound/f13music/03aWRLDMP.ogg', 'sound/f13music/03bWRLDMP.ogg')
+	ambientsounds = list('sound/f13music/07DESERT.ogg', 'sound/f13music/08VATS.ogg', 'sound/f13music/03aWRLDMP.ogg', 'sound/f13music/03bWRLDMP.ogg')
 
 /area/awaymission/example
 	name = "Strange Station"
 	icon_state = "away"
+
+/area/awaymission/enclave
+	name = "Enclave Upper Base"
+	icon_state = "away"
+	ambientsounds = list('sound/f13music/08VATS.ogg')
+
+/area/awaymission/enclave/lower
+	name = "Enclave Lower Base"
+	icon_state = "away"
+	ambientsounds = list('sound/f13music/08VATS.ogg')
 
 /area/awaymission/desert
 	name = "Mars"

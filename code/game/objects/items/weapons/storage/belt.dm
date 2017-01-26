@@ -280,12 +280,9 @@
 	desc = "A robust webbing vest that can carry a substantial amount of gear."
 	icon_state = "explorer1"
 	item_state = "explorer1"
-	storage_slots = 14
-	can_hold = list(
-		/obj/item/weapon/gun/projectile/automatic/pistol,
-		/obj/item/weapon/gun/projectile/revolver,
-		/obj/item/ammo_box,
-		)
+	max_w_class = 3
+	max_combined_w_class = 21
+	storage_slots = 21
 
 /obj/item/weapon/storage/belt/webbing/alt
 	name = "webbing gear"
