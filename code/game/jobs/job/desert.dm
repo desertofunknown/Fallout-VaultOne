@@ -273,7 +273,7 @@ Wastelandpusher
 	selection_color = "#dddddd"
 	access = list()
 	minimal_access = list()
-	outfit = /datum/outfit/job/wastelandwhore
+	outfit = /datum/outfit/job/pusher
 
 /datum/outfit/job/pusher
 	name = "Pusher"
@@ -285,7 +285,7 @@ Wastelandpusher
 
 /datum/outfit/job/pusher/pre_equip(mob/living/carbon/human/H)
 	..()
-	uniform = pick(/obj/item/clothing/under/f13/merccharm)
+	uniform = pick(/obj/item/clothing/under/f13/bennys)
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
