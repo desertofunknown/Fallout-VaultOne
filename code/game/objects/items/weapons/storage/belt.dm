@@ -274,3 +274,22 @@
 	desc = "A standard issue robust duty belt for all NCR troopers."
 	icon_state = "ncr_belt"
 	item_state = "ncr_belt"
+
+/obj/item/weapon/storage/belt/webbing
+	name = "webbing vest"
+	desc = "A robust webbing vest that can carry a substantial amount of gear."
+	icon_state = "explorer1"
+	item_state = "explorer1"
+	storage_slots = 14
+	can_hold = list(
+		/obj/item/weapon/gun/projectile/automatic/pistol,
+		/obj/item/weapon/gun/projectile/revolver,
+		/obj/item/ammo_box,
+		)
+
+/obj/item/weapon/storage/belt/webbing/alt
+	name = "webbing gear"
+	desc = "A kit of load bearing gear consisting of pouches, suspenders and a belt."
+	icon_state = "explorer2"
+	item_state = "explorer2"
+	storage_slots = 7
