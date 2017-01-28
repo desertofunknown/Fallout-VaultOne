@@ -364,6 +364,41 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	armor = list(melee = 70, bullet = 65, laser = 50,energy = 40, bomb = 25, bio = 0, rad = 100)
+
+/obj/item/clothing/head/helmet/f13/metalmask
+	name = "metal mask"
+	desc = "A crudely formed metal hockey mask."
+	icon_state = "metal_mask"
+	item_state = "metal_mask"
+	armor = list(melee = 30, bullet = 15, laser = 20,energy = 15, bomb = 5, bio = 2, rad = 0)
+	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	strip_delay = 80
+
+/obj/item/clothing/head/helmet/f13/metalmask/mk2
+	name = "metal mask mk2"
+	desc = "A finely formed metal hockey mask."
+	icon_state = "metal_mask2"
+	item_state = "metal_mask2"
+	armor = list(melee = 35, bullet = 20, laser = 25,energy = 20, bomb = 10, bio = 2, rad = 0)
+	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	strip_delay = 80
+
+/obj/item/clothing/head/helmet/f13/tesla
+	name = "tesla helmet"
+	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Provides the best energy weapons resistance."
+	icon_state = "tesla_helmet"
+	item_state = "tesla_helmet"
+	armor = list(melee = 35, bullet = 20, laser = 50, energy = 40, bomb = 10, bio = 0, rad = 5)
+	put_on_delay = 30
+	strip_delay = 10
+
+/obj/item/clothing/head/helmet/f13/tesla/IsReflect(def_zone)
+	if(!(def_zone in list("head"))) //If not shot where ablative is covering you, you don't get the reflection bonus!
+		return 0
+	if (prob(hit_reflect_chance))
+		return 1
 //Power armor helmets
 
 /obj/item/clothing/head/helmet/f13/advhelmet

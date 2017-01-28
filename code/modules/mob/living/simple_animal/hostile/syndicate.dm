@@ -98,8 +98,8 @@
 	projectilesound = 'sound/weapons/Gunshot_smg.ogg'
 	weapon1 = /obj/item/weapon/gun/projectile/automatic/l6_saw/unrestricted
 	corpse = /obj/effect/landmark/mobcorpse/syndicatecommando
-	maxHealth = 5000
-	health = 5000
+	maxHealth = 3500
+	health = 3500
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 

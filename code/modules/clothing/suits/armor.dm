@@ -105,16 +105,21 @@
 	item_state = "armor"
 
 /obj/item/clothing/suit/armor/laserproof
-	name = "reflector vest"
-	desc = "A vest that excels in protecting the wearer against energy projectiles, as well as occasionally reflecting them."
-	icon_state = "armor_reflec"
-	item_state = "armor_reflec"
+	name = "tesla armor"
+	desc = "A prewar armor design by Nikola Tesla before being confinscated by the U.S. government. Provides the best energy weapons resistance."
+	icon_state = "tesla_armor"
+	item_state = "tesla_armor"
 	blood_overlay_type = "armor"
-	armor = list(melee = 10, bullet = 10, laser = 60, energy = 50, bomb = 0, bio = 0, rad = 0)
-	var/hit_reflect_chance = 40
+	armor = list(melee = 65, bullet = 45, laser = 70, energy = 60, bomb = 35, bio = 0, rad = 5)
+	var/hit_reflect_chance = 50
+	body_parts_covered = CHEST|GROIN|FEET|HANDS
+	slowdown = 0.5
+	put_on_delay = 30
+	strip_delay = 10
+	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/armor/laserproof/IsReflect(def_zone)
-	if(!(def_zone in list("chest", "groin"))) //If not shot where ablative is covering you, you don't get the reflection bonus!
+	if(!(def_zone in list("chest", "groin", "feet", "hands"))) //If not shot where ablative is covering you, you don't get the reflection bonus!
 		return 0
 	if (prob(hit_reflect_chance))
 		return 1
@@ -333,12 +338,24 @@
 	strip_delay = 30
 
 /obj/item/clothing/suit/armor/fluff/chestplate
-	name = "metal chestplate"
-	desc = "When equipped, the owner takes significantly less damage from attacks to a chest zone.<br>It's heavy and uncomfortable though."
+	name = "metal armor"
+	desc = "A set of polished plates formed together to form a crude set of armor."
 	icon_state = "metal_chestplate"
 	item_state = "metal_chestplate"
-	body_parts_covered = CHEST
+	body_parts_covered = CHEST|GROIN|FEET|HANDS
 	armor = list(melee = 60, bullet = 40, laser = 30, energy = 15, bomb = 30, bio = 0, rad = 5)
+	slowdown = 0.5
+	put_on_delay = 30
+	strip_delay = 10
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/fluff/chestplate/mk2
+	name = "metal armor mk2"
+	desc = "A set of polished plates formed together to form a fine set of armor."
+	icon_state = "metal_chestplate2"
+	item_state = "metal_chestplate2"
+	body_parts_covered = CHEST|GROIN|FEET|HANDS
+	armor = list(melee = 65, bullet = 45, laser = 40, energy = 25, bomb = 35, bio = 0, rad = 5)
 	slowdown = 0.5
 	put_on_delay = 30
 	strip_delay = 10
@@ -389,7 +406,7 @@
 	strip_delay = 40
 
 /obj/item/clothing/suit/armor/f13/bmetalarmor
-	name = "metal armor"
+	name = "raider metal armor"
 	desc = "A set of sturdy metal armor made from various bits of scrap metal. It looks like it might impair movement"
 	icon_state = "bmetalarmor"
 	item_state = "bmetalarmor"
