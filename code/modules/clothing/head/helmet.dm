@@ -391,6 +391,7 @@
 	icon_state = "tesla_helmet"
 	item_state = "tesla_helmet"
 	armor = list(melee = 35, bullet = 20, laser = 50, energy = 40, bomb = 10, bio = 0, rad = 5)
+	var/hit_reflect_chance = 70
 	put_on_delay = 30
 	strip_delay = 10
 
