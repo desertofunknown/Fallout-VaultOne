@@ -17,7 +17,6 @@
 	if(!pref_species)
 		pref_species = new /datum/species/human()
 	backbag = 1
-	features = random_features()
 	age = rand(AGE_MIN,AGE_MAX)
 
 /datum/preferences/proc/update_preview_icon()
