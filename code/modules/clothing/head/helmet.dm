@@ -269,6 +269,8 @@
 	put_on_delay = 10
 	strip_delay = 50
 	burn_state = FIRE_PROOF
+	flash_protect = 1
+	tint = 0
 
 /obj/item/clothing/head/helmet/f13/combat/brotherhood
 	name = "brotherhood combat helmet"
@@ -418,6 +420,8 @@
 	strip_delay = 200
 	burn_state = FIRE_PROOF
 	unacidable = 1
+	flash_protect = 2
+	tint = 0
 
 /obj/item/clothing/head/helmet/f13/t51bhelmet
 	name = "t51b power helmet"
@@ -435,6 +439,8 @@
 	strip_delay = 200
 	burn_state = FIRE_PROOF
 	unacidable = 1
+	flash_protect = 2
+	tint = 0
 
 /obj/item/clothing/head/helmet/f13/t45bhelmet
 	name = "salvaged power helmet"
@@ -447,6 +453,8 @@
 	put_on_delay = 20
 	strip_delay = 100
 	burn_state = FIRE_PROOF
+	flash_protect = 2
+	tint = 0
 
 /obj/item/clothing/head/helmet/f13/t45dhelmet
 	name = "T-45d power helmet"
@@ -457,6 +465,8 @@
 	armor = list(melee = 80, bullet = 60, laser = 60,energy = 60, bomb = 40, bio = 100, rad = 40)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	cold_protection = HEAD
+	flash_protect = 2
+	tint = 0
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	put_on_delay = 20
 	strip_delay = 100
