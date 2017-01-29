@@ -1,4 +1,5 @@
 /mob/new_player/Login()
+	winset(src, null, "mainwindow.title='[station_name()]'")
 	if(!mind)
 		mind = new /datum/mind(key)
 		mind.active = 1
