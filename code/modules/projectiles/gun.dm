@@ -76,7 +76,6 @@
 
 	build_zooming()
 
-
 /obj/item/weapon/gun/CheckParts()
 	var/obj/item/weapon/gun/G = locate(/obj/item/weapon/gun) in contents
 	if(G)
@@ -384,12 +383,15 @@
 		return
 
 /obj/item/weapon/gun/pickup(mob/user)
+	user.visible_message("<span class = 'warning'><b>[user] grabs a weapon!</b></span>")
+	playsound(user, 'sound/items/unholster.ogg', 50, 1)
 	if(F)
 		if(F.on)
 			user.AddLuminosity(F.brightness_on)
 			SetLuminosity(0)
 	if(azoom)
 		azoom.Grant(user)
+
 
 /obj/item/weapon/gun/dropped(mob/user)
 	if(F)
