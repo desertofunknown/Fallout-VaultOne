@@ -7,6 +7,9 @@
 	burst_size = 3
 	fire_delay = 2
 	action_button_name = "Toggle Firemode"
+	mag_load_sound = 'sound/effects/wep_magazines/smg_load.ogg'
+	mag_unload_sound = 'sound/effects/wep_magazines/smg_unload.ogg'
+	chamber_sound = 'sound/effects/wep_magazines/smg_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/proto
 	name = "\improper NanoTrasen Saber SMG"
@@ -235,6 +238,9 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
+	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
+	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
+	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/smg10mm
 	name = "10-mm submachine gun"
@@ -261,6 +267,9 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
+	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
+	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
+	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/marksman
 	name = "Marksman Carbine"
@@ -274,6 +283,9 @@
 	can_suppress = 0
 	burst_size = 0
 	fire_delay = 2
+	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
+	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
+	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	name = "Service Rifle"

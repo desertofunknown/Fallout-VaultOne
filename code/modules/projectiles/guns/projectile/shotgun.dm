@@ -11,11 +11,16 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
 	fire_sound = 'sound/f13weapons/shotgun.ogg'
 	var/pumpsound = 'sound/weapons/shotgunpump.ogg'
+	var/loadsound = 'sound/effects/wep_magazines/insertShotgun.ogg'
 	var/recentpump = 0 // to prevent spammage
+	mag_load_sound = null
+	mag_unload_sound = null		//Shotguns have their own procs related to loading, unloading, etc.
+	chamber_sound = null
 
 /obj/item/weapon/gun/projectile/shotgun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
+		playsound(loc, loadsound, 80)
 		user << "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>"
 		A.update_icon()
 		update_icon()
@@ -96,6 +101,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	pumpsound = 'sound/weapons/boltpump.ogg'
+	loadsound = 'sound/effects/wep_magazines/rifle_load.ogg'
 
 /*	var/bolt_open = 0
 
