@@ -62,6 +62,7 @@
 	origin_tech = "materials=1"
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP_ACCURATE
+	drawsound = 'sound/items/unholster_knife.ogg'
 
 /obj/item/weapon/kitchen/knife/suicide_act(mob/user)
 	user.visible_message(pick("<span class='suicide'>[user] is slitting \his wrists with the [src.name]! It looks like \he's trying to commit suicide.</span>", \
@@ -105,5 +106,6 @@
 	throw_range = 7
 	w_class = 3
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
+	drawsound = null
 
 /* Trays  moved to /obj/item/weapon/storage/bag */

@@ -67,6 +67,7 @@
 	var/zoomed = FALSE //Zoom toggle
 	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/datum/action/toggle_scope_zoom/azoom
+	drawsound = 'sound/items/unholster.ogg'
 
 
 /obj/item/weapon/gun/New()
@@ -383,14 +384,13 @@
 		return
 
 /obj/item/weapon/gun/pickup(mob/user)
-	user.visible_message("<span class = 'warning'><b>[user] grabs a weapon!</b></span>")
-	playsound(user, 'sound/items/unholster.ogg', 50, 1)
 	if(F)
 		if(F.on)
 			user.AddLuminosity(F.brightness_on)
 			SetLuminosity(0)
 	if(azoom)
 		azoom.Grant(user)
+	..()
 
 
 /obj/item/weapon/gun/dropped(mob/user)
