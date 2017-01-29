@@ -163,6 +163,8 @@
 		else
 			f_name = "a "
 		f_name += "<span class='danger'>blood-stained</span> [name]!"
+	if(!isobserver(user))
+		user.visible_message("<small>[user.name] looks at [src].</small>")
 
 	user << "\icon[src] That's [f_name]"
 

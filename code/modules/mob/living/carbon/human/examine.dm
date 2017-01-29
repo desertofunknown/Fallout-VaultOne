@@ -1,5 +1,6 @@
 /mob/living/carbon/human/examine(mob/user)
-
+	
+	user.visible_message("<small>[user] looks at [src].</small>")
 	var/list/obscured = check_obscured_slots()
 	var/skipface = 0
 	if(wear_mask)
