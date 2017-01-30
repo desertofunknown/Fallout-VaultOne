@@ -446,9 +446,11 @@ var/datum/subsystem/ticker/ticker
 	return 1
 
 /datum/subsystem/ticker/proc/send_random_tip()
-	var/list/randomtips = file2list("config/tips.txt")
-	if(randomtips.len)
-		world << "<font color='purple'><b>Tip of the round: </b>[html_encode(pick(randomtips))]</font>"
+	return
+	//var/list/randomtips = file2list("config/tips.txt")
+	//if(randomtips.len)//lmao no more of this
+	//	world << "<font color='purple'><b>Tip of the round: </b>[html_encode(pick(randomtips))]</font>"
+
 
 /datum/subsystem/ticker/proc/check_queue()
 	if(!queued_players.len || !config.hard_popcap)
