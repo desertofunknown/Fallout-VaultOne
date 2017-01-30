@@ -73,7 +73,7 @@
 				usr.update_inv_head()
 
 /obj/item/clothing/head/helmet/riot/vaultsec
-	name = "vault security helmet"
+	name = "security helmet"
 	desc = "A standard issue vault security helmet, pretty robust."
 	armor = list(melee = 60, bullet = 25, laser = 25,energy = 10, bomb = 25, bio = 2, rad = 0)
 

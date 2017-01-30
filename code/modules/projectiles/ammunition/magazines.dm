@@ -61,7 +61,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	name = "d-tiv revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/c38
+	ammo_type = /obj/item/ammo_casing/c357
 	caliber = "38"
 	max_ammo = 6
 
@@ -340,6 +340,14 @@ obj/item/ammo_box/magazine/tommygunm45
 /obj/item/ammo_box/magazine/m556_20/training
 	name = "5.56 training magazine (Dummy 5.56)"
 	ammo_type = /obj/item/ammo_casing/a556training
+
+/obj/item/ammo_box/magazine/d12g
+	name = "shotgun drum magazine"
+	icon_state = "riotmag"
+	ammo_type = /obj/item/ammo_casing/shotgun
+	origin_tech = "combat=3;syndicate=1"
+	caliber = "shotgun"
+	max_ammo = 12
 
 
 /obj/item/ammo_box/magazine/m12g

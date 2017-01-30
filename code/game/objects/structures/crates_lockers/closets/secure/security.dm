@@ -177,8 +177,8 @@
 	new /obj/item/device/detective_scanner(src)
 	new /obj/item/tapeproj/security(src)
 	new /obj/item/clothing/suit/armor/vest/det_suit(src)
-	new /obj/item/ammo_box/c38(src)
-	new /obj/item/ammo_box/c38(src)
+//	new /obj/item/ammo_box/c38(src)
+//	new /obj/item/ammo_box/c38(src)
 	new /obj/item/weapon/storage/belt/holster(src)
 	new /obj/item/weapon/gun/projectile/revolver/detective(src)
 

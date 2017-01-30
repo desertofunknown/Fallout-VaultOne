@@ -79,6 +79,10 @@
 	id = "Mining Relay"
 	autolinkers = list("m_relay")
 
+/obj/machinery/telecomms/relay/preset/dungeon
+	id = "Dungeon Relay (HOW ARE YOU SEEING THIS?)"
+	autolinkers = list ("dungeon_1")
+
 /obj/machinery/telecomms/relay/preset/ruskie
 	id = "Ruskie Relay"
 	hide = 1

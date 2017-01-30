@@ -283,6 +283,8 @@
 	can_suppress = 0
 	burst_size = 0
 	fire_delay = 2
+	zoomable = TRUE
+	zoom_amt = 7
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
@@ -293,6 +295,7 @@
 	icon_state = "service_rifle"
 	item_state = "assault_rifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
+	zoomable = FALSE
 
 /obj/item/weapon/gun/projectile/automatic/minigun
 	name = "Minigun"
@@ -306,3 +309,24 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 0.5
+
+/obj/item/weapon/gun/projectile/automatic/shotgun/pancor
+	name = "pancor jackhammer"
+	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
+	icon_state = "pancor"
+	item_state = "bulldog"
+	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
+	mag_type = /obj/item/ammo_box/magazine/d12g
+	can_suppress = 0
+	burst_size = 3
+
+/obj/item/weapon/gun/projectile/automatic/shotgun/riot
+	name = "riot shotgun"
+	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
+	icon_state = "riot_shotgun"
+	item_state = "shotgun"
+	can_suppress = 0
+	burst_size = 0
+	fire_delay = 2
+	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
+	mag_type = /obj/item/ammo_box/magazine/d12g
