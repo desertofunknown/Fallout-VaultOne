@@ -19,13 +19,41 @@
 	needs_permit = 0
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
 
+/obj/item/weapon/gun/energy/laser/pistol
+	name = "laser pistol"
+	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
+	icon_state = "AEP7"
+	item_state = "pistol"
+	w_class = 2
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pistol)
+	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
+
 /obj/item/weapon/gun/energy/laser/plasma_rifle
 	name ="plasma rifle"
 	item_state = "plasma"
 	icon_state = "plasma"
-	desc = "Winchester P94 - energy weapon, firing heated plasma clots. Due to the high accuracy and range is a good tool to eliminate the enemy."
+	desc = "A energy weapon that fires heated plasma clots. Due to the high accuracy and range is a good tool to eliminate the enemy."
 	origin_tech = "combat=3;magnets=3"
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun)
+	ammo_x_offset = 1
+	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
+
+/obj/item/weapon/gun/energy/laser/plasma_rifle/multiplas
+	name = "multiplas rifle"
+	item_state = "plasma"
+	icon_state = "multiplas"
+	desc = "A plasma rifle designed to fire multiple shots."
+	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/scatter)
+	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
+
+/obj/item/weapon/gun/energy/laser/plasma_rifle/pistol
+	name ="plasma pistol"
+	item_state = "plasma"
+	icon_state = "plasma_pistol"
+	desc = "An energy sidearm that fires heated plasma clots."
+	origin_tech = "combat=3;magnets=3"
+	ammo_type = list(/obj/item/ammo_casing/energy/plasmapistol)
+	w_class = 2
 	ammo_x_offset = 1
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
 
@@ -68,9 +96,11 @@
 	return
 
 /obj/item/weapon/gun/energy/laser/scatter
-	name = "scatter laser gun"
+	name = "tribeam laser gun"
 	desc = "A laser gun equipped with a refraction kit that spreads bolts."
-	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/laser/scatter)
+	icon_state = "tribeam"
+	item_state = "laser"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
 
 /obj/item/weapon/gun/energy/lasercannon

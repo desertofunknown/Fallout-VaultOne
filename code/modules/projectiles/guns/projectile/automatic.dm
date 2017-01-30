@@ -312,7 +312,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/shotgun/pancor
 	name = "pancor jackhammer"
-	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
+	desc = "A select fire automatic shotgun, the pinnacle of turning things into swiss cheese."
 	icon_state = "pancor"
 	item_state = "bulldog"
 	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
@@ -322,7 +322,7 @@
 
 /obj/item/weapon/gun/projectile/automatic/shotgun/riot
 	name = "riot shotgun"
-	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
+	desc = "A semi-automatic shotgun with a drum magazine of 12, allowing for robust crowd control."
 	icon_state = "riot_shotgun"
 	item_state = "shotgun"
 	can_suppress = 0

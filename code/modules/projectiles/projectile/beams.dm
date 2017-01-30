@@ -9,10 +9,29 @@
 	flag = "laser"
 	eyeblur = 2
 
+/obj/item/projectile/beam/pistol
+	name = "laser"
+	icon_state = "laser"
+	damage = 20
+
 /obj/item/projectile/beam/plasma_beam
-	name = "plasma_beam"
+	name = "plasma beam"
 	icon_state = "plasma_beam"
 	damage = 50
+	hitsound = 'sound/f13weapons/plasmarifle.ogg'
+	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
+
+/obj/item/projectile/beam/plasma_scatter
+	name = "plasma scatter"
+	icon_state = "plasma_beam"
+	damage = 13
+	hitsound = 'sound/f13weapons/plasmarifle.ogg'
+	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
+
+/obj/item/projectile/beam/plasma_pistol
+	name = "plasma scatter"
+	icon_state = "plasma_beam"
+	damage = 35
 	hitsound = 'sound/f13weapons/plasmarifle.ogg'
 	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
 
@@ -25,7 +44,7 @@
 /obj/item/projectile/beam/scatter
 	name = "laser pellet"
 	icon_state = "scatterlaser"
-	damage = 8
+	damage = 10
 
 
 /obj/item/projectile/beam/heavylaser
