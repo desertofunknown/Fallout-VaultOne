@@ -38,22 +38,29 @@
 	..()
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
-		if(ishuman(L) && L.stat)
+		if(ishuman(L) && L.stat==DEAD)
 			var/mob/living/carbon/human/H = L
 			view(L) << "<span class='userdanger'>[src] feasts on [L] healing them."
 			src.revive()
+			src.LoseTarget()
+			visible_message("<span class='danger'>[src] tears [L] to pieces!</span>")
 			L.gib()
+			return
+			//L.gib()
 			//for(var/mob/living/simple_animal/hostile/ferralghoul/holder/Z in H) //No instant heals for people who are already zombies
 				//src << "<span class='userdanger'>They'll be getting up on their own, just give them a minute!</span>"
 				//Z.faction = src.faction //Just in case zombies somehow ended up on different "teams"
 				//H.faction = src.faction
 				//return
 			//Zombify(H)
-		else if (L.stat) //So they don't get stuck hitting a corpse
-			L.gib()
+		else if (L.stat==DEAD) //So they don't get stuck hitting a corpse
+			//L.gib()
 			visible_message("<span class='danger'>[src] tears [L] to pieces!</span>")
 			src << "<span class='userdanger'>You feast on [L], restoring your health!</span>"
 			src.revive()
+			src.LoseTarget()
+			L.gib()
+			return
 	if(src.health <= 200)
 		if(prob(100))
 			view(src) << "<span class='userdanger'>[src] lets out a large screech...this dosn't bode well.."
