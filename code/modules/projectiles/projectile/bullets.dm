@@ -15,6 +15,10 @@
 	damage = 55
 	armour_penetration = -10
 
+/obj/item/projectile/bullet/mag357
+	damage = 50
+	armour_penetration = 5
+
 /obj/item/projectile/bullet/slug
 	damage = 65
 	armour_penetration = -10

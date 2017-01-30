@@ -295,7 +295,7 @@
 	id = "c38"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/c38
+	build_path = /obj/item/ammo_box/c357/c38
 	category = list("initial", "Security")
 
 /datum/design/recorder
@@ -330,6 +330,7 @@
 	build_path = /obj/item/device/assembly/signaler
 	category = list("initial", "T-Comm")
 
+/*
 /datum/design/radio_headset
 	name = "Radio headset"
 	id = "radio_headset"
@@ -337,6 +338,7 @@
 	materials = list(MAT_METAL = 75)
 	build_path = /obj/item/device/radio/headset
 	category = list("initial", "T-Comm")
+*/
 
 /datum/design/bounced_radio
 	name = "Station bounced radio"
@@ -559,8 +561,16 @@
 	name = "Stripper clip (7.62)"
 	id = "a762"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
+	materials = list(MAT_METAL = 5000)
 	build_path = /obj/item/ammo_box/a762
+	category = list("hacked", "Security")
+
+/datum/design/a357
+	name = "speed loader (.357)"
+	id = "a357"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/c357
 	category = list("hacked", "Security")
 
 /datum/design/sniper_rounds

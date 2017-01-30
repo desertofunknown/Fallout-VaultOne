@@ -107,51 +107,11 @@
 	options["The Peacemaker"] = "detective_peacemaker"
 	options["Cancel"] = null
 
-/obj/item/weapon/gun/projectile/revolver/detective/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override = "")
-	if(magazine.caliber != initial(magazine.caliber))
-		if(prob(70 - (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60
-			playsound(user, fire_sound, 50, 1)
-			user << "<span class='userdanger'>[src] blows up in your face!</span>"
-			user.take_organ_damage(0,20)
-			user.unEquip(src)
-			return 0
-	..()
-
-/obj/item/weapon/gun/projectile/revolver/detective/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/weapon/screwdriver))
-		if(magazine.caliber == "38")
-			user << "<span class='notice'>You begin to reinforce the barrel of [src]...</span>"
-			if(magazine.ammo_count())
-				afterattack(user, user)	//you know the drill
-				user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
-				return
-			if(do_after(user, 30/A.toolspeed, target = src))
-				if(magazine.ammo_count())
-					user << "<span class='warning'>You can't modify it!</span>"
-					return
-				magazine.caliber = "357"
-				desc = "The barrel and chamber assembly seems to have been modified."
-				user << "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>"
-		else
-			user << "<span class='notice'>You begin to revert the modifications to [src]...</span>"
-			if(magazine.ammo_count())
-				afterattack(user, user)	//and again
-				user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
-				return
-			if(do_after(user, 30/A.toolspeed, target = src))
-				if(magazine.ammo_count())
-					user << "<span class='warning'>You can't modify it!</span>"
-					return
-				magazine.caliber = "38"
-				desc = initial(desc)
-				user << "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>"
-
-
 /obj/item/weapon/gun/projectile/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A retro high-powered autorevolver typically used by officers of the New Russia military. Uses .357 ammo."
 	icon_state = "mateba"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	origin_tech = "combat=2;materials=2"
 
 /obj/item/weapon/gun/projectile/revolver/m29
@@ -172,7 +132,7 @@
 
 /obj/item/weapon/gun/projectile/revolver/police
 	name = "police pistol"
-	desc = "A .38 caliber police pistol, this model is unsuitable for magnum loads."
+	desc = "A .38 caliber police pistol which can also accept .357 rounds."
 	icon_state = "detective_panther"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	origin_tech = "combat=2;materials=2"

@@ -16,6 +16,23 @@ Trooper
 	minimal_access = list()
 	outfit = /datum/outfit/job/ncrlieutenant
 
+/datum/outfit/job/ncrlieutenant
+	name = "NCR Lieutenant"
+	id = /obj/item/weapon/card/id/ncr
+	gloves = /obj/item/clothing/gloves/f13/legion/ncr
+	uniform = /obj/item/clothing/under/f13/ncr
+	shoes = /obj/item/clothing/shoes/combat/ncr
+	belt = /obj/item/weapon/storage/belt/webbing/alt
+	ears = /obj/item/device/radio/headset
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	head = /obj/item/clothing/head/beret/ncr
+	glasses = /obj/item/clothing/glasses/sunglasses/swat
+	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
+	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
+		/obj/item/ammo_box/magazine/m556_20=3, \
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
+
 /datum/job/ncrc
 	title = "NCR Colonel"
 	flag = NCRCOLONEL
@@ -29,24 +46,25 @@ Trooper
 	selection_color = "#ffeeee"
 	access = list()
 	minimal_access = list()
-	outfit = /datum/outfit/job/ncrlieutenant
+	outfit = /datum/outfit/job/ncrcolonel
 
-/datum/outfit/job/ncrlieutenant
-	name = "NCR Lieutenant"
+/datum/outfit/job/ncrcolonel
 	id = /obj/item/weapon/card/id/ncr
 	gloves = /obj/item/clothing/gloves/f13/legion/ncr
 	uniform = /obj/item/clothing/under/f13/ncr
 	shoes = /obj/item/clothing/shoes/combat/ncr
-	belt = /obj/item/weapon/storage/belt/ncr
+	belt = /obj/item/weapon/storage/belt/webbing/alt
 	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
 	head = /obj/item/clothing/head/beret/ncr
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
-	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
+	suit_store = /obj/item/weapon/gun/projectile/automatic/shotgun/pancor
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/ammo_box/magazine/m556_20=3, \
+		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
+		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
+
+
 /*
 Sergeant
 */
@@ -182,7 +200,7 @@ Veteran Ranger
 	gloves = /obj/item/clothing/gloves/combat
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	shoes = /obj/item/clothing/shoes/combat/swat
-	belt = /obj/item/weapon/storage/belt/ncr
+	belt = /obj/item/weapon/storage/belt/webbing/alt
 	ears = /obj/item/device/radio/headset
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat
 	head = /obj/item/clothing/head/helmet/f13/rangercombat
@@ -216,18 +234,18 @@ NCR Ranger
 	name = "NCR Ranger"
 	id = /obj/item/weapon/card/id/ncr/ranger
 	gloves = /obj/item/clothing/gloves/combat
-	belt = /obj/item/weapon/storage/belt/ncr
+	belt = /obj/item/weapon/storage/belt/webbing/alt
 	ears = /obj/item/device/radio/headset
 	uniform = /obj/item/clothing/under/f13/cowboyb
 	shoes = /obj/item/clothing/shoes/combat/swat
 	suit = /obj/item/clothing/suit/armor/f13/combat/ncr
 	head = /obj/item/clothing/head/f13/ranger
 	glasses = /obj/item/clothing/glasses/sunglasses
-	suit_store = /obj/item/weapon/gun/projectile/shotgun/riot
+	suit_store = /obj/item/weapon/gun/projectile/automatic/shotgun/riot
 	backpack_contents = list(/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1, \
 		/obj/item/weapon/restraints/handcuffs=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/storage/box/lethalshot=1)
+		/obj/item/ammo_box/magazine/d12g=2)
 
 /datum/job/detective
 	//title = "Wake up"
