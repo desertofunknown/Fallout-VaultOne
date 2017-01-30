@@ -70,28 +70,3 @@
 	desc = "A Deagle brand Deagle for operators operating operationally. Uses .50 AE ammo."
 	icon_state = "deaglecamo"
 	item_state = "deagleg"
-
-/obj/item/weapon/gun/projectile/automatic/marksman
-	name = "Marksman Carbine"
-	desc = "A 5.56 caliber assault rifle widely seen in use by pre-war U.S. military forces. Semi-automatic only."
-	icon_state = "marksman_rifle"
-	item_state = "arg"
-	slot_flags = 0
-	origin_tech = "combat=6;materials=1"
-	mag_type = /obj/item/ammo_box/magazine/m556_20
-	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
-	can_suppress = 0
-	fire_delay = 2
-	zoomable = TRUE
-	zoom_amt = 7
-	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
-	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
-	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
-
-/obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
-	name = "Service Rifle"
-	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
-	icon_state = "service_rifle"
-	item_state = "assault_rifle"
-	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-	zoomable = FALSE
