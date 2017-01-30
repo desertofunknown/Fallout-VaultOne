@@ -281,7 +281,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m556_20
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
-	burst_size = 0
+	burst_size = 1//Setting it to 0 is dumb. Just set it to one.
 	fire_delay = 2
 	zoomable = TRUE
 	zoom_amt = 7
