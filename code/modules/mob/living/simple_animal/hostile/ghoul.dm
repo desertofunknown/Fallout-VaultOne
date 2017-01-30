@@ -9,9 +9,9 @@
 	speak_emote = list("growls")
 	emote_see = list("growls")
 	a_intent = "harm"
-	maxHealth = 100
-	health = 100
-	speed = 1
+	maxHealth = 300
+	health = 300
+	speed = 1.4
 	harm_intent_damage = 8
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -34,25 +34,36 @@
 
 
 
-/*/mob/living/simple_animal/hostile/ferralghoul/AttackingTarget()
+/mob/living/simple_animal/hostile/ferralghoul/AttackingTarget()
 	..()
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
 		if(ishuman(L) && L.stat)
 			var/mob/living/carbon/human/H = L
-			for(var/mob/living/simple_animal/hostile/ferralghoul/holder/Z in H) //No instant heals for people who are already zombies
-				src << "<span class='userdanger'>They'll be getting up on their own, just give them a minute!</span>"
-				Z.faction = src.faction //Just in case zombies somehow ended up on different "teams"
-				H.faction = src.faction
-				return
-			Zombify(H)
+			view(H) << "<span class='userdanger'>[src] feasts on [L] healing them."
+			src.revive()
+			src.LoseTarget()
+			L.gib()
+			//for(var/mob/living/simple_animal/hostile/ferralghoul/holder/Z in H) //No instant heals for people who are already zombies
+				//src << "<span class='userdanger'>They'll be getting up on their own, just give them a minute!</span>"
+				//Z.faction = src.faction //Just in case zombies somehow ended up on different "teams"
+				//H.faction = src.faction
+				//return
+			//Zombify(H)
 		else if (L.stat) //So they don't get stuck hitting a corpse
 			L.gib()
 			visible_message("<span class='danger'>[src] tears [L] to pieces!</span>")
 			src << "<span class='userdanger'>You feast on [L], restoring your health!</span>"
 			src.revive()
+	if(src.health <= 200)
+		if(prob(50))
+			view(src) << "<span class='userdanger'>[src] lets out a large screech...this dosn't bode well.."
+			for(var/mob/living/simple_animal/hostile/ferralghoul/F in range(50,src))
+				if(F != src)
+					if(F.stat != DEAD)
+						walk_towards(F,src,3,3)
 
-/mob/living/simple_animal/hostile/ferralghoul/death()
+/*/mob/living/simple_animal/hostile/ferralghoul/death()
 	..()
 	if(stored_corpse)
 		stored_corpse.loc = loc

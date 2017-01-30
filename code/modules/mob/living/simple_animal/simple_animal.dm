@@ -229,15 +229,20 @@
 	else if(bodytemperature > maxbodytemp)
 		adjustBruteLoss(3)
 
-/mob/living/simple_animal/gib(animation = 0)
-	if(icon_gib)
-		flick(icon_gib, src)
-	if(butcher_results)
-		for(var/path in butcher_results)
-			for(var/i = 1; i <= butcher_results[path];i++)
-				new path(src.loc)
-	..()
+/mob/living/simple_animal/gib(animation = 1)
+	var/prev_lying = lying
+	death(1)
 
+	if(buckled)
+		buckled.unbuckle_mob() //to update alien nest overlay.
+
+	var/atom/movable/overlay/animate = setup_animation(animation, prev_lying)
+	if(animate)
+		gib_animation(animate)
+
+	spawn_gibs()
+
+	end_animation(animate) // Will qdel(src)
 
 /mob/living/simple_animal/blob_act()
 	adjustBruteLoss(20)

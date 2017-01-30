@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/glowingone
 	name = "The Glowing One"
-	desc = "A ferral ghoul that has been super irradiated..watch outits going to blow!"
+	desc = "A ferral ghoul that has been super irradiated..watch out it is going to blow!"
 	icon = 'icons/mob/human.dmi'
 	icon_state = "glowingghoul"
 	icon_living = "glowingghoul"
@@ -9,9 +9,9 @@
 	speak_emote = list("growls")
 	emote_see = list("growls")
 	a_intent = "harm"
-	maxHealth = 100
-	health = 100
-	speed = 1
+	maxHealth = 500
+	health = 500
+	speed = 1.2
 	harm_intent_damage = 8
 	melee_damage_lower = 20
 	melee_damage_upper = 20
@@ -34,42 +34,46 @@
 
 
 
-/*/mob/living/simple_animal/hostile/glowingone/AttackingTarget()
+/mob/living/simple_animal/hostile/glowingone/AttackingTarget()
 	..()
 	if(istype(target, /mob/living))
 		var/mob/living/L = target
 		if(ishuman(L) && L.stat)
 			var/mob/living/carbon/human/H = L
-			for(var/mob/living/simple_animal/hostile/glowingone/holder/Z in H) //No instant heals for people who are already zombies
-				src << "<span class='userdanger'>They'll be getting up on their own, just give them a minute!</span>"
-				Z.faction = src.faction //Just in case zombies somehow ended up on different "teams"
-				H.faction = src.faction
-				return
-			Zombify(H)
+			view(L) << "<span class='userdanger'>[src] feasts on [L] healing them."
+			src.revive()
+			L.gib()
+			//for(var/mob/living/simple_animal/hostile/ferralghoul/holder/Z in H) //No instant heals for people who are already zombies
+				//src << "<span class='userdanger'>They'll be getting up on their own, just give them a minute!</span>"
+				//Z.faction = src.faction //Just in case zombies somehow ended up on different "teams"
+				//H.faction = src.faction
+				//return
+			//Zombify(H)
 		else if (L.stat) //So they don't get stuck hitting a corpse
 			L.gib()
 			visible_message("<span class='danger'>[src] tears [L] to pieces!</span>")
 			src << "<span class='userdanger'>You feast on [L], restoring your health!</span>"
 			src.revive()
+	if(src.health <= 200)
+		if(prob(100))
+			view(src) << "<span class='userdanger'>[src] lets out a large screech...this dosn't bode well.."
+			for(var/mob/living/simple_animal/hostile/ferralghoul/F in range(50,src))
+				if(F != src)
+					if(F.stat != DEAD)
+						walk_towards(F,src,3,3)
 
 /mob/living/simple_animal/hostile/glowingone/death()
 	..()
-	if(stored_corpse)
-		stored_corpse.loc = loc
-		if(ckey)
-			stored_corpse.ckey = src.ckey
-			stored_corpse << "<span class='userdanger'>You're down, but not quite out. You'll be back on your feet within a minute or two.</span>"
-			var/mob/living/simple_animal/hostile/glowingone/holder/D = new/mob/living/simple_animal/hostile/glowingone/holder(stored_corpse)
-			D.faction = src.faction
-		qdel(src)
+	for(var/mob/living/carbon/human/L in view(5,src))
+		L.adjustToxLoss(10)
+		L << "<span class='userdanger'>[src] begins to flash suddenly exploding."
 		return
-	src << "<span class='userdanger'>You're down, but not quite out. You'll be back on your feet within a minute or two.</span>"
-	spawn(rand(800,1200))
-		if(src)
-			visible_message("<span class='danger'>[src] staggers to their feet!</span>")
-			src.revive()
-
-/mob/living/simple_animal/hostile/glowingone/proc/Zombify(mob/living/carbon/human/H)
+	del src
+	//for(var/mob/living/simple_animal/hostile/glowingone/F in view(1,src))
+		//if(F==src)
+			//F.gib()
+			//del F
+/*/mob/living/simple_animal/hostile/glowingone/proc/Zombify(mob/living/carbon/human/H)
 	H.set_species(/datum/species/glowingone)
 	if(H.head) //So people can see they're a zombie
 		var/obj/item/clothing/helmet = H.head
