@@ -427,7 +427,7 @@
 		/obj/item/weapon/storage/firstaid/tactical=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 
-/datum/outfit/chief_ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/desert_ranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
@@ -445,12 +445,12 @@
 	ears = /obj/item/device/radio/headset/heads/hos/alt
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat/eliteriot
 	r_hand = /obj/item/weapon/gun/projectile/revolver/sequoia
-	suit_store = /obj/item/weapon/gun/energy/laser/plasma_rifle
+	suit_store = /obj/item/weapon/gun/projectile/automatic/shotgun/pancor
 	l_pocket = /obj/item/ammo_box/c4570
 	r_pocket = /obj/item/weapon/lighter/engraved
 	belt = /obj/item/weapon/storage/belt/ncr
 	back = /obj/item/weapon/storage/backpack/satchel
-	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
+	backpack_contents = list(/obj/item/ammo_box/magazine/d12g = 2, \
 		/obj/item/ammo_box/c4570=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1,\
@@ -477,7 +477,7 @@
 	ears = /obj/item/device/radio/headset/heads/hos/alt
 	suit = /obj/item/clothing/suit/armor/f13/t51bpowerarmor
 	head = /obj/item/clothing/head/helmet/f13/t51bhelmet
-	suit_store = /obj/item/weapon/gun/energy/laser/plasma_rifle
+	suit_store = /obj/item/weapon/gun/energy/laser/scatter
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel
 	glasses = /obj/item/clothing/glasses/night
@@ -485,7 +485,8 @@
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1,\
 		/obj/item/weapon/gun/energy/stunrevolver/pin=1,\
-		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
+		/obj/item/weapon/gun/energy/laser/pistol=1,\
+		/obj/item/weapon/gun/energy/laser/plasma_rifle/multiplas=1)
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 
 /datum/outfit/bos_paladin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -496,6 +497,10 @@
 	W.registered_name = H.real_name
 	W.assignment = "BoS Paladin"
 	W.update_label(W.registered_name, W.assignment)
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("BoS Paladin")
+	W.assignment = "BoS Paladin"
+	W.update_label()
 
 /datum/outfit/bos_knight
 	name = "BoS Knight"
@@ -514,7 +519,7 @@
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1,\
 		/obj/item/weapon/gun/energy/stunrevolver/pin=1,\
-		/obj/item/weapon/gun/projectile/automatic/pistol/n99=1)
+		/obj/item/weapon/gun/energy/laser/pistol=1)
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 
 /datum/outfit/bos_knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -525,6 +530,10 @@
 	W.registered_name = H.real_name
 	W.assignment = "BoS Knight"
 	W.update_label(W.registered_name, W.assignment)
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("BoS Knight")
+	W.assignment = "BoS Knight"
+	W.update_label()
 
 /datum/outfit/bos_initiate
 	name = "BoS Initiate"
@@ -542,7 +551,7 @@
 	backpack_contents = list(/obj/item/ammo_box/magazine/m556 = 6, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1,\
-		/obj/item/weapon/gun/projectile/automatic/pistol/n99=1)
+		/obj/item/weapon/gun/energy/laser/pistol=1)
 
 /datum/outfit/bos_initiate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -552,6 +561,10 @@
 	W.registered_name = H.real_name
 	W.assignment = "BoS Initiate"
 	W.update_label(W.registered_name, W.assignment)
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("BoS Initiate")
+	W.assignment = "BoS Initiate"
+	W.update_label()
 
 /datum/outfit/bos_scribe
 	name = "BoS Scribe"
@@ -565,10 +578,10 @@
 	belt = /obj/item/weapon/storage/belt/utility/full
 	back = /obj/item/weapon/storage/backpack/satchel
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
-	backpack_contents = list(/obj/item/ammo_box/magazine/m45 = 2, \
+	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/storage/firstaid/tactical=1,\
-		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1,\
+		/obj/item/weapon/gun/energy/laser/pistol=1,\
 		/obj/item/weapon/reagent_containers/pill/patch/supstimpak=4)
 
 /datum/outfit/bos_scribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -579,6 +592,10 @@
 	W.registered_name = H.real_name
 	W.assignment = "BoS Scribe"
 	W.update_label(W.registered_name, W.assignment)
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("BoS Scribe")
+	W.assignment = "BoS Scribe"
+	W.update_label()
 
 
 

@@ -704,9 +704,6 @@ var/list/teleportlocs = list()
 /area/assembly/assembly_line //Derelict Assembly Line
 	name = "Assembly Line"
 	icon_state = "ass_line"
-	power_equip = 0
-	power_light = 0
-	power_environ = 0
 	ambientsounds = list('sound/f13music/10LABONE.ogg')
 
 //Teleporter
