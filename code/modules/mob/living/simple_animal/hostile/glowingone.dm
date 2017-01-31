@@ -31,7 +31,8 @@
 	see_invisible = SEE_INVISIBLE_MINIMUM
 	see_in_dark = 8
 	layer = MOB_LAYER - 0.1
-
+	New()
+		walk_rand(src,4,4)
 
 
 /mob/living/simple_animal/hostile/glowingone/AttackingTarget()
