@@ -50,6 +50,7 @@ var/const/LEGDECAN			=(1<<11)
 var/const/LEGVEX			=(1<<12)
 var/const/LEGCENTURION		=(1<<13)
 var/const/LEGLEGAT			=(1<<14)
+var/const/LEGPRIRECRUIT		=(1<<15)
 
 //~~NCR~~
 var/const/NCRTROOPER        	=(1<<6)
@@ -152,6 +153,7 @@ var/list/legion_positions = list(
 	"Legion Vexillarius",
 	"Legion Centurion",
 	"Legion Legat",
+	"Legion Prime Recruit",
 )
 
 var/list/ncr_positions = list(

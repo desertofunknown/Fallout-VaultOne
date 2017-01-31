@@ -291,6 +291,9 @@
 	strip_delay = 50
 	burn_state = FIRE_PROOF
 
+/obj/item/clothing/head/helmet/f13/legrecruit/prime
+	name = "legion prime recruit helmet"
+
 /obj/item/clothing/head/helmet/f13/legvexil
 	name = "legion vexillarius helmet"
 	desc = "It's leather legion vexillarius helmet."

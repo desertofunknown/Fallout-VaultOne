@@ -166,6 +166,11 @@
 	desc = "A fine centurion bandana."
 	icon_state = "legcenturion"
 
+/obj/item/clothing/mask/bandana/legprime
+	name = "prime bandana"
+	desc = "A fine prime bandana."
+	icon_state = "bandred"
+
 /obj/item/clothing/mask/facewrap
 	name = "desert face wrap"
 	desc = "An NCR issue facewrap used to protect the wearer from the harsh desert elements."

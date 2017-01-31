@@ -427,6 +427,9 @@
 	put_on_delay = 60
 	strip_delay = 60
 
+/obj/item/clothing/suit/armor/f13/legrecruit/prime
+	name = "legion prime recruit armor"
+
 /obj/item/clothing/suit/armor/f13/legvexil
 	name = "Legion vexillarius armor"
 	desc = "The armor appears to be based off of a suit of Legion veteran armor, with the addition of circular metal plates attached to the torso, as well as a banner displaying the flag of the Legion worn on the back."
