@@ -17,6 +17,7 @@
 #include "interaction_definitions.dm"
 #include "interaction_interface.dm"
 #include "interaction_mob.dm"
+#include "lootspawns.dm"
 #include "stairs.dm"
 #include "_maps\__MAP_DEFINES.dm"
 #include "_maps\tgstation2.dm"

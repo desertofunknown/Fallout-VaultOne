@@ -32,9 +32,13 @@
 	see_in_dark = 8
 	layer = MOB_LAYER - 0.1
 	New()
-		walk_rand(src,4,4)
+		Glow()
 
-
+mob/proc/Glow()
+	src.luminosity=1
+	spawn(50)
+		src.luminosity=0
+		src.Glow()
 /mob/living/simple_animal/hostile/glowingone/AttackingTarget()
 	..()
 	if(istype(target, /mob/living))
@@ -65,6 +69,7 @@
 	if(src.health <= 200)
 		if(prob(100))
 			view(src) << "<span class='userdanger'>[src] lets out a large screech...this dosn't bode well.."
+			playsound(loc, 'sound/ghoulscreech.wav', 50, 1, -1)
 			for(var/mob/living/simple_animal/hostile/ferralghoul/F in range(50,src))
 				if(F != src)
 					if(F.stat != DEAD)

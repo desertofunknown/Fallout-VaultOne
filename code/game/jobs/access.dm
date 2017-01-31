@@ -64,6 +64,7 @@
 /var/const/access_mineral_storeroom = 64
 /var/const/access_minisat = 65
 /var/const/access_weapons = 66 //Weapon authorization for secbots
+/var/const/access_powerplant = 67
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
@@ -307,6 +308,8 @@
 			return "Custodial Closet"
 		if(access_engine)
 			return "Engineering"
+		if(access_powerplant)
+			return "Power Plant"
 		if(access_engine_equip)
 			return "Power Equipment"
 		if(access_maint_tunnels)

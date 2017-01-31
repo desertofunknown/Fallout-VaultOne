@@ -12,8 +12,8 @@ Trooper
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 	outfit = /datum/outfit/job/ncrlieutenant
 
 /datum/outfit/job/ncrlieutenant
@@ -44,8 +44,8 @@ Trooper
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 	outfit = /datum/outfit/job/ncrcolonel
 
 /datum/outfit/job/ncrcolonel
@@ -79,8 +79,8 @@ Sergeant
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 	outfit = /datum/outfit/job/ncrsergeant
 
 /datum/outfit/job/ncrsergeant
@@ -112,8 +112,8 @@ Trooper
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 	outfit = /datum/outfit/job/ncrtrooper
 
 /datum/outfit/job/ncrtrooper
@@ -145,8 +145,8 @@ Recruit
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 	outfit = /datum/outfit/job/ncrrecruit
 
 /datum/outfit/job/ncrrecruit
@@ -191,8 +191,8 @@ Veteran Ranger
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	outfit = /datum/outfit/job/ncrvetranger
 
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 
 /datum/outfit/job/ncrvetranger
 	name = "NCR Veteran Ranger"
@@ -227,8 +227,8 @@ NCR Ranger
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	outfit = /datum/outfit/job/ncrranger
 
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
 
 /datum/outfit/job/ncrranger
 	name = "NCR Ranger"
@@ -261,5 +261,5 @@ NCR Ranger
 
 	outfit = /datum/outfit/job/ncrranger
 
-	access = list()
-	minimal_access = list()
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
