@@ -126,7 +126,6 @@ Raider
 		/obj/item/clothing/suit/armor/f13/bmetalarmor,\
 		/obj/item/clothing/suit/armor/f13/yankee)
 	head = /obj/item/clothing/head/helmet/f13/supaflyhelmet
-	ears = /obj/item/clothing/ears/raider_mark
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
