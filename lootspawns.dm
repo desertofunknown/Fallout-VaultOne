@@ -495,7 +495,7 @@ obj
 						switch(rand(1,6))
 							if(1)
 								var/obj/item/clothing/suit/armor/f13/t45bpowerarmor/lb = new
-								var/obj/item/clothing/head/helmet/f13/t45bhelmetlb2 = new
+								var/obj/item/clothing/head/helmet/f13/t45bhelmet/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
 								del src

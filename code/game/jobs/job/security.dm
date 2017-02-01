@@ -374,7 +374,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legrecruit/vet
 	head = /obj/item/clothing/head/helmet/f13/legveteran
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	mask = /obj/item/clothing/mask/bandana/legprime
+	mask = /obj/item/clothing/mask/bandana/legvet
 	suit_store = /obj/item/weapon/gun/projectile/shotgun/riot
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
