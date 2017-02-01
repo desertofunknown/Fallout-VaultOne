@@ -427,8 +427,9 @@
 	put_on_delay = 60
 	strip_delay = 60
 
-/obj/item/clothing/suit/armor/f13/legrecruit/prime
-	name = "legion prime recruit armor"
+/obj/item/clothing/suit/armor/f13/legrecruit/vet
+	name = "legion veteran armor"
+	armor = list (melee = 60, bullet = 30, laser = 15, energy = 10, bomb = 20, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/armor/f13/legvexil
 	name = "Legion vexillarius armor"

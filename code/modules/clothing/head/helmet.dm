@@ -291,8 +291,17 @@
 	strip_delay = 50
 	burn_state = FIRE_PROOF
 
-/obj/item/clothing/head/helmet/f13/legrecruit/prime
-	name = "legion prime recruit helmet"
+/obj/item/clothing/head/helmet/f13/legveteran
+	name = "legion veteran helmet"
+	desc = "It's a metal legion veteran helmet, looks pretty sturdy."
+	icon_state = "legvet"
+	item_state = "legvet"
+	armor = list(melee = 40, bullet = 20, laser = 10,energy = 0, bomb = 30, bio = 0, rad = 0)
+	flags_inv = HIDEEARS
+	flags = BLOCKHAIR
+	put_on_delay = 10
+	strip_delay = 50
+	burn_state = FIRE_PROOF
 
 /obj/item/clothing/head/helmet/f13/legvexil
 	name = "legion vexillarius helmet"

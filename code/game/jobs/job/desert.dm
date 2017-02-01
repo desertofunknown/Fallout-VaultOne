@@ -123,7 +123,7 @@ Raider
 		/obj/item/clothing/suit/armor/f13/bmetalarmor,\
 		/obj/item/clothing/suit/armor/f13/yankee)
 	head = /obj/item/clothing/head/helmet/f13/supaflyhelmet
-	suit_store = /obj/item/weapon/gun/projectile/revolver/doublebarrel/improvised
+	suit_store = obj/item/weapon/gun/projectile/revolver/caravan_shotgun
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1,\
 	/obj/item/weapon/pipe=1, \
 	/obj/item/weapon/storage/wallet=1, \

@@ -50,7 +50,7 @@ var/const/LEGDECAN			=(1<<11)
 var/const/LEGVEX			=(1<<12)
 var/const/LEGCENTURION		=(1<<13)
 var/const/LEGLEGAT			=(1<<14)
-var/const/LEGPRIRECRUIT		=(1<<15)
+var/const/LEGVET			=(1<<15)
 
 //~~NCR~~
 var/const/NCRTROOPER        	=(1<<6)

@@ -243,7 +243,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legvexil
 	head = /obj/item/clothing/head/helmet/f13/legvexil
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/revolver/sequoia/scoped
+	suit_store = /obj/item/weapon/gun/projectile/revolver/m29
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
@@ -252,7 +252,7 @@ Legion
 	/obj/item/stack/coin/coins = 3, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
-	/obj/item/ammo_box/c4570=1, \
+	/obj/item/ammo_box/m44=1, \
 	)
 
 //centurion
@@ -343,9 +343,9 @@ Legion
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2)
 
 //prime recruit
-/datum/job/legprirecruit
-	title = "Legion Prime Recruit"
-	flag = LEGPRIRECRUIT
+/datum/job/legVET
+	title = "Legion Veteran"
+	flag = LEGVET
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
 	faction = "Legion"
@@ -355,27 +355,27 @@ Legion
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
-	outfit = /datum/outfit/job/legprirecruit
+	outfit = /datum/outfit/job/legvet
 
 	access = list()
 	minimal_access = list()
 
-/datum/outfit/job/legrecruit
-	name = "Legion Prime Recruit"
+/datum/outfit/job/legvet
+	name = "Legion Veteran"
 	id = null
 	ears = null
 	belt = null
 
-/datum/outfit/job/legprirecruit/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/legvet/pre_equip(mob/living/carbon/human/H)
 	..()
 	uniform = pick(/obj/item/clothing/under/pants/f13/caravan)
-	shoes = /obj/item/clothing/shoes/legionleather
+	shoes = /obj/item/clothing/shoes/legionmetal
 	gloves = /obj/item/clothing/gloves/f13/legion
-	suit = /obj/item/clothing/suit/armor/f13/legrecruit/prime
-	head = /obj/item/clothing/head/helmet/f13/legrecruit/prime
+	suit = /obj/item/clothing/suit/armor/f13/legrecruit/vet
+	head = /obj/item/clothing/head/helmet/f13/legveteran
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
 	mask = /obj/item/clothing/mask/bandana/legprime
-	suit_store = /obj/item/weapon/gun/projectile/revolver/caravan_shotgun
+	suit_store = /obj/item/weapon/gun/projectile/shotgun/riot
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm

@@ -73,7 +73,7 @@
 
 /obj/item/weapon/gun/projectile/shotgun/riot //for spawn in the armory
 	name = "tactical shotgun"
-	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
+	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for tactical use."
 	icon_state = "riotshotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
@@ -204,6 +204,18 @@
 	unique_reskin = 0
 	origin_tech = "combat=2;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/mad
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/single_shotgun
+	name = "single shotgun"
+	desc = "A dirt cheap single shot shotgun."
+	icon_state = "single_shotgun"
+	item_state = "shotgun"
+	w_class = 3
+	force = 15
+	unique_reskin = 0
+	origin_tech = "combat=2;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
 // IMPROVISED SHOTGUN //
