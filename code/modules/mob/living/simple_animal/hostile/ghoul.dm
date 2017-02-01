@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/ferralghoul
-	name = "Ferral Ghoul"
+	name = "Feral Ghoul"
 	desc = "A lone flesh eating ghoul that has lost its mind."
 	icon = 'icons/mob/human.dmi'
 	icon_state = "feralghoul"
