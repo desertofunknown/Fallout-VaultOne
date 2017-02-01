@@ -247,6 +247,39 @@ NCR Ranger
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/ammo_box/magazine/d12g=2)
 
+/datum/job/ncrrecranger
+	title = "NCR Recruit Ranger"
+	flag = NCRRECRANGER
+	department_flag = CIVILIAN
+	faction = "NCR" //desert faction shall disable appearing as scavenger after readying
+	total_positions = 5
+	spawn_positions = 5 //does not matter for late join
+	supervisors = "the head of security"
+	selection_color = "#ffeeee"
+	minimal_player_age = 0
+	access = list(access_powerplant)
+	minimal_access = list(access_powerplant)
+	outfit = /datum/outfit/job/ncrrecranger
+
+/datum/outfit/job/ncrrecranger
+	name = "NCR Recruit Ranger"
+	id = /obj/item/weapon/card/id/ncr/ranger
+	uniform = /obj/item/clothing/under/f13/ranger
+	shoes = /obj/item/clothing/shoes/workboots
+	head = /obj/item/clothing/head/fluff/cowboy
+	back = /obj/item/weapon/storage/backpack
+	belt = /obj/item/weapon/storage/belt/ncr
+	gloves = /obj/item/clothing/gloves/combat
+	glasses = /obj/item/clothing/glasses/sunglasses
+	backpack = /obj/item/weapon/storage/backpack
+	satchel = /obj/item/weapon/storage/backpack/satchel_norm
+	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1, \
+	/obj/item/weapon/storage/wallet=1, \
+	/obj/item/stack/coin/coins = 1, \
+	/obj/item/weapon/gun/projectile/revolver/m29=1, \
+	/obj/item/ammo_box/m44=2, \
+	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1)
+
 /datum/job/detective
 	//title = "Wake up"
 	//flag = RANGER

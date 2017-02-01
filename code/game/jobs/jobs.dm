@@ -60,6 +60,7 @@ var/const/NCRRECRUIT        	=(1<<3)
 var/const/NCRSERGEANT        	=(1<<4)
 var/const/NCRRANGER       		=(1<<5)
 var/const/NCRCOLONEL			=(1<<7)
+var/const/NCRRECRANGER			=(1<<8)
 
 //~~Wasteland~~
 var/const/SCAVENGER         =(1<<21)

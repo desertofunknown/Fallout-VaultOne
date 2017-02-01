@@ -379,12 +379,12 @@
 //Fallout 13
 
 /obj/item/clothing/suit/f13/mfp //Mad Max 1979 babe!
-	name = "mfp jacket"
-	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
-	icon_state = "mfp"
+	name = "weathered mfp jacket"
+	desc = "A well worn main force patrol jacket"
+	icon_state = "wornmfp"
 	item_state = "hostrench"
 	body_parts_covered = CHEST|ARMS
-	armor = list(melee = 20, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 25, laser = 10,energy = 0, bomb = 10, bio = 0, rad = 10)
 
 /obj/item/clothing/suit/f13/veteran
 	name = "merc veteran coat"
