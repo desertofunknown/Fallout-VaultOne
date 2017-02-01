@@ -698,3 +698,139 @@
 	new /obj/item/ammo_casing/shotgun/buckshot(src)
 	new /obj/item/ammo_casing/shotgun/buckshot(src)
 	new /obj/item/ammo_casing/shotgun/buckshot(src)
+
+/obj/item/weapon/storage/box/improshot
+	name = "box of improvised shotgun shots"
+	desc = "A box full of improvised shots."
+	icon_state = "improshot_box"
+
+/obj/item/weapon/storage/box/improshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+	new /obj/item/ammo_casing/shotgun/improvised(src)
+
+/obj/item/weapon/storage/box/improshot_o
+	name = "box of overloaded improvised shotgun shots"
+	desc = "A box full of overloaded improvised shots."
+	icon_state = "improshot_box"
+
+/obj/item/weapon/storage/box/improshot_o/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+	new /obj/item/ammo_casing/shotgun/improvised/overload(src)
+
+/obj/item/weapon/storage/box/slugshot
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug shots."
+	icon_state = "slugshot_box"
+
+/obj/item/weapon/storage/box/slugshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+
+/obj/item/weapon/storage/box/slugshot
+	name = "box of slug shotgun shots"
+	desc = "A box full of slug shots."
+	icon_state = "slugshot_box"
+
+/obj/item/weapon/storage/box/lethalshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+	new /obj/item/ammo_casing/shotgun(src)
+
+/obj/item/weapon/storage/box/incenshot
+	name = "box of incendiary shotgun shots"
+	desc = "A box full of incendiary shots."
+	icon_state = "incenshot_box"
+
+/obj/item/weapon/storage/box/incenshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+	new /obj/item/ammo_casing/shotgun/incendiary(src)
+
+/obj/item/weapon/storage/box/dragonshot
+	name = "box of dragonsbreath shotgun shots"
+	desc = "A box full of dragonsbreath shots."
+	icon_state = "dragonshot_box"
+
+/obj/item/weapon/storage/box/dragonshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+	new /obj/item/ammo_casing/shotgun/incendiary/dragonsbreath(src)
+
+/obj/item/weapon/storage/box/fragshot
+	name = "box of explosive shotgun shots"
+	desc = "A box full of frag 12 shots."
+	icon_state = "fragshot_box"
+
+/obj/item/weapon/storage/box/fragshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+	new /obj/item/ammo_casing/shotgun/frag12(src)
+
+/obj/item/weapon/storage/box/lasershot
+	name = "box of experimental laser shotgun shots"
+	desc = "A box full of laser slug shots."
+	icon_state = "lasershot_box"
+
+/obj/item/weapon/storage/box/lasershot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+	new /obj/item/ammo_casing/shotgun/laserslug(src)
+
+/obj/item/weapon/storage/box/pulseshot
+	name = "box of experimental pulse shotgun shots"
+	desc = "A box full of pulse slug shots."
+	icon_state = "pulseshot_box"
+
+/obj/item/weapon/storage/box/pulseshot/New()
+	..()
+	new /obj/item/ammo_casing/shotgun/ion(src)
+	new /obj/item/ammo_casing/shotgun/ion(src)
+	new /obj/item/ammo_casing/shotgun/ion(src)
+	new /obj/item/ammo_casing/shotgun/ion(src)
+	new /obj/item/ammo_casing/shotgun/ion(src)
+	new /obj/item/ammo_casing/shotgun/ion(src)
+	new /obj/item/ammo_casing/shotgun/ion(src)
+
