@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/energy/laser
-	name = "laser gun"
+	name = "laser rifle"
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
 	item_state = "laser"
@@ -96,7 +96,7 @@
 	return
 
 /obj/item/weapon/gun/energy/laser/scatter
-	name = "tribeam laser gun"
+	name = "tribeam laser rifle"
 	desc = "A laser gun equipped with a refraction kit that spreads bolts."
 	icon_state = "tribeam"
 	item_state = "laser"
