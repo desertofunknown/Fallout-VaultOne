@@ -32,6 +32,9 @@ Trooper
 		/obj/item/ammo_box/magazine/m556_20=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
+/datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 
 /datum/job/ncrc
 	title = "NCR Colonel"
@@ -63,6 +66,9 @@ Trooper
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
+/datum/outfit/job/ncrc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 
 
 /*
@@ -98,6 +104,9 @@ Sergeant
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556_20=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
+/datum/outfit/job/ncrsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 /*
 Trooper
 */
@@ -131,6 +140,9 @@ Trooper
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556_20/surplus=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
+/datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 /*
 Recruit
 */
@@ -173,6 +185,9 @@ Recruit
 	W.registered_name = H.real_name
 	W.assignment = "NCR Recruit"
 	W.update_label(W.registered_name, W.assignment)
+	W.access = list(access_powerplant)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 
 /*
 Veteran Ranger
@@ -210,6 +225,9 @@ Veteran Ranger
 		/obj/item/ammo_box/c4570=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
+/datum/outfit/job/ncrvetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 /*
 NCR Ranger
 */
@@ -246,7 +264,9 @@ NCR Ranger
 		/obj/item/weapon/restraints/handcuffs=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/ammo_box/magazine/d12g=2)
-
+/datum/outfit/job/ncrranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 /datum/job/ncrrecranger
 	title = "NCR Recruit Ranger"
 	flag = NCRRECRANGER
@@ -279,7 +299,9 @@ NCR Ranger
 	/obj/item/weapon/gun/projectile/revolver/m29=1, \
 	/obj/item/ammo_box/m44=2, \
 	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1)
-
+/datum/outfit/job/ncrrecranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in view(1,src))
+		h.set_frequency(300)
 /datum/job/detective
 	//title = "Wake up"
 	//flag = RANGER

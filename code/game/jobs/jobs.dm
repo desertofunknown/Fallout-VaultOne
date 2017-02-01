@@ -53,12 +53,12 @@ var/const/LEGLEGAT			=(1<<14)
 var/const/LEGVET			=(1<<15)
 
 //~~NCR~~
-var/const/NCRTROOPER        	=(1<<6)
 var/const/NCRLIEUTENANT      	=(1<<1)
 var/const/NCRVETRANGER			=(1<<2)
 var/const/NCRRECRUIT        	=(1<<3)
 var/const/NCRSERGEANT        	=(1<<4)
 var/const/NCRRANGER       		=(1<<5)
+var/const/NCRTROOPER        	=(1<<6)
 var/const/NCRCOLONEL			=(1<<7)
 var/const/NCRRECRANGER			=(1<<8)
 
@@ -162,6 +162,7 @@ var/list/ncr_positions = list(
 	"NCR Lieutenant",
 	"NCR Trooper",
 	"NCR Veteran Ranger",
+	"NCR Recruit Ranger",
 	"NCR Ranger",
 	"NCR Sergeant",
 	"NCR Recruit",

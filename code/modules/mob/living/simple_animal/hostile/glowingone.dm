@@ -32,10 +32,15 @@
 	see_in_dark = 8
 	layer = MOB_LAYER - 0.1
 	New()
-		Glow()
+		..()
+		var/obj/machinery/light/l = new
+		l.loc=src
+		src.Glow()
 
 mob/proc/Glow()
 	src.luminosity=1
+	for(var/obj/machinery/light/light in src)
+		light.flicker(20) //spooky
 	spawn(50)
 		src.luminosity=0
 		src.Glow()
@@ -45,10 +50,10 @@ mob/proc/Glow()
 		var/mob/living/L = target
 		if(ishuman(L) && L.stat==DEAD)
 			var/mob/living/carbon/human/H = L
-			view(L) << "<span class='userdanger'>[src] feasts on [L] healing them."
+			view(H) << "<span class='userdanger'>[src] feasts on [H] healing them."
 			src.revive()
 			src.LoseTarget()
-			visible_message("<span class='danger'>[src] tears [L] to pieces!</span>")
+			visible_message("<span class='danger'>[src] tears [H] to pieces!</span>")
 			L.gib()
 			return
 			//L.gib()
@@ -161,10 +166,10 @@ mob/proc/Glow()
 	stop_automated_movement = 1
 	density = 0
 
-/mob/living/simple_animal/hostile/glowingone/holder/New()
-	..()
-	spawn(rand(800,1200))
-		if(src && istype(loc, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = loc
+///mob/living/simple_animal/hostile/glowingone/holder/New()
+//	..()
+	//spawn(rand(800,1200))
+	//	if(src && istype(loc, /mob/living/carbon/human))
+	//		var/mob/living/carbon/human/H = loc
 			//Zombify(H)
-		qdel(src)
+	//	qdel(src)

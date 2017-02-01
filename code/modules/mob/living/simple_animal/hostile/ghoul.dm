@@ -153,10 +153,10 @@
 	stop_automated_movement = 1
 	density = 0
 
-/mob/living/simple_animal/hostile/ferralghoul/holder/New()
-	..()
-	spawn(rand(800,1200))
-		if(src && istype(loc, /mob/living/carbon/human))
-			var/mob/living/carbon/human/H = loc
+///mob/living/simple_animal/hostile/ferralghoul/holder/New()
+	//..()
+	//spawn(rand(800,1200))
+		//if(src && istype(loc, /mob/living/carbon/human))
+		//	var/mob/living/carbon/human/H = loc
 			//Zombify(H)
-		qdel(src)
+		//qdel(src)

@@ -439,7 +439,7 @@ obj
 			armorspawners //1.8
 				tier1
 					New()
-						switch(rand(1,5))
+						switch(rand(1,4))
 							if(1)
 								var/obj/item/clothing/suit/armor/vest/lb = new
 								var/obj/item/clothing/head/helmet/riot/vaultsec/lb2 = new
@@ -458,10 +458,6 @@ obj
 								var/obj/item/clothing/suit/armor/f13/kit/lb = new
 								lb.loc=src.loc
 								del src
-							if(5)
-								var/obj/item/clothing/suit/armor/bulletproof/lb = new
-								lb.loc=src.loc
-								del src
 				tier2
 					New()
 						switch(rand(1,2))
@@ -473,7 +469,9 @@ obj
 								del src
 							if(2)
 								var/obj/item/clothing/head/helmet/swat/lb = new
+								var/obj/item/clothing/suit/armor/bulletproof/lb2 = new
 								lb.loc=src.loc
+								lb2.loc=src.loc
 								del src
 				tier3
 					New()
