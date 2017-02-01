@@ -166,8 +166,8 @@
 	desc = "A fine centurion bandana."
 	icon_state = "legcenturion"
 
-/obj/item/clothing/mask/bandana/legprime
-	name = "prime bandana"
+/obj/item/clothing/mask/bandana/legvet
+	name = "veteran bandana"
 	desc = "A fine prime bandana."
 	icon_state = "bandred"
 
