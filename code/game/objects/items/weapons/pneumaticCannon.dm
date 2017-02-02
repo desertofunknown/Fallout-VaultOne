@@ -12,7 +12,7 @@
 	var/maxWeightClass = 20 //The max weight of items that can fit into the cannon
 	var/loadedWeightClass = 0 //The weight of items currently in the cannon
 	var/obj/item/weapon/tank/internals/tank = null //The gas tank that is drawn from to fire things
-	var/gasPerThrow = 3 //How much gas is drawn from a tank's pressure to fire
+//	var/gasPerThrow = 3 //How much gas is drawn from a tank's pressure to fire
 	var/list/loadedItems = list() //The items loaded into the cannon that will be fired out
 	var/pressureSetting = 1 //How powerful the cannon is - higher pressure = more gas but more powerful throws
 
@@ -31,12 +31,6 @@
 
 /obj/item/weapon/pneumatic_cannon/attackby(obj/item/weapon/W, mob/user, params)
 	..()
-	if(istype(W, /obj/item/weapon/tank/internals/) && !tank)
-		if(istype(W, /obj/item/weapon/tank/internals/emergency_oxygen))
-			user << "<span class='warning'>\The [W] is too small for \the [src].</span>"
-			return
-		updateTank(W, 0, user)
-		return
 	if(W.type == type)
 		user << "<span class='warning'>You're fairly certain that putting a pneumatic cannon inside another pneumatic cannon would cause a spacetime disruption.</span>"
 		return
@@ -50,9 +44,9 @@
 				pressureSetting = 1
 		user << "<span class='notice'>You tweak \the [src]'s pressure output to [pressureSetting].</span>"
 		return
-	if(istype(W, /obj/item/weapon/screwdriver) && tank)
-		updateTank(tank, 1, user)
-		return
+//	if(istype(W, /obj/item/weapon/screwdriver) && tank)
+//		updateTank(tank, 1, user)
+//		return
 	if(loadedWeightClass >= maxWeightClass)
 		user << "<span class='warning'>\The [src] can't hold any more items!</span>"
 		return
@@ -95,12 +89,13 @@
 	if(!loadedItems || !loadedWeightClass)
 		user << "<span class='warning'>\The [src] has nothing loaded.</span>"
 		return
-	if(!tank)
+/*	if(!tank)
 		user << "<span class='warning'>\The [src] can't fire without a source of gas.</span>"
 		return
 	if(tank && !tank.air_contents.remove(gasPerThrow * pressureSetting))
 		user << "<span class='warning'>\The [src] lets out a weak hiss and doesn't react!</span>"
 		return
+*/
 	if(user.disabilities & CLUMSY && prob(75))
 		user.visible_message("<span class='warning'>[user] loses their grip on [src], causing it to go off!</span>", "<span class='userdanger'>[src] slips out of your hands and goes off!</span>")
 		user.drop_item()
@@ -132,7 +127,7 @@
 	force = 5
 	w_class = 3
 	maxWeightClass = 7
-	gasPerThrow = 5
+//	gasPerThrow = 5
 
 /datum/table_recipe/improvised_pneumatic_cannon //Pretty easy to obtain but
 	name = "Pneumatic Cannon"
@@ -145,6 +140,7 @@
 	time = 300
 	category = CAT_WEAPON
 
+/*
 /obj/item/weapon/pneumatic_cannon/proc/updateTank(obj/item/weapon/tank/internals/thetank, removing = 0, mob/living/carbon/human/user)
 	if(removing)
 		if(!src.tank)
@@ -170,3 +166,4 @@
 		return
 	src.overlays += image('icons/obj/pneumaticCannon.dmi', "[tank.icon_state]")
 	src.update_icon()
+*/

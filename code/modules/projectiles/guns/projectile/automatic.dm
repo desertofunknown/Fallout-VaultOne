@@ -330,3 +330,20 @@
 	fire_delay = 2
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
+
+/obj/item/weapon/gun/projectile/automatic/lsw
+	name = "light support weapon"
+	desc = "A British made light machine gun, for squad supressive fire capabilities. "
+	icon_state = "lsw"
+	item_state = "l6closedmag"
+	slot_flags = 0
+	origin_tech = "combat=6;materials=1"
+	mag_type = /obj/item/ammo_box/magazine/m556
+	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
+	can_suppress = 0
+	burst_size = 10
+	heavy_weapon = 1
+	fire_delay = 1
+	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
+	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
+	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
