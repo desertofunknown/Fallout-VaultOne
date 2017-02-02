@@ -50,7 +50,7 @@
 	icon_state = "[lasercolor]ed209[on]"
 	set_weapon() //giving it the right projectile and firing sound.
 	spawn(3)
-		var/datum/job/detective/J = new/datum/job/detective
+		var/datum/job/ncrrecranger/J = new/datum/job/ncrrecranger
 		access_card.access += J.get_access()
 		prev_access = access_card.access
 

@@ -33,8 +33,14 @@ Trooper
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
 /datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
 
 /datum/job/ncrc
 	title = "NCR Colonel"
@@ -66,10 +72,15 @@ Trooper
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
-/datum/outfit/job/ncrc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
-
+/datum/outfit/job/ncrcolonel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
 
 /*
 Sergeant
@@ -105,8 +116,15 @@ Sergeant
 		/obj/item/ammo_box/magazine/m556_20=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 /datum/outfit/job/ncrsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
+
 /*
 Trooper
 */
@@ -141,8 +159,14 @@ Trooper
 		/obj/item/ammo_box/magazine/m556_20/surplus=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 /datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
 /*
 Recruit
 */
@@ -177,17 +201,15 @@ Recruit
 		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 
-/datum/outfit/job/ncrrecruit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	if(visualsOnly)
-		return
-
-	var/obj/item/weapon/card/id/ncr/W = H.wear_id
-	W.registered_name = H.real_name
-	W.assignment = "NCR Recruit"
-	W.update_label(W.registered_name, W.assignment)
-	W.access = list(access_powerplant)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
+/datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "NCR Recruit"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] (NCR Recruit)"
+		n.access = list(access_powerplant)
 
 /*
 Veteran Ranger
@@ -226,8 +248,14 @@ Veteran Ranger
 		/obj/item/weapon/kitchen/knife/combat=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 /datum/outfit/job/ncrvetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
 /*
 NCR Ranger
 */
@@ -265,12 +293,18 @@ NCR Ranger
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/ammo_box/magazine/d12g=2)
 /datum/outfit/job/ncrranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
 /datum/job/ncrrecranger
 	title = "NCR Recruit Ranger"
 	flag = NCRRECRANGER
-	department_flag = CIVILIAN
+	department_flag = NCR
 	faction = "NCR" //desert faction shall disable appearing as scavenger after readying
 	total_positions = 5
 	spawn_positions = 5 //does not matter for late join
@@ -300,11 +334,17 @@ NCR Ranger
 	/obj/item/ammo_box/m44=2, \
 	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1)
 /datum/outfit/job/ncrrecranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
-	for(var/obj/item/device/radio/headset/h in view(1,src))
-		h.set_frequency(300)
-/datum/job/detective
-	//title = "Wake up"
-	//flag = RANGER
+	for(var/obj/item/device/radio/headset/h in H.contents)
+		h.frequency=1350
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		n.access = list(access_powerplant)
+/*/datum/job/detective
+	title = "Wake up"
+	flag = RANGER
 	department_head = list("Head of Security")
 	department_flag = NCR
 	faction = "NCR"
@@ -317,4 +357,4 @@ NCR Ranger
 	outfit = /datum/outfit/job/ncrranger
 
 	access = list(access_powerplant)
-	minimal_access = list(access_powerplant)
+	minimal_access = list(access_powerplant)*/
