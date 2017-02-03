@@ -385,6 +385,7 @@
 	item_state = "hostrench"
 	body_parts_covered = CHEST|ARMS
 	armor = list(melee = 35, bullet = 25, laser = 10,energy = 0, bomb = 10, bio = 0, rad = 10)
+	flags_inv = HIDEJUMPSUIT
 
 /obj/item/clothing/suit/f13/veteran
 	name = "merc veteran coat"
