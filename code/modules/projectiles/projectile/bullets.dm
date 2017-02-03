@@ -111,7 +111,6 @@
 	nodamage = 1
 	stun = 0
 	weaken = 0
-	breakthings = FALSE
 
 /obj/item/projectile/bullet/heavybullet/soporific/on_hit(atom/target, blocked = 0, hit_zone)
 	if((blocked != 100) && istype(target, /mob/living))

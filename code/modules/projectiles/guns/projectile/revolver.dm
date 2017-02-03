@@ -153,6 +153,12 @@
 	origin_tech = "combat=4;materials=3"
 	fire_sound = 'sound/f13weapons/that_gun.ogg'
 
+/obj/item/weapon/gun/projectile/revolver/that_gun/New()
+	..()
+	update_icon()
+	src.setgundamage(15,0,5,0)
+	return
+
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.

@@ -271,6 +271,12 @@
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
+/obj/item/weapon/gun/projectile/automatic/assault_rifle/New()
+	..()
+	update_icon()
+	src.setgundamage(-7,0,0,0)
+	return
+
 /obj/item/weapon/gun/projectile/automatic/marksman
 	name = "Marksman Carbine"
 	desc = "A 5.56 caliber assault rifle widely seen in use by pre-war U.S. military forces. Semi-automatic only."
@@ -289,6 +295,12 @@
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
+/obj/item/weapon/gun/projectile/automatic/marksman/New()
+	..()
+	update_icon()
+	src.setgundamage(7,0,0,0)
+	return
+
 /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	name = "Service Rifle"
 	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
@@ -296,6 +308,12 @@
 	item_state = "assault_rifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	zoomable = FALSE
+
+/obj/item/weapon/gun/projectile/automatic/marksman/servicerifle/New()
+	..()
+	update_icon()
+	src.setgundamage(-10,0,0,0)
+	return
 
 /obj/item/weapon/gun/projectile/automatic/minigun
 	name = "Minigun"
