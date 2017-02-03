@@ -93,13 +93,13 @@
 	fire_delay = 2
 	burst_size = 2
 	pin = /obj/item/device/firing_pin/implant/pindicate
-
 /obj/item/weapon/gun/projectile/automatic/c20r/unrestricted
 	pin = /obj/item/device/firing_pin
 
 /obj/item/weapon/gun/projectile/automatic/c20r/New()
 	..()
 	update_icon()
+	src.setgundamage(10,0,5,0)
 	return
 
 /obj/item/weapon/gun/projectile/automatic/c20r/afterattack()

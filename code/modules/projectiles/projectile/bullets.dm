@@ -6,6 +6,9 @@
 	damage_type = BRUTE
 	nodamage = 0
 	flag = "bullet"
+	var/gundamageapplied=0
+
+
 
 /obj/item/projectile/bullet/deagleAE
 	damage = 65

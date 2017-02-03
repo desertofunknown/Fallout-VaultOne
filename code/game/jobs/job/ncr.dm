@@ -34,7 +34,7 @@ Trooper
 		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
 /datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
@@ -74,7 +74,7 @@ Trooper
 		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
 /datum/outfit/job/ncrcolonel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
@@ -117,7 +117,7 @@ Sergeant
 		/obj/item/weapon/kitchen/knife/combat=1)
 /datum/outfit/job/ncrsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
@@ -160,7 +160,7 @@ Trooper
 		/obj/item/weapon/kitchen/knife/combat=1)
 /datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
@@ -201,9 +201,9 @@ Recruit
 		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 
-/datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/ncrrecruit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "NCR Recruit"
@@ -249,7 +249,7 @@ Veteran Ranger
 	mask = /obj/item/clothing/mask/gas/sechailer
 /datum/outfit/job/ncrvetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
@@ -294,7 +294,7 @@ NCR Ranger
 		/obj/item/ammo_box/magazine/d12g=2)
 /datum/outfit/job/ncrranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1141
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
@@ -335,7 +335,7 @@ NCR Ranger
 	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1)
 /datum/outfit/job/ncrrecranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
-		h.frequency=1350
+		h.frequency=1441
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
 		n.assignment = "[H.job]"
