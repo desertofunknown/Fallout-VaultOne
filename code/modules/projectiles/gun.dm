@@ -307,7 +307,7 @@
 		return
 
 /obj/item/weapon/gun/attackby(obj/item/A, mob/user, params)
-	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
+	//src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	if(istype(A, /obj/item/device/flashlight/seclite))
 		var/obj/item/device/flashlight/seclite/S = A
 		if(can_flashlight)

@@ -7,10 +7,15 @@
 	fps = 31
 
 var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
-
+proc/checkgundamage()
+	for(var/obj/item/weapon/gun/G in world)
+		G.setgundamage(G.damageG,G.damageA,G.damageS,G.rangeG)
+		spawn(50)
+			checkgundamage()
 /world/New()
 	check_for_cleanbot_bug()
 	map_ready = 1
+	checkgundamage()
 	world.log << "Map is ready."
 
 #if (PRELOAD_RSC == 0)
