@@ -292,6 +292,16 @@
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
+	damageG=10
+	damageA=0
+	damageS=0
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/automatic/marksman/New()
+	..()
+	update_icon()
+	src.setgundamage(damageG,damageA,damageS,rangeG)
+	return
 
 /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	name = "Service Rifle"

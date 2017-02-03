@@ -17,17 +17,37 @@
 
 /obj/item/weapon/gun/projectile/automatic/pistol/m1911
 	name = "\improper M1911"
-	desc = "A classic .45 handgun with a small magazine capacity."
+	desc = "A classic .45 handgun with a small magazine capacity, a good weapon for taking down unarmored enemies."
 	icon_state = "m1911"
 	w_class = 3
 	mag_type = /obj/item/ammo_box/magazine/m45
 	can_suppress = 0
+	damageG=10
+	damageA=0
+	damageS=30
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/automatic/pistol/m1911/New()
+	..()
+	update_icon()
+	src.setgundamage(damageG,damageA,damageS,rangeG)
+	return
 
 /obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact
 	name = "\improper M1911 Compact"
 	desc = "A classic .45 handgun with a small magazine capacity. This model can easily fit in your pocket"
 	icon_state = "m1911c"
 	w_class = 2
+	damageG=10
+	damageA=0
+	damageS=30
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact/New()
+	..()
+	update_icon()
+	src.setgundamage(damageG,damageA,damageS,rangeG)
+	return
 
 // 10-mm pistol
 /obj/item/weapon/gun/projectile/automatic/pistol/n99

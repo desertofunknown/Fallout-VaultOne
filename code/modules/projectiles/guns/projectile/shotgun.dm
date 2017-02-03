@@ -78,6 +78,16 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	sawn_desc = "Come with me if you want to live."
+	damageG=15
+	damageA=0
+	damageS=0
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/shotgun/riot/New()
+	..()
+	update_icon()
+	src.setgundamage(damageG,damageA,damageS,rangeG)
+	return
 
 /obj/item/weapon/gun/projectile/shotgun/riot/attackby(obj/item/A, mob/user, params)
 	..()
@@ -87,12 +97,6 @@
 		var/obj/item/weapon/melee/energy/W = A
 		if(W.active)
 			sawoff(user)
-
-/obj/item/weapon/gun/projectile/shotgun/riot/New()
-	..()
-	update_icon()
-	src.setgundamage(15,0,0,0)
-	return
 
 ///////////////////////
 // BOLT ACTION RIFLE //
@@ -199,11 +203,15 @@
 	origin_tech = "combat=4;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/mad
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	damageG=25
+	damageA=0
+	damageS=0
+	rangeG=0
 
 /obj/item/weapon/gun/projectile/revolver/max_sawn_off/New()
 	..()
 	update_icon()
-	src.setgundamage(25,0,0,0)
+	src.setgundamage(damageG,damageA,damageS,rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/revolver/caravan_shotgun
