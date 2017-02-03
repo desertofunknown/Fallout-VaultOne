@@ -86,7 +86,7 @@
 /obj/item/weapon/gun/projectile/shotgun/riot/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/shotgun/riot/attackby(obj/item/A, mob/user, params)
@@ -211,7 +211,7 @@
 /obj/item/weapon/gun/projectile/revolver/max_sawn_off/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/revolver/caravan_shotgun

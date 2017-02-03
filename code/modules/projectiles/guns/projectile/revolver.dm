@@ -160,7 +160,7 @@
 /obj/item/weapon/gun/projectile/revolver/that_gun/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 // A gun to play Russian Roulette!

@@ -30,7 +30,7 @@
 /obj/item/weapon/gun/projectile/automatic/pistol/m1911/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact
@@ -46,7 +46,7 @@
 /obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 // 10-mm pistol

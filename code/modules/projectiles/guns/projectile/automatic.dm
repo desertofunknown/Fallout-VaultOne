@@ -103,7 +103,7 @@
 /obj/item/weapon/gun/projectile/automatic/c20r/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/automatic/c20r/afterattack()
@@ -300,7 +300,7 @@
 /obj/item/weapon/gun/projectile/automatic/marksman/New()
 	..()
 	update_icon()
-	src.setgundamage(damageG,damageA,damageS,rangeG)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
