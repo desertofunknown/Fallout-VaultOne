@@ -15,7 +15,7 @@ proc/checkgundamage()
 /world/New()
 	check_for_cleanbot_bug()
 	map_ready = 1
-	checkgundamage()
+	//checkgundamage()
 	world.log << "Map is ready."
 
 #if (PRELOAD_RSC == 0)
