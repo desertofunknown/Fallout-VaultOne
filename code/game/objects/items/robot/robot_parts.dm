@@ -37,8 +37,8 @@
 	name = "cyborg head"
 	desc = "A standard reinforced braincase, with spine-plugged neural socket and sensor gimbals."
 	icon_state = "head"
-	var/obj/item/device/assembly/flash/handheld/flash1 = null
-	var/obj/item/device/assembly/flash/handheld/flash2 = null
+	var/obj/item/device/assembly/flash/flash1 = null
+	var/obj/item/device/assembly/flash/flash2 = null
 
 /obj/item/robot_parts/robot_suit
 	name = "cyborg endoskeleton"
@@ -327,8 +327,8 @@
 
 /obj/item/robot_parts/head/attackby(obj/item/W, mob/user, params)
 	..()
-	if(istype(W, /obj/item/device/assembly/flash/handheld))
-		var/obj/item/device/assembly/flash/handheld/F = W
+	if(istype(W, /obj/item/device/assembly/flash))
+		var/obj/item/device/assembly/flash/F = W
 		if(src.flash1 && src.flash2)
 			user << "<span class='warning'>You have already inserted the eyes!</span>"
 			return
