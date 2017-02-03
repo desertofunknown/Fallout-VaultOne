@@ -181,34 +181,58 @@
 
 /datum/design/mag_oldsmg
 	name = "20 round Magazine (5.56 Match)"
-	desc = "A 20 round magazine for 5.56 rifles."
+	desc = "A box of 20 5.56 match grade ammo."
 	id = "mag_oldsmg"
 	req_tech = list("combat" = 1, "materials" = 1)
 	build_type = PROTOLATHE
 	materials = list(MAT_METAL = 4000)
-	build_path = /obj/item/ammo_box/magazine/m556_20
+	build_path = /obj/item/ammo_box/a556
 	category = list("Ammo")
 
 /datum/design/mag_oldsmg/ap_mag
 	name = "20 round armour piercing (5.56 AP)"
-	desc = "A 20 round armour piercing magazine for 5.56 rifles."
+	desc = "A box of 20 armour piercing 5.56 ammo."
 	id = "mag_oldsmg_ap"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600)
-	build_path = /obj/item/ammo_box/magazine/m556_20/ap
+	build_path = /obj/item/ammo_box/a556/ap
 
 /datum/design/mag_oldsmg/ic_mag
 	name = "20 round incendiary (5.56 IC)"
-	desc = "A 20 round incendiary magazine for 5.56 rifles."
+	desc = "A box of 20 incendiary 5.56 ammo."
 	id = "mag_oldsmg_ic"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_GLASS = 1000)
-	build_path = /obj/item/ammo_box/magazine/m556_20/inc
+	build_path = /obj/item/ammo_box/a556/inc
 
 /datum/design/mag_oldsmg/tx_mag
 	name = "20 round uranium tipped (5.56 TX)"
-	desc = "A 20 round uranium tipped magazine for 5.56 rifles."
+	desc = "a box of 20 uranium tipped 5.56 ammo."
 	id = "mag_oldsmg_tx"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000)
-	build_path = /obj/item/ammo_box/magazine/m556_20/tx
+	build_path = /obj/item/ammo_box/a556/tox
+
+/datum/design/mag_oldsmge/bleed_mag
+	name = "experimental 20 round bleeding (5.56 bleed)"
+	desc = "a box of 20 bleeding 5.56 ammo"
+	id = "mag_oldsmg_bleed"
+	req_tech = list("combat" = 6, "engineering" = 5, "syndicate" = 3)
+	materials = list (MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000, MAT_DIAMOND = 1000)
+	build_path = /obj/item/ammo_box/a556/bleed
+
+/datum/design/mag_oldsmge/sleep_mag
+	name = "experimental 20 round sleeping (5.56 sopoforic)"
+	desc = "a box of 20 sleeping 5.56 ammo"
+	id = "mag_oldsmg_sleep"
+	req_tech = list("combat" = 6, "engineering" = 5, "syndicate" = 3)
+	materials = list (MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000, MAT_DIAMOND = 1000, MAT_GOLD = 800)
+	build_path = /obj/item/ammo_box/a556/sopoforic
+
+/datum/design/mag_oldsmge/pen_mag
+	name = "experimental 20 round penetrator (5.56 penetrator)"
+	desc = "a box of 20 penetrator 5.56 ammo"
+	id = "mag_oldsmg_pen"
+	req_tech = list("combat" = 6, "engineering" = 5, "syndicate" = 3)
+	materials = list (MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000, MAT_DIAMOND = 2000)
+	build_path = /obj/item/ammo_box/a556/penetrator
 
 //SABR Mags
 

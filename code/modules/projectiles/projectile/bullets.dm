@@ -91,6 +91,35 @@
 /obj/item/projectile/bullet/heavybullet/surplus
 	damage = 20
 
+/obj/item/projectile/bullet/heavybullet/bleed
+	damage = 10
+	armour_penetration = 15
+
+/obj/item/projectile/bullet/heavybullet/bleed/on_hit(atom/target, blocked = 0, hit_zone)
+	if((blocked != 100) && istype(target, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = target
+		H.drip(100)
+
+	return ..()
+
+/obj/item/projectile/bullet/heavybullet/penetrator
+	damage = 30
+	forcedodge = 1
+
+/obj/item/projectile/bullet/heavybullet/sopoforic
+	armour_penetration = 0
+	nodamage = 1
+	stun = 0
+	weaken = 0
+	breakthings = FALSE
+
+/obj/item/projectile/bullet/heavybullet/soporific/on_hit(atom/target, blocked = 0, hit_zone)
+	if((blocked != 100) && istype(target, /mob/living))
+		var/mob/living/L = target
+		L.SetSleeping(20)
+
+	return ..()
+
 /obj/item/projectile/bullet/rpellet
 	damage = 3
 	stamina = 25

@@ -29,7 +29,7 @@ Trooper
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
 	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/ammo_box/magazine/m556_20=3, \
+		/obj/item/ammo_box/magazine/m556=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
 /datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -113,7 +113,7 @@ Sergeant
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
 	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/ammo_box/magazine/m556_20=2, \
+		/obj/item/ammo_box/magazine/m556/r20=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 /datum/outfit/job/ncrsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)
@@ -156,7 +156,7 @@ Trooper
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
 	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/ammo_box/magazine/m556_20/surplus=2, \
+		/obj/item/ammo_box/magazine/m556/r20=2, \
 		/obj/item/weapon/kitchen/knife/combat=1)
 /datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/device/radio/headset/h in H.contents)

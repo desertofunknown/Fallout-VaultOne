@@ -257,14 +257,10 @@ obj
 										lb.loc=src.loc
 										del src
 									if(3)
-										var/obj/item/ammo_box/magazine/m556_20/training/lb = new
-										lb.loc=src.loc
-										del src
-									if(4)
 										var/obj/item/ammo_box/a762/lb = new
 										lb.loc=src.loc
 										del src
-									if(5)
+									if(4)
 										var/obj/item/weapon/storage/box/rubbershot/lb = new
 										lb.loc=src.loc
 										del src
@@ -299,7 +295,7 @@ obj
 							New()
 								switch(rand(1,7))
 									if(1)
-										var/obj/item/ammo_box/magazine/m556_20/surplus/lb = new
+										var/obj/item/ammo_box/magazine/m556/r20/lb = new
 										lb.loc=src.loc
 										del src
 									if(2)
@@ -334,38 +330,34 @@ obj
 										lb.loc=src.loc
 										del src
 									if(2)
-										var/obj/item/ammo_box/magazine/m556_20/lb = new
+										var/obj/item/ammo_box/a556/inc/lb = new
 										lb.loc=src.loc
 										del src
 									if(3)
-										var/obj/item/ammo_box/magazine/m556_20/inc/lb = new
+										var/obj/item/ammo_box/a556/ap/lb = new
 										lb.loc=src.loc
 										del src
 									if(4)
-										var/obj/item/ammo_box/magazine/m556_20/ap/lb = new
+										var/obj/item/ammo_box/a556/tox/lb = new
 										lb.loc=src.loc
 										del src
 									if(5)
-										var/obj/item/ammo_box/magazine/m556_20/tx/lb = new
-										lb.loc=src.loc
-										del src
-									if(6)
 										var/obj/item/ammo_box/magazine/m50/lb = new
 										lb.loc=src.loc
 										del src
-									if(7)
+									if(6)
 										var/obj/item/ammo_box/magazine/m556/lb = new
 										lb.loc=src.loc
 										del src
-									if(8)
+									if(7)
 										var/obj/item/weapon/storage/box/lasershot/lb = new
 										lb.loc=src.loc
 										del src
-									if(9)
+									if(8)
 										var/obj/item/weapon/storage/box/incenshot/lb = new
 										lb.loc=src.loc
 										del src
-									if(10)
+									if(9)
 										var/obj/item/weapon/stock_parts/cell/device/laser/super/lb = new
 										lb.loc=src.loc
 										del src

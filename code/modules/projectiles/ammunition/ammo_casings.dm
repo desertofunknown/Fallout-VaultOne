@@ -226,20 +226,29 @@
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/heavybullet
 
-/obj/item/ammo_casing/a556ap
+/obj/item/ammo_casing/a556/ap
 	projectile_type = /obj/item/projectile/bullet/heavybullet/ap
 
-/obj/item/ammo_casing/a556inc
+/obj/item/ammo_casing/a556/inc
 	projectile_type = /obj/item/projectile/bullet/incendiary/heavybullet
 
-/obj/item/ammo_casing/a556tox
+/obj/item/ammo_casing/a556/tox
 	projectile_type = /obj/item/projectile/bullet/heavybullet/tox
 
-/obj/item/ammo_casing/a556surplus
+/obj/item/ammo_casing/a556/surplus
 	projectile_type = /obj/item/projectile/bullet/heavybullet/surplus
 
-/obj/item/ammo_casing/a556training
+/obj/item/ammo_casing/a556/training
 	projectile_type = /obj/item/projectile/bullet/training
+
+/obj/item/ammo_casing/a556/bleed
+	projectile_type = /obj/item/projectile/bullet/heavybullet/bleed
+
+/obj/item/ammo_casing/a556/sopoforic
+	projectile_type = /obj/item/projectile/bullet/heavybullet/sopoforic
+
+/obj/item/ammo_casing/a556/penetrator
+	projectile_type = /obj/item/projectile/bullet/heavybullet/penetrator
 
 /obj/item/ammo_casing/c4570
 	caliber = "4570"

@@ -338,7 +338,7 @@ Legion
 	backpack_contents = list(/obj/item/stack/spear/bundle=1, \
 	/obj/item/stack/coin/coins = 3, \
 	/obj/item/weapon/powergauntlet = 1,\
-	/obj/item/ammo_box/magazine/m556_20=3, \
+	/obj/item/ammo_box/magazine/m556=3, \
 	/obj/item/weapon/restraints/legcuffs/bola/tribal=2, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2)
 
