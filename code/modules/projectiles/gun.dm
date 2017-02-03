@@ -20,6 +20,11 @@
 	needs_permit = 1
 	attack_verb = list("struck", "hit", "bashed")
 
+	var/damageG=0
+	var/damageA=0
+	var/damageS=0
+	var/rangeG=0
+
 	var/fire_sound = "gunshot"
 	var/suppressed = 0					//whether or not a message is displayed when fired
 	var/can_suppress = 0
@@ -302,6 +307,7 @@
 		return
 
 /obj/item/weapon/gun/attackby(obj/item/A, mob/user, params)
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	if(istype(A, /obj/item/device/flashlight/seclite))
 		var/obj/item/device/flashlight/seclite/S = A
 		if(can_flashlight)

@@ -92,6 +92,10 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	fire_delay = 2
 	burst_size = 2
+	damageG=10
+	damageA=0
+	damageS=5
+	rangeG=0
 	pin = /obj/item/device/firing_pin/implant/pindicate
 /obj/item/weapon/gun/projectile/automatic/c20r/unrestricted
 	pin = /obj/item/device/firing_pin
@@ -99,7 +103,7 @@
 /obj/item/weapon/gun/projectile/automatic/c20r/New()
 	..()
 	update_icon()
-	src.setgundamage(10,0,5,0)
+	src.setgundamage(damageG,damageA,damageS,rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/automatic/c20r/afterattack()
@@ -271,12 +275,6 @@
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
-/obj/item/weapon/gun/projectile/automatic/assault_rifle/New()
-	..()
-	update_icon()
-	src.setgundamage(-7,0,0,0)
-	return
-
 /obj/item/weapon/gun/projectile/automatic/marksman
 	name = "Marksman Carbine"
 	desc = "A 5.56 caliber assault rifle widely seen in use by pre-war U.S. military forces. Semi-automatic only."
@@ -284,7 +282,7 @@
 	item_state = "arg"
 	slot_flags = 0
 	origin_tech = "combat=6;materials=1"
-	mag_type = /obj/item/ammo_box/magazine/m556
+	mag_type = /obj/item/ammo_box/magazine/m556/r20
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
 	burst_size = 1//Setting it to 0 is dumb. Just set it to one.
@@ -295,12 +293,6 @@
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
-/obj/item/weapon/gun/projectile/automatic/marksman/New()
-	..()
-	update_icon()
-	src.setgundamage(7,0,0,0)
-	return
-
 /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	name = "Service Rifle"
 	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
@@ -308,12 +300,6 @@
 	item_state = "assault_rifle"
 	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
 	zoomable = FALSE
-
-/obj/item/weapon/gun/projectile/automatic/marksman/servicerifle/New()
-	..()
-	update_icon()
-	src.setgundamage(-10,0,0,0)
-	return
 
 /obj/item/weapon/gun/projectile/automatic/minigun
 	name = "Minigun"
