@@ -7,11 +7,11 @@
 	fps = 31
 
 var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
-proc/checkgundamage()
-	for(var/obj/item/weapon/gun/G in world)
-		G.setgundamage(G.damageG,G.damageA,G.damageS,G.rangeG)
-		spawn(50)
-			checkgundamage()
+//proc/checkgundamage()
+	//for(var/obj/item/weapon/gun/G in world)
+		//G.setgundamage(G.damageG,G.damageA,G.damageS,G.rangeG)
+	//	spawn(50)
+		//	checkgundamage()
 /world/New()
 	check_for_cleanbot_bug()
 	map_ready = 1
@@ -282,8 +282,7 @@ var/inerror = 0
 		s += "<h1><font face=fantasy color=green>[config.server_name] &#8212;"
 
 	s += "<font face=fantasy color=green>[station_name()]</b><p>";
-	s += " ("
-	s += "<h3><a href=\"https://cavecrawlers.com\">" //Change this to wherever you want the hub to link to.
+	s += "<h3>(<a href=\"https://cavecrawlers.com\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
 	s += "Community"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
