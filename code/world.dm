@@ -279,7 +279,7 @@ var/inerror = 0
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<h1><font face=fantasy color=green size=7>[config.server_name] &#8212;"
+		s += "<h1><font face=fantasy color=green>[config.server_name] &#8212;"
 
 	s += "<h1><font face=fantasy color=green>[station_name()]</b><p>";
 	s += " ("
