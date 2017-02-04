@@ -279,9 +279,9 @@ var/inerror = 0
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<font face=fantasy color=green>[config.server_name] &#8212;"
+		s += "<h1><font face=fantasy color=green size=7>[config.server_name] &#8212;"
 
-	s += "<font face=fantasy color=green>[station_name()]</b><p>";
+	s += "<h1><font face=fantasy color=green>[station_name()]</b><p>";
 	s += " ("
 	s += "<a href=\"https://cavecrawlers.com\">" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
