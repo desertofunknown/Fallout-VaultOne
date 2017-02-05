@@ -282,7 +282,7 @@
 	item_state = "arg"
 	slot_flags = 0
 	origin_tech = "combat=6;materials=1"
-	mag_type = /obj/item/ammo_box/magazine/m556/r20
+	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
 	can_suppress = 0
 	burst_size = 1//Setting it to 0 is dumb. Just set it to one.

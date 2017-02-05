@@ -29,7 +29,7 @@
 	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
 
 /obj/item/projectile/beam/plasma_pistol
-	name = "plasma scatter"
+	name = "plasma beam"
 	icon_state = "plasma_beam"
 	damage = 35
 	hitsound = 'sound/f13weapons/plasmarifle.ogg'
