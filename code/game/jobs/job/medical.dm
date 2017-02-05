@@ -73,7 +73,6 @@ Medical Doctor
 	gloves = /obj/item/clothing/gloves/pda/medical
 	ears = /obj/item/device/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	//shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/regular
 	suit_store = /obj/item/device/flashlight/pen
@@ -107,7 +106,6 @@ Chemist
 	gloves = /obj/item/clothing/gloves/pda/chemist
 	ears = /obj/item/device/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	//shoes = /obj/item/clothing/shoes/sneakers/white
 	suit =  /obj/item/clothing/suit/toggle/labcoat/chemist
 
 /*

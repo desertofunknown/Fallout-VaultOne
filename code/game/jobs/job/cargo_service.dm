@@ -118,7 +118,6 @@ Bartender
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/ammo_casing/shotgun/beanbag=4)
-	shoes = /obj/item/clothing/shoes/laceup
 
 /*
 Cook

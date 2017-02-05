@@ -247,26 +247,22 @@ obj
 					ammo
 						tier1
 							New()
-								switch(rand(1,5))
+								switch(rand(1,3))
 									if(1)
-										var/obj/item/weapon/storage/box/improshot/lb = new
-										lb.loc=src.loc
-										del src
-									if(2)
 										var/obj/item/ammo_box/c357/c38/lb = new
 										lb.loc=src.loc
 										del src
-									if(3)
+									if(2)
 										var/obj/item/ammo_box/a762/lb = new
 										lb.loc=src.loc
 										del src
-									if(4)
+									if(3)
 										var/obj/item/weapon/storage/box/rubbershot/lb = new
 										lb.loc=src.loc
 										del src
 						tier2
 							New()
-								switch(rand(1,6))
+								switch(rand(1,5))
 									if(1)
 										var/obj/item/ammo_box/magazine/m45/lb = new
 										lb.loc=src.loc
@@ -280,14 +276,10 @@ obj
 										lb.loc=src.loc
 										del src
 									if(4)
-										var/obj/item/weapon/storage/box/improshot_o/lb = new
-										lb.loc=src.loc
-										del src
-									if(5)
 										var/obj/item/weapon/storage/box/lethalshot/lb = new
 										lb.loc=src.loc
 										del src
-									if(6)
+									if(5)
 										var/obj/item/weapon/stock_parts/cell/device/laser/lb = new
 										lb.loc=src.loc
 										del src
@@ -521,7 +513,7 @@ obj
 					New()
 						switch(rand(1,5))
 							if(1)
-								var/obj/item/clothing/suit/armor/f13/advpowerarmor/lb = new
+								var/obj/item/clothing/suit/space/hardsuit/syndi/lb = new
 								lb.loc=src.loc
 								del src
 							if(2)

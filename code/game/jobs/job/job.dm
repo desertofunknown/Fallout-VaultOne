@@ -137,7 +137,7 @@
 	id = /obj/item/weapon/card/id
 	ears = /obj/item/device/radio/headset
 	back = /obj/item/weapon/storage/backpack
-	shoes = /obj/item/clothing/shoes/sneakers/black
+	shoes = /obj/item/clothing/shoes/jackboots
 
 	var/backpack = /obj/item/weapon/storage/backpack
 	var/satchel  = /obj/item/weapon/storage/backpack/satchel_norm

@@ -78,7 +78,7 @@ Station Engineer
 	gloves = /obj/item/clothing/gloves/pda/engineering
 	ears = /obj/item/device/radio/headset/headset_eng
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	shoes = /obj/item/clothing/shoes/workboots
+	shoes = /obj/item/clothing/shoes/sneakers/red
 	head = /obj/item/clothing/head/hardhat
 	r_pocket = /obj/item/device/t_scanner
 

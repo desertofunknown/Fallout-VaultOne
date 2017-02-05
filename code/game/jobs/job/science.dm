@@ -74,7 +74,6 @@ Scientist
 	gloves = /obj/item/clothing/gloves/pda/toxins
 	ears = /obj/item/device/radio/headset/headset_sci
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	//shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 
 /*
