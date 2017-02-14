@@ -143,6 +143,24 @@
 	return T
 
 /*
+ * False Vault R-Walls
+ */
+
+/obj/structure/falsewall/reinforcedvault
+	name = "vault reinforced wall"
+	desc = "A huge vault reinforced metal."
+	icon = 'icons/turf/walls/vault_reinforced_wall.dmi'
+	icon_state = "vaultwall"
+	walltype = "vaultwall"
+
+/obj/structure/falsewall/reinforcedvault/ChangeToWall(delete = 1)
+	var/turf/T = get_turf(src)
+	T.ChangeTurf(/turf/simulated/wall/r_wall/vault)
+	if(delete)
+		qdel(src)
+	return T
+
+/*
  * Uranium Falsewalls
  */
 

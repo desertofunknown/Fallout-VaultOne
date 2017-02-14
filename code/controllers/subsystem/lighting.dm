@@ -5,10 +5,11 @@ var/datum/subsystem/lighting/SSlighting
 /datum/subsystem/lighting
 	name = "Lighting"
 	priority = 1
-	wait = 5
-	dynamic_wait = 1
-	dwait_delta = 3
+	wait = 0.1
+
 	display = 5
+
+	can_fire = 1
 
 	var/list/changed_lights = list()		//list of all datum/light_source that need updating
 	var/changed_lights_workload = 0			//stats on the largest number of lights (max changed_lights.len)
@@ -83,7 +84,6 @@ var/datum/subsystem/lighting/SSlighting
 			changed_turfs.Remove(thing)
 	else
 		changed_turfs.Cut()
-
 	..()
 
 //Used to strip valid information from an existing instance and transfer it to the replacement. i.e. when a crash occurs

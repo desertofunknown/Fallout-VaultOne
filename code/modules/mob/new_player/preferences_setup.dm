@@ -17,6 +17,7 @@
 	if(!pref_species)
 		pref_species = new /datum/species/human()
 	backbag = 1
+	features = random_features()
 	age = rand(AGE_MIN,AGE_MAX)
 
 /datum/preferences/proc/update_preview_icon()
@@ -38,7 +39,7 @@
 
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob
-	var/highRankFlag = job_civilian_high | job_medsci_high | job_engsec_high | job_ncr_high
+	var/highRankFlag = job_civilian_high | job_medsci_high | job_engsec_high
 
 	if(job_civilian_low & ASSISTANT)
 		previewJob = SSjob.GetJob("Assistant")
@@ -50,8 +51,6 @@
 			highDeptFlag = MEDSCI
 		else if(job_engsec_high)
 			highDeptFlag = ENGSEC
-		else if(job_ncr_high)
-			highDeptFlag = NCR
 
 		for(var/datum/job/job in SSjob.occupations)
 			if(job.flag == highRankFlag && job.department_flag == highDeptFlag)

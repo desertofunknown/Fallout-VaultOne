@@ -61,7 +61,7 @@
 	response_help = "pets"
 	response_disarm = "gently pushes aside"
 	response_harm = "hits"
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/moleratmeat = 1)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/molerat = 1)
 	maxHealth = 50
 	health = 50
 	faction = list("wmob")
@@ -70,9 +70,9 @@
 	attacktext = "bites"
 	speed = 2
 
-/mob/living/simple_animal/hostile/gecko
-	name = "Gecko"
-	desc = "It's gecko, not G.E.C.K."
+/mob/living/simple_animal/hostile/gekkon
+	name = "Gekkon"
+	desc = "It's Gekkon, not G.E.C.K."
 	icon_state = "gekkon"
 	icon_living = "gekkon"
 	icon_dead = "gekkon_dead"
@@ -86,7 +86,7 @@
 	maxHealth = 60
 	health = 60
 	butcher_results = list(/obj/item/stack/sheet/gekkonhide = 1, \
-	/obj/item/weapon/reagent_containers/food/snacks/gekkonmeat = 1)
+	/obj/item/weapon/reagent_containers/food/snacks/meat/slab/gekkon = 1)
 	faction = list("wmobs")
 	melee_damage_lower = 10
 	melee_damage_upper = 15
@@ -108,7 +108,7 @@
 	response_help = "touches"
 	response_disarm = "tries to push aside"
 	response_harm = "hits"
-	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/deathmeat = 5)
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/deathclaw = 5)
 	maxHealth = 500
 	health = 500
 	force_threshold = 20
@@ -121,7 +121,7 @@
 
 /mob/living/simple_animal/hostile/badmutant
 	name = "Mutant"
-	desc = "A huge mutant"
+	desc = "A huge and ugly super mutant."
 	icon = 'icons/mob/hulk.dmi'
 	icon_state = "hulk_113_s"
 	icon_dead = "hulk_113_s"
@@ -133,8 +133,8 @@
 	response_help = "touches"
 	response_disarm = "tries to push aside"
 	response_harm = "hits"
-	maxHealth = 250
-	health = 250
+	maxHealth = 300
+	health = 300
 	force_threshold = 15
 	faction = list("wmaster")
 	melee_damage_lower = 25
@@ -151,3 +151,50 @@
 	if(!gibbed)
 		visible_message("<span class='danger'>\the [src] stops moving...</span>")
 	..()
+
+//RAd scorpion
+
+/mob/living/simple_animal/hostile/rad_scorpion
+	name = "giant rad scorpion"
+	desc = "Furry and black, it makes you shudder to look at it. This one has deep red eyes."
+	icon_state = "guard"
+	icon_living = "guard"
+	icon_dead = "guard_dead"
+	speak_emote = list("chitters")
+	//emote_hear = list("chitters")
+	speak_chance = 5
+	turns_per_move = 5
+	see_in_dark = 10
+	butcher_results = list(/obj/item/weapon/reagent_containers/food/snacks/meat/slab/spider = 2, /obj/item/weapon/reagent_containers/food/snacks/spiderleg = 8)
+	response_help  = "pets"
+	response_disarm = "gently pushes aside"
+	response_harm   = "hits"
+	maxHealth = 200
+	health = 200
+	melee_damage_lower = 15
+	melee_damage_upper = 20
+	faction = list("scorpions")
+	var/busy = 0
+	pass_flags = PASSTABLE
+	move_to_delay = 6
+	ventcrawler = 2
+	attacktext = "bites"
+	attack_sound = 'sound/weapons/bite.ogg'
+	unique_name = 1
+	gold_core_spawnable = 1
+	see_invisible = SEE_INVISIBLE_MINIMUM
+	see_in_dark = 4
+
+/mob/living/simple_animal/hostile/rad_scorpion/blue
+	name = "giant rad scorpion"
+	desc = "Furry and black, it makes you shudder to look at it. This one has deep red eyes."
+	icon_state = "radscorpion"
+	icon_living = "radscorpion"
+	icon_dead = "radscorpion_d"
+	icon_gib = "radscorpion_g"
+	maxHealth = 200
+	health = 200
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	move_to_delay = 5
+	faction = list("scorpions")

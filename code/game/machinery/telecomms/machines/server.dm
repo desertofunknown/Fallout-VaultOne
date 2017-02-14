@@ -138,22 +138,22 @@
 
 /obj/machinery/telecomms/server/presets/science
 	id = "Science Server"
-	freq_listening = list(SCI_FREQ)
+	freq_listening = list(SCI_FREQ, VLT_FREQ)
 	autolinkers = list("science")
 
 /obj/machinery/telecomms/server/presets/medical
 	id = "Medical Server"
-	freq_listening = list(MED_FREQ)
+	freq_listening = list(MED_FREQ, ENCL_FREQ)
 	autolinkers = list("medical")
 
 /obj/machinery/telecomms/server/presets/supply
 	id = "Supply Server"
-	freq_listening = list(SUPP_FREQ)
+	freq_listening = list(SUPP_FREQ, DEN_FREQ)
 	autolinkers = list("supply")
 
 /obj/machinery/telecomms/server/presets/service
 	id = "Service Server"
-	freq_listening = list(SERV_FREQ)
+	freq_listening = list(SERV_FREQ, LEG_FREQ)
 	autolinkers = list("service")
 
 /obj/machinery/telecomms/server/presets/common
@@ -170,7 +170,7 @@
 
 /obj/machinery/telecomms/server/presets/command
 	id = "Command Server"
-	freq_listening = list(COMM_FREQ)
+	freq_listening = list(COMM_FREQ, NCR_FREQ)
 	autolinkers = list("command")
 
 /obj/machinery/telecomms/server/presets/engineering

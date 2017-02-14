@@ -96,7 +96,10 @@
 /mob/living/simple_animal/handle_regular_status_updates()
 	if(..()) //alive
 		if(health < 1)
-			death()
+			if(getBruteLoss() > maxHealth*1.1 && prob(25))
+				gib()
+			else
+				death()
 			return 0
 		return 1
 
@@ -189,37 +192,46 @@
 			//world << "changed from [bodytemperature] by [diff] to [bodytemperature + diff]"
 			bodytemperature += diff
 
+		var/tox = 0
+		var/oxy = 0
+		var/n2 = 0
+		var/co2 = 0
 		if(istype(T,/turf/simulated))
 			var/turf/simulated/ST = T
 			if(ST.air)
-				var/tox = ST.air.toxins
-				var/oxy = ST.air.oxygen
-				var/n2  = ST.air.nitrogen
-				var/co2 = ST.air.carbon_dioxide
-
-				if(atmos_requirements["min_oxy"] && oxy < atmos_requirements["min_oxy"])
-					atmos_suitable = 0
-				else if(atmos_requirements["max_oxy"] && oxy > atmos_requirements["max_oxy"])
-					atmos_suitable = 0
-				else if(atmos_requirements["min_tox"] && tox < atmos_requirements["min_tox"])
-					atmos_suitable = 0
-				else if(atmos_requirements["max_tox"] && tox > atmos_requirements["max_tox"])
-					atmos_suitable = 0
-				else if(atmos_requirements["min_n2"] && n2 < atmos_requirements["min_n2"])
-					atmos_suitable = 0
-				else if(atmos_requirements["max_n2"] && n2 > atmos_requirements["max_n2"])
-					atmos_suitable = 0
-				else if(atmos_requirements["min_co2"] && co2 < atmos_requirements["min_co2"])
-					atmos_suitable = 0
-				else if(atmos_requirements["max_co2"] && co2 > atmos_requirements["max_co2"])
-					atmos_suitable = 0
-
-				if(!atmos_suitable)
-					adjustBruteLoss(unsuitable_atmos_damage)
-
+				tox = ST.air.toxins
+				oxy = ST.air.oxygen
+				n2  = ST.air.nitrogen
+				co2 = ST.air.carbon_dioxide
+		else if(istype(T,/turf/ground))
+			tox = T.toxins
+			oxy = T.oxygen
+			n2  = T.nitrogen
+			co2 = T.carbon_dioxide
 		else
 			if(atmos_requirements["min_oxy"] || atmos_requirements["min_tox"] || atmos_requirements["min_n2"] || atmos_requirements["min_co2"])
 				adjustBruteLoss(unsuitable_atmos_damage)
+				return
+
+		if(atmos_requirements["min_oxy"] && oxy < atmos_requirements["min_oxy"])
+			atmos_suitable = 0
+		else if(atmos_requirements["max_oxy"] && oxy > atmos_requirements["max_oxy"])
+			atmos_suitable = 0
+		else if(atmos_requirements["min_tox"] && tox < atmos_requirements["min_tox"])
+			atmos_suitable = 0
+		else if(atmos_requirements["max_tox"] && tox > atmos_requirements["max_tox"])
+			atmos_suitable = 0
+		else if(atmos_requirements["min_n2"] && n2 < atmos_requirements["min_n2"])
+			atmos_suitable = 0
+		else if(atmos_requirements["max_n2"] && n2 > atmos_requirements["max_n2"])
+			atmos_suitable = 0
+		else if(atmos_requirements["min_co2"] && co2 < atmos_requirements["min_co2"])
+			atmos_suitable = 0
+		else if(atmos_requirements["max_co2"] && co2 > atmos_requirements["max_co2"])
+			atmos_suitable = 0
+
+		if(!atmos_suitable)
+			adjustBruteLoss(unsuitable_atmos_damage)
 
 	handle_temperature_damage()
 
@@ -229,20 +241,15 @@
 	else if(bodytemperature > maxbodytemp)
 		adjustBruteLoss(3)
 
-/mob/living/simple_animal/gib(animation = 1)
-	var/prev_lying = lying
-	death(1)
+/mob/living/simple_animal/gib(animation = 0)
+	if(icon_gib)
+		flick(icon_gib, src)
+	if(butcher_results)
+		for(var/path in butcher_results)
+			for(var/i = 1; i <= butcher_results[path];i++)
+				new path(src.loc)
+	..()
 
-	if(buckled)
-		buckled.unbuckle_mob() //to update alien nest overlay.
-
-	var/atom/movable/overlay/animate = setup_animation(animation, prev_lying)
-	if(animate)
-		gib_animation(animate)
-
-	spawn_gibs()
-
-	end_animation(animate) // Will qdel(src)
 
 /mob/living/simple_animal/blob_act()
 	adjustBruteLoss(20)

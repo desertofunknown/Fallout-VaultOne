@@ -70,19 +70,19 @@
 /obj/machinery/telecomms/bus/preset_one
 	id = "Bus 1"
 	network = "tcommsat"
-	freq_listening = list(SCI_FREQ, MED_FREQ)
+	freq_listening = list(SCI_FREQ, MED_FREQ, VLT_FREQ, ENCL_FREQ)
 	autolinkers = list("processor1", "science", "medical")
 
 /obj/machinery/telecomms/bus/preset_two
 	id = "Bus 2"
 	network = "tcommsat"
-	freq_listening = list(SUPP_FREQ,SERV_FREQ)
+	freq_listening = list(SUPP_FREQ,SERV_FREQ, DEN_FREQ, LEG_FREQ)
 	autolinkers = list("processor2", "supply", "service")
 
 /obj/machinery/telecomms/bus/preset_three
 	id = "Bus 3"
 	network = "tcommsat"
-	freq_listening = list(SEC_FREQ, COMM_FREQ)
+	freq_listening = list(SEC_FREQ, COMM_FREQ, NCR_FREQ)
 	autolinkers = list("processor3", "security", "command")
 
 /obj/machinery/telecomms/bus/preset_four

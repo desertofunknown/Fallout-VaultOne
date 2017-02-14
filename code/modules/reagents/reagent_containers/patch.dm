@@ -5,7 +5,7 @@
 	icon_state = "bandaid"
 	item_state = "bandaid"
 	possible_transfer_amounts = list()
-	volume = 60
+	volume = 120
 	apply_type = PATCH
 	apply_method = "apply"
 
@@ -34,26 +34,27 @@
 /obj/item/weapon/reagent_containers/pill/patch/stimpak
 	name = "Stimpak"
 	desc = "Stimpak, or stimulation delivery package, is a type of hand-held medication used for healing the body. This item consists of a syringe for containing and delivering the medication and a gauge for measuring the status of the stimpak's contents. When the medicine is injected, it provides immediate healing of the body's minor wounds."
-	list_reagents = list("styptic_powder" = 30, "silver_sulfadiazine" = 30)
+	list_reagents = list("styptic_powder" = 30, "silver_sulfadiazine" = 30, "omnizine" = 10)
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_15"
 	icon_state = "15"
 
+/obj/item/weapon/reagent_containers/pill/patch/healpowder
+	name = "Healing powder"
+	desc = "Soldiers of the Legion use healing powder as their primary source of medicine and healing, since the Legion bans the use of other chems, such as stimpaks."
+	list_reagents = list("styptic_powder" = 15, "silver_sulfadiazine" = 15, "omnizine" = 5)
+	icon = 'icons/obj/syringe.dmi'
+	item_state = "bandaid"
+	icon_state = "heal_powder"
+
 /obj/item/weapon/reagent_containers/pill/patch/supstimpak
 	name = "SuperStimpak"
 	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
-	list_reagents = list("styptic_powder" = 60, "silver_sulfadiazine" = 60)
+	list_reagents = list("styptic_powder" = 60, "silver_sulfadiazine" = 60, "omnizine" = 15)
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_15"
 	icon_state = "superstim_15"
 
-/obj/item/weapon/reagent_containers/pill/patch/healpowder
-	name = "Healing powder"
-	desc = "Soldiers of the Legion use healing powder as their primary source of medicine and healing, since the Legion bans the use of other chems, such as stimpaks."
-	list_reagents = list("styptic_powder" = 15, "silver_sulfadiazine" = 15, "space_drugs" = 5)
-	icon = 'icons/obj/syringe.dmi'
-	item_state = "bandaid"
-	icon_state = "heal_powder"
 
 /obj/item/weapon/reagent_containers/pill/patch/radaway
 	name = "RadAway"
@@ -80,7 +81,7 @@
 	icon_state = "psycho"
 
 /obj/item/weapon/reagent_containers/pill/patch/medx
-	name = "Med-X"
+	name = "Mex-X"
 	desc = "Med-X is a potent opiate analgesic that binds to opioid receptors in the brain and central nervous system, reducing the perception of pain as well as the emotional response to pain. Essentially, it is a painkiller delivered by a hypodermic needle."
 	list_reagents = list("methamphetamine" = 10, "krokodil" = 10, "styptic_powder" = 10, "silver_sulfadiazine" = 10)
 	icon = 'icons/obj/syringe.dmi'

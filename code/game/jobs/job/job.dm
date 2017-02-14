@@ -15,7 +15,9 @@
 	var/department_flag = 0
 
 	//Players will be allowed to spawn in as jobs that are set to "Station"
-	var/faction = "None"
+	var/faction = "Wasteland"
+
+	var/status = "Wastelander"
 
 	//How many players can be this job
 	var/total_positions = 0
@@ -40,6 +42,10 @@
 	var/minimal_player_age = 0
 
 	var/outfit = null
+
+	var/whitelist_on = 0
+
+	var/donaters = 0
 
 //Only override this proc
 /datum/job/proc/equip_items(mob/living/carbon/human/H)
@@ -135,9 +141,16 @@
 
 	uniform = /obj/item/clothing/under/color/grey
 	id = /obj/item/weapon/card/id
-	ears = /obj/item/device/radio/headset
+	ears = /obj/item/device/radio/headset/headset_vlt
 	back = /obj/item/weapon/storage/backpack
-	shoes = /obj/item/clothing/shoes/jackboots
+	shoes = /obj/item/clothing/shoes/sneakers/black
+
+	var/list/simple_start_weapon = list(/obj/item/weapon/crowbar,/obj/item/weapon/golf,
+				/obj/item/weapon/hatchet,/obj/item/weapon/shovel,
+				/obj/item/weapon/wrench,
+				/obj/item/weapon/pipe, /obj/item/weapon/melee/chainofcommand,
+				/obj/item/weapon/gavelhammer,/obj/item/weapon/cultivator,
+				/obj/item/weapon/extinguisher)
 
 	var/backpack = /obj/item/weapon/storage/backpack
 	var/satchel  = /obj/item/weapon/storage/backpack/satchel_norm

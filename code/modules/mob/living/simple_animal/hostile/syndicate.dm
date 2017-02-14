@@ -87,21 +87,8 @@
 	icon_living = "syndicateranged"
 	casingtype = /obj/item/ammo_casing/c10mm
 	projectilesound = 'sound/f13weapons/10mm_fire_01.ogg'
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/smg10mm
 
-/mob/living/simple_animal/hostile/syndicate/ranged/power
-	name = "Enclave Base Commander"
-	desc = "He looks like a meaaaaannnn motherfuckers."
-	icon_state = "syndicaterangedpsace"
-	icon_living = "syndicaterangedpsace"
-	casingtype = /obj/item/ammo_casing/a762
-	projectilesound = 'sound/weapons/Gunshot_smg.ogg'
-	weapon1 = /obj/item/weapon/gun/projectile/automatic/l6_saw/unrestricted
-	corpse = /obj/effect/landmark/mobcorpse/syndicatecommando
-	maxHealth = 3500
-	health = 3500
-	melee_damage_lower = 25
-	melee_damage_upper = 30
+	weapon1 = /obj/item/weapon/gun/projectile/automatic/smg10mm
 
 /mob/living/simple_animal/hostile/syndicate/ranged/space
 	icon_state = "syndicaterangedpsace"

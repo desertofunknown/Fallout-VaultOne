@@ -30,6 +30,13 @@
 	if(!canconsume(M, user))
 		return 0
 
+	if(M.water > THIRST_LEVEL_FULL)
+		if(M == user)
+			M << "<span class='notice'>You do not want to drink.</span>"
+		else
+			user << "<span class='notice'>[M] do not want to drink.</span>"
+		return 0
+
 	if(M == user)
 		M << "<span class='notice'>You swallow a gulp of [src].</span>"
 
@@ -161,35 +168,36 @@
 	icon_state = "ramen"
 	list_reagents = list("dry_ramen" = 30)
 
-/obj/item/weapon/reagent_containers/food/drinks/beer
+/obj/item/weapon/reagent_containers/food/drinks/bottle/beer
 	name = "Space Beer"
 	desc = "Beer. In space."
 	icon_state = "beer"
 	list_reagents = list("beer" = 30)
 
-/obj/item/weapon/reagent_containers/food/drinks/ale
+/obj/item/weapon/reagent_containers/food/drinks/bottle/ale
 	name = "Magm-Ale"
 	desc = "A true dorf's drink of choice."
 	icon_state = "alebottle"
 	item_state = "beer"
 	list_reagents = list("ale" = 30)
 
-/obj/item/weapon/reagent_containers/food/drinks/nukacola //Attractive but dangerous.
+/obj/item/weapon/reagent_containers/food/drinks/bottle/sunset //Howdy, pardner!
+	name = "Sunset Sarsaparilla"
+	desc = "A traditional radiation-free carbonated beverage of a root-beer-type.<br>Tastes like sunshine!"
+	icon_state = "sunset"
+	item_state = "beer"
+	list_reagents = list("beer" = 10, "mine_salve" = 10, "potass_iodide" = 10)
+
+/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola //Attractive but dangerous.
 	name = "Nuka-Cola"
 	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state."
 	icon_state = "nukacola"
-	item_state = "nukacola"
-	list_reagents = list("cola" = 20, "mercury" = 5, "omnizine" = 5)
+	item_state = "beer"
+	list_reagents = list("cola" = 20, "nuka_cola" = 1, "mercury" = 5,)
 
-/obj/item/weapon/reagent_containers/food/drinks/nukacola/radioactive //Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive!
+/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola/radioactive //Whoa, oh, oh, oh, oh, whoa, oh, oh, oh, I'm radioactive, radioactive!
 	desc = "The most popular flavored soft drink in the United States before the Great War.<br>It was preserved in a fairly pristine state.<br>The bottle is slightly glowing."
-	list_reagents = list("cola" = 15, "radium" = 5,, "omnizine" = 5)
-
-/obj/item/weapon/reagent_containers/food/drinks/nukacola/quantium
-	desc = "Nuka-Cola Quantum - (the Quantum included a mild radioactive strontium isotope, (and an eighteenth fruit flavor - pomegranate). The bottle is really glowing."
-	icon_state = "nukacolaquantum"
-	item_state = "nukacolaquantum"
-	list_reagents = list("cola" = 15, "radium" = 10, "omnizine" = 15)
+	list_reagents = list("cola" = 15, "radium" = 10,)
 
 //Paper cup
 
@@ -227,6 +235,14 @@
 	icon_state = "flask"
 	materials = list(MAT_SILVER=500)
 	volume = 60
+
+/obj/item/weapon/reagent_containers/food/drinks/flask/survival
+	name = "metal flask"
+	desc = "A metal flask with water, useful in waste's."
+	icon_state = "flask"
+	materials = list(MAT_GLASS=500)
+	volume = 60
+	list_reagents = list("water" = 30, "silver_sulfadiazine" = 20, "charcoal" = 10)
 
 /obj/item/weapon/reagent_containers/food/drinks/flask/det
 	name = "detective's flask"

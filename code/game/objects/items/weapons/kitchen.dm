@@ -62,7 +62,6 @@
 	origin_tech = "materials=1"
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	sharpness = IS_SHARP_ACCURATE
-	drawsound = 'sound/items/unholster_knife.ogg'
 
 /obj/item/weapon/kitchen/knife/suicide_act(mob/user)
 	user.visible_message(pick("<span class='suicide'>[user] is slitting \his wrists with the [src.name]! It looks like \he's trying to commit suicide.</span>", \
@@ -87,15 +86,6 @@
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = 3
 
-/obj/item/weapon/kitchen/knife/combat
-	name = "combat knife"
-	icon_state = "combatknife"
-	item_state = "knife"
-	desc = "A standard issue NCR fighting utility knife. It's sharp."
-	force = 20
-	throwforce = 20
-	origin_tech = "materials=3;combat=4"
-
 /obj/item/weapon/kitchen/rollingpin
 	name = "rolling pin"
 	desc = "Used to knock out the Bartender."
@@ -106,6 +96,5 @@
 	throw_range = 7
 	w_class = 3
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
-	drawsound = null
 
 /* Trays  moved to /obj/item/weapon/storage/bag */

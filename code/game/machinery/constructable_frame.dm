@@ -219,28 +219,7 @@
 						return 1
 				user << "<span class='warning'>You cannot add that to the machine!</span>"
 				return 0
-/obj/item/weapon/circuitboard/machine/proc/apply_default_parts(obj/machinery/M)
-	if(!req_components)
-		return
 
-	M.component_parts = list(src) // List of components always contains a board
-	loc = null
-
-	for(var/comp_path in req_components)
-		var/comp_amt = req_components[comp_path]
-		if(!comp_amt)
-			continue
-
-		if(def_components && def_components[comp_path])
-			comp_path = def_components[comp_path]
-
-		if(ispath(comp_path, /obj/item/stack))
-			M.component_parts += new comp_path(null, comp_amt)
-		else
-			for(var/i in 1 to comp_amt)
-				M.component_parts += new comp_path(null)
-
-	M.RefreshParts()
 
 //Machine Frame Circuit Boards
 /*Common Parts: Parts List: Ignitor, Timer, Infra-red laser, Infra-red sensor, t_scanner, Capacitor, Valve, sensor unit,
@@ -248,13 +227,7 @@ micro-manipulator, console screen, beaker, Microlaser, matter bin, power cells.
 Note: Once everything is added to the public areas, will add m_amt and g_amt to circuit boards since autolathe won't be able
 to destroy them and players will be able to make replacements.
 */
-/obj/item/weapon/circuitboard/
-	var/list/req_components = null
-	// Components required by the machine.
-	// Example: list(/obj/item/weapon/stock_parts/matter_bin = 5)
-	var/list/def_components = null
-	// Default replacements for req_components, to be used in apply_default_parts instead of req_components types
-	// Example: list(/obj/item/weapon/stock_parts/matter_bin = /obj/item/weapon/stock_parts/matter_bin/super)
+
 /obj/item/weapon/circuitboard/vendor
 	name = "circuit board (Booze-O-Mat Vendor)"
 	build_path = /obj/machinery/vending/boozeomat

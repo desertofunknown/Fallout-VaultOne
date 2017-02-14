@@ -173,7 +173,7 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_helm"
 	item_color = "syndi"
-	armor = list(melee = 90, bullet = 70, laser = 70,energy = 70, bomb = 50, bio = 100, rad = 50)
+	armor = list(melee = 40, bullet = 50, laser = 30, energy = 15, bomb = 35, bio = 100, rad = 50)
 	on = 0
 	var/obj/item/clothing/suit/space/hardsuit/syndi/linkedsuit = null
 	action_button_name = "Toggle Helmet Mode"
@@ -244,10 +244,9 @@
 	icon_state = "hardsuit1-syndi"
 	item_state = "syndie_hardsuit"
 	item_color = "syndi"
-	w_class = 4
-	slowdown = 1
+	w_class = 3
 	action_button_name = "Toggle Helmet"
-	armor = list(melee = 90, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 90)
+	armor = list(melee = 90, bullet = 60, laser = 60, energy = 70, bomb = 70, bio = 100, rad = 50)
 	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/melee/energy/sword/saber,/obj/item/weapon/restraints/handcuffs,/obj/item/weapon/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi
 

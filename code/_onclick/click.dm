@@ -110,8 +110,6 @@
 		// No adjacency needed
 		if(W)
 			var/resolved = A.attackby(W,src)
-			for(var/obj/item/weapon/gun/G in range(5,src))
-				G.setgundamage(G.damageG,G.damageA,G.damageS,G.rangeG)
 			if(!resolved && A && W)
 				W.afterattack(A,src,1,params) // 1 indicates adjacency
 		else

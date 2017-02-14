@@ -9,7 +9,12 @@
 	var/to_be_destroyed = 0 //Used for fire, if a melting temperature was reached, it will be destroyed
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 
-
+/turf/simulated/New()
+	..()
+	if(istype(get_area(src),/area/awaymission))
+		baseturf = /turf/ground/mountain
+	else
+		baseturf = /turf/ground/desert
 
 /turf/simulated/proc/burn_tile()
 
@@ -58,8 +63,24 @@
 
 
 /turf/simulated/ChangeTurf(var/path)
-	. = ..()
+	var/bt = baseturf
+	var/bti = baseturf_icon
+	var/btd = baseturf_dir
+
+	var/turf/t = ..()
+
 	smooth_icon_neighbors(src)
+
+	if(path == bt)
+		if(bti)
+			t.icon_state = bti
+			t.dir = btd
+	else
+		t.baseturf = bt
+		if(bti)
+			t.baseturf_icon = bti
+			t.baseturf_dir = btd
+	return t
 
 /turf/simulated/proc/is_shielded()
 

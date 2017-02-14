@@ -186,7 +186,7 @@
 		terminal = null
 
 
-/*/obj/machinery/power/smes/update_icon()
+/obj/machinery/power/smes/update_icon()
 	overlays.Cut()
 	if(stat & BROKEN)	return
 
@@ -222,26 +222,6 @@
 	var/clevel = chargedisplay()
 	if(clevel>0)
 		overlays += smesImageCache[clevel]
-	return*/
-/obj/machinery/power/smes/update_icon()
-	overlays.Cut()
-	if(stat & BROKEN)	return
-
-	if(panel_open)
-		return
-
-
-	overlays += image('icons/obj/power.dmi', "smes-op[outputting]")
-
-	if(inputting)
-		overlays += image('icons/obj/power.dmi', "smes-oc1")
-	else
-		if(input_attempt)
-			overlays += image('icons/obj/power.dmi', "smes-oc0")
-
-	var/clevel = chargedisplay()
-	if(clevel>0)
-		overlays += image('icons/obj/power.dmi', "smes-og[clevel]")
 	return
 
 

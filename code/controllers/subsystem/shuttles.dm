@@ -83,28 +83,28 @@ var/datum/subsystem/shuttle/SSshuttle
 
 /datum/subsystem/shuttle/proc/requestEvac(mob/user, call_reason)
 	if(!emergency)
-		throw EXCEPTION("requestEvac(): There is no emergency train! The game will be unresolvable. This is likely due to a mapping error")
+		throw EXCEPTION("requestEvac(): There is no emergency shuttle! The game will be unresolvable. This is likely due to a mapping error")
 		return
 
 	if(world.time - round_start_time < config.shuttle_refuel_delay)
-		user << "The emergency train is being repaired. Please wait another [abs(round(((world.time - round_start_time) - config.shuttle_refuel_delay)/600))] minutes before trying again."
+		user << "The emergency shuttle is refueling. Please wait another [abs(round(((world.time - round_start_time) - config.shuttle_refuel_delay)/600))] minutes before trying again."
 		return
 
 	switch(emergency.mode)
 		if(SHUTTLE_RECALL)
-			user << "The emergency train may not be called while returning to Vault-Tec emergency hub."
+			user << "The emergency shuttle may not be called while returning to Centcom."
 			return
 		if(SHUTTLE_CALL)
-			user << "The emergency train is already on its way."
+			user << "The emergency shuttle is already on its way."
 			return
 		if(SHUTTLE_DOCKED)
-			user << "The emergency train is already here."
+			user << "The emergency shuttle is already here."
 			return
 		if(SHUTTLE_ESCAPE)
-			user << "The emergency train is moving away to a safe distance."
+			user << "The emergency shuttle is moving away to a safe distance."
 			return
 		if(SHUTTLE_STRANDED)
-			user << "The emergency train has been disabled by Vault-Tec."
+			user << "The emergency shuttle has been disabled by Centcom."
 			return
 
 	call_reason = trim(html_encode(call_reason))

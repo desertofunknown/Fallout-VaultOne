@@ -69,12 +69,6 @@ var/list/sqrtTable = list(1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 
 /proc/Lerp(a, b, amount = 0.5)
 	return a + (b - a) * amount
 
-//Calculates the sum of a list of numbers.
-/proc/Sum(var/list/data)
-	. = 0
-	for(var/val in data)
-		.+= val
-
 /proc/Mean(...)
 	var/values 	= 0
 	var/sum		= 0

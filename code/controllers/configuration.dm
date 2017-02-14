@@ -33,28 +33,27 @@
 	var/log_adminchat = 0				// log admin chat messages
 	var/log_pda = 0						// log pda messages
 	var/log_hrefs = 0					// logs all links clicked in-game. Could be used for debugging and tracking down exploits
-
 	var/sql_enabled = 0					// for sql switching
-
-	var/allow_admin_ooccolor = 0		// Allows admins with relevant permissions to have their own ooc colour
-	var/allow_vote_restart = 0 			// allow votes to restart
+	var/allow_admin_ooccolor = 1		// Allows admins with relevant permissions to have their own ooc colour
+	var/allow_vote_restart = 1 			// allow votes to restart
 	var/allow_vote_mode = 0				// allow votes to change mode
-	var/vote_delay = 6000				// minimum time between voting sessions (deciseconds, 10 minute default)
+	var/vote_delay = 60000				// minimum time between voting sessions (deciseconds, 10 minute default)
 	var/vote_period = 600				// length of voting period (deciseconds, default 1 minute)
 	var/vote_no_default = 0				// vote does not default to nochange/norestart (tbi)
 	var/vote_no_dead = 0				// dead people can't vote (tbi)
-
 	var/del_new_on_log = 1				// del's new players if they log before they spawn in
 	var/allow_Metadata = 0				// Metadata is supported.
 	var/popup_admin_pm = 0				//adminPMs to non-admins show in a pop-up 'reply' window when set to 1.
-	var/log_world_topic = 0
-	var/fps = 20
+	var/fps = 10
 	var/allow_holidays = 0				//toggles whether holiday-specific content should be used
 
-	var/respawn = 1
-	var/respawn_timer = 3000
+	var/sun_enabled = 1
+	var/max_sunlight = 10
+	var/min_sunlight = 0.3
+	var/time_of_day_rate = 18000
 
-	var/hostedby = null
+	var/hostedby = "Enclave"
+	var/respawn = 1
 	var/guest_jobban = 1
 	var/usewhitelist = 0
 	var/kick_inactive = 0				//force disconnect for inactive players
@@ -63,15 +62,15 @@
 	var/minimal_access_threshold = 0	//If the number of players is larger than this threshold, minimal access will be turned on.
 	var/jobs_have_minimal_access = 0	//determines whether jobs use minimal access or expanded access.
 	var/jobs_have_maint_access = 0 		//Who gets maint access?  See defines above.
-	var/sec_start_brig = 0				//makes sec start in brig or dept sec post
+	var/sec_start_brig = 0				//makes sec start in brig or dept sec posts
 
 	var/server
 	var/banappeals
-	var/wikiurl = "http://wasteland.expert" // default wiki link
-	var/forumurl = "http://longedprey.x10host.com/index.php" // default forums
-	var/rulesurl = "http://longedprey.x10host.com/showthread.php?tid=3" // default rules
-	var/githuburl = "https://github.com/Lykayos/Fallout-13-EN" //default github
-
+	var/wikiurl = "http://www.fallss.esy.es/wiki/doku.php?id=ru:start" // default wiki link
+	var/forumurl = "https://vk.com/the_fallout_13" // default forums
+	var/rulesurl = "html/rules.html" // default rules
+	var/githuburl = "https://bitbucket.org/Jackerzz/fallout/issues?status=new&status=open" //default github
+	var/discordurl = "https://discord.gg/fECUGbv"
 	var/forbid_singulo_possession = 0
 	var/useircbot = 0
 
@@ -89,7 +88,6 @@
 	var/extreme_popcap_message	= "The server is currently serving a high number of users, find alternative servers."
 
 	//game_options.txt configs
-	var/cross_name = "Other server"
 	var/force_random_names = 0
 	var/list/mode_names = list()
 	var/list/modes = list()				// allowed modes
@@ -128,12 +126,12 @@
 	var/no_summon_magic		//Fun
 	var/no_summon_events	//Allowed
 
-	var/alert_desc_green = "All threats to the vault have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
-	var/alert_desc_blue_upto = "The vault has received reliable information about possible hostile activity in or near the vault. Security staff may have weapons visible, random searches are permitted."
+	var/alert_desc_green = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
+	var/alert_desc_blue_upto = "The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted."
 	var/alert_desc_blue_downto = "The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed."
-	var/alert_desc_red_upto = "There is an immediate serious threat to the vault. Security may have weapons unholstered at all times. Random searches are allowed and advised."
-	var/alert_desc_red_downto = "The vault's destruction has been averted. There is still however an immediate serious threat to the vault. Security may have weapons unholstered at all times, random searches are allowed and advised."
-	var/alert_desc_delta = "Destruction of the vault is imminent. All crew are instructed to obey all instructions given by the Overseer. Any violations of these orders can be punished by death. This is not a drill."
+	var/alert_desc_red_upto = "There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised."
+	var/alert_desc_red_downto = "The station's destruction has been averted. There is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised."
+	var/alert_desc_delta = "Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill."
 
 	var/health_threshold_crit = 0
 	var/health_threshold_dead = -100
@@ -143,8 +141,8 @@
 	var/revival_brain_life = -1
 
 	var/rename_cyborg = 0
-	var/ooc_during_round = 0
-	var/emojis = 0
+	var/ooc_during_round = 1
+	var/emojis = 1
 
 	//Used for modifying movement speed for mobs.
 	//Unversal modifiers
@@ -545,7 +543,7 @@
 				if("assistant_cap")
 					config.assistant_cap			= text2num(value)
 				if("starlight")
-					config.starlight			= 1
+					config.starlight				= 1
 				if("grey_assistants")
 					config.grey_assistants			= 1
 				if("no_summon_guns")
@@ -556,6 +554,14 @@
 					config.no_summon_events			= 1
 				if("reactionary_explosions")
 					config.reactionary_explosions	= 1
+				if("sun_enabled")
+					config.sun_enabled				= text2num(value)
+				if("max_sunlight")
+					config.max_sunlight				= text2num(value)
+				if("min_sunlight")
+					config.min_sunlight				= text2num(value)
+				if("time_of_day_rate")
+					config.time_of_day_rate			= text2num(value)
 				if("bombcap")
 					var/BombCap = text2num(value)
 					if (!BombCap)

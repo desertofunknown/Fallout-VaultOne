@@ -472,7 +472,7 @@ var/list/all_supply_groups = list(supply_emergency,supply_security,supply_engine
 					/obj/item/clothing/head/hardhat)
 	cost = 10
 	containername = "engineering gear crate"
-
+/*
 /datum/supply_packs/engineering/solar
 	name = "Solar Pack Crate"
 	contains  = list(/obj/item/solar_assembly,
@@ -501,7 +501,7 @@ var/list/all_supply_groups = list(supply_emergency,supply_security,supply_engine
 					/obj/item/weapon/paper/solar)
 	cost = 20
 	containername = "solar pack crate"
-
+*/
 /datum/supply_packs/engineering/engine
 	name = "Emitter Crate"
 	contains = list(/obj/machinery/power/emitter,
@@ -808,12 +808,12 @@ var/list/all_supply_groups = list(supply_emergency,supply_security,supply_engine
 					/obj/item/weapon/reagent_containers/food/drinks/shaker,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/patron,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager,
-					/obj/item/weapon/reagent_containers/food/drinks/ale,
-					/obj/item/weapon/reagent_containers/food/drinks/ale,
-					/obj/item/weapon/reagent_containers/food/drinks/beer,
-					/obj/item/weapon/reagent_containers/food/drinks/beer,
-					/obj/item/weapon/reagent_containers/food/drinks/beer,
-					/obj/item/weapon/reagent_containers/food/drinks/beer)
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/ale,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/ale,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/beer,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/beer,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/beer,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/beer)
 	cost = 20
 	containername = "party equipment"
 

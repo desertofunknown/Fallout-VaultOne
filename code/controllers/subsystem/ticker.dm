@@ -52,7 +52,7 @@ var/datum/subsystem/ticker/ticker
 /datum/subsystem/ticker/New()
 	NEW_SS_GLOBAL(ticker)
 
-	login_music = pickweight(list('sound/f13music/AKISS.ogg' = 49, 'sound/f13music/lobby1.ogg' = 49, 'sound/f13music/lobby2.ogg' = 49, 'sound/f13music/lobby3.ogg' = 49, 'sound/f13music/lobby4.ogg' = 49, 'sound/f13music/lobby5.ogg' = 49, 'sound/f13music/lobby6.ogg' = 49))
+	login_music = pickweight(list('sound/f13music/AKISS.ogg' = 5, 'sound/f13music/20CAR.ogg' = 5, 'sound/f13music/17ARROYO.ogg' = 5, 'sound/f13music/13CARVRN.ogg' = 5, 'sound/f13music/f13standby.ogg' = 40, 'sound/f13music/11-the-brotherhood-of-steel.ogg' = 40)) // choose title music!
 	if(SSevent.holidays && SSevent.holidays[APRIL_FOOLS])
 		login_music = 'sound/f13music/mysterious_stranger.ogg'
 
@@ -69,7 +69,7 @@ var/datum/subsystem/ticker/ticker
 		if(GAME_STATE_STARTUP)
 			timeLeft = config.lobby_countdown * 10
 			world << "<b><font color='blue'>Welcome to the pre-game lobby!</font></b>"
-			world << "Please, setup your character and select ready. Game will start in [config.lobby_countdown] seconds"
+			world << "Please, setup your character and select ready, and prepare to survive. Game will start in [config.lobby_countdown] seconds"
 			current_state = GAME_STATE_PREGAME
 
 		if(GAME_STATE_PREGAME)
@@ -446,11 +446,9 @@ var/datum/subsystem/ticker/ticker
 	return 1
 
 /datum/subsystem/ticker/proc/send_random_tip()
-	return
-	//var/list/randomtips = file2list("config/tips.txt")
-	//if(randomtips.len)//lmao no more of this
-	//	world << "<font color='purple'><b>Tip of the round: </b>[html_encode(pick(randomtips))]</font>"
-
+	var/list/randomtips = file2list("config/tips.txt")
+	if(randomtips.len)
+		world << "<font color='purple'><b>Tip of the round: </b>[html_encode(pick(randomtips))]</font>"
 
 /datum/subsystem/ticker/proc/check_queue()
 	if(!queued_players.len || !config.hard_popcap)

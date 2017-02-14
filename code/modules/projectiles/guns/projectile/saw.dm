@@ -136,31 +136,26 @@
 
 
 /obj/item/ammo_casing/a762
-	name = "7.62mm"
 	desc = "A 7.62mm bullet casing."
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/saw
 
 /obj/item/ammo_casing/a762/bleeding
-	name = "7.62mm bleeding"
 	desc = "A 7.62mm bullet casing with specialized inner-casing, that when it makes contact with a target, release tiny shrapnel to induce internal bleeding."
 	icon_state = "762-casing"
 	caliber = "a762"
 	projectile_type = /obj/item/projectile/bullet/saw/bleeding
 
 /obj/item/ammo_casing/a762/hollow
-	name = "7.62mm hollow"
 	desc = "A 7.62mm bullet casing designed to cause more damage to unarmored targets."
 	projectile_type = /obj/item/projectile/bullet/saw/hollow
 
 /obj/item/ammo_casing/a762/ap
-	name = "7.62mm ap"
 	desc = "A 7.62mm bullet casing designed with a hardened-tipped core to help penetrate armored targets."
 	projectile_type = /obj/item/projectile/bullet/saw/ap
 
 /obj/item/ammo_casing/a762/incen
-	name = "7.62mm incen"
 	desc = "A 7.62mm bullet casing designed with a chemical-filled capsule on the tip that when bursted, reacts with the atmosphere to produce a fireball, engulfing the target in flames. "
 	projectile_type = /obj/item/projectile/bullet/saw/incen
 

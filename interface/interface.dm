@@ -1,6 +1,19 @@
 //Please use mob or src (not usr) in these procs. This way they can be called in the same fashion as procs.
+
+/client/verb/discord()
+	set name = "Discord"
+	set desc = "Visit the discord."
+	set hidden = 1
+	if(config.discordurl)
+		if(alert("This will open the discord in your browser. Are you sure?",,"Yes","No")=="No")
+			return
+		src << link(config.discordurl)
+	else
+		src << "<span class='danger'>The wiki URL is not set in the server configuration.</span>"
+	return
+
 /client/verb/wiki()
-	set name = "wiki"
+	set name = "Wiki"
 	set desc = "Visit the wiki."
 	set hidden = 1
 	if(config.wikiurl)
@@ -11,9 +24,9 @@
 		src << "<span class='danger'>The wiki URL is not set in the server configuration.</span>"
 	return
 
-/client/verb/forum()
-	set name = "forum"
-	set desc = "Visit the forum."
+/client/verb/vk()
+	set name = "VK"
+	set desc = "Visit the VK."
 	set hidden = 1
 	if(config.forumurl)
 		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
@@ -27,17 +40,18 @@
 	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = 1
-	if(config.rulesurl)
-		if(alert("This will open the rules in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.rulesurl)
-	else
-		src << "<span class='danger'>The rules URL is not set in the server configuration.</span>"
+	getFiles(
+		'html/ru_rules.html',
+		'html/eng_rules.html',
+		'html/ru.gif',
+		'html/en.gif'
+	)
+	src << browse('html/rules.html', "size=320x640;window=rules")
 	return
-
+/*
 /client/verb/github()
-	set name = "Github"
-	set desc = "Visit Github"
+	set name = "Bug Tracker"
+	set desc = "Tell us about bugs"
 	set hidden = 1
 	if(config.githuburl)
 		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")=="No")
@@ -46,17 +60,17 @@
 	else
 		src << "<span class='danger'>The Github URL is not set in the server configuration.</span>"
 	return
-
+*/
 /client/verb/reportissue()
 	set name = "Report issue"
 	set desc = "Report an issue"
 	set hidden = 1
 	if(config.githuburl)
-		if(alert("This will open the Github issue reporter in your browser. Are you sure?",,"Yes","No")=="No")
+		if(alert("This will open the BitBucket issue reporter in your browser. Are you sure?",,"Yes","No")=="No")
 			return
-		src << link("[config.githuburl]/issues/new")
+		src << link("[config.githuburl]")
 	else
-		src << "<span class='danger'>The Github URL is not set in the server configuration.</span>"
+		src << "<span class='danger'>The BitBucket URL is not set in the server configuration.</span>"
 	return
 
 /client/verb/hotkeys_help()

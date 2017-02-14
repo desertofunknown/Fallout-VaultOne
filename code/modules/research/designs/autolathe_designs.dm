@@ -295,7 +295,7 @@
 	id = "c38"
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/c357/c38
+	build_path = /obj/item/ammo_box/c38
 	category = list("initial", "Security")
 
 /datum/design/recorder
@@ -330,7 +330,6 @@
 	build_path = /obj/item/device/assembly/signaler
 	category = list("initial", "T-Comm")
 
-/*
 /datum/design/radio_headset
 	name = "Radio headset"
 	id = "radio_headset"
@@ -338,7 +337,6 @@
 	materials = list(MAT_METAL = 75)
 	build_path = /obj/item/device/radio/headset
 	category = list("initial", "T-Comm")
-*/
 
 /datum/design/bounced_radio
 	name = "Station bounced radio"
@@ -548,39 +546,6 @@
 	materials = list(MAT_METAL = 30000)
 	build_path = /obj/item/ammo_box/c9mm
 	category = list("hacked", "Security")
-
-/datum/design/m50
-	name = "Magazine (.50 AE)"
-	id = "m50"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/magazine/m50
-	category = list("hacked", "Security")
-
-/datum/design/a762
-	name = "Stripper clip (7.62)"
-	id = "a762"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 5000)
-	build_path = /obj/item/ammo_box/a762
-	category = list("hacked", "Security")
-
-/datum/design/a357
-	name = "speed loader (.357)"
-	id = "a357"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/c357
-	category = list("hacked", "Security")
-
-/datum/design/sniper_rounds
-	name = "Magazine (.50 BMG)"
-	id = "sniper_rounds"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 50000)
-	build_path = /obj/item/ammo_box/magazine/sniper_rounds
-	category = list("hacked", "Security")
-
 
 /datum/design/spraycan
 	name = "Spraycan"

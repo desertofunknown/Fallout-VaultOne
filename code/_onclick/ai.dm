@@ -39,10 +39,7 @@
 		CtrlShiftClickOn(A)
 		return
 	if(modifiers["middle"])
-		if(controlled_mech) //Are we piloting a mech? Placed here so the modifiers are not overridden.
-			controlled_mech.click_action(A, src, params) //Override AI normal click behavior.
-		return
-
+		MiddleClickOn(A)
 		return
 	if(modifiers["shift"])
 		ShiftClickOn(A)
@@ -85,7 +82,7 @@
 /mob/living/silicon/ai/RangedAttack(atom/A)
 	A.attack_ai(src)
 
-/atom/proc/attack_ai(mob/user)
+/atom/proc/attack_ai(mob/user as mob)
 	return
 
 /*
@@ -112,7 +109,7 @@
 /* Atom Procs */
 /atom/proc/AICtrlClick()
 	return
-/atom/proc/AIAltClick(mob/living/silicon/ai/user)
+/atom/proc/AIAltClick(var/mob/living/silicon/ai/user)
 	AltClick(user)
 	return
 /atom/proc/AIShiftClick()

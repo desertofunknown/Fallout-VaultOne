@@ -3,20 +3,36 @@ var/list/department_radio_keys = list(
 	  ":l" = "left hand",	"#l" = "left hand",		".l" = "left hand",
 	  ":i" = "intercom",	"#i" = "intercom",		".i" = "intercom",
 	  ":h" = "department",	"#h" = "department",	".h" = "department",
-	  ":c" = "Command",		"#c" = "Command",		".c" = "Command",
+//	  ":c" = "Command",		"#c" = "Command",		".c" = "Command",
 	  ":n" = "Science",		"#n" = "Science",		".n" = "Science",
 	  ":m" = "Medical",		"#m" = "Medical",		".m" = "Medical",
-	  ":e" = "Engineering", "#e" = "Engineering",	".e" = "Engineering",
+//	  ":e" = "Engineering", "#e" = "Engineering",	".e" = "Engineering",
 	  ":s" = "Security",	"#s" = "Security",		".s" = "Security",
 	  ":w" = "whisper",		"#w" = "whisper",		".w" = "whisper",
 	  ":b" = "binary",		"#b" = "binary",		".b" = "binary",
 	  ":a" = "alientalk",	"#a" = "alientalk",		".a" = "alientalk",
 	  ":t" = "Syndicate",	"#t" = "Syndicate",		".t" = "Syndicate",
 	  ":u" = "Supply",		"#u" = "Supply",		".u" = "Supply",
-	  ":v" = "Service",		"#v" = "Service",		".v" = "Service",
+//	  ":v" = "Service",		"#v" = "Service",		".v" = "Service",
 	  ":o" = "AI Private",	"#o" = "AI Private",	".o" = "AI Private",
 	  ":g" = "changeling",	"#g" = "changeling",	".g" = "changeling",
 	  ":y" = "Centcom",		"#y" = "Centcom",		".y" = "Centcom",
+
+//////////////////////////////FALLOUT///////////////////////////////////
+
+	  ":c" = "NCR",			"#c" = "NCR",			".c" = "NCR",
+	  ":e" = "Legion",		"#e" = "Legion",		".e" = "Legion",
+	  ":v" = "Vault",		"#v" = "Vault",			".v" = "Vault",
+	  ":d" = "Den",			"#d" = "Den",			".d" = "Den",
+	  ":q" = "Enclave",		"#q" = "Enclave",		".q" = "Enclave",
+
+	  ":ñ" = "NCR",			"#ñ" = "NCR",			".ñ" = "NCR",
+	  ":ó" = "Legion",		"#ó" = "Legion",		".ó" = "Legion",
+	  ":ì" = "Vault",		"#ì" = "Vault",			".ì" = "Vault",
+	  ":â" = "Den",			"#â" = "Den",			".â" = "Den",
+	  ":é" = "Enclave",		"#é" = "Enclave",		".é" = "Enclave",
+
+////////////////////////////////////////////////////////////////////////
 
 	  ":R" = "right hand",	"#R" = "right hand",	".R" = "right hand",
 	  ":L" = "left hand",	"#L" = "left hand",		".L" = "left hand",
@@ -43,16 +59,16 @@ var/list/department_radio_keys = list(
 	  ":ä" = "left hand",	"#ä" = "left hand",		".ä" = "left hand",
 	  ":ø" = "intercom",	"#ø" = "intercom",		".ø" = "intercom",
 	  ":ð" = "department",	"#ð" = "department",	".ð" = "department",
-	  ":ñ" = "Command",		"#ñ" = "Command",		".ñ" = "Command",
+//	  ":ñ" = "Command",		"#ñ" = "Command",		".ñ" = "Command",
 	  ":ò" = "Science",		"#ò" = "Science",		".ò" = "Science",
 	  ":ü" = "Medical",		"#ü" = "Medical",		".ü" = "Medical",
-	  ":ó" = "Engineering",	"#ó" = "Engineering",	".ó" = "Engineering",
+//	  ":ó" = "Engineering",	"#ó" = "Engineering",	".ó" = "Engineering",
 	  ":û" = "Security",	"#û" = "Security",		".û" = "Security",
 	  ":ö" = "whisper",		"#ö" = "whisper",		".ö" = "whisper",
 	  ":è" = "binary",		"#è" = "binary",		".è" = "binary",
 	  ":ô" = "alientalk",	"#ô" = "alientalk",		".ô" = "alientalk",
 	  ":å" = "Syndicate",	"#å" = "Syndicate",		".å" = "Syndicate",
-	  ":é" = "Supply",		"#é" = "Supply",		".é" = "Supply",
+//	  ":é" = "Supply",		"#é" = "Supply",		".é" = "Supply",
 	  ":ï" = "changeling",	"#ï" = "changeling",	".ï" = "changeling"
 )
 

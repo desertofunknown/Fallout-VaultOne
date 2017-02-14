@@ -1,15 +1,15 @@
 /client/script = {"<style>
 body					{font-family: "Courier New", Courier, monospace;}
 
-h1, h2, h3, h4, h5, h6	{color: #0000ff;font-family: Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6	{color: #cd3000;	font-family: Arial, Helvetica, sans-serif;}
 
-em						{font-style: normal;font-weight: bold;}
+em						{font-style: normal;	font-weight: bold;}
 
-.motd					{color: #638500;font-family: Verdana, sans-serif;}
+.motd					{color: #b55a23;	font-family: "Courier New", Courier, monospace;}
 .motd h1, .motd h2, .motd h3, .motd h4, .motd h5, .motd h6
-	{color: #638500;	text-decoration: underline;}
+	{color: #cd3000;	text-decoration: underline;}
 .motd a, .motd a:link, .motd a:visited, .motd a:active, .motd a:hover
-	{color: #638500;}
+	{color: #cd3000;}
 
 .italics				{					font-style: italic;}
 
@@ -26,7 +26,7 @@ em						{font-style: normal;font-weight: bold;}
 
 .say					{}
 .deadsay				{color: #5c00e6;}
-.radio					{color: #008000;}
+.radio					{color: #171717;}
 .sciradio				{color: #993399;}
 .comradio				{color: #aca82d;}
 .secradio				{color: #b22222;}
@@ -37,6 +37,12 @@ em						{font-style: normal;font-weight: bold;}
 .syndradio				{color: #6d3f40;}
 .centcomradio			{color: #686868;}
 .aiprivradio			{color: #ff00ff;}
+
+.vltradio				{color: #005A20;}
+.enclradio				{color: #505050;}
+.denradio				{color: #804B00;}
+.ncrradio				{color: #020080;}
+.legradio				{color: #C24D44;}
 
 .yell					{					font-weight: bold;}
 

@@ -779,27 +779,7 @@ The _flatIcons list is a cache for generated icon files.
 		flat.Blend(rgb(255, 255, 255, A.alpha), ICON_MULTIPLY)
 
 	return icon(flat, "", SOUTH)
-/atom/proc/cut_overlays()
-	cut_overlays()
-	overlays += priority_overlays
 
-/atom/proc/add_overlay(image, priority = 0)
-	if(image in overlays)
-		return
-	var/list/new_overlays = overlays.Copy()
-	if(priority)
-		if(!priority_overlays)
-			priority_overlays = list()
-		priority_overlays += image
-		new_overlays += image
-	else
-		if(priority_overlays)
-			new_overlays -= priority_overlays
-			new_overlays += image
-			new_overlays += priority_overlays
-		else
-			new_overlays += image
-	overlays = new_overlays
 /proc/getIconMask(atom/A)//By yours truly. Creates a dynamic mask for a mob/whatever. /N
 	var/icon/alpha_mask = new(A.icon,A.icon_state)//So we want the default icon and icon state of A.
 	for(var/I in A.overlays)//For every image in overlays. var/image/I will not work, don't try it.

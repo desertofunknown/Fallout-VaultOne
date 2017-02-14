@@ -68,8 +68,3 @@
 	icon_state = "xtracks"
 	random_icon_states = null
 	blood_DNA = list("UNKNOWN DNA" = "X*")
-
-/obj/effect/decal/cleanable/remains/xeno
-	desc = "They look like the remains of something... alien. They have a strange aura about them."
-	icon = 'icons/effects/blood.dmi'
-	icon_state = "remainsxeno"

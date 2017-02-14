@@ -16,7 +16,7 @@
 /area
 	var/global/global_uid = 0
 	var/radiation = 0
-	var/uid
+	var/uid //1 - 2 : outside the structures, 3 - 9 : inside the structures, 10 - 14 : vault specific
 	var/list/ambientsounds = list('sound/ambience/ambigen1.ogg','sound/ambience/ambigen2.ogg',\
 									'sound/ambience/ambigen3.ogg','sound/ambience/ambigen4.ogg',\
 									'sound/ambience/ambigen5.ogg','sound/ambience/ambigen6.ogg',\
@@ -105,7 +105,7 @@
 	return 0
 
 /area/proc/firealert(obj/source)
-	if(always_unpowered == 1) //no fire alarms in space/wasteland
+	if(always_unpowered == 1) //no fire alarms in space/asteroid
 		return
 
 	var/list/cameras = list()
@@ -158,7 +158,7 @@
 	return
 
 /area/proc/burglaralert(obj/trigger)
-	if(always_unpowered == 1) //no burglar alarms in space/wasteland
+	if(always_unpowered == 1) //no burglar alarms in space/asteroid
 		return
 
 	var/list/cameras = list()

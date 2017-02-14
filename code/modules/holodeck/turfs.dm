@@ -28,12 +28,12 @@
 	name = "water"
 	icon_state = "water"
 
-/turf/simulated/floor/holofloor/wasteland
-	name = "wasteland"
-	icon_state = "wasteland0"
+/turf/simulated/floor/holofloor/asteroid
+	name = "Asteroid"
+	icon_state = "asteroid0"
 
-/turf/simulated/floor/holofloor/wasteland/New()
-	icon_state = "wasteland[pick(0,1,2,3,4,5,6,7,8,9,10,11,12)]"
+/turf/simulated/floor/holofloor/asteroid/New()
+	icon_state = "asteroid[pick(0,1,2,3,4,5,6,7,8,9,10,11,12)]"
 	..()
 
 /turf/simulated/floor/holofloor/space

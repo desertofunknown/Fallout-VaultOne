@@ -826,15 +826,6 @@
 	item_color = "cowboyg"
 	can_adjust = 0
 
-/obj/item/clothing/under/f13/ranger
-	name = "ranger outfit"
-	desc = "It's a real cowboy uniform with a brown vest and red bandana."
-	icon_state = "ranger"
-	item_state = "sl_suit"
-	item_color = "ranger"
-	can_adjust = 0
-	armor = list(melee = 10, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
-
 /obj/item/clothing/under/f13/female/flapper
 	name = "flapper dress"
 	desc = "It's an outfit commonly worn by old-time prostitutes from around New Reno, but can be seen all over the wasteland."
@@ -1034,14 +1025,6 @@
 	item_color = "roving"
 	can_adjust = 0
 
-/obj/item/clothing/under/f13/follower
-	name = "followers otufit"
-	desc = "A standard Follower's of the Apocalypse uniform."
-	icon_state = "follower"
-	item_state ="bl_suit"
-	item_color = "follower"
-	can_adjust = 0
-
 /obj/item/clothing/under/f13/vault
 	name = "vault jumpsuit"
 	desc = "The regulation clothing worn by the vault dwellers of Vault-Tec vaults. It's made of sturdy leather.<br>This particular jumpsuit has no number on the back."
@@ -1057,6 +1040,12 @@
 	item_color = "vault13"
 
 
+/obj/item/clothing/under/f13/ncr
+	name = "NCR trooper jumpsuit"
+	desc = "Regular NCR uniform."
+	armor = list(melee = 10, bullet = 5, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
+	icon_state = "ncrt"
+	item_color = "ncrt"
 
 //Fallout 13 goes rampage at this point. The following uniforms provide decent deffence bonus.
 
@@ -1068,20 +1057,10 @@
 	item_color = "recon"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HEAD
 	flags = BLOCKHAIR //It doesn't block the hair! What I did wrong?
-	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 20, bio = 50, rad = 50)
+	armor = list(melee = 40, bullet = 30, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	can_adjust = 0
-
-/obj/item/clothing/under/f13/ncr
-    name = "NCR fatigues"
-    desc = "A set of standard issue New California Republic trooper fatigues, offers slight protection."
-    icon_state = "ncr_uniform"
-    item_state = "lb_suit"
-    item_color = "ncr_uniform"
-    body_parts_covered = CHEST|GROIN|LEGS|ARMS
-    armor = list(melee = 10, bullet = 5, laser = 5,energy = 5, bomb = 5, bio = 0, rad = 5)
-    can_adjust = 0
 
 //Plasmameme
 

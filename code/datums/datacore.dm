@@ -87,9 +87,6 @@
 	var/list/sup = list()
 	var/list/civ = list()
 	var/list/bot = list()
-	var/list/leg = list() //ADDED LEGION
-	var/list/ncr = list() //ADDED NCR
-	var/list/wast = list() //ADDED WASTELAND
 	var/list/misc = list()
 	var/dat = {"
 	<head><style>
@@ -104,7 +101,6 @@
 	<tr class='head'><th>Name</th><th>Rank</th></tr>
 	"}
 	var/even = 0
-	var/banner = 0
 	// sort mobs
 	for(var/datum/data/record/t in data_core.general)
 		var/name = t.fields["name"]
@@ -113,48 +109,29 @@
 		if(rank in command_positions)
 			heads[name] = rank
 			department = 1
-			banner = 1
 		if(rank in security_positions)
 			sec[name] = rank
 			department = 1
-			banner = 1
 		if(rank in engineering_positions)
 			eng[name] = rank
 			department = 1
-			banner = 1
 		if(rank in medical_positions)
 			med[name] = rank
 			department = 1
-			banner = 1
 		if(rank in science_positions)
 			sci[name] = rank
 			department = 1
-			banner = 1
 		if(rank in supply_positions)
 			sup[name] = rank
 			department = 1
-			banner = 1
 		if(rank in civilian_positions)
 			civ[name] = rank
 			department = 1
-			banner = 1
 		if(rank in nonhuman_positions)
 			bot[name] = rank
 			department = 1
-			banner = 1
-		if(rank in legion_positions)
-			leg[name] = rank
-			department = 1
-		if(rank in ncr_positions)
-			ncr[name] = rank
-			department = 1
-		if(rank in wasteland_positions)
-			wast[name] = rank
-			department = 1
 		if(!department && !(name in heads))
 			misc[name] = rank
-	if(banner)
-		dat += "<tr><th colspan=4><b>~Vault Personnel~</b></th></tr>"
 	if(heads.len > 0)
 		dat += "<tr><th colspan=3>Heads</th></tr>"
 		for(var/name in heads)
@@ -202,22 +179,6 @@
 		for(var/name in misc)
 			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[misc[name]]</td></tr>"
 			even = !even
-	if(leg.len > 0) //Adds legion to the manifest
-		dat += "<tr><th colspan=4><b>~Legion~</b></th></tr>"
-		for(var/name in leg)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[leg[name]]</td></tr>"
-			even = !even
-	if(ncr.len > 0) //Adds ncr to the manifest
-		dat += "<tr><th colspan=4><b>~NCR~</b></th></tr>"
-		for(var/name in ncr)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[ncr[name]]</td></tr>"
-			even = !even
-	if(wast.len > 0) //Adds wasteland roles to the manifest
-		dat += "<tr><th colspan=4><b>~Wasteland~</b></th></tr>"
-		for(var/name in wast)
-			dat += "<tr[even ? " class='alt'" : ""]><td>[name]</td><td>[wast[name]]</td></tr>"
-			even = !even
-	// misc guys will go in the vault.
 
 	dat += "</table>"
 	dat = replacetext(dat, "\n", "")

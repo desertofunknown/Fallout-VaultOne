@@ -11,9 +11,10 @@
 	mutant_bodyparts = list("tail_human", "ears")
 	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None")
 	use_skintones = 1
+	whitelist_req = 0
 
 /datum/species/human/spec_life(mob/living/carbon/human/H)
-	if (H.getToxLoss()>175 && prob(1))
+	if (H.getToxLoss()>175 && prob(10))
 		H << "<span class='danger'>You transform!</span>"
 		H.set_species(/datum/species/ghoul)
 		H.adjustToxLoss(-100)
@@ -162,9 +163,9 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	else
 		canshout = canshout - 1
 
+
+
 */
-
-
 /*
  PODPEOPLE
 */
@@ -506,68 +507,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	sexes = 0
 	meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
 
-/*Ghouls*/
-/datum/species/ferralghoul
-	// 1spooky
-	name = "Flesh Eating Ghoul"
-	id = "fghoul"
-	say_mod = "moans"
-	sexes = 0
-	meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
-	specflags = list(NOBREATH,HEATRES,COLDRES,NOBLOOD,RADIMMUNE)
 
-/datum/species/ferralghoul/handle_speech(message)
-	var/list/message_list = text2list(message, " ")
-	var/maxchanges = max(round(message_list.len / 1.5), 2)
-
-	for(var/i = rand(maxchanges / 2, maxchanges), i > 0, i--)
-		var/insertpos = rand(1, message_list.len - 1)
-		var/inserttext = message_list[insertpos]
-
-		if(!(copytext(inserttext, length(inserttext) - 2) == "..."))
-			message_list[insertpos] = inserttext + "..."
-
-		if(prob(20) && message_list.len > 3)
-			message_list.Insert(insertpos, "[pick("SCReee", "HSHHH", "HURRRHH", "EKEEKE")]...")
-
-	return list2text(message_list, " ")
-
-/datum/species/cosmetic_ferralghoul
-	name = "Human"
-	id = "fghoul"
-	sexes = 0
-	meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
-/datum/species/glowingone
-	// 1spooky
-	name = "Glowing Flesh Eating Ghoul"
-	id = "glowingone"
-	say_mod = "moans"
-	sexes = 0
-	meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
-	specflags = list(NOBREATH,HEATRES,COLDRES,NOBLOOD,RADIMMUNE)
-
-/datum/species/glowingone/handle_speech(message)
-	var/list/message_list = text2list(message, " ")
-	var/maxchanges = max(round(message_list.len / 1.5), 2)
-
-	for(var/i = rand(maxchanges / 2, maxchanges), i > 0, i--)
-		var/insertpos = rand(1, message_list.len - 1)
-		var/inserttext = message_list[insertpos]
-
-		if(!(copytext(inserttext, length(inserttext) - 2) == "..."))
-			message_list[insertpos] = inserttext + "..."
-
-		if(prob(20) && message_list.len > 3)
-			message_list.Insert(insertpos, "[pick("SCReee", "HSHHH", "HURRRHH", "EKEEKE")]...")
-
-	return list2text(message_list, " ")
-
-/datum/species/cosmetic_glowingone
-	name = "Human"
-	id = "glowingone"
-	sexes = 0
-	meat = /obj/item/weapon/reagent_containers/food/snacks/meat/slab/human/mutant/zombie
-/*Ghouls end*/
 /datum/species/abductor
 	name = "Abductor"
 	id = "abductor"

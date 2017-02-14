@@ -72,7 +72,7 @@
 		if(istype(ears, /obj/item/clothing/ears/earmuffs)) // earmuffs rest your ears, healing ear_deaf faster and ear_damage, but keeping you deaf.
 			setEarDamage(max(ear_damage-0.10, 0), max(ear_deaf - 1, 1))
 
-
+/*
 	if (getBrainLoss() >= 60 && stat != DEAD)
 		if (prob(3))
 			switch(pick(1,2,3,4,5))
@@ -86,7 +86,7 @@
 					emote("drool")
 				if(5)
 					say(pick("REMOVE SINGULARITY", "INSTLL TEG", "TURBIN IS BEST ENGIENE", "SOLIRS CAN POWER THE HOLE STATION ANEWAY", "parasteng was best", "Tajaran has warrrres, if you have coin"))
-
+*/
 
 /mob/living/carbon/human/handle_mutations_and_radiation()
 	if(!dna || !dna.species.handle_mutations_and_radiation(src))
@@ -288,6 +288,7 @@
 					location.add_vomit_floor(src, 1)
 
 				nutrition -= 20
+				water -= 20
 				adjustToxLoss(-3)
 
 				// make it so you can only puke so fast

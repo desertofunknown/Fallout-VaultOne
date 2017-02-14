@@ -1,7 +1,7 @@
 //Packer Ship Areas
 
 /area/awaymission/BMPship
-	name = "\improper BMP wastelands"
+	name = "\improper BMP Asteroids"
 	icon_state = "away"
 	luminosity = 0
 

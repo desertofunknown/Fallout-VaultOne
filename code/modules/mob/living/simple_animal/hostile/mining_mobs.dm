@@ -1,4 +1,4 @@
-/mob/living/simple_animal/hostile/wasteland/
+/mob/living/simple_animal/hostile/asteroid/
 	vision_range = 2
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	unsuitable_atmos_damage = 15
@@ -15,16 +15,16 @@
 	see_in_dark = 8
 	see_invisible = SEE_INVISIBLE_MINIMUM
 
-/mob/living/simple_animal/hostile/wasteland/Aggro()
+/mob/living/simple_animal/hostile/asteroid/Aggro()
 	..()
 	if(vision_range != aggro_vision_range)
 		icon_state = icon_aggro
 
-/mob/living/simple_animal/hostile/wasteland/LoseAggro()
+/mob/living/simple_animal/hostile/asteroid/LoseAggro()
 	..()
 	icon_state = icon_living
 
-/mob/living/simple_animal/hostile/wasteland/bullet_act(obj/item/projectile/P)//Reduces damage from most projectiles to curb off-screen kills
+/mob/living/simple_animal/hostile/asteroid/bullet_act(obj/item/projectile/P)//Reduces damage from most projectiles to curb off-screen kills
 	if(!stat)
 		Aggro()
 	if(P.damage < 30 && P.damage_type != BRUTE)
@@ -32,7 +32,7 @@
 		visible_message("<span class='danger'>[P] has a reduced effect on [src]!</span>")
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/hitby(atom/movable/AM)//No floor tiling them to death, wiseguy
+/mob/living/simple_animal/hostile/asteroid/hitby(atom/movable/AM)//No floor tiling them to death, wiseguy
 	if(istype(AM, /obj/item))
 		var/obj/item/T = AM
 		if(!stat)
@@ -42,11 +42,11 @@
 			return
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/death(gibbed)
 	feedback_add_details("mobs_killed_mining","[src.type]")
 	..(gibbed)
 
-/mob/living/simple_animal/hostile/wasteland/basilisk
+/mob/living/simple_animal/hostile/asteroid/basilisk
 	name = "basilisk"
 	desc = "A territorial beast, covered in a thick shell that absorbs energy. Its stare causes victims to freeze from the inside."
 	icon = 'icons/mob/animal.dmi'
@@ -87,7 +87,7 @@
 	flag = "energy"
 	temperature = 50
 
-/mob/living/simple_animal/hostile/wasteland/basilisk/GiveTarget(new_target)
+/mob/living/simple_animal/hostile/asteroid/basilisk/GiveTarget(new_target)
 	if(..()) //we have a target
 		if(isliving(target))
 			var/mob/living/L = target
@@ -95,7 +95,7 @@
 				L.bodytemperature = 200
 				visible_message("<span class='danger'>The [src.name]'s stare chills [L.name] to the bone!</span>")
 
-/mob/living/simple_animal/hostile/wasteland/basilisk/ex_act(severity, target)
+/mob/living/simple_animal/hostile/asteroid/basilisk/ex_act(severity, target)
 	switch(severity)
 		if(1)
 			gib()
@@ -104,7 +104,7 @@
 		if(3)
 			adjustBruteLoss(110)
 
-/mob/living/simple_animal/hostile/wasteland/basilisk/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/basilisk/death(gibbed)
 	var/counter
 	for(counter=0, counter<2, counter++)
 		var/obj/item/weapon/ore/diamond/D = new /obj/item/weapon/ore/diamond(src.loc)
@@ -112,7 +112,7 @@
 	..(gibbed)
 
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub
+/mob/living/simple_animal/hostile/asteroid/goldgrub
 	name = "goldgrub"
 	desc = "A worm that grows fat from eating everything in its sight. Seems to enjoy precious metals and other shiny things, hence the name."
 	icon = 'icons/mob/animal.dmi'
@@ -146,12 +146,12 @@
 	var/ore_eaten = 1
 	var/chase_time = 100
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/New()
+/mob/living/simple_animal/hostile/asteroid/goldgrub/New()
 	..()
 	ore_types_eaten += pick(/obj/item/weapon/ore/silver, /obj/item/weapon/ore/gold, /obj/item/weapon/ore/uranium, /obj/item/weapon/ore/diamond)
 	ore_eaten = rand(1,3)
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/GiveTarget(new_target)
+/mob/living/simple_animal/hostile/asteroid/goldgrub/GiveTarget(new_target)
 	target = new_target
 	if(target != null)
 		if(istype(target, /obj/item/weapon/ore))
@@ -165,13 +165,13 @@
 			Burrow()
 
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/AttackingTarget()
+/mob/living/simple_animal/hostile/asteroid/goldgrub/AttackingTarget()
 	if(istype(target, /obj/item/weapon/ore))
 		EatOre(target)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/proc/EatOre(atom/targeted_ore)
+/mob/living/simple_animal/hostile/asteroid/goldgrub/proc/EatOre(atom/targeted_ore)
 	for(var/obj/item/weapon/ore/O in targeted_ore.loc)
 		ore_eaten++
 		if(!(O.type in ore_types_eaten))
@@ -181,7 +181,7 @@
 		ore_eaten = 10
 	visible_message("<span class='notice'>The ore was swallowed whole!</span>")
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/proc/Burrow()//Begin the chase to kill the goldgrub in time
+/mob/living/simple_animal/hostile/asteroid/goldgrub/proc/Burrow()//Begin the chase to kill the goldgrub in time
 	if(!alerted)
 		alerted = 1
 		spawn(chase_time)
@@ -189,7 +189,7 @@
 			visible_message("<span class='danger'>The [src.name] buries into the ground, vanishing from sight!</span>")
 			qdel(src)
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/proc/Reward()
+/mob/living/simple_animal/hostile/asteroid/goldgrub/proc/Reward()
 	if(!ore_eaten || ore_types_eaten.len == 0)
 		return
 	visible_message("<span class='danger'>[src] spits up the contents of its stomach before dying!</span>")
@@ -201,20 +201,20 @@
 	ore_eaten = 0
 
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/bullet_act(obj/item/projectile/P)
+/mob/living/simple_animal/hostile/asteroid/goldgrub/bullet_act(obj/item/projectile/P)
 	visible_message("<span class='danger'>The [P.name] was repelled by [src.name]'s girth!</span>")
 	return
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/goldgrub/death(gibbed)
 	alerted = 0
 	Reward()
 	..(gibbed)
 
-/mob/living/simple_animal/hostile/wasteland/goldgrub/adjustBruteLoss(damage)
+/mob/living/simple_animal/hostile/asteroid/goldgrub/adjustBruteLoss(damage)
 	idle_vision_range = 9
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/hivelord
+/mob/living/simple_animal/hostile/asteroid/hivelord
 	name = "hivelord"
 	desc = "A truly alien creature, it is a mass of unknown organic material, constantly fluctuating. When attacking, pieces of it split off and attack in tandem with the original."
 	icon = 'icons/mob/animal.dmi'
@@ -248,19 +248,19 @@
 	var/next_brood = 0
 	var/brood_cooldown = 20
 
-/mob/living/simple_animal/hostile/wasteland/hivelord/OpenFire(the_target)
+/mob/living/simple_animal/hostile/asteroid/hivelord/OpenFire(the_target)
 	if(world.time >= next_brood)
-		var/mob/living/simple_animal/hostile/wasteland/hivelordbrood/A = new /mob/living/simple_animal/hostile/wasteland/hivelordbrood(src.loc)
+		var/mob/living/simple_animal/hostile/asteroid/hivelordbrood/A = new /mob/living/simple_animal/hostile/asteroid/hivelordbrood(src.loc)
 		A.GiveTarget(target)
 		A.friends = friends
 		A.faction = faction
 		next_brood = world.time + brood_cooldown
 	return
 
-/mob/living/simple_animal/hostile/wasteland/hivelord/AttackingTarget()
+/mob/living/simple_animal/hostile/asteroid/hivelord/AttackingTarget()
 	OpenFire()
 
-/mob/living/simple_animal/hostile/wasteland/hivelord/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/hivelord/death(gibbed)
 	new /obj/item/organ/internal/hivelord_core(src.loc)
 	mouse_opacity = 1
 	..(gibbed)
@@ -316,7 +316,7 @@
 /obj/item/organ/internal/hivelord_core/prepare_eat()
 	return null
 
-/mob/living/simple_animal/hostile/wasteland/hivelordbrood
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood
 	name = "hivelord brood"
 	desc = "A fragment of the original Hivelord, rallying behind its original. One isn't much of a threat, but..."
 	icon = 'icons/mob/animal.dmi'
@@ -342,15 +342,15 @@
 	environment_smash = 0
 	pass_flags = PASSTABLE
 
-/mob/living/simple_animal/hostile/wasteland/hivelordbrood/New()
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/New()
 	..()
 	spawn(100)
 		qdel(src)
 
-/mob/living/simple_animal/hostile/wasteland/hivelordbrood/death()
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/death()
 	qdel(src)
 
-/mob/living/simple_animal/hostile/wasteland/goliath
+/mob/living/simple_animal/hostile/asteroid/goliath
 	name = "goliath"
 	desc = "A massive beast that uses long tentacles to ensare its prey, threatening them is not advised under any conditions."
 	icon = 'icons/mob/animal.dmi'
@@ -383,26 +383,26 @@
 	mob_size = MOB_SIZE_LARGE
 	var/pre_attack = 0
 
-/mob/living/simple_animal/hostile/wasteland/goliath/Life()
+/mob/living/simple_animal/hostile/asteroid/goliath/Life()
 	..()
 	handle_preattack()
 
-/mob/living/simple_animal/hostile/wasteland/goliath/proc/handle_preattack()
+/mob/living/simple_animal/hostile/asteroid/goliath/proc/handle_preattack()
 	if(ranged_cooldown <= 2 && !pre_attack)
 		pre_attack++
 	if(!pre_attack || stat || AIStatus == AI_IDLE)
 		return
 	icon_state = "Goliath_preattack"
 
-/mob/living/simple_animal/hostile/wasteland/goliath/revive()
+/mob/living/simple_animal/hostile/asteroid/goliath/revive()
 	anchored = 1
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/goliath/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
 	anchored = 0
 	..(gibbed)
 
-/mob/living/simple_animal/hostile/wasteland/goliath/OpenFire()
+/mob/living/simple_animal/hostile/asteroid/goliath/OpenFire()
 	var/tturf = get_turf(target)
 	if(get_dist(src, target) <= 7)//Screen range check, so you can't get tentacle'd offscreen
 		visible_message("<span class='warning'>The [src.name] digs its tentacles under [target.name]!</span>")
@@ -412,12 +412,12 @@
 		pre_attack = 0
 	return
 
-/mob/living/simple_animal/hostile/wasteland/goliath/adjustBruteLoss(damage)
+/mob/living/simple_animal/hostile/asteroid/goliath/adjustBruteLoss(damage)
 	ranged_cooldown--
 	handle_preattack()
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/goliath/Aggro()
+/mob/living/simple_animal/hostile/asteroid/goliath/Aggro()
 	vision_range = aggro_vision_range
 	handle_preattack()
 	if(icon_state != icon_aggro)
@@ -465,12 +465,12 @@
 		spawn(50)
 			qdel(src)
 
-/mob/living/simple_animal/hostile/wasteland/goliath/death(gibbed)
-	var/obj/item/wasteland/goliath_hide/G = new /obj/item/wasteland/goliath_hide(src.loc)
+/mob/living/simple_animal/hostile/asteroid/goliath/death(gibbed)
+	var/obj/item/asteroid/goliath_hide/G = new /obj/item/asteroid/goliath_hide(src.loc)
 	G.layer = 4.1
 	..(gibbed)
 
-/obj/item/wasteland/goliath_hide
+/obj/item/asteroid/goliath_hide
 	name = "goliath hide plates"
 	desc = "Pieces of a goliath's rocky hide, these might be able to make your suit a bit more durable to attack from the local fauna."
 	icon = 'icons/obj/mining.dmi'
@@ -479,7 +479,7 @@
 	w_class = 3
 	layer = 4
 
-/obj/item/wasteland/goliath_hide/afterattack(atom/target, mob/user, proximity_flag)
+/obj/item/asteroid/goliath_hide/afterattack(atom/target, mob/user, proximity_flag)
 	if(proximity_flag)
 		if(istype(target, /obj/item/clothing/suit/space/hardsuit/mining) || istype(target, /obj/item/clothing/head/helmet/space/hardsuit/mining))
 			var/obj/item/clothing/C = target
@@ -511,14 +511,14 @@
 				user << "<span class='warning'>You can't improve [D] any further!</span>"
 				return
 
-/mob/living/simple_animal/hostile/wasteland/handle_temperature_damage()
+/mob/living/simple_animal/hostile/asteroid/handle_temperature_damage()
 	if(bodytemperature < minbodytemp)
 		adjustBruteLoss(2)
 	else if(bodytemperature > maxbodytemp)
 		adjustBruteLoss(20)
 
 
-/mob/living/simple_animal/hostile/wasteland/fugu
+/mob/living/simple_animal/hostile/asteroid/fugu
 	name = "wumborian fugu"
 	desc = "The wumborian fugu rapidly increases its body mass in order to ward off its prey. Great care should be taken to avoid it while it's in this state as it is nearly invincible, but it cannot maintain its form forever."
 	icon = 'icons/mob/animal.dmi'
@@ -549,23 +549,23 @@
 	var/wumbo = 0
 	var/inflate_cooldown = 0
 
-/mob/living/simple_animal/hostile/wasteland/fugu/Life()
+/mob/living/simple_animal/hostile/asteroid/fugu/Life()
 	if(!wumbo)
 		inflate_cooldown = max((inflate_cooldown - 1), 0)
 	if(target && AIStatus == AI_ON)
 		Inflate()
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/fugu/adjustBruteLoss(var/damage)
+/mob/living/simple_animal/hostile/asteroid/fugu/adjustBruteLoss(var/damage)
 	if(wumbo)
 		return
 	..()
 
-/mob/living/simple_animal/hostile/wasteland/fugu/Aggro()
+/mob/living/simple_animal/hostile/asteroid/fugu/Aggro()
 	..()
 	Inflate()
 
-/mob/living/simple_animal/hostile/wasteland/fugu/verb/Inflate()
+/mob/living/simple_animal/hostile/asteroid/fugu/verb/Inflate()
 	set name = "Inflate"
 	set category = "Fugu"
 	set desc = "Temporarily increases your size, and makes you significantly more dangerous and tough."
@@ -594,7 +594,7 @@
 	spawn(100)
 		Deflate()
 
-/mob/living/simple_animal/hostile/wasteland/fugu/proc/Deflate()
+/mob/living/simple_animal/hostile/asteroid/fugu/proc/Deflate()
 	if(wumbo)
 		walk(src, 0)
 		wumbo = 0
@@ -612,13 +612,13 @@
 		mob_size = MOB_SIZE_SMALL
 		speed = 0
 
-/mob/living/simple_animal/hostile/wasteland/fugu/death(gibbed)
+/mob/living/simple_animal/hostile/asteroid/fugu/death(gibbed)
 	Deflate()
-	var/obj/item/wasteland/fugu_gland/F = new /obj/item/wasteland/fugu_gland(src.loc)
+	var/obj/item/asteroid/fugu_gland/F = new /obj/item/asteroid/fugu_gland(src.loc)
 	F.layer = 4.1
 	..(gibbed)
 
-/obj/item/wasteland/fugu_gland
+/obj/item/asteroid/fugu_gland
 	name = "wumborian fugu gland"
 	desc = "The key to the wumborian fugu's ability to increase its mass arbitrarily, this disgusting remnant can apply the same effect to other creatures, giving them great strength."
 	icon = 'icons/obj/surgery.dmi'
@@ -629,7 +629,7 @@
 	origin_tech = "biotech=6"
 	var/list/banned_mobs()
 
-/obj/item/wasteland/fugu_gland/afterattack(atom/target, mob/user, proximity_flag)
+/obj/item/asteroid/fugu_gland/afterattack(atom/target, mob/user, proximity_flag)
 	if(proximity_flag && istype(target, /mob/living/simple_animal))
 		var/mob/living/simple_animal/A = target
 		if(A.buffed || (A.type in banned_mobs) || A.stat)

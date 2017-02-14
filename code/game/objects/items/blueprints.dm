@@ -116,7 +116,7 @@
 		/area/admin,
 		/area/arrival,
 		/area/centcom,
-		/area/wasteland,
+		/area/asteroid,
 		/area/tdome,
 		/area/wizard_station,
 		/area/prison

@@ -23,7 +23,7 @@
 	if(!..())
 		return
 	if(!broken && !burnt)
-		icon_state = icon_plating //Because wastelands are 'platings' too.
+		icon_state = icon_plating //Because asteroids are 'platings' too.
 
 /turf/simulated/floor/plating/attackby(obj/item/C, mob/user, params)
 	if(..())
@@ -67,6 +67,12 @@
 				icon_state = icon_plating
 				burnt = 0
 				broken = 0
+		else if (!broken && !burnt)
+			if(welder.remove_fuel(0,user) && do_after(user, 30/C.toolspeed, target = src))
+				user << "<span class='danger'>You removed plating.</span>"
+				ChangeTurf(baseturf)
+				new /obj/item/stack/tile/plasteel(src)
+				playsound(src, 'sound/weapons/Genhit.ogg', 50, 1)
 
 /turf/simulated/floor/plating/airless
 	icon_state = "plating"

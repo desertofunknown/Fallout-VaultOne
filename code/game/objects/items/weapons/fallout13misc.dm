@@ -51,7 +51,7 @@
 /obj/item/weapon/holodisk/holodiskcursed
 	soundFile =  'sound/f13items/holodisk_cursed.ogg'
 	soundLength = 230
-	throwforce = 5 //It's funny counting you can't give objects hand to hand on TG, but have to throw or drop them instead.
+	throwforce = 50 //It's funny counting you can't give objects hand to hand on TG, but have to throw or drop them instead.
 
 /obj/item/weapon/holodisk/holodiskcursed/playAudio(mob/user)
 	if(!src.busy)
@@ -60,6 +60,7 @@
 		src.add_fingerprint(user)
 		src.icon_state = "[initial(src.icon_state)]anim"
 		spawn(src.soundLength)
+			if(user) user.gib()
 			src.icon_state = initial(src.icon_state)
 			src.busy = 0
 	return

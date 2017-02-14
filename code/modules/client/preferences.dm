@@ -26,7 +26,7 @@ var/list/preferences_datums = list()
 										//autocorrected this round, not that you'd need to check that.
 
 
-	var/UI_style = "Midnight"
+	var/UI_style = "Fallout"
 	var/nanoui_fancy = TRUE
 	var/toggles = TOGGLES_DEFAULT
 	var/chat_toggles = TOGGLES_DEFAULT_CHAT
@@ -74,10 +74,6 @@ var/list/preferences_datums = list()
 	var/job_engsec_high = 0
 	var/job_engsec_med = 0
 	var/job_engsec_low = 0
-
-	var/job_ncr_high = 0
-	var/job_ncr_med = 0
-	var/job_ncr_low = 0
 
 		// Want randomjob if preferences already filled - Donkie
 	var/userandomjob = 1 //defaults to 1 for fewer assistants
@@ -412,7 +408,7 @@ var/list/preferences_datums = list()
 	popup.set_content(dat)
 	popup.open(0)
 
-/datum/preferences/proc/SetChoices(mob/user, limit = 17, list/splitJobs = list("Chief Engineer"), widthPerColumn = 295, height = 620)
+/datum/preferences/proc/SetChoices(mob/user, limit = 18, list/splitJobs = list("Chief Engineer"), widthPerColumn = 295, height = 620)
 	if(!SSjob)	return
 
 	//limit - The amount of jobs allowed per column. Defaults to 17 to make it look nice.
@@ -467,9 +463,9 @@ var/list/preferences_datums = list()
 				HTML += "<font color=red>[rank]</font></td><td><font color=red><b> \[NON-HUMAN\]</b></font></td></tr>"
 			continue
 		if((rank in command_positions) || (rank == "AI"))//Bold head jobs
-			HTML += "<b><span class='dark'>[rank]</span></b>"
+			HTML += "<b><span class='white'>[rank]</span></b>"
 		else
-			HTML += "<span class='dark'>[rank]</span>"
+			HTML += "<span class='white'>[rank]</span>"
 
 		HTML += "</td><td width='40%'>"
 
@@ -478,7 +474,13 @@ var/list/preferences_datums = list()
 		var/prefUpperLevel = -1 // level to assign on left click
 		var/prefLowerLevel = -1 // level to assign on right click
 
-		if(GetJobDepartment(job, 1) & job.flag)
+		if(job.whitelist_on && !check_whitelist(user))
+			prefLevelLabel = "Donate"
+			prefLevelColor = "red"
+			prefUpperLevel = 4
+			prefLowerLevel = 4
+
+		else if(GetJobDepartment(job, 1) & job.flag)
 			prefLevelLabel = "High"
 			prefLevelColor = "slateblue"
 			prefUpperLevel = 4
@@ -543,7 +545,6 @@ var/list/preferences_datums = list()
 		job_civilian_high = 0
 		job_engsec_high = 0
 		job_medsci_high = 0
-		job_ncr_high = 0
 
 	if (job.department_flag == CIVILIAN)
 		job_civilian_low &= ~job.flag
@@ -585,20 +586,6 @@ var/list/preferences_datums = list()
 				job_medsci_med |= job.flag
 			if (3)
 				job_medsci_low |= job.flag
-
-		return 1
-	else if (job.department_flag == NCR)
-		job_ncr_low &= ~job.flag
-		job_ncr_med &= ~job.flag
-		job_ncr_high &= ~job.flag
-
-		switch(level)
-			if (1)
-				job_ncr_high |= job.flag
-			if (2)
-				job_ncr_med |= job.flag
-			if (3)
-				job_ncr_low |= job.flag
 
 		return 1
 
@@ -647,9 +634,6 @@ var/list/preferences_datums = list()
 	job_engsec_med = 0
 	job_engsec_low = 0
 
-	job_ncr_high = 0
-	job_ncr_med = 0
-	job_ncr_low = 0
 
 /datum/preferences/proc/GetJobDepartment(datum/job/job, level)
 	if(!job || !level)	return 0
@@ -678,14 +662,6 @@ var/list/preferences_datums = list()
 					return job_engsec_med
 				if(3)
 					return job_engsec_low
-		if(NCR)
-			switch(level)
-				if(1)
-					return job_ncr_high
-				if(2)
-					return job_ncr_med
-				if(3)
-					return job_ncr_low
 	return 0
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
@@ -883,6 +859,10 @@ var/list/preferences_datums = list()
 					if(result)
 						var/newtype = roundstart_species[result]
 						pref_species = new newtype()
+						if(pref_species.whitelist_req && !check_whitelist(user))
+							pref_species = new /datum/species/human()
+							user << "<font class='warning'>Race changing available only for donaters</font>"
+							return
 						//Now that we changed our species, we must verify that the mutant colour is still allowed.
 						var/temp_hsv = RGBtoHSV(features["mcolor"])
 						if(features["mcolor"] == "#000" || (!(MUTCOLORS_PARTSONLY in pref_species.specflags) && ReadHSV(temp_hsv)[3] < ReadHSV("#7F7F7F")[3]))
@@ -1041,6 +1021,8 @@ var/list/preferences_datums = list()
 							UI_style = "Plasmafire"
 						if("Plasmafire")
 							UI_style = "Retro"
+						if("Retro")
+							UI_style = "Fallout"
 						else
 							UI_style = "Midnight"
 

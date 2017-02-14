@@ -65,10 +65,6 @@
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
 
-/obj/item/clothing/gloves/f13/legion/ncr
-	name = "NCR gloves"
-	desc = "Standard issue fingerless gloves for all NCR Troopers."
-
 
 /obj/item/clothing/gloves/f13/legionlegat
 	name = "Legion legat gloves"

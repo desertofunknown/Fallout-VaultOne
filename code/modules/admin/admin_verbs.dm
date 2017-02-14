@@ -52,6 +52,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/Getkey,				/*teleports a mob with a certain ckey to our location*/
 //	/client/proc/sendmob,				/*sends a mob somewhere*/ -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage
 	/client/proc/jumptoarea,
+	/datum/admins/proc/clear_blood,
 	/client/proc/jumptokey,				/*allows us to jump to the location of a mob with a certain ckey*/
 	/client/proc/jumptomob,				/*allows us to jump to a specific mob*/
 	/client/proc/jumptoturf,			/*allows us to jump to a specific turf*/
@@ -141,7 +142,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/reset_latejoin_spawns,
 	/client/proc/create_outfits,
 	/client/proc/debug_huds,
-	/client/proc/map_template_load
+	/client/proc/map_template_load,
 	)
 var/list/admin_verbs_possess = list(
 	/proc/possess,
@@ -276,7 +277,7 @@ var/list/admin_verbs_hideable = list(
 		/client/proc/count_objects_all,
 		/client/proc/cmd_assume_direct_control,
 		/client/proc/startSinglo,
-		/client/proc/fps2,
+		/client/proc/set_server_fps,
 		/client/proc/cmd_admin_grantfullaccess,
 		/client/proc/cmd_admin_areatest,
 		/client/proc/readmin

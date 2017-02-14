@@ -21,6 +21,7 @@
 	bitesize = 6
 	filling_color = "#FA8072"
 
+/* //Moved to steak subtype
 /obj/item/weapon/reagent_containers/food/snacks/gekkonmeat
 	name = "gekkon fillet"
 	desc = "A fillet of gekkon meat."
@@ -44,6 +45,7 @@
 	list_reagents = list("nutriment" = 9, "vitamin" = 9)
 	bitesize = 6
 	filling_color = "#FA8072"
+*/
 
 /obj/item/weapon/reagent_containers/food/snacks/carpmeat/New()
 	..()

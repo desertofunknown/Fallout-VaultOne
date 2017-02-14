@@ -21,15 +21,10 @@ var/next_mob_id = 0
 	prepare_huds()
 	..()
 
-/*/atom/proc/prepare_huds()
-	for(var/hud in hud_possible)
-		hud_list[hud] = image('icons/mob/hud.dmi', src, "")*/
 /atom/proc/prepare_huds()
-	hud_list = list()
 	for(var/hud in hud_possible)
-		var/image/I = image('icons/mob/hud.dmi', src, "")
-		I.appearance_flags = RESET_COLOR|RESET_TRANSFORM
-		hud_list[hud] = I
+		hud_list[hud] = image('icons/mob/hud.dmi', src, "")
+
 /mob/proc/Cell()
 	set category = "Admin"
 	set hidden = 1
@@ -470,14 +465,39 @@ var/list/slot_equipment_priority = list( \
 /mob/verb/abandon_mob()
 	set name = "Respawn"
 	set category = "OOC"
-	if (!( abandon_allowed )) // Check if respawn enabled
+
+	if (!( abandon_allowed ))
 		return
-	if ((stat!=DEAD || !( ticker )))
+	var/is_admin = 0
+	if ((stat != 2 || !( ticker )))
 		usr << "<span class='boldnotice'>You must be dead to use this!</span>"
 		return
-	if( (world.time - timeofdeath) < config.respawn_timer ) // Ensure time has elapsed
-		usr << "You can respawn in [round(abs(timeofdeath + config.respawn_timer - world.time)/10)] seconds"
-		return
+
+	else
+		if(src.client)
+			is_admin = check_rights(0, 0)
+	var/deathtime = world.time - src.timeofdeath
+	var/deathtimeminutes = round(deathtime / 600)
+	var/pluralcheck = "minute"
+	if(deathtimeminutes == 0)
+		pluralcheck = ""
+	else if(deathtimeminutes == 1)
+		pluralcheck = " [deathtimeminutes] minute and"
+	else if(deathtimeminutes > 1)
+		pluralcheck = " [deathtimeminutes] minutes and"
+	var/deathtimeseconds = round((deathtime - deathtimeminutes * 600) / 10,1)
+	usr << "You have been dead for[pluralcheck] [deathtimeseconds] seconds."
+
+	if (deathtime < 10*600)
+		if(is_admin)
+			if(alert("Normal players must wait at least [10] minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
+				return
+		else
+			usr << "You must wait [10] minutes to respawn!"
+			return
+	else
+		usr << "You can respawn now, enjoy your new life!"
+
 	log_game("[usr.name]/[usr.key] used abandon mob.")
 
 	usr << "<span class='boldnotice'>Please roleplay correctly!</span>"
@@ -638,6 +658,8 @@ var/list/slot_equipment_priority = list( \
 		if (nextmap && istype(nextmap))
 			stat(null, "Next Map: [nextmap.friendlyname]")
 		stat(null, "Server Time: [time2text(world.realtime, "YYYY-MM-DD hh:mm")]")
+		if(config.sun_enabled)
+			stat(null, "Time Of Day: [SSsun.current_time_of_day]")
 		var/ETA
 		switch(SSshuttle.emergency.mode)
 			if(SHUTTLE_RECALL)

@@ -446,7 +446,7 @@
 		return /area/bridge
 	if(T.title == "Bartender" || T.title == "Chef")
 		return /area/crew_quarters
-	if(T.title == "Engineer" || T.title == "Chief Engineer" || T.title == "Atmospheric Technician")
+	if(T.title == "Station Engineer" || T.title == "Chief Engineer" || T.title == "Atmospheric Technician")
 		return /area/engine
 	if(T.title == "Chief Medical Officer" || T.title == "Medical Doctor" || T.title == "Chemist" || T.title == "Virologist" || T.title == "Geneticist")
 		return /area/medical

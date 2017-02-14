@@ -635,8 +635,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/tequila = 5,/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/vermouth = 5,/obj/item/weapon/reagent_containers/food/drinks/bottle/rum = 5,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/wine = 5,/obj/item/weapon/reagent_containers/food/drinks/bottle/cognac = 5,
-					/obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua = 5,/obj/item/weapon/reagent_containers/food/drinks/beer = 6,
-					/obj/item/weapon/reagent_containers/food/drinks/ale = 6,/obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice = 4,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua = 5,/obj/item/weapon/reagent_containers/food/drinks/bottle/beer = 6,
+					/obj/item/weapon/reagent_containers/food/drinks/bottle/ale = 6,/obj/item/weapon/reagent_containers/food/drinks/bottle/orangejuice = 4,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/tomatojuice = 4,/obj/item/weapon/reagent_containers/food/drinks/bottle/limejuice = 4,
 					/obj/item/weapon/reagent_containers/food/drinks/bottle/cream = 4,/obj/item/weapon/reagent_containers/food/drinks/soda_cans/tonic = 8,
 					/obj/item/weapon/reagent_containers/food/drinks/soda_cans/cola = 8, /obj/item/weapon/reagent_containers/food/drinks/soda_cans/sodawater = 15,
@@ -710,8 +710,8 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "nuka_vending"
 	icon_deny = "nuka_vending-deny"
 	product_slogans = "Take the leap... enjoy a Quantum!"
-	products = list(/obj/item/weapon/reagent_containers/food/drinks/nukacola/radioactive = 20)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/nukacola = 20)
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola/radioactive = 20)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola = 4)
 	refill_canister = /obj/item/weapon/vending_refill/nukacolavend
 
 /obj/machinery/vending/nukacolavend/New()
@@ -723,11 +723,11 @@ IF YOU MODIFY THE PRODUCTS LIST OF A MACHINE, MAKE SURE TO UPDATE ITS RESUPPLY C
 	icon_state = "nuka_vending"
 	icon_deny = "nuka_vending-deny"
 	product_slogans = "Take the leap... enjoy a Quantum!"
-	products = list(/obj/item/weapon/reagent_containers/food/drinks/nukacola = 20)
-	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/nukacola = 10)
+	products = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola = 20)
+	contraband = list(/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola = 10)
 	refill_canister = /obj/item/weapon/vending_refill/nukacolavendfull
 
-/obj/machinery/vending/nukacolavend/New()
+/obj/machinery/vending/nukacolavendfull/New()
 	desc = pick("You can clearly read the engravement on the side of a machine.<br>Warning: If you tamper with this unit you will have to answer to the Nuka-Cola Corporation.","This particular machine seems to be in a better condition than something you could see out in the wastes.<br>What if there are still some bottles left?","Cola. Cola never changes.<br>The Romans waged war because they didn't try Nuka-Cola. Spain built an empire from its lust for everything but Nuka-Cola.<br>All the empires on Earth have fallen, but Cola never changes.")
 	..()
 

@@ -25,7 +25,7 @@
 	icon_living = "guard"
 	icon_dead = "guard_dead"
 	speak_emote = list("chitters")
-	emote_hear = list("chitters")
+	//emote_hear = list("chitters")
 	speak_chance = 5
 	turns_per_move = 5
 	see_in_dark = 10
@@ -62,7 +62,7 @@
 	melee_damage_upper = 10
 	poison_per_bite = 10
 	var/atom/cocoon_target
-	poison_type = "morphine"
+//	poison_type = "morphine"
 	var/fed = 0
 
 //hunters have the most poison and move the fastest, so they can find prey
@@ -77,7 +77,7 @@
 	melee_damage_upper = 20
 	poison_per_bite = 5
 	move_to_delay = 5
-
+/*
 /mob/living/simple_animal/hostile/poison/giant_spider/handle_automated_action()
 	if(!..()) //AIStatus is off
 		return 0
@@ -260,7 +260,7 @@
 		adjustBruteLoss(20)
 	else if(bodytemperature > maxbodytemp)
 		adjustBruteLoss(20)
-
+*/
 #undef SPINNING_WEB
 #undef LAYING_EGGS
 #undef MOVING_TO_TARGET

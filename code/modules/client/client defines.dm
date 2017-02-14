@@ -18,7 +18,7 @@
 	var/moving			= null
 	var/adminobs		= null
 	var/area			= null
-	var/ircreplyamount = 0
+
 		///////////////
 		//SOUND STUFF//
 		///////////////

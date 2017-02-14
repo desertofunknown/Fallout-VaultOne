@@ -102,6 +102,12 @@ Radio:
 1349 - Miners
 1347 - Cargo techs
 1447 - AI Private
+Fallout Frequencies
+1301 - Vault
+1303 - Legion
+1305 - NCR
+1307 - Den
+1309 - Enclave
 
 Devices:
 1451 - tracking implant
@@ -124,7 +130,7 @@ On the map:
 */
 
 var/list/radiochannels = list(
-	"Common" = 1459,
+	"Wasteland" = 1459,
 	"Science" = 1351,
 	"Command" = 1353,
 	"Medical" = 1355,
@@ -134,11 +140,16 @@ var/list/radiochannels = list(
 	"Syndicate" = 1213,
 	"Supply" = 1347,
 	"Service" = 1349,
-	"AI Private" = 1447
+	"AI Private" = 1447,
+	"Vault" = 1301,
+	"Legion" = 1303,
+	"NCR" = 1305,
+	"Den" = 1307,
+	"Enclave" = 1309
 )
 
 var/list/radiochannelsreverse = list(
-	"1459" = "Common",
+	"1459" = "Wasteland",
 	"1351" = "Science",
 	"1353" = "Command",
 	"1355" = "Medical",
@@ -148,7 +159,12 @@ var/list/radiochannelsreverse = list(
 	"1213" = "Syndicate",
 	"1347" = "Supply",
 	"1349" = "Service",
-	"1447" = "AI Private"
+	"1447" = "AI Private",
+	"1301" = "Vault",
+	"1303" = "Legion",
+	"1305" = "NCR",
+	"1307" = "Den",
+	"1309" = "Enclave"
 )
 
 //depenging helpers
@@ -162,6 +178,12 @@ var/const/ENG_FREQ = 1357 //engineering, coloured orange in chat window
 var/const/SEC_FREQ = 1359 //security, coloured red in chat window
 var/const/CENTCOM_FREQ = 1337 //centcom frequency, coloured grey in chat window
 var/const/AIPRIV_FREQ = 1447 //AI private, colored magenta in chat window
+
+var/const/VLT_FREQ = 1301
+var/const/LEG_FREQ = 1303
+var/const/NCR_FREQ = 1305
+var/const/DEN_FREQ = 1307
+var/const/ENCL_FREQ = 1309
 
 #define TRANSMISSION_WIRE	0
 #define TRANSMISSION_RADIO	1

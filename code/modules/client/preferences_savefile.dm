@@ -304,9 +304,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_engsec_high"]	>> job_engsec_high
 	S["job_engsec_med"]		>> job_engsec_med
 	S["job_engsec_low"]		>> job_engsec_low
-	S["job_ncr_high"]		>> job_ncr_high
-	S["job_ncr_med"]		>> job_ncr_med
-	S["job_ncr_low"]		>> job_ncr_low
+
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update)		//needs_update == savefile_version if we need an update (positive integer)
@@ -359,9 +357,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	job_engsec_high = sanitize_integer(job_engsec_high, 0, 65535, initial(job_engsec_high))
 	job_engsec_med = sanitize_integer(job_engsec_med, 0, 65535, initial(job_engsec_med))
 	job_engsec_low = sanitize_integer(job_engsec_low, 0, 65535, initial(job_engsec_low))
-	job_ncr_high = sanitize_integer(job_ncr_high, 0, 65535, initial(job_ncr_high))
-	job_ncr_med = sanitize_integer(job_ncr_med, 0, 65535, initial(job_ncr_med))
-	job_ncr_low = sanitize_integer(job_ncr_low, 0, 65535, initial(job_ncr_low))
+
 	return 1
 
 /datum/preferences/proc/save_character()
@@ -417,9 +413,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["job_engsec_high"]	<< job_engsec_high
 	S["job_engsec_med"]		<< job_engsec_med
 	S["job_engsec_low"]		<< job_engsec_low
-	S["job_ncr_high"]		<< job_ncr_high
-	S["job_ncr_med"]		<< job_ncr_med
-	S["job_ncr_low"]		<< job_ncr_low
+
 	return 1
 
 

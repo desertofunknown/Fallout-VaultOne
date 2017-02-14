@@ -197,8 +197,3 @@
 		return 1
 	return 0
 
-/obj/effect/decal/cleanable/remains/human
-	desc = "They look like human remains. They have a strange aura about them."
-	icon = 'icons/effects/blood.dmi'
-	icon_state = "remains"
-

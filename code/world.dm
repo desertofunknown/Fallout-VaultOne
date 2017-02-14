@@ -1,23 +1,130 @@
+
+mob
+
+    var/blindspots = list()
+    var/complex_blind = 0
+    var/masked_from[0]
+
+
+
+    proc/RefreshView()
+        Blindspots(1)
+        for (var/mob/M in view())
+            CanSee(M)
+
+    proc/RefreshViewers()
+        for(var/mob/P in view())
+            P.CanSee(src)
+
+    proc/Blindspots(recalc)
+        if (recalc)
+            blindspots = list()
+            if (!client && !complex_blind)
+            //NPCs don't need big blindspot calculation for now but have that var there just in case
+                if (dir == SOUTH)
+                    blindspots += locate(x, y + 1, z)
+                if (dir == NORTH)
+                    blindspots += locate(x, y - 1, z)
+                if (dir == EAST)
+                    blindspots += locate(x - 1, y, z)
+                if (dir == WEST)
+                    blindspots += locate(x + 1, y, z)
+                return
+            var/p
+            var/newy = y
+            var/newx = x
+            var/xref = x
+            var/yref = y
+            var/loops = 0
+            if (dir == SOUTH)
+                for(p=0, p<9, p++)
+                    newy = newy + 1
+                    blindspots += locate(newx, newy, z)
+                    if (loops)
+                        for(p=0, p<loops, p++)
+                            newx = newx + 1
+                            blindspots += locate(newx, newy, z)
+                        newx = xref
+                        for(p=0, p<loops, p++)
+                            newx = newx - 1
+                            blindspots += locate(newx, newy, z)
+                        newx = xref
+                    loops++
+            if (dir == NORTH)
+                for(p=0, p<9, p++) //p<howevermany tiles the screen extends from the player
+                    newy = newy - 1
+                    blindspots += locate(newx, newy, z)
+                    if (loops)
+                        for(p=0, p<loops, p++)
+                            newx = newx + 1
+                            blindspots += locate(newx, newy, z)
+                        newx = xref
+                        for(p=0, p<loops, p++) // The tiles immediately in the player's rear peripheral aren't made a 'blind spot' this way
+                            newx = newx - 1
+                            blindspots += locate(newx, newy, z)
+                        newx = xref
+                    loops++
+            if (dir == EAST)
+                for(p=0, p<9, p++)
+                    newx = newx - 1
+                    blindspots += locate(newx, newy, z)
+                    if (loops)
+                        for(p=0, p<loops, p++)
+                            newy = newy + 1
+                            blindspots += locate(newx, newy, z)
+                        newy = yref
+                        for(p=0, p<loops, p++)
+                            newy = newy - 1
+                            blindspots += locate(newx, newy, z)
+                        newy = yref
+                    loops++
+            if (dir == WEST)
+                for(p=0, p<9, p++)
+                    newx = newx + 1
+                    blindspots += locate(newx, newy, z)
+                    if (loops)
+                        for(p=0, p<loops, p++)
+                            newy = newy + 1
+                            blindspots += locate(newx, newy, z)
+                        newy = yref
+                        for(p=0, p<loops, p++)
+                            newy = newy - 1
+                            blindspots += locate(newx, newy, z)
+                        newy = yref
+                    loops++
+
+
+
+    proc/CanSee(mob/M)
+        var/T
+        if (src.key in M.masked_from)
+            for (T in blindspots)
+                if (M.loc == T)
+                    return 0
+            if (client)
+                del M.masked_from[src.key]
+                M.masked_from -= src.key
+            return 1
+        else
+            for (T in blindspots)
+                if (M.loc == T)
+                    if (client)
+                        var/image/mask = image(null, loc = M)
+                        M.masked_from[src.key] = mask
+                        mask.override = 1
+                        src << mask
+                    return 0
 /world
 	mob = /mob/new_player
-	//turf = /turf/open/space
-	//area = /area/space
+	turf = /turf/ground/desert
+	area = /area/awaymission
 	view = "15x15"
 	cache_lifespan = 7
-	fps = 31
 
 var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
-//proc/checkgundamage()
-	//for(var/obj/item/weapon/gun/G in world)
-		//G.setgundamage(G.damageG,G.damageA,G.damageS,G.rangeG)
-	//	spawn(50)
-		//	checkgundamage()
-/world/New()
-	check_for_cleanbot_bug()
-	map_ready = 1
-	//checkgundamage()
-	world.log << "Map is ready."
 
+/world/New()
+	map_ready = 1
 #if (PRELOAD_RSC == 0)
 	external_rsc_urls = file2list("config/external_rsc_urls.txt","\n")
 	var/i=1
@@ -62,7 +169,7 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 
 	data_core = new /datum/datacore()
 
-	spawn(10)
+	spawn(-1)
 		Master.Setup()
 
 	process_teleport_locs()			//Sets up the wizard teleport locations
@@ -74,43 +181,28 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 	map_name = "Unknown"
 	#endif
 
-
 	return
 
-#define IRC_STATUS_THROTTLE 50
-var/last_irc_status = 0
 
 /world/Topic(T, addr, master, key)
-	if(config && config.log_world_topic)
-		diary << "TOPIC: \"[T]\", from:[addr], master:[master], key:[key]"
+	diary << "TOPIC: \"[T]\", from:[addr], master:[master], key:[key]"
 
-	var/list/input = params2list(T)
-	var/key_valid = (global.comms_allowed && input["key"] == global.comms_key)
-
-	if("ping" in input)
+	if (T == "ping")
 		var/x = 1
 		for (var/client/C in clients)
 			x++
 		return x
 
-	else if("players" in input)
+	else if(T == "players")
 		var/n = 0
 		for(var/mob/M in player_list)
 			if(M.client)
 				n++
 		return n
 
-	else if("ircstatus" in input)
-		if(world.time - last_irc_status < IRC_STATUS_THROTTLE)
-			return
-		var/list/adm = get_admin_counts()
-		var/status = "Admins: [Sum(adm)] (Active: [adm["admins"]] AFK: [adm["afkadmins"]] Stealth: [adm["stealthadmins"]] Skipped: [adm["noflagadmins"]]). "
-		status += "Players: [clients.len] (Active: [get_active_player_count()]). Mode: [master_mode]."
-		send2irc("Status", status)
-		last_irc_status = world.time
-
-	else if("status" in input)
+	else if (T == "status")
 		var/list/s = list()
+		// Please add new status indexes under the old ones, for the server banner (until that gets reworked)
 		s["version"] = game_version
 		s["mode"] = master_mode
 		s["respawn"] = config ? abandon_allowed : 0
@@ -118,63 +210,36 @@ var/last_irc_status = 0
 		s["vote"] = config.allow_vote_mode
 		s["ai"] = config.allow_ai
 		s["host"] = host ? host : null
+
+		var/admins = 0
+		for(var/client/C in clients)
+			if(C.holder)
+				if(C.holder.fakekey)
+					continue	//so stealthmins aren't revealed by the hub
+				admins++
+
 		s["active_players"] = get_active_player_count()
 		s["players"] = clients.len
-		//s["revision"] = revdata.commit
+		s["revision"] = revdata.revision
 		s["revision_date"] = revdata.date
-
-		var/list/adm = get_admin_counts()
-		s["admins"] = adm["present"] + adm["afk"] //equivalent to the info gotten from adminwho
+		s["admins"] = admins
 		s["gamestate"] = 1
 		if(ticker)
 			s["gamestate"] = ticker.current_state
-
 		s["map_name"] = map_name ? map_name : "Unknown"
 
-		if(key_valid && ticker && ticker.mode)
-			s["real_mode"] = ticker.mode.name
-			// Key-authed callers may know the truth behind the "secret"
-
-		s["security_level"] = get_security_level()
-		s["round_duration"] = round(world.time/10)
-		// Amount of world's ticks in seconds, useful for calculating round duration
-
-		if(SSshuttle && SSshuttle.emergency)
-			s["shuttle_mode"] = SSshuttle.emergency.mode
-			// Shuttle status, see /__DEFINES/stat.dm
-			s["shuttle_timer"] = SSshuttle.emergency.timeLeft()
-			// Shuttle timer, in seconds
-
 		return list2params(s)
-
-	else if("announce" in input)
-		if(!key_valid)
-			return "Bad Key"
-		else
+	else if (copytext(T,1,9) == "announce")
+		var/input[] = params2list(T)
+		if(global.comms_allowed)
+			if(input["key"] != global.comms_key)
+				return "Bad Key"
+			else
 #define CHAT_PULLR	64 //defined in preferences.dm, but not available here at compilation time
-			for(var/client/C in clients)
-				if(C.prefs && (C.prefs.chat_toggles & CHAT_PULLR))
-					C << "<span class='announce'>PR: [input["announce"]]</span>"
+				for(var/client/C in clients)
+					if(C.prefs && (C.prefs.chat_toggles & CHAT_PULLR))
+						C << "<span class='announce'>PR: [input["announce"]]</span>"
 #undef CHAT_PULLR
-
-	else if("crossmessage" in input)
-		if(!key_valid)
-			return
-		else
-			if(input["crossmessage"] == "Ahelp")
-				relay_msg_admins("<span class='adminnotice'><b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b></span>")
-			if(input["crossmessage"] == "Comms_Console")
-				minor_announce(input["message"], "Incoming message from [input["message_sender"]]")
-				for(var/obj/machinery/computer/communications/CM in machines)
-					CM.overrideCooldown()
-
-	else if("adminmsg" in input)
-		if(!key_valid)
-			return "Bad Key"
-		else
-			return IrcPm(input["adminmsg"],input["msg"],input["sender"])
-
-
 
 /world/Reboot(var/reason, var/feedback_c, var/feedback_r, var/time)
 	if (reason == 1) //special reboot, do none of the normal stuff
@@ -198,14 +263,6 @@ var/last_irc_status = 0
 	if(ticker.delay_end)
 		world << "<span class='boldannounce'>Reboot was cancelled by an admin.</span>"
 		return
-	if(mapchanging)
-		world << "<span class='boldannounce'>Map change operation detected, delaying reboot.</span>"
-		rebootingpendingmapchange = 1
-		spawn(1200)
-			if(mapchanging)
-				mapchanging = 0 //map rotation can in some cases be finished but never exit, this is a failsafe
-				Reboot("Map change timed out", time = 10)
-		return
 	feedback_set_details("[feedback_c]","[feedback_r]")
 	log_game("<span class='boldannounce'>Rebooting World. [reason]</span>")
 	kick_clients_in_lobby("<span class='boldannounce'>The round came to an end with you in the lobby.</span>", 1) //second parameter ensures only afk clients are kicked
@@ -221,31 +278,13 @@ var/last_irc_status = 0
 		if(ticker && ticker.round_end_sound)
 			world << sound(ticker.round_end_sound)
 		else
-			world << sound(pick('sound/AI/newroundsexy.ogg','sound/misc/apcdestroyed.ogg','sound/misc/bangindonk.ogg','sound/misc/leavingtg.ogg')) // random end sounds!! - LastyBatsy
+			world << sound(pick('sound/misc/warneverchanges.ogg','sound/misc/wheresthekaboom.ogg','sound/misc/joker.ogg','sound/misc/metalgear.ogg','sound/misc/gameover.ogg')) // random end sounds!! - LastyBatsy
 	for(var/client/C in clients)
 		if(config.server)	//if you set a server location in config.txt, it sends you there instead of trying to reconnect to the same world address. -- NeoFite
 			C << link("byond://[config.server]")
+	shell("sh /root/Reboot.sh")
 	..(0)
 
-var/inerror = 0
-/world/Error(var/exception/e)
-	//runtime while processing runtimes
-	if (inerror)
-		inerror = 0
-		return ..(e)
-	inerror = 1
-	//newline at start is because of the "runtime error" byond prints that can't be timestamped.
-	e.name = "\n\[[time2text(world.timeofday,"hh:mm:ss")]\][e.name]"
-
-	//this is done this way rather then replace text to pave the way for processing the runtime reports more thoroughly
-	//	(and because runtimes end with a newline, and we don't want to basically print an empty time stamp)
-	var/list/split = splittext(e.desc, "\n")
-	for (var/i in 1 to split.len)
-		if (split[i] != "")
-			split[i] = "\[[time2text(world.timeofday,"hh:mm:ss")]\][split[i]]"
-	e.desc = jointext(split, "\n")
-	inerror = 0
-	return ..(e)
 
 /world/proc/load_mode()
 	var/list/Lines = file2list("data/mode.txt")
@@ -279,24 +318,25 @@ var/inerror = 0
 	var/s = ""
 
 	if (config && config.server_name)
-		s += "<b>[config.server_name]</b> &#8212;"
+		s += "<b>[config.server_name]</b> &#8212; "
 
-	s += "[station_name()]</b><p>";
-	s += "<a href=\"https://cavecrawlers.com\">" //Change this to wherever you want the hub to link to.
+	s += "<b>[station_name()]</b>";
 	s += " ("
+	s += "<a href=[config.discordurl]>" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
-	s += "Community"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
+	s += "Discord Channel"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
-	s += ")"
-
+	s += ")<br>"
+	s += "<img src='http://i.imgur.com/bwkdv8N.gif'><br>"
+	s += "Under <b>[config.hostedby]</b> Protectorate"
+/*
 	var/list/features = list()
-
-	if(ticker)
-		if(master_mode)
-			features += master_mode
-	else
+	if(!ticker)
+		//if(master_mode)
+			//features += master_mode
+	//else
 		features += "<b>STARTING</b>"
-
+/*
 	if (!enter_allowed)
 		features += "closed"
 
@@ -317,14 +357,22 @@ var/inerror = 0
 		features += "~[n] players"
 	else if (n > 0)
 		features += "~[n] player"
+*/
+	/*
+	is there a reason for this? the byond site shows 'hosted by X' when there is a proper host already.
+	if (host)
+		features += "hosted by <b>[host]</b>"
+	*/
 
 	if (!host && config && config.hostedby)
-		features += "hosted by <b>[config.hostedby]</b>"
+		features += "Under <b>[config.hostedby]</b> Protectorate"
 
 	if (features)
-		s += ": [jointext(features, ", ")]"
-
-	status = s
+		s += " [list2text(features, ", ")]"
+*/
+	/* does this help? I do not know */
+	if (src.status != s)
+		src.status = s
 
 #define FAILED_DB_CONNECTION_CUTOFF 5
 var/failed_db_connections = 0
@@ -414,19 +462,17 @@ var/failed_db_connections = 0
 		world << "<span class='boldannounce'>Map rotation has chosen [VM.friendlyname] for next round!</span>"
 
 var/datum/votablemap/nextmap
-var/mapchanging = 0
-var/rebootingpendingmapchange = 0
+
 /proc/changemap(var/datum/votablemap/VM)
 	if (!SERVERTOOLS)
 		return
 	if (!istype(VM))
 		return
-	mapchanging = 1
+
 	log_game("Changing map to [VM.name]([VM.friendlyname])")
 	var/file = file("setnewmap.bat")
 	file << "\nset MAPROTATE=[VM.name]\n"
 	. = shell("..\\bin\\maprotate.bat")
-	mapchanging = 0
 	switch (.)
 		if (null)
 			message_admins("Failed to change map: Could not run map rotator")
@@ -456,5 +502,3 @@ var/rebootingpendingmapchange = 0
 		else
 			message_admins("Failed to change map: Unknown error: Error code #[.]")
 			log_game("Failed to change map: Unknown error: Error code #[.]")
-	if(rebootingpendingmapchange)
-		world.Reboot("Map change finished", time = 10)

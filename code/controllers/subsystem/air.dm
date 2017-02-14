@@ -1,28 +1,3 @@
-/turf/open/space/resolve_active_graph()
-	return list()
-/turf/open/proc/resolve_active_graph()
-	. = list()
-	var/datum/excited_group/EG = excited_group
-	if (blocks_air || !air)
-		return
-	if (!EG)
-		EG = new
-		EG.add_turf(src)
-
-	for (var/turf/open/ET in atmos_adjacent_turfs)
-		if ( ET.blocks_air || !ET.air)
-			continue
-
-		var/ET_EG = ET.excited_group
-		if (ET_EG)
-			if (ET_EG != EG)
-				EG.merge_groups(ET_EG)
-				EG = excited_group //merge_groups() may decide to replace our current EG
-		else
-			EG.add_turf(ET)
-		if (!ET.excited)
-			ET.excited = 1
-			. += ET
 var/datum/subsystem/air/SSair
 
 /datum/subsystem/air
@@ -82,11 +57,10 @@ var/datum/subsystem/air/SSair
 
 
 /datum/subsystem/air/Initialize(timeofday, zlevel)
-	return
-	//setup_allturfs(zlevel)
-	//setup_atmos_machinery(zlevel)
-	//setup_pipenets(zlevel)
-	//..()
+	setup_allturfs(zlevel)
+	setup_atmos_machinery(zlevel)
+	setup_pipenets(zlevel)
+	..()
 
 #define MC_AVERAGE(average, current) (0.8*(average) + 0.2*(current))
 /datum/subsystem/air/fire()
@@ -152,7 +126,7 @@ var/datum/subsystem/air/SSair
 /datum/subsystem/air/proc/process_high_pressure_delta()
 	for(var/turf/T in high_pressure_delta)
 		T.high_pressure_movements()
-		//T.pressure_difference = 0
+		T.pressure_difference = 0
 	high_pressure_delta.len = 0
 
 
@@ -201,6 +175,8 @@ var/datum/subsystem/air/SSair
 		z_finish = z_level
 	var/list/turfs_to_init = block(locate(1, 1, z_start), locate(world.maxx, world.maxy, z_finish))
 	for(var/turf/simulated/T in turfs_to_init)
+		if(!istype(T))
+			continue
 		T.CalculateAdjacentTurfs()
 		T.excited = 0
 		active_turfs -= T
@@ -212,7 +188,7 @@ var/datum/subsystem/air/SSair
 				var/turf/enemy_tile = get_step(T, direction)
 				if(istype(enemy_tile,/turf/simulated/))
 					var/turf/simulated/enemy_simulated = enemy_tile
-					if(!T.air.compare(enemy_simulated.air))
+					if(!enemy_simulated.air.compare(enemy_simulated.air))
 						T.excited = 1
 						active_turfs |= T
 						break

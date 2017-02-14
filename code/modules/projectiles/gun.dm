@@ -20,11 +20,6 @@
 	needs_permit = 1
 	attack_verb = list("struck", "hit", "bashed")
 
-	var/damageG=0
-	var/damageA=0
-	var/damageS=0
-	var/rangeG=0
-
 	var/fire_sound = "gunshot"
 	var/suppressed = 0					//whether or not a message is displayed when fired
 	var/can_suppress = 0
@@ -40,7 +35,7 @@
 	var/semicd = 0						//cooldown handler
 	var/heavy_weapon = 0
 
-	var/safetyposition = 0				//the safety position you see not the one you have 0 = off
+	var/safetyposition = 1				//the safety position you see not the one you have 0 = off
 	var/safetyon = 0				//the safetys actual position
 	var/safetybroken = 0				//whether the safetys lever is atached
 
@@ -72,7 +67,6 @@
 	var/zoomed = FALSE //Zoom toggle
 	var/zoom_amt = 3 //Distance in TURFs to move the user's screen forward (the "zoom" effect)
 	var/datum/action/toggle_scope_zoom/azoom
-	drawsound = 'sound/items/unholster.ogg'
 
 
 /obj/item/weapon/gun/New()
@@ -81,6 +75,7 @@
 		pin = new pin(src)
 
 	build_zooming()
+
 
 /obj/item/weapon/gun/CheckParts()
 	var/obj/item/weapon/gun/G = locate(/obj/item/weapon/gun) in contents
@@ -176,7 +171,7 @@
 
 	if(safetyon == 1)
 		shoot_with_empty_chamber(user)
-		user << "<span class='warning'>The gun can't fire with safety on! (Alt-click to turn the safety off.)</span>"
+		user << "<span class='warning'>The gun can't fire with safety on!</span>"
 		return
 
 	//DUAL WIELDING
@@ -307,7 +302,6 @@
 		return
 
 /obj/item/weapon/gun/attackby(obj/item/A, mob/user, params)
-	//src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	if(istype(A, /obj/item/device/flashlight/seclite))
 		var/obj/item/device/flashlight/seclite/S = A
 		if(can_flashlight)
@@ -396,8 +390,6 @@
 			SetLuminosity(0)
 	if(azoom)
 		azoom.Grant(user)
-	..()
-
 
 /obj/item/weapon/gun/dropped(mob/user)
 	if(F)
@@ -412,26 +404,27 @@
 
 /obj/item/weapon/gun/AltClick(mob/user)
 	..()
-	if(!in_range(src, user))
-		user << "<span class='warning'>You are too far away!</span>"
-		return
-	if(user.incapacitated())
-		user << "<span class='warning'>You can't do that right now!</span>"
-		return
-	if(unique_reskin && !reskinned && loc == user)
-		reskin_gun(user)
-		return
-	if(safetyposition == 1)
-		user << "<span class='warning'>You flip the safety to FIRE.</span>"
-		safetyposition = 0
-		if(safetybroken == 0)
-			safetyon = !safetyon
-		return
-	else
-		user << "<span class='warning'>You flip the safety to SAFE.</span>"
-		safetyposition = 1
-		if(safetybroken == 0)
-			safetyon = !safetyon
+	if(istype(user, /mob/living))
+		if(!in_range(src, user))
+			user << "<span class='warning'>You are too far away!</span>"
+			return
+		if(user.incapacitated())
+			user << "<span class='warning'>You can't do that right now!</span>"
+			return
+		if(unique_reskin && !reskinned && loc == user)
+			reskin_gun(user)
+			return
+		if(safetyposition == 1)
+			user << "<span class='warning'>You flip the safety to FIRE.</span>"
+			safetyposition = 0
+			if(safetybroken == 0)
+				safetyon = !safetyon
+			return
+		else
+			user << "<span class='warning'>You flip the safety to SAFE.</span>"
+			safetyposition = 1
+			if(safetybroken == 0)
+				safetyon = !safetyon
 
 /obj/item/weapon/gun/proc/reskin_gun(mob/M)
 	var/choice = input(M,"Warning, you can only reskin your weapon once!","Reskin Gun") in options

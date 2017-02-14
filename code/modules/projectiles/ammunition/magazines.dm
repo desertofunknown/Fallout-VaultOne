@@ -13,7 +13,7 @@
 /obj/item/ammo_box/magazine/internal/cylinder
 	name = "revolver cylinder"
 	ammo_type = /obj/item/ammo_casing/m44
-	caliber = "357"
+	caliber = "44"
 	max_ammo = 7
 
 /obj/item/ammo_box/magazine/internal/cylinder/ammo_count(countempties = 1)
@@ -61,27 +61,9 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	name = "d-tiv revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/c357
+	ammo_type = /obj/item/ammo_casing/c38
 	caliber = "38"
 	max_ammo = 6
-
-/obj/item/ammo_box/magazine/internal/cylinder/rev4570
-	name = "d-tiv revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/c4570
-	caliber = "4570"
-	max_ammo = 6
-
-/obj/item/ammo_box/magazine/internal/cylinder/rev44
-	name = "d-tiv revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/m44
-	caliber = "44"
-	max_ammo = 6
-
-/obj/item/ammo_box/magazine/internal/cylinder/rev556
-	name = "d-tiv revolver cylinder"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 5
 
 /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	name = "grenade launcher internal magazine"
@@ -124,12 +106,12 @@
 
 /obj/item/ammo_box/magazine/internal/shot/improvised
 	name = "improvised shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/improvised
 	max_ammo = 1
 
 /obj/item/ammo_box/magazine/internal/shot/riot
 	name = "riot shotgun internal magazine"
-	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	max_ammo = 6
 
 
@@ -174,6 +156,15 @@
 	max_ammo = 5
 
 ///////////EXTERNAL MAGAZINES////////////////
+
+/obj/item/ammo_box/magazine/pipeammo
+	name = "ammo for pipe rifle"
+	icon_state = "pipeammo"
+	origin_tech = "combat=2"
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+	max_ammo = 1
+	multiple_sprites = 2
 
 /obj/item/ammo_box/magazine/m10mm
 	name = "pistol magazine (10mm)"
@@ -303,31 +294,13 @@ obj/item/ammo_box/magazine/tommygunm45
 	max_ammo = 8
 
 /obj/item/ammo_box/magazine/m556
-	name = "5.56 magazine extended (5.56x45mm)"
+	name = "toploader magazine (5.56mm)"
 	icon_state = "5.56m"
 	origin_tech = "combat=5;syndicate=1"
 	ammo_type = /obj/item/ammo_casing/a556
 	caliber = "a556"
 	max_ammo = 30
 	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/m556/r20
-	name = "5.56 magazine (5.56x45mm)"
-	icon_state = "75"
-	origin_tech = "combat=3"
-	ammo_type = /obj/item/ammo_casing/a556
-	caliber = "a556"
-	max_ammo = 20
-	multiple_sprites = 2
-
-/obj/item/ammo_box/magazine/d12g
-	name = "shotgun drum magazine"
-	icon_state = "riotmag"
-	ammo_type = /obj/item/ammo_casing/shotgun
-	origin_tech = "combat=3;syndicate=1"
-	caliber = "shotgun"
-	max_ammo = 12
-
 
 /obj/item/ammo_box/magazine/m12g
 	name = "shotgun magazine (12g slugs)"
@@ -406,3 +379,16 @@ obj/item/ammo_box/magazine/tommygunm45
 /obj/item/ammo_box/magazine/toy/m762/update_icon()
 	..()
 	icon_state = "a762-[round(ammo_count(),10)]"
+
+//gauss
+
+/obj/item/ammo_box/magazine/m2mm
+	name = "gauss magazine (.2mm)"
+	icon_state = "2mm"
+	ammo_type = /obj/item/ammo_casing/c2mm
+	caliber = "2mm"
+	multiple_sprites = 2
+	max_ammo = 20
+
+//bozar
+

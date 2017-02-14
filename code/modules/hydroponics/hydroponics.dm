@@ -18,7 +18,7 @@
 	var/health = 0			//Its health.
 	var/lastproduce = 0		//Last time it was harvested
 	var/lastcycle = 0		//Used for timing of cycles.
-	var/cycledelay = 200	//About 10 seconds / cycle
+	var/cycledelay = 2000	//About 10 seconds / cycle
 	var/planted = 0			//Is it occupied?
 	var/harvest = 0			//Ready to harvest?
 	var/obj/item/seeds/myseed = null	//The currently planted seed
@@ -629,9 +629,8 @@
 			else 			usr << "Nothing happens..."
 
 /obj/machinery/hydroponics/attackby(obj/item/O, mob/user, params)
-
 	//Called when mob user "attacks" it with object O
-	if(istype(O, /obj/item/weapon/reagent_containers) )  // Syringe stuff (and other reagent containers now too)
+	if(istype(O, /obj/item/weapon/reagent_containers) && planted)  // Syringe stuff (and other reagent containers now too)
 		var/obj/item/weapon/reagent_containers/reagent_source = O
 
 		if(istype(reagent_source, /obj/item/weapon/reagent_containers/syringe))
@@ -698,7 +697,7 @@
 			reagent_source.update_icon()
 		return 1
 
-	else if(istype(O, /obj/item/seeds/))
+	else if(istype(O, /obj/item/seeds))
 		if(!planted)
 			if(/obj/item/seeds/kudzuseed)
 				investigate_log("had Kudzu planted in it by [user.ckey]([user]) at ([x],[y],[z])","kudzu")
@@ -714,6 +713,30 @@
 			if((user.client  && user.s_active != src))
 				user.client.screen -= O
 			O.dropped(user)
+			update_icon()
+
+		else
+			user << "<span class='warning'>[src] already has seeds in it!</span>"
+	else if(istype(O,/obj/item/weapon/reagent_containers/food/snacks/grown))
+		var/obj/item/weapon/reagent_containers/food/snacks/grown/G = O
+		if(!planted)
+			if(!G.seed)
+				user << "<span class='warning'>You can't plant that!</span>"
+				return 0
+			if(/obj/item/seeds/kudzuseed)
+				investigate_log("had Kudzu planted in it by [user.ckey]([user]) at ([x],[y],[z])","kudzu")
+			user.unEquip(O)
+			user << "<span class='notice'>You plant [O].</span>"
+			dead = 0
+			myseed = new G.seed
+			planted = 1
+			age = 1
+			health = myseed.endurance
+			lastcycle = world.time
+			if((user.client  && user.s_active != src))
+				user.client.screen -= O
+			O.dropped(user)
+			qdel(O)
 			update_icon()
 
 		else
@@ -1049,3 +1072,135 @@
 	if(istype(O, /obj/item/weapon/shovel))
 		user << "<span class='notice'>You clear up [src]!</span>"
 		qdel(src)
+
+var/list/wild_plants = list(
+/obj/machinery/hydroponics/soil/wild_plant/mutfruit = 40,
+/obj/machinery/hydroponics/soil/wild_plant/xander = 40,
+/obj/machinery/hydroponics/soil/wild_plant/broc = 40,
+/obj/machinery/hydroponics/soil/wild_plant/cornseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/feracactus = 40,
+/obj/machinery/hydroponics/soil/wild_plant/cherryseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/ambrosiavulgarisseed = 1,
+/obj/machinery/hydroponics/soil/wild_plant/lemonseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/pumpkinseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/watermelonseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/sunflowerseed = 1,
+/obj/machinery/hydroponics/soil/wild_plant/carrotseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/tobacco_seed = 1,
+/obj/machinery/hydroponics/soil/wild_plant/wheatseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/potatoseed = 10,
+/obj/machinery/hydroponics/soil/wild_plant/coffee_arabica_seed = 1
+)
+
+var/list/wild_cave_plants = list(
+/obj/machinery/hydroponics/soil/wild_plant/glowshroom = 50,
+/obj/machinery/hydroponics/soil/wild_plant/glowcap = 50,
+/obj/machinery/hydroponics/soil/wild_plant/plumpmycelium = 10,
+/obj/machinery/hydroponics/soil/wild_plant/fungus = 50
+)
+
+/obj/machinery/hydroponics/soil/wild_plant
+	name = "wild plant"
+	icon_state = ""
+	unwrenchable = 1
+	health = 100
+	planted = 1
+
+obj/machinery/hydroponics/soil/wild_plant/mutfruit
+	myseed = new /obj/item/seeds/mutfruit
+obj/machinery/hydroponics/soil/wild_plant/xander
+	myseed = new /obj/item/seeds/xander
+obj/machinery/hydroponics/soil/wild_plant/broc
+	myseed = new /obj/item/seeds/broc
+obj/machinery/hydroponics/soil/wild_plant/cornseed
+	myseed = new /obj/item/seeds/cornseed
+obj/machinery/hydroponics/soil/wild_plant/cherryseed
+	myseed = new /obj/item/seeds/cherryseed
+obj/machinery/hydroponics/soil/wild_plant/ambrosiavulgarisseed
+	myseed = new /obj/item/seeds/ambrosiavulgarisseed
+obj/machinery/hydroponics/soil/wild_plant/lemonseed
+	myseed = new /obj/item/seeds/lemonseed
+obj/machinery/hydroponics/soil/wild_plant/pumpkinseed
+	myseed = new /obj/item/seeds/pumpkinseed
+obj/machinery/hydroponics/soil/wild_plant/watermelonseed
+	myseed = new /obj/item/seeds/watermelonseed
+obj/machinery/hydroponics/soil/wild_plant/sunflowerseed
+	myseed = new /obj/item/seeds/sunflowerseed
+obj/machinery/hydroponics/soil/wild_plant/carrotseed
+	myseed = new /obj/item/seeds/carrotseed
+obj/machinery/hydroponics/soil/wild_plant/wheatseed
+	myseed = new /obj/item/seeds/wheatseed
+obj/machinery/hydroponics/soil/wild_plant/potatoseed
+	myseed = new /obj/item/seeds/potatoseed
+obj/machinery/hydroponics/soil/wild_plant/feracactus
+	myseed = new /obj/item/seeds/feracactus
+obj/machinery/hydroponics/soil/wild_plant/tobacco_seed
+	myseed = new /obj/item/seeds/tobacco_seed
+obj/machinery/hydroponics/soil/wild_plant/coffee_arabica_seed
+	myseed = new /obj/item/seeds/coffee_arabica_seed
+obj/machinery/hydroponics/soil/wild_plant/tea_aspera_seed
+	myseed = new /obj/item/seeds/tea_aspera_seed
+
+obj/machinery/hydroponics/soil/wild_plant/glowshroom
+	myseed = new /obj/item/seeds/glowshroom
+obj/machinery/hydroponics/soil/wild_plant/glowcap
+	myseed = new /obj/item/seeds/glowcap
+obj/machinery/hydroponics/soil/wild_plant/plumpmycelium
+	myseed = new /obj/item/seeds/plumpmycelium
+obj/machinery/hydroponics/soil/wild_plant/fungus
+	myseed = new /obj/item/seeds/fungus
+/obj/machinery/hydroponics/soil/wild_plant/New()
+	..()
+	name = myseed.plantname
+
+/obj/machinery/hydroponics/soil/wild_plant/attackby(obj/item/O, mob/user, params)
+	if(istype(O, /obj/item/weapon/shovel))
+		user << "<span class='notice'>You clear up [src]!</span>"
+		qdel(src)
+		return
+	attack_hand(user)
+
+/obj/machinery/hydroponics/soil/wild_plant/attack_hand(mob/user)
+	if(istype(user, /mob/living/silicon))		//How does AI know what plant is?
+		return
+	if(harvest)
+		myseed.harvest()
+	else
+		if(planted && !dead)
+			user << "<span class='info'>There is growing [myseed.plantname]</span>."
+/obj/machinery/hydroponics/soil/wild_plant/process()
+
+	if(!myseed)
+		qdel(src)
+		return
+	var/needs_update = 0 // Checks if the icon needs updating so we don't redraw empty trays every time
+
+	if(myseed.loc != src)
+		myseed.loc = src
+
+	if(world.time > (lastcycle + cycledelay))
+		lastcycle = world.time
+		if(planted && !dead)
+			// Advance age
+			age++
+			needs_update = 1
+
+			// Plant dies if health <= 0
+			if(health <= 0)
+				plantdies()
+				qdel(src)
+
+			// If the plant is too old, lose health fast
+			if(age > myseed.lifespan)
+				health -= 2
+
+			// Harvest code
+			if(age > myseed.production && (age - lastproduce) > myseed.production && (!harvest && !dead))
+				nutrimentMutation()
+				if(myseed && myseed.yield != -1) // Unharvestable shouldn't be harvested
+					harvest = 1
+				else
+					lastproduce = age
+	if (needs_update)
+		update_icon()
+	return

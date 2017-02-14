@@ -335,7 +335,7 @@
 		else
 			stat(null, text("No Cell Inserted!"))
 
-		stat("World Time:", worldtime2text())
+		stat("Station Time:", worldtime2text())
 		if(module)
 			internal = locate(/obj/item/weapon/tank/jetpack) in module.modules
 			if(internal)
@@ -938,7 +938,7 @@
 			return
 
 		if(module.type == /obj/item/weapon/robot_module/miner)
-			if(istype(loc, /turf/simulated/floor/wasteland))
+			if(istype(loc, /turf/simulated/floor/plating/asteroid))
 				if(istype(module_state_1,/obj/item/weapon/storage/bag/ore))
 					loc.attackby(module_state_1,src)
 				else if(istype(module_state_2,/obj/item/weapon/storage/bag/ore))

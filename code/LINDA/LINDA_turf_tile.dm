@@ -1,61 +1,8 @@
 
-/turf/open
-	//used for spacewind
-	var/pressure_difference = 0
-	var/pressure_direction = 0
-
-	var/datum/excited_group/excited_group
-	var/excited = 0
-	var/recently_active = 0
-	var/datum/gas_mixture/air
-
-	var/obj/effect/hotspot/active_hotspot
-	var/atmos_cooldown  = 0
-	var/planetary_atmos = FALSE //air will revert to initial_gas_mix over time
-
-	var/list/atmos_overlay_types = list() //gas IDs of current active gas overlays
-
-/turf/open/New()
-	..()
-	if(!blocks_air)
-		air = new
-		air.copy_from_turf(src)
-
-/turf/open/Destroy()
-	if(active_hotspot)
-		qdel(active_hotspot)
-		active_hotspot = null
-	// Adds the adjacent turfs to the current atmos processing
-	for(var/T in atmos_adjacent_turfs)
-		SSair.add_to_active(T)
-	return ..()
-
-/////////////////GAS MIXTURE PROCS///////////////////
-
-/turf/open/assume_air(datum/gas_mixture/giver) //use this for machines to adjust air
-	if(!giver)
-		return 0
-	air.merge(giver)
-	update_visuals()
-	return 1
-
-/turf/open/remove_air(amount)
-	var/datum/gas_mixture/ours = return_air()
-	var/datum/gas_mixture/removed = ours.remove(amount)
-	update_visuals()
-	return removed
-
-/turf/open/proc/copy_air_with_tile(turf/open/T)
-	if(istype(T))
-		air.copy_from(T.air)
-
-/turf/open/proc/copy_air(datum/gas_mixture/copy)
-	if(copy)
-		air.copy_from(copy)
 
 /turf
-	//var/pressure_difference = 0
-	//var/pressure_direction = 0
+	var/pressure_difference = 0
+	var/pressure_direction = 0
 	var/atmos_adjacent_turfs = 0
 	var/atmos_adjacent_turfs_amount = 0
 	var/atmos_supeconductivity = 0
@@ -305,17 +252,7 @@
 		if("sleeping_agent")
 			return SSair.sleeptoxin_overlay
 	return null
-/turf/open/proc/update_visuals()
-	//var/list/new_overlay_types = tile_graphic()
 
-	//for(var/overlay in atmos_overlay_types-new_overlay_types) //doesn't remove overlays that would only be added
-		//overlays -= overlay
-		//atmos_overlay_types -= overlay
-
-	//for(var/overlay in new_overlay_types-atmos_overlay_types) //doesn't add overlays that already exist
-		//add_overlay(overlay)
-
-	//atmos_overlay_types = new_overlay_types
 /turf/simulated/proc/tile_graphic()
 	if(air.toxins > MOLES_PLASMA_VISIBLE)
 		return "plasma"
@@ -338,17 +275,17 @@
 
 /turf/proc/consider_pressure_difference(turf/simulated/T, difference)
 	SSair.high_pressure_delta |= src
-	//if(difference > pressure_difference)
-		//pressure_direction = get_dir(src, T)
-		//pressure_difference = difference
+	if(difference > pressure_difference)
+		pressure_direction = get_dir(src, T)
+		pressure_difference = difference
 
 /turf/simulated/proc/last_share_check()
 	if(air.last_share > MINIMUM_AIR_TO_SUSPEND)
 		excited_group.reset_cooldowns()
 
 /turf/proc/high_pressure_movements()
-	//for(var/atom/movable/M in src)
-		//M.experience_pressure_difference(pressure_difference, pressure_direction)
+	for(var/atom/movable/M in src)
+		M.experience_pressure_difference(pressure_difference, pressure_direction)
 
 
 

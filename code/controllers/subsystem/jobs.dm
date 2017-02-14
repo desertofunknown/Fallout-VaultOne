@@ -17,10 +17,24 @@ var/datum/subsystem/job/SSjob
 /datum/subsystem/job/Initialize(timeofday, zlevel)
 	if (zlevel)
 		return ..()
+	SetupFaction()
+	SetupStatus()
 	SetupOccupations()
 	if(config.load_jobs_from_txt)
 		LoadJobs()
 	..()
+
+/datum/subsystem/job/proc/SetupFaction()
+	var/list/factions = subtypesof(/datum/f13_faction)
+	for(var/F in factions)
+		var/datum/f13_faction/faction = new F()
+		human_factions[faction.name] = faction
+/datum/subsystem/job/proc/SetupStatus()
+	var/list/status = subtypesof(/datum/status)
+	for(var/S in status)
+		var/datum/status/stat = new S()
+		human_status[stat.name] = stat
+
 
 /datum/subsystem/job/proc/SetupDesertOccupations()
 	desert_occupations = list()
@@ -29,7 +43,8 @@ var/datum/subsystem/job/SSjob
 		var/datum/job/job = new J()
 		if(!job)
 			continue
-		if(job.faction != "Desert")
+		var/datum/f13_faction/faction = get_faction_datum(job.faction)
+		if(faction == null || !faction.late_join)
 			continue
 		desert_occupations += job
 
@@ -37,7 +52,6 @@ var/datum/subsystem/job/SSjob
 /datum/subsystem/job/proc/SetupOccupations()
 	SetupDesertOccupations()
 	occupations = list()
-	var/list/pregame_factions = list("Vault", "Legion", "NCR")
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!all_jobs.len)
 		world << "<span class='boldannounce'>Error setting up jobs, no job datums found</span>"
@@ -46,7 +60,9 @@ var/datum/subsystem/job/SSjob
 	for(var/J in all_jobs)
 		var/datum/job/job = new J()
 		if(!job)	continue
-		if(!(job.faction in pregame_factions))	continue
+		var/datum/f13_faction/F = get_faction_datum(job.faction)
+		if(F == null || !F.first_spawn)
+			continue
 		if(!job.config_check()) continue
 		occupations += job
 
@@ -414,6 +430,8 @@ var/datum/subsystem/job/SSjob
 			H << "<FONT color='blue'><B>As this station was initially staffed with a [config.jobs_have_minimal_access ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></font>"
 	else
 		H << "<b>As the [rank], your main and only goal is to survive in the wasteland.</b>"
+	H.set_status(job.status)
+	H.set_faction(job.faction)
 	H.update_hud() 	// Tmp fix for Github issue 1006. TODO: make all procs in update_icons.dm do client.screen |= equipment no matter what.
 	return 1
 

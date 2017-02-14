@@ -40,7 +40,7 @@ var/list/image/ghost_darkness_images = list() //this is a list of images for thi
 	if(ismob(body))
 		T = get_turf(body)				//Where is the body located?
 		attack_log = body.attack_log	//preserve our attack logs by copying them to our ghost
-		timeofdeath = body.timeofdeath	//preserve timeofdeath
+
 		gender = body.gender
 		if(body.mind && body.mind.name)
 			name = body.mind.name
@@ -89,6 +89,9 @@ Works together with spawning an observer, noted above.
 			SSnano.on_transfer(src, ghost) // Transfer NanoUIs.
 			ghost.can_reenter_corpse = can_reenter_corpse
 			ghost.key = key
+			ghost.timeofdeath = src.timeofdeath
+			if(src.timeofdeath == 0)
+				ghost.timeofdeath = world.time
 			return ghost
 
 /*
@@ -136,7 +139,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 /mob/dead/observer/Stat()
 	..()
 	if(statpanel("Status"))
-		stat(null, "World Time: [worldtime2text()]")
+		stat(null, "Station Time: [worldtime2text()]")
 		if(ticker)
 			if(ticker.mode)
 				for(var/datum/gang/G in ticker.mode.gangs)

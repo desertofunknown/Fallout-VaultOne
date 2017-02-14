@@ -7,9 +7,6 @@
 	burst_size = 3
 	fire_delay = 2
 	action_button_name = "Toggle Firemode"
-	mag_load_sound = 'sound/effects/wep_magazines/smg_load.ogg'
-	mag_unload_sound = 'sound/effects/wep_magazines/smg_unload.ogg'
-	chamber_sound = 'sound/effects/wep_magazines/smg_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/proto
 	name = "\improper NanoTrasen Saber SMG"
@@ -92,18 +89,14 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	fire_delay = 2
 	burst_size = 2
-	damageG=10
-	damageA=0
-	damageS=5
-	rangeG=0
 	pin = /obj/item/device/firing_pin/implant/pindicate
+
 /obj/item/weapon/gun/projectile/automatic/c20r/unrestricted
 	pin = /obj/item/device/firing_pin
 
 /obj/item/weapon/gun/projectile/automatic/c20r/New()
 	..()
 	update_icon()
-	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
 	return
 
 /obj/item/weapon/gun/projectile/automatic/c20r/afterattack()
@@ -242,9 +235,6 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
-	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
-	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
-	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/smg10mm
 	name = "10-mm submachine gun"
@@ -271,93 +261,20 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
-	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
-	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
-	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
-/obj/item/weapon/gun/projectile/automatic/marksman
-	name = "Marksman Carbine"
-	desc = "A 5.56 caliber assault rifle widely seen in use by pre-war U.S. military forces. Semi-automatic only."
-	icon_state = "marksman_rifle"
-	item_state = "arg"
+
+//bozar
+
+/obj/item/weapon/gun/projectile/automatic/bozar
+	name = "Bozar"
+	desc = "The ultimate refinement of the sniper's art. Although, somewhat finicky and prone to jamming if not kept scrupulously clean, the big weapon's accuracy more than makes up for its extra maintenance requirements."
+	icon_state = "bozar"
+	item_state = "bozar"
 	slot_flags = 0
-	origin_tech = "combat=6;materials=1"
+	origin_tech = "combat=6;materials=5"
 	mag_type = /obj/item/ammo_box/magazine/m556
-	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
+	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	can_suppress = 0
-	burst_size = 1//Setting it to 0 is dumb. Just set it to one.
-	fire_delay = 2
-	zoomable = TRUE
-	zoom_amt = 7
-	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
-	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
-	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
-	damageG=10
-	damageA=0
-	damageS=0
-	rangeG=0
-
-/obj/item/weapon/gun/projectile/automatic/marksman/New()
-	..()
-	update_icon()
-	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
-	return
-
-/obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
-	name = "Service Rifle"
-	desc = "A 5.56 caliber semi-automatic standard issue service rifle for NCR Troopers."
-	icon_state = "service_rifle"
-	item_state = "assault_rifle"
-	fire_sound = 'sound/f13weapons/varmint_rifle.ogg'
-	zoomable = FALSE
-
-/obj/item/weapon/gun/projectile/automatic/minigun
-	name = "Minigun"
-	desc = "A minigun is a multi-barrel machine gun with a high rate of fire, employing Gatling-style rotating barrels."
-	icon_state = "arg"
-	item_state = "arg"
-	slot_flags = 0
-	origin_tech = "combat=5;materials=1"
-	mag_type = /obj/item/ammo_box/magazine/m556
-	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
-	can_suppress = 0
-	burst_size = 3
-	fire_delay = 0.5
-
-/obj/item/weapon/gun/projectile/automatic/shotgun/pancor
-	name = "pancor jackhammer"
-	desc = "A select fire automatic shotgun, the pinnacle of turning things into swiss cheese."
-	icon_state = "pancor"
-	item_state = "bulldog"
-	fire_sound = 'sound/f13weapons/repeater_fire.ogg'
-	mag_type = /obj/item/ammo_box/magazine/d12g
-	can_suppress = 0
-	burst_size = 3
-
-/obj/item/weapon/gun/projectile/automatic/shotgun/riot
-	name = "riot shotgun"
-	desc = "A semi-automatic shotgun with a drum magazine of 12, allowing for robust crowd control."
-	icon_state = "riot_shotgun"
-	item_state = "shotgun"
-	can_suppress = 0
-	burst_size = 0
-	fire_delay = 2
-	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
-	mag_type = /obj/item/ammo_box/magazine/d12g
-
-/obj/item/weapon/gun/projectile/automatic/lsw
-	name = "light support weapon"
-	desc = "A British made light machine gun, for squad supressive fire capabilities. "
-	icon_state = "lsw"
-	item_state = "l6closedmag"
-	slot_flags = 0
-	origin_tech = "combat=6;materials=1"
-	mag_type = /obj/item/ammo_box/magazine/m556
-	fire_sound = 'sound/f13weapons/assaultrifle_fire.ogg'
-	can_suppress = 0
-	burst_size = 10
-	heavy_weapon = 1
+	burst_size = 15
 	fire_delay = 1
-	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
-	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
-	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
+

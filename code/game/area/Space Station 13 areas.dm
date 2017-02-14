@@ -51,7 +51,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	var/static_light = 0
 	var/static_environ
 
-	var/has_gravity = 1
+	var/has_gravity = 0
 	var/safe = 0 				//Is the area teleport-safe: no space / radiation / aggresive mobs / other dangers
 
 	var/no_air = null
@@ -94,13 +94,19 @@ var/list/teleportlocs = list()
 /area/space
 	icon_state = "space"
 	requires_power = 1
-	always_unpowered = 0
-	lighting_use_dynamic = DYNAMIC_LIGHTING_ENABLED
+	always_unpowered = 1
+//	lighting_use_dynamic = DYNAMIC_LIGHTING_DISABLED
 	power_light = 0
 	power_equip = 0
+	open_space = 1
 	power_environ = 0
 	valid_territory = 0
-	//ambientsounds = list('sound/ambience/ambispace.ogg','sound/ambience/title2.ogg',)
+	ambientsounds = list('sound/f13ambience/wasteland.ogg','sound/f13music/22VCITY.ogg',
+	'sound/f13music/07DESERT.ogg', 'sound/f13music/03aWRLDMP.ogg',
+	'sound/f13music/08VATS.ogg', 'sound/f13music/10LABONE.ogg',
+	'sound/f13music/13CARVRN.ogg', 'sound/f13music/14NECRO.ogg',
+	'sound/f13music/16FOLLOW.ogg', 'sound/f13music/24REDD.ogg'
+	)
 	blob_allowed = 0 //Eating up space doesn't count for victory as a blob.
 
 /area/space/nearstation
@@ -211,24 +217,24 @@ var/list/teleportlocs = list()
 
 //EXTRA
 
-/area/wasteland
+/area/asteroid
 	name = "Mines"
-	icon_state = "wasteland"
+	icon_state = "asteroid"
 	requires_power = 0
 	has_gravity = 1
-	blob_allowed = 0 //Nope, no winning on the wasteland as a blob. Gotta eat the station.
+	blob_allowed = 0 //Nope, no winning on the asteroid as a blob. Gotta eat the station.
 	valid_territory = 0
 
-/area/wasteland/cave
+/area/asteroid/cave
 	name = "Mines - Underground"
 	icon_state = "cave"
 	requires_power = 0
 
-/area/wasteland/artifactroom
+/area/asteroid/artifactroom
 	name = "Mines - Artifact"
 	icon_state = "cave"
 
-/area/wasteland/artifactroom/New()
+/area/asteroid/artifactroom/New()
 	..()
 	SetDynamicLighting()
 
@@ -485,7 +491,6 @@ var/list/teleportlocs = list()
 /area/hallway/secondary/entry
 	name = "Vault Entry"
 	icon_state = "entry"
-	ambientsounds = list('sound/f13music/22VCITY.ogg')
 
 //Command
 
@@ -593,6 +598,7 @@ var/list/teleportlocs = list()
 /area/library
  	name = "Library"
  	icon_state = "library"
+ 	open_space = 1
 
 /area/chapel/main
 	name = "Chapel"
@@ -618,10 +624,6 @@ var/list/teleportlocs = list()
 
 /area/engine/engineering
 	name = "Reactor level"
-	icon_state = "engine"
-
-/area/engine/power_plant
-	name = "Power Plant"
 	icon_state = "engine"
 
 /area/engine/break_room
@@ -704,7 +706,9 @@ var/list/teleportlocs = list()
 /area/assembly/assembly_line //Derelict Assembly Line
 	name = "Assembly Line"
 	icon_state = "ass_line"
-	ambientsounds = list('sound/f13music/10LABONE.ogg')
+	power_equip = 0
+	power_light = 0
+	power_environ = 0
 
 //Teleporter
 
@@ -929,7 +933,6 @@ var/list/teleportlocs = list()
 /area/janitor/
 	name = "Custodial Closet"
 	icon_state = "janitor"
-	ambientsounds = list('sound/f13music/12JUNKTN.ogg')
 
 /area/hydroponics
 	name = "Hydroponics"
@@ -1326,23 +1329,10 @@ var/list/teleportlocs = list()
 	name = "Wasteland"
 	icon_state = "away"
 	has_gravity = 1
-	luminosity = 1
-	lighting_use_dynamic = DYNAMIC_LIGHTING_DISABLED
-	ambientsounds = list('sound/f13music/07DESERT.ogg', 'sound/f13music/08VATS.ogg', 'sound/f13music/03aWRLDMP.ogg', 'sound/f13music/03bWRLDMP.ogg')
 
 /area/awaymission/example
 	name = "Strange Station"
 	icon_state = "away"
-
-/area/awaymission/enclave
-	name = "Enclave Upper Base"
-	icon_state = "away"
-	ambientsounds = list('sound/f13music/08VATS.ogg')
-
-/area/awaymission/enclave/lower
-	name = "Enclave Lower Base"
-	icon_state = "away"
-	ambientsounds = list('sound/f13music/08VATS.ogg')
 
 /area/awaymission/desert
 	name = "Mars"

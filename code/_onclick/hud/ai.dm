@@ -39,9 +39,9 @@
 	name = "Crew Monitoring Console"
 	icon_state = "crew_monitor"
 
-/obj/screen/ai/crew_monitor/Click()
-	var/mob/living/silicon/ai/AI = usr
-	crewmonitor.show(AI)
+///obj/screen/ai/crew_monitor/Click()
+//	var/mob/living/silicon/ai/AI = usr
+//	crewmonitor(AI,AI)
 
 /obj/screen/ai/crew_manifest
 	name = "Crew Manifest"
@@ -68,15 +68,12 @@
 	AI.announcement()
 
 /obj/screen/ai/call_shuttle
-	name = "Call/Recall Emergency Shuttle"
+	name = "Call Emergency Shuttle"
 	icon_state = "call_shuttle"
 
 /obj/screen/ai/call_shuttle/Click()
 	var/mob/living/silicon/ai/AI = usr
-	if(SSshuttle.emergency.mode < SHUTTLE_CALL)
-		AI.ai_call_shuttle()
-	else
-		AI.ai_cancel_call()
+	AI.ai_call_shuttle()
 
 /obj/screen/ai/state_laws
 	name = "State Laws"

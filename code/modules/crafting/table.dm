@@ -2,7 +2,7 @@
 /obj/structure/table
 	var/list/table_contents = list()
 	var/viewing_category = 1 //typical powergamer starting on the Weapons tab
-	var/list/categories = list(CAT_WEAPON,CAT_ARMOR,CAT_AMMO,CAT_ROBOT,CAT_FOOD,CAT_MISC)
+	var/list/categories = list(CAT_WEAPON,CAT_MED,CAT_ARMOR,CAT_AMMO,CAT_ROBOT,CAT_FOOD,CAT_MISC)
 
 
 /obj/structure/table/MouseDrop(atom/over)
@@ -201,6 +201,8 @@
 		var/list/cant_craft = list()
 		for(var/datum/table_recipe/R in table_recipes)
 			if(R.category != categories[viewing_category])
+				continue
+			if(!(R.show || (R.type in user.allow_recipes)))
 				continue
 			if(check_contents(R))
 				can_craft += R

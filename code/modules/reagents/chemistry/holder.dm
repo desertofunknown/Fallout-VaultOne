@@ -130,10 +130,17 @@ var/const/INJECT = 5 //injection
 	var/part = amount / src.total_volume
 	var/trans_data = null
 	for (var/datum/reagent/current_reagent in src.reagent_list)
-		if (current_reagent.id == "blood" && ishuman(target))
+		if(ishuman(target))
 			var/mob/living/carbon/human/H = target
-			H.inject_blood(my_atom, amount)
-			continue
+			if (current_reagent.id == "blood" && ishuman(target))
+				H.inject_blood(my_atom, amount)
+				continue
+			if(istype(current_reagent,/datum/reagent/consumable))
+				var/datum/reagent/consumable/drink = current_reagent
+				H.water += drink.water_level * amount * 2
+			if(istype(current_reagent,/datum/reagent/water))
+				H.water += amount * 2
+
 		var/current_reagent_transfer = current_reagent.volume * part
 		if(preserve_data)
 			trans_data = copy_data(current_reagent)

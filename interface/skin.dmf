@@ -185,52 +185,52 @@ macro "borghotkeymode"
 
 macro "macro"
 	elem 
-		name = "Tab"
+		name = "TAB"
 		command = ".winset \"mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0\""
 	elem 
-		name = "Center+REP"
+		name = "CENTER+REP"
 		command = ".center"
 	elem 
-		name = "Northeast"
+		name = "NORTHEAST"
 		command = ".northeast"
 	elem 
-		name = "Southeast"
+		name = "SOUTHEAST"
 		command = ".southeast"
 	elem 
-		name = "Southwest"
+		name = "SOUTHWEST"
 		command = ".southwest"
 	elem 
-		name = "Northwest"
+		name = "NORTHWEST"
 		command = ".northwest"
 	elem 
-		name = "CTRL+West"
+		name = "CTRL+WEST"
 		command = "westface"
 	elem 
-		name = "West+REP"
+		name = "WEST+REP"
 		command = ".west"
 	elem 
-		name = "CTRL+North"
+		name = "CTRL+NORTH"
 		command = "northface"
 	elem 
-		name = "North+REP"
+		name = "NORTH+REP"
 		command = ".north"
 	elem 
-		name = "CTRL+East"
+		name = "CTRL+EAST"
 		command = "eastface"
 	elem 
-		name = "East+REP"
+		name = "EAST+REP"
 		command = ".east"
 	elem 
-		name = "CTRL+South"
+		name = "CTRL+SOUTH"
 		command = "southface"
 	elem 
-		name = "South+REP"
+		name = "SOUTH+REP"
 		command = ".south"
 	elem 
-		name = "Insert"
+		name = "INSERT"
 		command = "a-intent right"
 	elem 
-		name = "Delete"
+		name = "DELETE"
 		command = "delete-key-pressed"
 	elem 
 		name = "CTRL+1"
@@ -288,6 +288,7 @@ macro "macro"
 		command = "Activate-Held-Object"
 	elem 
 		name = "F1"
+		command = "adminhelp"
 	elem 
 		name = "CTRL+SHIFT+F1+REP"
 		command = ".options"
@@ -865,7 +866,7 @@ window "mapwindow"
 window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 219,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
@@ -890,18 +891,20 @@ window "outputwindow"
 window "rpane"
 	elem "rpane"
 		type = MAIN
-		pos = 281,0
+		pos = 219,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		is-pane = true
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0
-		size = 640x499
+		size = 638x474
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		right = "outputwindow"
 		is-vert = false
@@ -911,19 +914,21 @@ window "rpane"
 		size = 67x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Report Issue"
 		command = "report-issue"
 		group = "rpanemode"
-	elem "changelogb"
+	elem "discordb"
 		type = BUTTON
 		pos = 336,0
 		size = 67x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
-		text = "Changelog"
-		command = "Changelog"
+		text = "Discord"
+		command = "discord"
 		group = "rpanemode"
 	elem "rulesb"
 		type = BUTTON
@@ -931,19 +936,21 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Rules"
 		command = "rules"
 		group = "rpanemode"
-	elem "githubb"
+	elem "changelogb"
 		type = BUTTON
 		pos = 408,0
 		size = 67x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
-		text = "Github"
-		command = "github"
+		text = "Changelog"
+		command = "changelog"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
@@ -951,9 +958,10 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
-		text = "Forum"
-		command = "forum"
+		text = "VK"
+		command = "vk"
 		group = "rpanemode"
 	elem "wikib"
 		type = BUTTON
@@ -961,6 +969,7 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Wiki"
 		command = "wiki"
@@ -971,6 +980,7 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Text"
@@ -984,6 +994,7 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Browser"
@@ -996,6 +1007,7 @@ window "rpane"
 		size = 60x16
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = "is-checked"
 		text = "Info"
@@ -1006,10 +1018,11 @@ window "rpane"
 window "browserwindow"
 	elem "browserwindow"
 		type = MAIN
-		pos = 281,0
+		pos = 219,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Browser"
 		is-pane = true
@@ -1028,7 +1041,7 @@ window "browserwindow"
 window "infowindow"
 	elem "infowindow"
 		type = MAIN
-		pos = 281,0
+		pos = 219,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none

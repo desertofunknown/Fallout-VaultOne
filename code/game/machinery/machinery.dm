@@ -339,11 +339,7 @@ Class Procs:
 			playsound(src.loc, 'sound/items/Deconstruct.ogg', 50, 1)
 		return 1
 	return 0
-/obj/structure/frame/machine
-	name = "machine frame"
-	var/list/components = null
-	var/list/req_components = null
-	var/list/req_component_names = null // user-friendly names of components
+
 /obj/machinery/proc/exchange_parts(mob/user, obj/item/weapon/storage/part_replacer/W)
 	if(flags & NODECONSTRUCT)
 		return

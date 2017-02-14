@@ -43,6 +43,8 @@
 	var/list/default_features = list() // Default mutant bodyparts for this species. Don't forget to set one for every mutant bodypart you allow this species to have.
 	var/list/mutant_bodyparts = list() 	// Parts of the body that are diferent enough from the standard human model that they cause clipping with some equipment
 
+	var/whitelist_req = 1
+
 	var/speedmod = 0	// this affects the race's speed. positive numbers make it move slower, negative numbers make it move faster
 	var/armor = 0		// overall defense for the race... or less defense, if it's negative.
 	var/brutemod = 1	// multiplier for brute damage
@@ -635,7 +637,7 @@
 			H.update_inv_wear_suit()
 
 	// nutrition decrease and satiety
-	if (H.nutrition > 0 && H.stat != DEAD && H.dna.species.need_nutrition)
+	if (H.nutrition > 0 && H.stat != DEAD && H.dna.species.need_nutrition && (H.client || H.nutrition > NUTRITION_LEVEL_STARVING))
 		var/hunger_rate = HUNGER_FACTOR
 		if(H.satiety > 0)
 			H.satiety--
@@ -645,6 +647,10 @@
 				H.Jitter(5)
 			hunger_rate = 3 * HUNGER_FACTOR
 		H.nutrition = max (0, H.nutrition - hunger_rate)
+
+	if ((H.water > 0 && H.stat != DEAD) && (H.client || H.water > THIRST_LEVEL_LIGHT))
+		var/thirst_rate = THIRST_FACTOR * H.transpiration_efficiency
+		H.water = max (0, H.water - thirst_rate)
 
 
 	if (H.nutrition > NUTRITION_LEVEL_FULL)
@@ -661,6 +667,13 @@
 		if(H.metabolism_efficiency != 1.25)
 			H << "<span class='notice'>You feel vigorous.</span>"
 			H.metabolism_efficiency = 1.25
+
+	else if(H.nutrition < NUTRITION_LEVEL_STARVING - 100)
+		if(H.metabolism_efficiency != 0.6)
+			H << "<span class='warning'>You are deadly hungy.</span>"
+		H.adjustOxyLoss(5)
+		H.metabolism_efficiency = 0.6
+
 	else if(H.nutrition < NUTRITION_LEVEL_STARVING + 50)
 		if(H.metabolism_efficiency != 0.8)
 			H << "<span class='notice'>You feel sluggish.</span>"
@@ -669,6 +682,35 @@
 		if(H.metabolism_efficiency == 1.25)
 			H << "<span class='notice'>You no longer feel vigorous.</span>"
 		H.metabolism_efficiency = 1
+	//THIRST//
+	if(H.water > THIRST_LEVEL_LIGHT)
+		if(H.transpiration_efficiency != 1.1)
+			H << "<span class='notice'>You quench your thirst.</span>"
+		H.transpiration_efficiency = 1.1
+	else if(H.water > THIRST_LEVEL_MIDDLE) //LITLE THIRST
+		if(H.transpiration_efficiency != 1)
+			H << "<span class='notice'>You mouth dry.</span>"
+		H.transpiration_efficiency = 1
+	else if(H.water > THIRST_LEVEL_HARD) //MIDDLE THIRST
+		if(H.transpiration_efficiency != 0.9)
+			H << "<span class='warning'>Mouth completely dry, you feel weak.</span>"
+		H.transpiration_efficiency = 0.9
+	else if(H.water > THIRST_LEVEL_DEADLY) //HARD THIRST
+		if(H.transpiration_efficiency != 0.6)
+			H << "<span class='warning'>Thirst is slowly killing you.</span>"
+		if(prob(4))
+			H.AdjustWeakened(5)
+		H.transpiration_efficiency = 0.6
+	else
+		if(H.transpiration_efficiency != 0.1)
+			H << "<span class='warning'>You are dying of thirst.</span>"
+		H.adjustOxyLoss(5)
+		H.transpiration_efficiency = 0.1
+		if(prob(10))
+			H.AdjustWeakened(5)
+
+
+
 
 	H.updatehealth()
 
@@ -798,10 +840,22 @@
 		if(NUTRITION_LEVEL_HUNGRY to NUTRITION_LEVEL_FULL)
 			H.clear_alert("nutrition")
 		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-			H.throw_alert("nutrition", /obj/screen/alert/hungry)
+			H.throw_alert("nutrition", /obj/screen/alert/starving, 1)
+		if(NUTRITION_LEVEL_STARVING - 100 to NUTRITION_LEVEL_STARVING)
+			H.throw_alert("nutrition", /obj/screen/alert/starving, 2)
 		else
-			H.throw_alert("nutrition", /obj/screen/alert/starving)
-
+			H.throw_alert("nutrition", /obj/screen/alert/starving, 3)
+	switch(H.water)
+		if(THIRST_LEVEL_LIGHT to INFINITY)
+			H.clear_alert("thirst")
+		if(THIRST_LEVEL_MIDDLE to THIRST_LEVEL_LIGHT)
+			H.throw_alert("thirst", /obj/screen/alert/thirst, 2)
+		if (THIRST_LEVEL_HARD to THIRST_LEVEL_MIDDLE)
+			H.throw_alert("thirst", /obj/screen/alert/thirst, 3)
+		if (THIRST_LEVEL_DEADLY to THIRST_LEVEL_HARD)
+			H.throw_alert("thirst", /obj/screen/alert/thirst, 4)
+		else
+			H.throw_alert("thirst", /obj/screen/alert/thirst, 5)
 	return 1
 
 /datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/target)
@@ -916,6 +970,9 @@
 			if(hungry >= 70)
 				. += hungry / 50
 
+			if(H.water < THIRST_LEVEL_LIGHT)
+				. += (THIRST_LEVEL_LIGHT - H.water)/100
+
 			if(H.wear_suit)
 				. += H.wear_suit.slowdown
 			if(H.shoes)
@@ -936,10 +993,10 @@
 
 		if(grav)
 			if(H.status_flags & GOTTAGOFAST)
-				. -= 0.1
+				. -= 1
 
 			if(H.status_flags & GOTTAGOREALLYFAST)
-				. -= 0.2
+				. -= 2
 
 //////////////////
 // ATTACK PROCS //

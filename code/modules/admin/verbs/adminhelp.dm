@@ -4,7 +4,7 @@
 	var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","alien","as", "i")
 
 	//explode the input msg into a list
-	var/list/msglist = splittext(msg, " ")
+	var/list/msglist = text2list(msg, " ")
 
 	//generate keywords lookup
 	var/list/surnames = list()
@@ -12,11 +12,10 @@
 	var/list/ckeys = list()
 	for(var/mob/M in mob_list)
 		var/list/indexing = list(M.real_name, M.name)
-		if(M.mind)
-			indexing += M.mind.name
+		if(M.mind)	indexing += M.mind.name
 
 		for(var/string in indexing)
-			var/list/L = splittext(string, " ")
+			var/list/L = text2list(string, " ")
 			var/surname_found = 0
 			//surnames
 			for(var/i=L.len, i>=1, i--)
@@ -61,6 +60,7 @@
 		msg += "[original_word] "
 	return msg
 
+
 /client/var/adminhelptimerid = 0
 
 /client/proc/giveadminhelpverb()
@@ -83,8 +83,7 @@
 		return
 
 	//clean the input msg
-	if(!msg)
-		return
+	if(!msg)	return
 	msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
 	if(!msg)	return
 	var/original_msg = msg
@@ -95,8 +94,7 @@
 
 	msg = keywords_lookup(msg)
 
-	if(!mob)
-		return						//this doesn't happen
+	if(!mob)	return						//this doesn't happen
 
 	var/ref_mob = "\ref[mob]"
 	var/ref_client = "\ref[src]"
@@ -116,21 +114,9 @@
 	//send it to irc if nobody is on and tell us how many were on
 	var/admin_number_present = send2irc_adminless_only(ckey,original_msg)
 	log_admin("HELP: [key_name(src)]: [original_msg] - heard by [admin_number_present] non-AFK admins who have +BAN.")
+	msg = sanitize_ya(msg)
 	feedback_add_details("admin_verb","AH") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
-
-/proc/get_admin_counts(requiredflags = R_BAN)
-	. = list("total" = 0, "noflags" = 0, "afk" = 0, "stealth" = 0, "present" = 0)
-	for(var/client/X in admins)
-		.["total"]++
-		if(requiredflags != 0 && !check_rights_for(X, requiredflags))
-			.["noflags"]++
-		else if(X.is_afk())
-			.["afk"]++
-		else if(X.holder.fakekey)
-			.["stealth"]++
-		else
-			.["present"]++
 
 /proc/send2irc_adminless_only(source, msg, requiredflags = R_BAN)
 	var/admin_number_total = 0		//Total number of admins
@@ -163,13 +149,3 @@
 	if(config.useircbot)
 		shell("python nudge.py [msg] [msg2]")
 	return
-/proc/send2otherserver(source,msg,type = "Ahelp")
-	if(global.cross_allowed)
-		var/list/message = list()
-		message["message_sender"] = source
-		message["message"] = msg
-		message["source"] = "([config.cross_name])"
-		message["key"] = global.comms_key
-		message["crossmessage"] = type
-
-		world.Export("[global.cross_address]?[list2params(message)]")

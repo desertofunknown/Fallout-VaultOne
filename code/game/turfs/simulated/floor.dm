@@ -4,9 +4,9 @@ var/list/icons_to_ignore_at_floor_init = list("damaged1","damaged2","damaged3","
 				"platingdmg3","plating","light_on","light_on_flicker1","light_on_flicker2",
 				"light_on_clicker3","light_on_clicker4","light_on_clicker5","light_broken",
 				"light_on_broken","light_off","wall_thermite","grass", "sand",
-				"wasteland","wasteland_dug",
-				"wasteland0","wasteland1","wasteland2","wasteland3","wasteland4",
-				"wasteland5","wasteland6","wasteland7","wasteland8","wasteland9","wasteland10","wasteland11","wasteland12",
+				"asteroid","asteroid_dug",
+				"asteroid0","asteroid1","asteroid2","asteroid3","asteroid4",
+				"asteroid5","asteroid6","asteroid7","asteroid8","asteroid9","asteroid10","asteroid11","asteroid12",
 				"oldburning","light-on-r","light-on-y","light-on-g","light-on-b", "wood", "wood-broken",
 				"carpetcorner", "carpetside", "carpet", "ironsand1", "ironsand2", "ironsand3", "ironsand4", "ironsand5",
 				"ironsand6", "ironsand7", "ironsand8", "ironsand9", "ironsand10", "ironsand11",
@@ -140,7 +140,10 @@ var/list/icons_to_ignore_at_floor_init = list("damaged1","damaged2","damaged3","
 /turf/simulated/floor/ChangeTurf(turf/simulated/floor/T)
 	if(!istype(src,/turf/simulated/floor)) return ..() //fucking turfs switch the fucking src of the fucking running procs
 	if(!ispath(T,/turf/simulated/floor)) return ..()
+	if(T == null) return ..()
 	var/old_icon = icon_regular_floor
+	if(old_icon == null)
+		old_icon = icon_state
 	var/old_dir = dir
 	var/turf/simulated/floor/W = ..()
 	W.icon_regular_floor = old_icon

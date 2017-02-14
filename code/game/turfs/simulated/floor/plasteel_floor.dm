@@ -316,16 +316,16 @@
 	icon_state = "shuttlefloor5"
 
 
-/turf/simulated/floor/plasteel/wasteland
-	icon_state = "wastelandfloor"
-/turf/simulated/floor/plasteel/wasteland/warning
-	icon_state = "wastelandwarning"
+/turf/simulated/floor/plasteel/asteroid
+	icon_state = "asteroidfloor"
+/turf/simulated/floor/plasteel/asteroid/warning
+	icon_state = "asteroidwarning"
 
 
 /turf/simulated/floor/plasteel/recharge_floor
 	icon_state = "recharge_floor"
-/turf/simulated/floor/plasteel/recharge_floor/wasteland
-	icon_state = "recharge_floor_wasteland"
+/turf/simulated/floor/plasteel/recharge_floor/asteroid
+	icon_state = "recharge_floor_asteroid"
 
 
 /turf/simulated/floor/plasteel/chapel
@@ -336,6 +336,9 @@
 
 /turf/simulated/floor/plasteel/floorgrime
 	icon_state = "floorgrime"
+
+/turf/simulated/floor/plasteel/vault1
+	icon_state = "vault1"
 
 /turf/simulated/floor/plasteel/solarpanel
 	icon_state = "solarpanel"
@@ -429,7 +432,7 @@
 	icon_state = "sandstonevault"
 
 
-/turf/simulated/floor/plasteel/shaft
+/turf/simulated/floor/plasteel/elevatorshaft
 	icon_state = "elevatorshaft"
 
 /turf/simulated/floor/plasteel/bluespace

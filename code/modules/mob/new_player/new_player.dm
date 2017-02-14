@@ -233,7 +233,9 @@
 						vote_on_poll(pollid, optionid, 1)
 
 /mob/new_player/proc/IsJobAvailable(rank)
-	/*var/datum/job/job = SSjob.GetJob(rank)
+	var/datum/job/job = SSjob.GetJob(rank)
+	if(!job)
+		job = SSjob.GetDesertJob(rank)
 	if(!job)
 		return 0
 	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
@@ -244,18 +246,18 @@
 				if(J && J.current_positions < J.total_positions && J.title != job.title)
 					return 0
 		else
-			return 0*/
+			return 0
 
 	//wasteland jobs are always available
 	return 1
 
-	/*if(jobban_isbanned(src,rank))
+	if(jobban_isbanned(src,rank))
 		return 0
 	if(!job.player_old_enough(src.client))
 		return 0
 	if(config.enforce_human_authority && !client.prefs.pref_species.qualifies_for_rank(rank, client.prefs.features))
 		return 0
-	return 1*/
+	return 1
 
 
 /mob/new_player/proc/AttemptLateSpawn(rank)
@@ -286,7 +288,12 @@
 					continue
 
 	character.loc = D
-
+	if(SSsun.global_sun_light < 5)
+		for(var/obj/item/I in character.contents)
+			if(istype(I,/obj/item/device/flashlight/flare/torch))
+				var/obj/item/device/flashlight/flare/torch/T = I
+				character.put_in_hands(T)
+				T.attack_self(character)
 	if(character.mind.assigned_role != "Cyborg")
 		data_core.manifest_inject(character)
 		ticker.minds += character.mind//Cyborgs and AIs handle this in the transform proc.	//TODO!!!!! ~Carn
@@ -306,13 +313,14 @@
 	qdel(src)
 
 /mob/new_player/proc/AnnounceArrival(var/mob/living/carbon/human/character, var/rank)
+/*
 	if (ticker.current_state == GAME_STATE_PLAYING)
 		if(announcement_systems.len)
 			if(character.mind)
 				if((character.mind.assigned_role != "Cyborg") && (character.mind.assigned_role != character.mind.special_role))
 					var/obj/machinery/announcement_system/announcer = pick(announcement_systems)
 					announcer.announce("ARRIVAL", character.real_name, rank, list()) //make the list empty to make it announce it in common
-
+*/
 /mob/new_player/proc/LateChoices()
 	var/mills = world.time // 1/10 of a second, not real milliseconds but whatever
 	//var/secs = ((mills % 36000) % 600) / 10 //Not really needed, but I'll leave it here for refrence.. or something
@@ -333,7 +341,7 @@
 		if(job && IsJobAvailable(job.title))
 			available_job_count++;*/
 
-	dat += "<div class='clearBoth'>Spawn as wastelander:</div><br>"
+	dat += "<div class='clearBoth'>Spawn as some wastelander:</div><br>"
 	dat += "<div class='jobs'><div class='jobsColumn'>"
 	/*var/job_count = 0
 	for(var/datum/job/job in SSjob.occupations)
@@ -352,6 +360,8 @@
 			break*/
 
 	for(var/datum/job/job in SSjob.desert_occupations)
+		if(job.donaters && !check_whitelist(src, job.title))
+			continue
 		dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
 		//break
 

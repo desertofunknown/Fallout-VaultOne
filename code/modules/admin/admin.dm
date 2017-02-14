@@ -8,10 +8,14 @@ var/global/floorIsLava = 0
 	msg = "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message\">[msg]</span></span>"
 	admins << msg
 
-/proc/relay_msg_admins(msg)
-	msg = "<span class=\"admin\"><span class=\"prefix\">RELAY:</span> <span class=\"message\">[msg]</span></span>"
-	admins << msg
+
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
+
+/datum/admins/proc/clear_blood()
+	set category = "Admin"
+	set name = "Clear Blood"
+	for(var/obj/effect/decal/cleanable/C in world)
+		qdel(C)
 
 /datum/admins/proc/show_player_panel(mob/M in mob_list)
 	set category = "Admin"

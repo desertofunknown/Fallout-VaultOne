@@ -28,7 +28,7 @@ What are the archived variables for?
 /datum/gas/volatile_fuel
 		specific_heat = 30
 
-/datum/gas_mixture/proc/copy_from_turf(turf/model)
+
 /datum/gas_mixture
 	var/oxygen = 0
 	var/carbon_dioxide = 0

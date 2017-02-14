@@ -11,7 +11,7 @@ var/global/max_secret_rooms = 6
 			var/cur_loc = locate(start_loc.x + x, start_loc.y + y, start_loc.z)
 
 
-			var/area/wasteland/artifactroom/A = new
+			var/area/asteroid/artifactroom/A = new
 			if(name)
 				A.name = name
 			else
@@ -36,11 +36,11 @@ var/global/max_secret_rooms = 6
 
 //////////////
 
-/proc/make_mining_wasteland_secrets()
+/proc/make_mining_asteroid_secrets()
 	for(1 to max_secret_rooms)
-		make_mining_wasteland_secret()
+		make_mining_asteroid_secret()
 
-/proc/make_mining_wasteland_secret()
+/proc/make_mining_asteroid_secret()
 	var/valid = 0
 	var/turf/T = null
 	var/sanity = 0
@@ -91,7 +91,7 @@ var/global/max_secret_rooms = 6
 		if("cavein")
 			theme = "cavein"
 			walltypes = list(/turf/simulated/mineral/random/high_chance=1)
-			floortypes = list(/turf/simulated/floor/wasteland/airless, /turf/simulated/floor/plating/beach/sand)
+			floortypes = list(/turf/ground/mountain/cave, /turf/simulated/floor/plating/beach/sand)
 			treasureitems = list(/obj/mecha/working/ripley/mining=1, /obj/item/weapon/pickaxe/drill/diamonddrill=2,/obj/item/weapon/gun/energy/kinetic_accelerator/hyper=1,
 							/obj/item/weapon/resonator/upgraded=1, /obj/item/weapon/pickaxe/drill/jackhammer=5)
 			fluffitems = list(/obj/effect/decal/cleanable/blood=3,/obj/effect/decal/remains/human=1,/obj/item/clothing/under/overalls=1,
@@ -100,7 +100,7 @@ var/global/max_secret_rooms = 6
 		if("xenoden")
 			theme = "xenoden"
 			walltypes = list(/turf/simulated/mineral/random/high_chance=1)
-			floortypes = list(/turf/simulated/floor/wasteland/airless, /turf/simulated/floor/plating/beach/sand)
+			floortypes = list(/turf/ground/mountain/cave, /turf/simulated/floor/plating/beach/sand)
 			treasureitems = list(/obj/item/clothing/mask/facehugger=1)
 			fluffitems = list(/obj/effect/decal/remains/human=1,/obj/effect/decal/cleanable/xenoblood/xsplatter=5)
 
@@ -177,11 +177,11 @@ var/global/max_secret_rooms = 6
 			valid = 0
 			continue
 
-		if(locate(/area/wasteland/artifactroom) in surroundings)
+		if(locate(/area/asteroid/artifactroom) in surroundings)
 			valid = 0
 			continue
 
-		if(locate(/turf/simulated/floor/wasteland/airless) in range(5,T))//A little less strict than the other checks due to tunnels
+		if(locate(/turf/simulated/floor) in range(5,T))//A little less strict than the other checks due to tunnels
 			valid = 0
 			continue
 

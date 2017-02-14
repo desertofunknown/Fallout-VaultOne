@@ -11,6 +11,7 @@
 	name = "Consumable"
 	id = "consumable"
 	var/nutriment_factor = 1 * REAGENTS_METABOLISM
+	var/water_level = 0.1
 
 /datum/reagent/consumable/on_mob_life(mob/living/M)
 	current_cycle++
@@ -37,6 +38,7 @@
 	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure form."
 	reagent_state = SOLID
 	color = "#664330" // rgb: 102, 67, 48
+	water_level = 0
 
 /datum/reagent/consumable/vitamin/on_mob_life(mob/living/M)
 	if(prob(50))
@@ -55,6 +57,7 @@
 	nutriment_factor = 10 * REAGENTS_METABOLISM
 	metabolization_rate = 2 * REAGENTS_METABOLISM
 	overdose_threshold = 200 // Hyperglycaemic shock
+	water_level = 0
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
 	M << "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>"
@@ -72,6 +75,7 @@
 	description = "A mixture of water and milk. Virus cells can use this mixture to reproduce."
 	nutriment_factor = 2 * REAGENTS_METABOLISM
 	color = "#899613" // rgb: 137, 150, 19
+	water_level = 0.5
 
 /datum/reagent/consumable/soysauce
 	name = "Soysauce"
@@ -79,6 +83,7 @@
 	description = "A salty sauce made from the soy plant."
 	nutriment_factor = 2 * REAGENTS_METABOLISM
 	color = "#792300" // rgb: 121, 35, 0
+	water_level = 0
 
 /datum/reagent/consumable/ketchup
 	name = "Ketchup"
@@ -86,6 +91,7 @@
 	description = "Ketchup, catsup, whatever. It's tomato paste."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#731008" // rgb: 115, 16, 8
+	water_level = 0
 
 
 /datum/reagent/consumable/capsaicin
@@ -93,6 +99,7 @@
 	id = "capsaicin"
 	description = "This is what makes chilis hot."
 	color = "#B31008" // rgb: 179, 16, 8
+	water_level = 0
 
 /datum/reagent/consumable/capsaicin/on_mob_life(mob/living/M)
 	switch(current_cycle)
@@ -122,6 +129,7 @@
 	id = "frostoil"
 	description = "A special oil that noticably chills the body. Extraced from Icepeppers."
 	color = "#8BA6E9" // rgb: 139, 166, 233
+	water_level = 0
 
 /datum/reagent/consumable/frostoil/on_mob_life(mob/living/M)
 	switch(current_cycle)
@@ -237,6 +245,7 @@
 	description = "A salt made of sodium chloride. Commonly used to season food."
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 255,255,255
+	water_level = 0
 
 /datum/reagent/consumable/blackpepper
 	name = "Black Pepper"
@@ -244,6 +253,7 @@
 	description = "A powder ground from peppercorns. *AAAACHOOO*"
 	reagent_state = SOLID
 	// no color (ie, black)
+	water_level = 0
 
 /datum/reagent/consumable/coco
 	name = "Coco Powder"
@@ -252,6 +262,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
+	water_level = 0
 
 /datum/reagent/consumable/hot_coco
 	name = "Hot Chocolate"
@@ -259,6 +270,7 @@
 	description = "Made with love! And coco beans."
 	nutriment_factor = 3 * REAGENTS_METABOLISM
 	color = "#403010" // rgb: 64, 48, 16
+	water_level = 0
 
 /datum/reagent/consumable/hot_coco/on_mob_life(mob/living/M)
 	if (M.bodytemperature < 310)//310 is the normal bodytemp. 310.055
@@ -306,6 +318,7 @@
 	id = "sprinkles"
 	description = "Multi-colored little bits of sugar, commonly found on donuts. Loved by cops."
 	color = "#FF00FF" // rgb: 255, 0, 255
+	water_level = 0
 
 /datum/reagent/consumable/sprinkles/on_mob_life(mob/living/M)
 	if(istype(M, /mob/living/carbon/human) && M.job in list("Security Officer", "Head of Security", "Detective", "Warden"))
@@ -339,6 +352,7 @@
 	id = "enzyme"
 	description = "A universal enzyme used in the preperation of certain chemicals and foods."
 	color = "#365E30" // rgb: 54, 94, 48
+	water_level = 0
 
 /datum/reagent/consumable/dry_ramen
 	name = "Dry Ramen"
@@ -346,6 +360,7 @@
 	description = "Space age food, since August 25, 1958. Contains dried noodles, vegetables, and chemicals that boil in contact with water."
 	reagent_state = SOLID
 	color = "#302000" // rgb: 48, 32, 0
+	water_level = 0
 
 /datum/reagent/consumable/hot_ramen
 	name = "Hot Ramen"
@@ -353,6 +368,7 @@
 	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
+	water_level = 0
 
 /datum/reagent/consumable/hot_ramen/on_mob_life(mob/living/M)
 	if (M.bodytemperature < 310)//310 is the normal bodytemp. 310.055
@@ -366,6 +382,7 @@
 	description = "The noodles are boiled, the flavors are artificial, just like being back in school."
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#302000" // rgb: 48, 32, 0
+	water_level = 0
 
 /datum/reagent/consumable/hell_ramen/on_mob_life(mob/living/M)
 	M.bodytemperature += 10 * TEMPERATURE_DAMAGE_COEFFICIENT
@@ -378,6 +395,7 @@
 	description = "This is what you rub all over yourself to pretend to be a ghost."
 	reagent_state = SOLID
 	color = "#FFFFFF" // rgb: 0, 0, 0
+	water_level = 0
 
 /datum/reagent/consumable/flour/reaction_turf(turf/T, reac_volume)
 	if(!istype(T, /turf/space))
@@ -403,6 +421,7 @@
 	reagent_state = SOLID
 	nutriment_factor = 3 * REAGENTS_METABOLISM
 	color = "#FFFFFF" // rgb: 0, 0, 0
+	water_level = 0
 
 /datum/reagent/consumable/vanilla
 	name = "Vanilla Powder"
@@ -411,18 +430,21 @@
 	reagent_state = SOLID
 	nutriment_factor = 5 * REAGENTS_METABOLISM
 	color = "#FFFACD"
+	water_level = 0
 
 /datum/reagent/consumable/eggyolk
 	name = "Egg Yolk"
 	id = "eggyolk"
 	description = "It's full of protein."
 	color = "#FFB500"
+	water_level = 0
 
 /datum/reagent/consumable/corn_starch
 	name = "Corn Starch"
 	id = "corn_starch"
 	description = "A slippery solution."
 	color = "#C8A5DC"
+	water_level = 0
 
 /datum/reagent/consumable/corn_syrup
 	name = "Corn Syrup"

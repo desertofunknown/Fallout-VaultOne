@@ -1,11 +1,11 @@
 /mob/living/carbon/human/examine(mob/user)
-	
-	user.visible_message("<small>[user] looks at [src].</small>")
+
 	var/list/obscured = check_obscured_slots()
 	var/skipface = 0
 	if(wear_mask)
 		skipface |= wear_mask.flags_inv & HIDEFACE
-
+	else if(head)
+		skipface |= head.flags_inv & HIDEFACE
 	// crappy hacks because you can't do \his[src] etc. I'm sorry this proc is so unreadable, blame the text macros :<
 	var/t_He = "It" //capitalised for use at the start of each line.
 	var/t_his = "its"
@@ -155,6 +155,15 @@
 			msg += "<span class='warning'>[t_He] [t_is] wearing \icon[wear_id] \a [wear_id] yet something doesn't seem right...</span>\n"
 		else*/
 		msg += "[t_He] [t_is] wearing \icon[wear_id] \a [wear_id].\n"
+	if(src.status != "Wastelander" && !skipface)
+		var/datum/status/S = get_status_datum(src.status)
+		if(S != null && S.name != "Wastelander")
+			msg += "[t_He] [t_is] <span style='color: [S.color]'>[S.name]</span>"
+			if(src.faction && !istype(src.faction, /list))
+				var/datum/f13_faction/F = get_faction_datum(src.faction)
+				if(F != null && F.name != "Wasteland")
+					msg += " from <span style='color: [F.color]'>[F.name]</span>"
+			msg += "\n"
 
 	//Jitters
 	switch(jitteriness)

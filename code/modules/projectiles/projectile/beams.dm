@@ -9,29 +9,24 @@
 	flag = "laser"
 	eyeblur = 2
 
-/obj/item/projectile/beam/pistol
-	name = "laser"
-	icon_state = "laser"
-	damage = 20
-
 /obj/item/projectile/beam/plasma_beam
-	name = "plasma beam"
+	name = "plasma_beam"
 	icon_state = "plasma_beam"
 	damage = 50
 	hitsound = 'sound/f13weapons/plasmarifle.ogg'
 	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
 
-/obj/item/projectile/beam/plasma_scatter
-	name = "plasma scatter"
+/obj/item/projectile/beam/turbo_plasma_beam
+	name = "turbo_plasma_beam"
 	icon_state = "plasma_beam"
-	damage = 13
+	damage = 75
 	hitsound = 'sound/f13weapons/plasmarifle.ogg'
 	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
 
-/obj/item/projectile/beam/plasma_pistol
-	name = "plasma beam"
+/obj/item/projectile/beam/plasma_pistol_beam
+	name = "plasma_pistol_beam"
 	icon_state = "plasma_beam"
-	damage = 35
+	damage = 30
 	hitsound = 'sound/f13weapons/plasmarifle.ogg'
 	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
 
@@ -44,7 +39,7 @@
 /obj/item/projectile/beam/scatter
 	name = "laser pellet"
 	icon_state = "scatterlaser"
-	damage = 10
+	damage = 8
 
 
 /obj/item/projectile/beam/heavylaser
@@ -121,3 +116,7 @@
 /obj/item/projectile/beam/lasertag/bluetag
 	icon_state = "bluelaser"
 	suit_types = list(/obj/item/clothing/suit/redtag)
+
+/obj/item/projectile/beam/robotlaser
+	name = "laser beam"
+	damage = 65

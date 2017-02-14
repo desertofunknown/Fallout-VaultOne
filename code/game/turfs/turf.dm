@@ -4,7 +4,9 @@
 
 	var/slowdown = 0 //negative for faster, positive for slower
 	var/intact = 1
-	var/baseturf = /turf/space
+	var/baseturf = /turf/ground/desert
+	var/baseturf_icon
+	var/baseturf_dir
 
 	//Properties for open tiles (/floor)
 	var/oxygen = 0
@@ -92,6 +94,9 @@
 	return 1 //Nothing found to block so return success!
 
 /turf/Entered(atom/movable/M)
+	for(var/mob/living/carbon/human/h in range(1,src))
+		h.RefreshView()
+		h.RefreshViewers()
 	var/loopsanity = 100
 	for(var/atom/A in range(1))
 		if(loopsanity == 0)
@@ -161,6 +166,13 @@
 					aco += S.air.carbon_dioxide
 					atox += S.air.toxins
 					atemp += S.air.temperature
+				turf_count ++
+			else if(istype(T, /turf/ground))
+				aoxy += T.oxygen
+				anitro += T.nitrogen
+				aco += T.carbon_dioxide
+				atox += T.toxins
+				atemp += T.temperature
 				turf_count ++
 		air.oxygen = (aoxy/max(turf_count,1))//Averages contents of the turfs, ignoring walls and the like
 		air.nitrogen = (anitro/max(turf_count,1))
@@ -302,9 +314,8 @@ turf/indestructible/splashscreen/New()
 	name = "Fallout 13"
 	desc = "The wasteland is calling."
 	icon = 'icons/misc/fullscreen.dmi'
-	icon_state = "title1"
+	icon_state = "title[rand(1,13)]"
 	layer = 60
-/*
 	src.fullDark = new/atom/movable{
 		icon = 'icons/misc/fullscreen.dmi' //Replace with actual icon
 		icon_state = "transition" //Replace with actual state
@@ -321,20 +332,15 @@ turf/indestructible/splashscreen/proc/ticker()
 	world << "Badmins spawn shit and title screen was deleted.<br>You know... I'm out of here!"
 	return
 
-*/
-
-
 //Change the time to determine how short/long the fading animation is.
 //Change the easing to determine what interpolation it uses to change the value on a curve: good ones to try are CUBIC, BOUNCE, and ELASTIC as well as CIRCULAR. BOUNCE and ELASTIC both "bounce" or "flicker" a little bit at the end instead of just finishing straight at black.
-/*
+
 /turf/indestructible/splashscreen/proc/swapImage()
 	animate(src.fullDark,alpha=255,time=10,easing=CUBIC_EASING)
 	sleep(12) //buffer of about 1/5 of the time of the animation, since they are not synchronized: the sleep happens on the server, but the animation is played for each client using directX. It's good to leave a buffer, but most of the time the directX will be much faster than the server anyway so you probably wont have any problems.
 	src.icon_state = "title[rand(1,13)]"
 	animate(src.fullDark,alpha=0,time=10,easing=CUBIC_EASING)
 	return
-*/
-
 
 //Various indestructible walls
 

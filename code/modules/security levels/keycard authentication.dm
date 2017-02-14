@@ -154,7 +154,7 @@
 		for(var/obj/machinery/door/airlock/D in A)
 			D.emergency = 1
 			D.update_icon(0)
-	minor_announce("Access restrictions on maintenance and external airlocks have been lifted.", "Attention! Vault-wide emergency declared!",1)
+	minor_announce("Access restrictions on maintenance and external airlocks have been lifted.", "Attention! Station-wide emergency declared!",1)
 	emergency_access = 1
 
 /proc/revoke_maint_all_access()
@@ -162,6 +162,6 @@
 		for(var/obj/machinery/door/airlock/D in A)
 			D.emergency = 0
 			D.update_icon(0)
-	minor_announce("Access restrictions in maintenance areas have been restored.", "Attention! Vault-wide emergency rescinded:")
+	minor_announce("Access restrictions in maintenance areas have been restored.", "Attention! Station-wide emergency rescinded:")
 	emergency_access = 0
 

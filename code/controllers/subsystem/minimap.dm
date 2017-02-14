@@ -42,9 +42,9 @@ var/datum/subsystem/minimap/SSminimap
 	// every time. You'll have to modify this code to generate a unique hash for your object.
 	// Don't forget to modify the minimap generation code to use a default icon (or skip generation altogether).
 	for (var/turf/tile in tiles)
-		if  (istype(tile.loc, /area/wasteland) || istype(tile.loc, /area/mine/unexplored) || istype(tile, /turf/simulated/mineral) || (istype(tile.loc, /area/space) && istype(tile, /turf/simulated/floor/plating/wasteland)))
-			temp = "/area/wasteland"
-		else if (istype(tile.loc, /area/mine) && istype(tile, /turf/simulated/floor/plating/wasteland))
+		if  (istype(tile.loc, /area/asteroid) || istype(tile.loc, /area/mine/unexplored) || istype(tile, /turf/simulated/mineral) || (istype(tile.loc, /area/space) && istype(tile, /turf/simulated/floor/plating/asteroid)))
+			temp = "/area/asteroid"
+		else if (istype(tile.loc, /area/mine) && istype(tile, /turf/simulated/floor/plating/asteroid))
 			temp = "/area/mine/explored"
 		else if (tile.loc.type == /area/start || (tile.type == /turf/space && !(locate(/obj/structure/lattice) in tile)) || istype(tile, /turf/space/transit))
 			temp = "/turf/space"
@@ -106,13 +106,13 @@ var/datum/subsystem/minimap/SSminimap
 
 		for (var/turf/tile in tiles)
 			if (tile.loc.type != /area/start && (tile.type != /turf/space || (locate(/obj/structure/lattice) in tile) || (locate(/obj/structure/transit_tube) in tile)) && !istype(tile, /turf/space/transit))
-				if (istype(tile.loc, /area/wasteland) || istype(tile.loc, /area/mine/unexplored) || istype(tile, /turf/simulated/mineral) || (istype(tile.loc, /area/space) && istype(tile, /turf/simulated/floor/plating/wasteland)))
+				if (istype(tile.loc, /area/asteroid) || istype(tile.loc, /area/mine/unexplored) || istype(tile, /turf/simulated/mineral) || (istype(tile.loc, /area/space) && istype(tile, /turf/simulated/floor/plating/asteroid)))
 					new_icon = 'icons/turf/mining.dmi'
 					new_icon_state = "rock"
 					new_dir = 2
-				else if (istype(tile.loc, /area/mine) && istype(tile, /turf/simulated/floor/plating/wasteland))
+				else if (istype(tile.loc, /area/mine) && istype(tile, /turf/simulated/floor/plating/asteroid))
 					new_icon = 'icons/turf/floors.dmi'
-					new_icon_state = "wasteland"
+					new_icon_state = "asteroid"
 					new_dir = 2
 				else if (tile.type == /turf/simulated/floor/plating/abductor)
 					new_icon = 'icons/turf/floors.dmi'

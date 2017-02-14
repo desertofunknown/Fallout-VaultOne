@@ -8,6 +8,8 @@
 	var/datum/mind/mind
 	var/list/datum/action/actions = list()
 
+	var/obj/structure/mob_spawner/spawner
+
 	var/stat = 0 //Whether a mob is alive or dead. TODO: Move this to living - Nodrak
 
 	var/obj/screen/flash = null
@@ -60,6 +62,10 @@
 	var/eye_stat = null//Living, potentially Carbon
 	var/lastpuke = 0
 
+	var/list/allow_recipes = list()
+
+	var/in_whitelist = -1
+
 	var/name_archive //For admin things like possession
 
 	var/timeofdeath = 0//Living
@@ -71,6 +77,7 @@
 	var/dizziness = 0//Carbon
 	var/jitteriness = 0//Carbon
 	var/nutrition = NUTRITION_LEVEL_FED + 50//Carbon
+	var/water = THIRST_LEVEL_FULL + 100//Carbon
 	var/satiety = 0//Carbon
 
 	var/overeatduration = 0		// How long this guy is overeating //Carbon
@@ -104,6 +111,7 @@
 	var/music_lastplayed = "null"
 
 	var/job = null//Living
+	var/status = null
 
 	var/radiation = 0//Carbon
 

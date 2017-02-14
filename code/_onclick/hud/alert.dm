@@ -127,21 +127,25 @@ The box in your backpack has an oxygen tank and gas mask in it."
 	icon_state = "tox_in_air"
 //End gas alerts
 
+/obj/screen/alert/thirst
+	name = "Thirst"
+	desc = "Drink."
+	icon_state = "water"
 
 /obj/screen/alert/fat
 	name = "Fat"
 	desc = "You ate too much food, lardass. Run around the station and lose some weight."
-	icon_state = "fat"
-
+	icon_state = "fat_1"
+/*
 /obj/screen/alert/hungry
 	name = "Hungry"
 	desc = "Some food would be good right about now."
 	icon_state = "hungry"
-
+*/
 /obj/screen/alert/starving
 	name = "Starving"
 	desc = "Some food would be to kill for right about now. The hunger pains make moving around a chore."
-	icon_state = "starving"
+	icon_state = "starv_"
 
 /obj/screen/alert/hot
 	name = "Too Hot"

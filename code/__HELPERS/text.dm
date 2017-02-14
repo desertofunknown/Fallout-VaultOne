@@ -29,11 +29,15 @@
 /proc/strip_html_simple(t,limit=MAX_MESSAGE_LEN)
 	var/list/strip_chars = list("<",">")
 	t = copytext(t,1,limit)
+
 	for(var/char in strip_chars)
 		var/index = findtext(t, char)
 		while(index)
 			t = copytext(t, 1, index) + copytext(t, index+1)
 			index = findtext(t, char)
+		while(index)
+			t = copytext(t, 1, index) + "____255;" + copytext(t, index+1)
+			index = findtext(t, "ÿ")
 	return t
 
 proc/sanitize(var/t)
@@ -61,10 +65,10 @@ proc/sanitize(var/t)
 	return t
 
 /proc/sanitize_ya(var/t)
-	var/index = findtext(t, "?")
+	var/index = findtext(t, "ÿ")
 	while(index)
 		t = copytext(t, 1, index) + "____255;" + copytext(t, index+1)
-		index = findtext(t, "?")
+		index = findtext(t, "ÿ")
 
 	t = html_encode(t)
 

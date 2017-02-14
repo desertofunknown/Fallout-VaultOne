@@ -64,7 +64,6 @@
 /var/const/access_mineral_storeroom = 64
 /var/const/access_minisat = 65
 /var/const/access_weapons = 66 //Weapon authorization for secbots
-/var/const/access_powerplant = 67
 
 	//BEGIN CENTCOM ACCESS
 	/*Should leave plenty of room if we need to add more access levels.
@@ -308,8 +307,6 @@
 			return "Custodial Closet"
 		if(access_engine)
 			return "Engineering"
-		if(access_powerplant)
-			return "Power Plant"
 		if(access_engine_equip)
 			return "Power Equipment"
 		if(access_maint_tunnels)
@@ -329,7 +326,7 @@
 		if(access_heads)
 			return "Bridge"
 		if(access_captain)
-			return "Overseer"
+			return "Captain"
 		if(access_all_personal_lockers)
 			return "Personal Lockers"
 		if(access_chapel_office)
@@ -427,9 +424,10 @@
 			return "Code Gold"
 
 /proc/get_all_jobs()
-	return list("Assistant", "Overseer", "Head of Personnel", "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
-				"Shaft Miner", "Janitor", "Engineer", "Medical Doctor", "Chemist", "Scientist", "Roboticist", "Warden",
-				"Security Officer")
+	return list("Assistant", "Captain", "Head of Personnel", "Bartender", "Cook", "Botanist", "Quartermaster", "Cargo Technician",
+				"Shaft Miner", "Clown", "Mime", "Janitor", "Librarian", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
+				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist",
+				"Research Director", "Scientist", "Roboticist", "Head of Security", "Warden", "Detective", "Security Officer")
 
 /proc/get_all_job_icons() //For all existing HUD icons
 	return get_all_jobs() + list("Prisoner")

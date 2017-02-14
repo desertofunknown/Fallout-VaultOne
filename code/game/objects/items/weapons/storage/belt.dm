@@ -268,25 +268,3 @@
 	name = "yellow fannypack"
 	icon_state = "fannypack_yellow"
 	item_state = "fannypack_yellow"
-
-/obj/item/weapon/storage/belt/ncr
-	name = "NCR duty belt"
-	desc = "A standard issue robust duty belt for all NCR troopers."
-	icon_state = "ncr_belt"
-	item_state = "ncr_belt"
-
-/obj/item/weapon/storage/belt/webbing
-	name = "webbing vest"
-	desc = "A robust webbing vest that can carry a substantial amount of gear."
-	icon_state = "explorer1"
-	item_state = "explorer1"
-	max_w_class = 3
-	max_combined_w_class = 21
-	storage_slots = 21
-
-/obj/item/weapon/storage/belt/webbing/alt
-	name = "webbing gear"
-	desc = "A kit of load bearing gear consisting of pouches, suspenders and a belt."
-	icon_state = "explorer2"
-	item_state = "explorer2"
-	storage_slots = 7

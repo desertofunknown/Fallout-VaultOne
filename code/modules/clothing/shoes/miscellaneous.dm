@@ -31,12 +31,6 @@
 	strip_delay = 70
 	burn_state = FIRE_PROOF
 
-/obj/item/clothing/shoes/combat/ncr
-	name = "NCR boots"
-	desc = "Standard issue high speed low drag NCR boots."
-	icon_state = "ncr_boots"
-	item_state = "ncr_boots"
-
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
 	name = "\improper SWAT boots"
 	desc = "High speed, no drag combat boots."
@@ -96,7 +90,7 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	item_color = "hosred"

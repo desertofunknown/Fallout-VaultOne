@@ -44,7 +44,7 @@ var/global/list/datum/stack_recipe/metal_recipes = list ( \
 	new/datum/stack_recipe("fire alarm frame", /obj/item/wallframe/firealarm, 2), \
 	new/datum/stack_recipe("button frame", /obj/item/wallframe/button, 1), \
 	null, \
-	new/datum/stack_recipe("iron door", /obj/structure/mineral_door/iron, 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("iron door", /obj/structure/simple_door/metal/store, 10, time = 20, one_per_turf = 1, on_floor = 1), \
 )
 
 /obj/item/stack/sheet/metal
@@ -99,13 +99,14 @@ var/global/list/datum/stack_recipe/wood_recipes = list ( \
 	new/datum/stack_recipe("rifle stock", /obj/item/weaponcrafting/stock, 10, time = 40), \
 	new/datum/stack_recipe("wooden chair", /obj/structure/bed/chair/wood/normal, 3, time = 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("wooden barricade", /obj/structure/barricade/wooden, 5, time = 50, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("wooden door", /obj/structure/mineral_door/wood, 10, time = 20, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("wooden door", /obj/structure/simple_door/house, 10, time = 20, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("coffin", /obj/structure/closet/coffin, 5, time = 15, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("book case", /obj/structure/bookcase, 4, time = 15, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("drying rack", /obj/machinery/smartfridge/drying_rack, 10, time = 15, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("dog bed", /obj/structure/bed/dogbed, 10, time = 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("display case chassis", /obj/structure/displaycase_chassis, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("wooden buckler", /obj/item/weapon/shield/riot/buckler, 20, time = 40), \
+	new/datum/stack_recipe("campfire", /obj/structure/campfire, 5, time = 40), \
 	)
 
 /obj/item/stack/sheet/mineral/wood
@@ -117,6 +118,56 @@ var/global/list/datum/stack_recipe/wood_recipes = list ( \
 	origin_tech = "materials=1;biotech=1"
 	sheettype = "wood"
 	burn_state = FLAMMABLE
+
+
+/obj/item/stack/sheet/mineral/wood/afterattack(atom/A, mob/user,proximity)
+	if(!proximity) return
+	if(istype(A, /obj/structure/barricade/wooden/planks))
+		var/obj/structure/barricade/wooden/planks/P = A
+		if(P.planks >= P.maxplanks)
+			user << "/red You can't reinforce this anymore!"
+			return
+		else
+			user.visible_message("<i>[user] begins to add another board to [P]...</i>")
+			if(do_after(user, 20, target = src))
+				user.visible_message("<i>[user] reinforced [P] with another board./i>")
+				P.planks ++
+				P.checkplanks()
+				return
+
+	if(istype(A, /obj/structure/window/fulltile))
+		var/obj/structure/window/fulltile/F = A
+		for(var/atom/S in F.loc)
+			if(istype(S, /obj/structure/barricade/wooden/planks))
+				..()
+//			var/obj/structure/barricade/wooden/planks/B = S
+//				B.attackby(src,user)
+//				return
+		user.visible_message("<i>[user] begins to board up [F]...</i>")
+		if(do_after(user, 20, target = src))
+			user.visible_message("<i>[user] reinforced [F] with a board.</i>")
+			src.use(1)
+			var/obj/structure/barricade/wooden/planks/K = new /obj/structure/barricade/wooden/planks(F.loc)
+			K.planks = 1
+			K.checkplanks()
+			return
+	if(istype(A, /obj/structure/simple_door))
+		var/obj/structure/simple_door/F = A
+		for(var/atom/S in F.loc)
+			if(istype(S, /obj/structure/barricade/wooden/planks))
+				..()
+//			var/obj/structure/barricade/wooden/planks/B = S
+//				B.attackby(src,user)
+//				return
+		user.visible_message("<i>[user] begins to board up [F]...</i>")
+		if(do_after(user, 20, target = src))
+			user.visible_message("<i>[user] reinforced [F] with a board.</i>")
+			src.use(1)
+			var/obj/structure/barricade/wooden/planks/K = new /obj/structure/barricade/wooden/planks(F.loc)
+			K.planks = 1
+			K.checkplanks()
+			return
+	..()
 
 /obj/item/stack/sheet/mineral/wood/New(var/loc, var/amount=null)
 	recipes = wood_recipes

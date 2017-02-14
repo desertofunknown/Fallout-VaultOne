@@ -467,6 +467,19 @@
 	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile)
 	level = 3
 
+/obj/structure/window/fulltile/attackby(obj/item/I, mob/user, params)
+	if(!istype(I, /obj/item/stack/sheet/mineral/wood))
+		for(var/obj/structure/barricade/wooden/planks/P in src.loc)
+			P.attackby(I, user, params)
+			return
+		..()
+
+/obj/structure/window/fulltile/wasteland
+	smooth = 0
+	icon = 'icons/obj/windows.dmi'
+	icon_state = "window"
+	fulltile = 1
+
 /obj/structure/window/reinforced/fulltile
 	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
 	icon_state = "r_window"
@@ -475,6 +488,16 @@
 	fulltile = 1
 	smooth = SMOOTH_TRUE
 	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile)
+	level = 3
+
+/obj/structure/window/reinforced/vault/fulltile
+	icon = 'icons/obj/smooth_structures/vault_window.dmi'
+	icon_state = "r_window"
+	dir = 5
+	maxhealth = 150
+	fulltile = 1
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/obj/structure/window/fulltile, /obj/structure/window/reinforced/fulltile, /obj/structure/window/reinforced/tinted/fulltile, /obj/structure/window/reinforced/vault/fulltile)
 	level = 3
 
 /obj/structure/window/reinforced/tinted/fulltile

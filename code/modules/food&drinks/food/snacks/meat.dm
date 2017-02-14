@@ -168,7 +168,34 @@
 	slice_path = /obj/item/weapon/reagent_containers/food/snacks/meat/rawcutlet/spider
 
 
+//////////////////////////////////////WASTELAND MEATS/////////////////////////////////////////////////////////
+/obj/item/weapon/reagent_containers/food/snacks/meat/slab/gekkon
+	name = "gekkon fillet"
+	desc = "A fillet of gekkon meat."
+	icon_state = "fishfillet"
+	list_reagents = list("nutriment" = 6, "carpotoxin" = 1, "vitamin" = 2)
+	bitesize = 2 //Smaller animal
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/weapon/reagent_containers/food/snacks/meat/steak/gekkon
+	slice_path = null
 
+/obj/item/weapon/reagent_containers/food/snacks/meat/slab/molerat
+	name = "molerat meat"
+	desc = "A slab of molerat meat."
+	list_reagents = list("nutriment" = 3, "carpotoxin" = 3)
+	bitesize = 4
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/weapon/reagent_containers/food/snacks/meat/steak/molerat
+	slice_path = null
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/slab/deathclaw
+	name = "deathclaw meat"
+	desc = "A slab of deathclaw meat."
+	list_reagents = list("nutriment" = 9, "vitamin" = 9)
+	bitesize = 6 //Big slabs of meat from a massive creature
+	filling_color = "#FA8072"
+	cooked_type = /obj/item/weapon/reagent_containers/food/snacks/meat/steak/deathclaw
+	slice_path = null
 
 ////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
 
@@ -198,7 +225,17 @@
 /obj/item/weapon/reagent_containers/food/snacks/meat/steak/spider
 	name = "spider steak"
 
+/obj/item/weapon/reagent_containers/food/snacks/meat/steak/gekkon
+	name = "gekkon steak"
 
+/obj/item/weapon/reagent_containers/food/snacks/meat/steak/molerat
+	name = "molerat steak"
+
+/obj/item/weapon/reagent_containers/food/snacks/meat/steak/deathclaw
+	name = "deathclaw steak"
+	desc = "A piece of hot spicy meat, eaten by only the most worthy hunters - or the most rich clients."
+	list_reagents = list("nutriment" = 10)
+	bonus_reagents = list("nutriment" = 5, "vitamin" = 10) //It wouldn't make sense for it to be worse than the normal
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 

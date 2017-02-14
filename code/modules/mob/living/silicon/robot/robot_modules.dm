@@ -158,7 +158,6 @@
 	modules += new /obj/item/weapon/circular_saw(src)
 	modules += new /obj/item/weapon/extinguisher/mini(src)
 	modules += new /obj/item/roller/robo(src)
-	modules += new /obj/item/weapon/twohanded/shockpaddles/borg(src)
 
 	add_module(new /obj/item/stack/medical/gauze/cyborg())
 

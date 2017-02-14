@@ -298,6 +298,16 @@
 				freq_text = "Supply"
 			if(AIPRIV_FREQ)
 				freq_text = "AI Private"
+			if(VLT_FREQ)
+				freq_text = "Vault"
+			if(NCR_FREQ)
+				freq_text = "NCR"
+			if(LEG_FREQ)
+				freq_text = "Legion"
+			if(DEN_FREQ)
+				freq_text = "Den"
+			if(ENCL_FREQ)
+				freq_text = "Enclave"
 		//There's probably a way to use the list var of channels in code\game\communications.dm to make the dept channels non-hardcoded, but I wasn't in an experimentive mood. --NEO
 
 
@@ -338,6 +348,17 @@
 			part_a = "<span class='centcomradio'><span class='name'>"
 		else if (display_freq==AIPRIV_FREQ)
 			part_a = "<span class='aiprivradio'><span class='name'>"
+
+		else if (display_freq==VLT_FREQ)
+			part_a = "<span class='vltradio'><span class='name'>"
+		else if (display_freq==NCR_FREQ)
+			part_a = "<span class='ncrradio'><span class='name'>"
+		else if (display_freq==LEG_FREQ)
+			part_a = "<span class='legradio'><span class='name'>"
+		else if (display_freq==DEN_FREQ)
+			part_a = "<span class='denradio'><span class='name'>"
+		else if (display_freq==ENCL_FREQ)
+			part_a = "<span class='enclradio'><span class='name'>"
 
 		// --- This following recording is intended for research and feedback in the use of department radio channels ---
 
