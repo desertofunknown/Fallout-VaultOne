@@ -17,9 +17,17 @@ var/datum/subsystem/sun/SSsun
 	var/min_sun = 0.3
 	var/curx
 	var/dif = 0
+	var/angle
+	var/dx
+	var/dy
+	var/rate
+	var/list/solars	= list()
 /datum/subsystem/sun/New()
 	NEW_SS_GLOBAL(SSsun)
-
+	angle = rand (0,360)			// the station position to the sun is randomised at round start
+	rate = rand(50,200)/100			// 50% - 200% of standard rotation
+	if(prob(50))					// same chance to rotate clockwise than counter-clockwise
+		rate = -rate
 
 /datum/subsystem/sun/Initialize(start_timeofday, zlevel)
 	max_sun = config.max_sunlight
@@ -83,6 +91,22 @@ var/datum/subsystem/sun/SSsun
 		is_apply_sunlight = 1
 		next_change = world.time + change_rate
 		curx = world.maxx
+	//now tell the solar control computers to update their status and linked devices
+	var/s = sin(angle)
+	var/c = cos(angle)
+	if(abs(s) < abs(c))
+		dx = s / abs(c)
+		dy = c / abs(c)
+	else
+		dx = s / abs(s)
+		dy = c / abs(s)
+
+	for(var/obj/machinery/power/solar_control/SC in solars)
+		if(!SC.powernet)
+			solars.Remove(SC)
+			continue
+		SC.update()
+
 /datum/subsystem/sun/stat_entry(msg)
 	msg += "Sun\[[global_sun_light]]"
 	..(msg)
