@@ -22,7 +22,7 @@
 					else
 						message_admins("<font color='red'><B>Notice: </B><font color='blue'>[key_name_admin(src)] has the same [matches] as [key_name_admin(M)] (no longer logged in). </font>")
 						log_access("Notice: [key_name(src)] has the same [matches] as [key_name(M)] (no longer logged in).")
-
+mob/var/usragreed=null
 /mob/Login()
 	player_list |= src
 	update_Login_details()
@@ -58,13 +58,24 @@
 	//add_click_catcher()
 
 	sync_mind()
-	switch(alert("By pressing yes you agree that you are 18+ and have read the rules.","You sure?","Yes","No"))
-		if("Yes")
-			usr << "Welcome [usr], thank you for joining fallout 13 enjoy and have a fun time."
-			return
-		if("No")
-			usr.Logout()
-			del usr
+	if(usr.usragreed=null)
+		switch(alert("By pressing yes you agree that you are 18+ and have read the rules.","You sure?","Yes","No"))
+			if("Yes")
+				usr.usragreed=1
+				usr << "Welcome [usr], thank you for joining fallout 13 enjoy and have a fun time."
+				return
+			if("No")
+				usr.usragreed=0
+				usr << "Goodbye [usr]."
+				usr.Logout()
+				usr.Del()
+				message_admins("<span class='adminnotice'>[usr] denied that they are either 18+ or denied they read and agreed to the rules.</span>")
+				return
+	if(usr.usragreed=0)
+		usr << "Goodbye [usr]."
+		usr.Del()
+		message_admins("<span class='adminnotice'>[usr] denied that they are either 18+ or denied they read and agreed to the rules and is trying to login again.</span>")
+		usr.Logout()
 // Calling update_interface() in /mob/Login() causes the Cyborg to immediately be ghosted; because of winget().
 // Calling it in the overriden Login, such as /mob/living/Login() doesn't cause this.
 /mob/proc/update_interface()

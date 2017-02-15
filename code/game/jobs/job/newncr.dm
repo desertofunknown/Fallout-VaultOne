@@ -13,8 +13,8 @@ Trooper
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 	outfit = /datum/outfit/job/ncrlieutenant
 
 /datum/outfit/job/ncrlieutenant
@@ -55,8 +55,8 @@ Trooper
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 	outfit = /datum/outfit/job/ncrcolonel
 
 /datum/outfit/job/ncrcolonel
@@ -82,7 +82,7 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
 
 /*
 Sergeant
@@ -143,8 +143,8 @@ Trooper
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 	outfit = /datum/outfit/job/ncrtrooper
 
 /datum/outfit/job/ncrtrooper
@@ -185,8 +185,8 @@ Recruit
 	supervisors = "the head of security"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 	outfit = /datum/outfit/job/ncrrecruit
 
 /datum/outfit/job/ncrrecruit
@@ -233,8 +233,8 @@ Veteran Ranger
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	outfit = /datum/outfit/job/ncrvetranger
 
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 
 /datum/outfit/job/ncrvetranger
 	name = "NCR Veteran Ranger"
@@ -279,8 +279,8 @@ NCR Ranger
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	outfit = /datum/outfit/job/ncrranger
 
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 
 /datum/outfit/job/ncrranger
 	name = "NCR Ranger"
@@ -318,8 +318,8 @@ NCR Ranger
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 0
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 	outfit = /datum/outfit/job/ncrrecranger
 
 /datum/outfit/job/ncrrecranger
