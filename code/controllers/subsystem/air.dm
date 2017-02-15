@@ -57,11 +57,10 @@ var/datum/subsystem/air/SSair
 
 
 /datum/subsystem/air/Initialize(timeofday, zlevel)
-	//setup_allturfs(zlevel)
-	//setup_atmos_machinery(zlevel)
-	//setup_pipenets(zlevel)
-	//..()
-	return
+	setup_allturfs(zlevel)
+	setup_atmos_machinery(zlevel)
+	setup_pipenets(zlevel)
+	..()
 #define MC_AVERAGE(average, current) (0.8*(average) + 0.2*(current))
 /datum/subsystem/air/fire()
 	var/timer = world.timeofday
