@@ -1047,15 +1047,6 @@
 	item_color = "vault13"
 
 
-/obj/item/clothing/under/f13/ncr
-	name = "NCR trooper jumpsuit"
-	desc = "Regular NCR uniform."
-	armor = list(melee = 10, bullet = 5, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
-	icon_state = "ncrt"
-	item_color = "ncrt"
-
-//Fallout 13 goes rampage at this point. The following uniforms provide decent deffence bonus.
-
 /obj/item/clothing/under/f13/recon
 	name = "recon armor"
 	desc = "Intended to serve as the under-armor of the T-45d power armor, the recon armor is a vacuum-sealed asbestos jumpsuit covering the entire body.<br>Attached to it is the interface and mounts for the power armor.<br>Its purpose is twofold - it allows the user to actually operate the armor and protect soft tissue from moving parts inside the suit and heat."
@@ -1064,10 +1055,20 @@
 	item_color = "recon"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|HEAD
 	flags = BLOCKHAIR //It doesn't block the hair! What I did wrong?
-	armor = list(melee = 40, bullet = 30, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 30, laser = 20, energy = 20, bomb = 20, bio = 50, rad = 50)
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HEAD
 	can_adjust = 0
+
+/obj/item/clothing/under/f13/ncr
+    name = "NCR fatigues"
+    desc = "A set of standard issue New California Republic trooper fatigues, offers slight protection."
+    icon_state = "ncr_uniform"
+    item_state = "lb_suit"
+    item_color = "ncr_uniform"
+    body_parts_covered = CHEST|GROIN|LEGS|ARMS
+    armor = list(melee = 10, bullet = 5, laser = 5,energy = 5, bomb = 5, bio = 0, rad = 5)
+    can_adjust = 0
 
 //Plasmameme
 
