@@ -28,6 +28,10 @@
 	if(num_loaded)
 		user << "<span class='notice'>You load [num_loaded] shell\s into \the [src].</span>"
 		A.update_icon()
+		if(istype(A, /obj/item/ammo_casing))
+			playsound(user.loc, pick('sound/effects/wep_misc/bullet_insert.ogg', 'sound/effects/wep_misc/bullet_insert2.ogg'), 30, 1, -2)
+		else
+			playsound(user.loc, 'sound/effects/wep_misc/reload1.ogg', 30, 1, -2)
 		update_icon()
 		chamber_round(0)
 
@@ -103,53 +107,61 @@
 	options["The Peacemaker"] = "detective_peacemaker"
 	options["Cancel"] = null
 
-/obj/item/weapon/gun/projectile/revolver/detective/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override = "")
-	if(magazine.caliber != initial(magazine.caliber))
-		if(prob(70 - (magazine.ammo_count() * 10)))	//minimum probability of 10, maximum of 60
-			playsound(user, fire_sound, 50, 1)
-			user << "<span class='userdanger'>[src] blows up in your face!</span>"
-			user.take_organ_damage(0,20)
-			user.unEquip(src)
-			return 0
-	..()
-
-/obj/item/weapon/gun/projectile/revolver/detective/attackby(obj/item/A, mob/user, params)
-	..()
-	if(istype(A, /obj/item/weapon/screwdriver))
-		if(magazine.caliber == "38")
-			user << "<span class='notice'>You begin to reinforce the barrel of [src]...</span>"
-			if(magazine.ammo_count())
-				afterattack(user, user)	//you know the drill
-				user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
-				return
-			if(do_after(user, 30/A.toolspeed, target = src))
-				if(magazine.ammo_count())
-					user << "<span class='warning'>You can't modify it!</span>"
-					return
-				magazine.caliber = "357"
-				desc = "The barrel and chamber assembly seems to have been modified."
-				user << "<span class='notice'>You reinforce the barrel of [src]. Now it will fire .357 rounds.</span>"
-		else
-			user << "<span class='notice'>You begin to revert the modifications to [src]...</span>"
-			if(magazine.ammo_count())
-				afterattack(user, user)	//and again
-				user.visible_message("<span class='danger'>[src] goes off!</span>", "<span class='userdanger'>[src] goes off in your face!</span>")
-				return
-			if(do_after(user, 30/A.toolspeed, target = src))
-				if(magazine.ammo_count())
-					user << "<span class='warning'>You can't modify it!</span>"
-					return
-				magazine.caliber = "38"
-				desc = initial(desc)
-				user << "<span class='notice'>You remove the modifications on [src]. Now it will fire .38 rounds.</span>"
-
-
 /obj/item/weapon/gun/projectile/revolver/mateba
 	name = "\improper Unica 6 auto-revolver"
 	desc = "A retro high-powered autorevolver typically used by officers of the New Russia military. Uses .357 ammo."
 	icon_state = "mateba"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
 	origin_tech = "combat=2;materials=2"
 
+/obj/item/weapon/gun/projectile/revolver/m29
+	name = "\improper S&W Model 29"
+	desc = "Being that this is the most powerful handgun in the world, and can blow your head clean-off, you've got to ask yourself one question. Do I feel lucky? Well, do ya punk? "
+	icon_state = "m29"
+	origin_tech = "combat=4;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev44
+	fire_sound = 'sound/f13weapons/44mag.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/sequoia
+	name = "Ranger Sequoia"
+	desc = "This large, double-action revolver is a rare, scopeless variant of the hunting revolver. It is used exclusively by the New California Republic Rangers. This revolver features a dark finish with intricate engravings etched all around the weapon. Engraved along the barrel are the words 'For Honorable Service,' and 'Against All Tyrants.' The hand grip bears the symbol of the NCR Rangers, a bear, and a brass plate attached to the bottom that reads '20 Years.' "
+	icon_state = "sequoia"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev4570
+	origin_tech = "combat=2;materials=2"
+	fire_sound = 'sound/f13weapons/sequoia.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/police
+	name = "police pistol"
+	desc = "A .38 caliber police pistol which can also accept .357 rounds."
+	icon_state = "detective_panther"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev38
+	origin_tech = "combat=2;materials=2"
+	fire_sound = 'sound/f13weapons/policepistol.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/sequoia/scoped
+	name = "Hunting Revolver"
+	desc = "A scoped double action revolver chambered in 45-70."
+	icon_state = "hunting_revolver"
+	zoomable = TRUE
+	zoom_amt = 7
+
+/obj/item/weapon/gun/projectile/revolver/that_gun
+	name = ".223 pistol"
+	desc = "A modified .223 rifle that was cut down to a pistol. It has two triggers, two red LEDs, and an ammunition capacity of five .223 rounds, granting it excellent firepower."
+	icon_state = "that_gun"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev556
+	origin_tech = "combat=4;materials=3"
+	fire_sound = 'sound/f13weapons/that_gun.ogg'
+	damageG=15
+	damageA=5
+	damageS=0
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/revolver/that_gun/New()
+	..()
+	update_icon()
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
+	return
 
 // A gun to play Russian Roulette!
 // You can spin the chamber to randomize the position of the bullet.

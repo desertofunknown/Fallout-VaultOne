@@ -15,7 +15,7 @@
     name = "Gauss rifle m72"
     desc = "The M72 rifle is of German design. It uses an electromagnetic field to propel rounds at tremendous speed... and pierce almost any obstacle. Its range, accuracy and stopping power is almost unparalleled."
     origin_tech = "combat=6"
-    mag_type = /obj/item/ammo_box/magazine/m2mm
+    //mag_type = /obj/item/ammo_box/magazine/m2mm
     icon_state = "gaussf2"
     item_state = "gaussf2"
     w_class = 3

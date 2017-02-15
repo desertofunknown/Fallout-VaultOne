@@ -825,7 +825,14 @@
 	item_state = "sl_suit"
 	item_color = "cowboyg"
 	can_adjust = 0
-
+/obj/item/clothing/under/f13/ranger
+	name = "ranger outfit"
+	desc = "It's a real cowboy uniform with a brown vest and red bandana."
+	icon_state = "ranger"
+	item_state = "sl_suit"
+	item_color = "ranger"
+	can_adjust = 0
+	armor = list(melee = 10, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 /obj/item/clothing/under/f13/female/flapper
 	name = "flapper dress"
 	desc = "It's an outfit commonly worn by old-time prostitutes from around New Reno, but can be seen all over the wasteland."

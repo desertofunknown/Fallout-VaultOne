@@ -39,6 +39,11 @@
 	var/safetyon = 0				//the safetys actual position
 	var/safetybroken = 0				//whether the safetys lever is atached
 
+	var/damageG=0
+	var/damageA=0
+	var/damageS=0
+	var/rangeG=0
+
 	var/spread = 0						//spread induced by the gun itself.
 	var/randomspread = 1				//set to 0 for shotguns.
 

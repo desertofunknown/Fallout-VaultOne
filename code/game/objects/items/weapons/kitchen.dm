@@ -85,7 +85,14 @@
 	throwforce = 8
 	attack_verb = list("cleaved", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = 3
-
+/obj/item/weapon/kitchen/knife/combat
+	name = "combat knife"
+	icon_state = "combatknife"
+	item_state = "knife"
+	desc = "A standard issue NCR fighting utility knife. It's sharp."
+	force = 20
+	throwforce = 20
+	origin_tech = "materials=3;combat=4"
 /obj/item/weapon/kitchen/rollingpin
 	name = "rolling pin"
 	desc = "Used to knock out the Bartender."

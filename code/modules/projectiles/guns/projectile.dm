@@ -9,6 +9,9 @@
 	var/mag_type = /obj/item/ammo_box/magazine/m10mm //Removes the need for max_ammo and caliber info
 	var/obj/item/ammo_box/magazine/magazine
 
+	var/mag_load_sound = 'sound/effects/wep_magazines/handgun_generic_load.ogg'
+	var/mag_unload_sound = 'sound/effects/wep_magazines/handgun_generic_unload.ogg'
+	var/chamber_sound = 'sound/effects/wep_magazines/generic_chamber.ogg'
 /obj/item/weapon/gun/projectile/New()
 	..()
 	if (!magazine)

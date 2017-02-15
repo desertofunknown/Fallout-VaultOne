@@ -8,23 +8,19 @@
 	caliber = ".50"
 	projectile_type = /obj/item/projectile/bullet/deagleAE
 
-/obj/item/ammo_casing/c38
-	desc = "A .38 bullet casing."
+/obj/item/ammo_casing/c357
+	desc = "A .357 bullet casing."
 	caliber = "38"
+	projectile_type = /obj/item/projectile/bullet/mag357
+
+/obj/item/ammo_casing/c357/lowpower
+	desc = "A .38 bullet casing."
 	projectile_type = /obj/item/projectile/bullet/weakbullet2
 
 /obj/item/ammo_casing/c10mm
 	desc = "A 10mm bullet casing."
 	caliber = "10mm"
 	projectile_type = /obj/item/projectile/bullet/midbullet3
-
-/obj/item/ammo_casing/c2mm
-	desc = "A 2mm nail."
-	caliber = "2mm"
-	icon_state = "nail2mm"
-	projectile_type = /obj/item/projectile/bullet/nail
-
-
 
 /obj/item/ammo_casing/c9mm
 	desc = "A 9mm bullet casing."
@@ -229,6 +225,34 @@
 	desc = "A 5.56mm bullet casing."
 	caliber = "a556"
 	projectile_type = /obj/item/projectile/bullet/heavybullet
+
+/obj/item/ammo_casing/a556/ap
+	projectile_type = /obj/item/projectile/bullet/heavybullet/ap
+
+/obj/item/ammo_casing/a556/inc
+	projectile_type = /obj/item/projectile/bullet/incendiary/heavybullet
+
+/obj/item/ammo_casing/a556/tox
+	projectile_type = /obj/item/projectile/bullet/heavybullet/tox
+
+/obj/item/ammo_casing/a556/surplus
+	projectile_type = /obj/item/projectile/bullet/heavybullet/surplus
+
+/obj/item/ammo_casing/a556/training
+	projectile_type = /obj/item/projectile/bullet/training
+
+/obj/item/ammo_casing/a556/bleed
+	projectile_type = /obj/item/projectile/bullet/heavybullet/bleed
+
+/obj/item/ammo_casing/a556/sopoforic
+	projectile_type = /obj/item/projectile/bullet/heavybullet/sopoforic
+
+/obj/item/ammo_casing/a556/penetrator
+	projectile_type = /obj/item/projectile/bullet/heavybullet/penetrator
+
+/obj/item/ammo_casing/c4570
+	caliber = "4570"
+	projectile_type = /obj/item/projectile/bullet/sequoia
 
 /obj/item/ammo_casing/caseless
 	desc = "A caseless bullet casing."

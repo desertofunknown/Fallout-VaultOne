@@ -477,7 +477,7 @@ var/list/slot_equipment_priority = list( \
 		if(src.client)
 			is_admin = check_rights(0, 0)
 	var/deathtime = world.time - src.timeofdeath
-	var/deathtimeminutes = round(deathtime / 600)
+	var/deathtimeminutes = round(deathtime / 120)
 	var/pluralcheck = "minute"
 	if(deathtimeminutes == 0)
 		pluralcheck = ""
@@ -485,15 +485,15 @@ var/list/slot_equipment_priority = list( \
 		pluralcheck = " [deathtimeminutes] minute and"
 	else if(deathtimeminutes > 1)
 		pluralcheck = " [deathtimeminutes] minutes and"
-	var/deathtimeseconds = round((deathtime - deathtimeminutes * 600) / 10,1)
+	var/deathtimeseconds = round((deathtime - deathtimeminutes * 120) / 10,1)
 	usr << "You have been dead for[pluralcheck] [deathtimeseconds] seconds."
 
-	if (deathtime < 10*600)
+	if (deathtime < 10*120)
 		if(is_admin)
-			if(alert("Normal players must wait at least [10] minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
+			if(alert("Normal players must wait at least [2] minutes to respawn! Continue?","Warning", "Respawn", "Cancel") == "Cancel")
 				return
 		else
-			usr << "You must wait [10] minutes to respawn!"
+			usr << "You must wait [2] minutes to respawn!"
 			return
 	else
 		usr << "You can respawn now, enjoy your new life!"

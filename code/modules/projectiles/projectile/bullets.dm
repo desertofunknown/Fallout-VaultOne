@@ -6,14 +6,21 @@
 	damage_type = BRUTE
 	nodamage = 0
 	flag = "bullet"
+	var/gundamageapplied=0
+
+
 
 /obj/item/projectile/bullet/deagleAE
-	damage = 70
+	damage = 65
 	armour_penetration = 10
 
 /obj/item/projectile/bullet/magnum
-	damage = 60
+	damage = 55
 	armour_penetration = -10
+
+/obj/item/projectile/bullet/mag357
+	damage = 50
+	armour_penetration = 5
 
 /obj/item/projectile/bullet/slug
 	damage = 65
@@ -24,9 +31,9 @@
 	stamina = 80
 
 /obj/item/projectile/bullet/weakbullet2 //detective revolver instastuns, but multiple shots are better for keeping punks down
-	damage = 15
-	weaken = 3
-	stamina = 50
+	damage = 20
+//	weaken = 3
+//	stamina = 50
 
 /obj/item/projectile/bullet/weakbullet3
 	damage = 45
@@ -69,6 +76,48 @@
 
 /obj/item/projectile/bullet/heavybullet
 	damage = 35
+
+/obj/item/projectile/bullet/heavybullet/ap
+	damage = 30
+	armour_penetration = 10
+
+/obj/item/projectile/bullet/heavybullet/tox
+	damage = 25
+	damage_type = TOX
+
+/obj/item/projectile/bullet/incendiary/heavybullet
+	damage = 25
+
+/obj/item/projectile/bullet/heavybullet/surplus
+	damage = 20
+
+/obj/item/projectile/bullet/heavybullet/bleed
+	damage = 10
+	armour_penetration = 15
+
+/obj/item/projectile/bullet/heavybullet/bleed/on_hit(atom/target, blocked = 0, hit_zone)
+	if((blocked != 100) && istype(target, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = target
+		H.drip(100)
+
+	return ..()
+
+/obj/item/projectile/bullet/heavybullet/penetrator
+	damage = 30
+	forcedodge = 1
+
+/obj/item/projectile/bullet/heavybullet/sopoforic
+	armour_penetration = 0
+	nodamage = 1
+	stun = 0
+	weaken = 0
+
+/obj/item/projectile/bullet/heavybullet/soporific/on_hit(atom/target, blocked = 0, hit_zone)
+	if((blocked != 100) && istype(target, /mob/living))
+		var/mob/living/L = target
+		L.SetSleeping(20)
+
+	return ..()
 
 /obj/item/projectile/bullet/rpellet
 	damage = 3
@@ -195,8 +244,10 @@
 		nodamage = 1
 	. = ..() // Execute the rest of the code.
 
-/obj/item/projectile/bullet/nail //gauss gun f2
-	name = "nail"
-	icon_state = "nail"
-	damage = 45
-	armour_penetration = 75
+/obj/item/projectile/bullet/training
+	name = "dummy bullet"
+	damage = 0
+
+/obj/item/projectile/bullet/sequoia
+	name = "bullet"
+	damage = 70

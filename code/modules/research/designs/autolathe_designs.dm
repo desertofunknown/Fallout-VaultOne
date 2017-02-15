@@ -290,13 +290,6 @@
 	build_path = /obj/item/ammo_casing/shotgun/rubbershot
 	category = list("initial", "Security")
 
-/datum/design/c38
-	name = "Speed loader (.38)"
-	id = "c38"
-	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 30000)
-	build_path = /obj/item/ammo_box/c38
-	category = list("initial", "Security")
 
 /datum/design/recorder
 	name = "Universal recorder"

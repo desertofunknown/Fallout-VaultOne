@@ -253,3 +253,23 @@ update_label("John Doe", "Clowny")
 /obj/item/weapon/card/id/prisoner/seven
 	name = "Prisoner #13-007"
 	registered_name = "Prisoner #13-007"
+
+/obj/item/weapon/card/id/ncr
+	desc = "A pair of standard issue NCR dogtags issued to all servicemen."
+	icon_state = "ncr"
+	item_state = "silver_id"
+
+/obj/item/weapon/card/id/ncr/ranger
+	desc = "A ranger pin issue to all NCR Rangers."
+	icon_state = "ranger"
+	item_state = "gold_id"
+
+/obj/item/weapon/card/id/bos
+	desc = "A pair of Brotherhood of Steel holotags."
+	icon_state = "bos"
+	item_state = "gold_id"
+
+/obj/item/weapon/card/id/syndicate
+	name = "agent card"
+	access = list(access_maint_tunnels, access_syndicate)
+	origin_tech = "syndicate=3"

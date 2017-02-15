@@ -7,8 +7,38 @@
 	var/select_name = "energy"
 	fire_sound = 'sound/weapons/Laser.ogg'
 
+/obj/item/projectile/beam/pistol
+	name = "laser"
+	icon_state = "laser"
+	damage = 20
+
+/obj/item/projectile/beam/plasma_beam
+	name = "plasma beam"
+	icon_state = "plasma_beam"
+	damage = 50
+	hitsound = 'sound/f13weapons/plasmarifle.ogg'
+	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
+
+/obj/item/projectile/beam/plasma_scatter
+	name = "plasma scatter"
+	icon_state = "plasma_beam"
+	damage = 13
+	hitsound = 'sound/f13weapons/plasmarifle.ogg'
+	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
+
+/obj/item/projectile/beam/plasma_pistol
+	name = "plasma beam"
+	icon_state = "plasma_beam"
+	damage = 35
+	hitsound = 'sound/f13weapons/plasmarifle.ogg'
+	hitsound_wall = 'sound/f13weapons/plasmaout.ogg'
+
 /obj/item/ammo_casing/energy/laser
 	projectile_type = /obj/item/projectile/beam
+	select_name = "kill"
+
+/obj/item/ammo_casing/energy/laser/pistol
+	projectile_type = /obj/item/projectile/beam/pistol
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/lasergun
@@ -21,14 +51,15 @@
 	e_cost = 83
 	select_name = "kill"
 
-/obj/item/ammo_casing/energy/turbo_plasmagun
-	projectile_type = /obj/item/projectile/beam/turbo_plasma_beam
-	e_cost = 50
+/obj/item/ammo_casing/energy/plasmagun/scatter
+	projectile_type = /obj/item/projectile/beam/plasma_scatter
+	pellets = 5
+	variance = 25
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/plasmapistol
-	projectile_type = /obj/item/projectile/beam/plasma_pistol_beam
-	e_cost = 100
+	projectile_type = /obj/item/projectile/beam/plasma_pistol
+	e_cost = 83
 	select_name = "kill"
 
 /obj/item/ammo_casing/energy/laser/hos
@@ -40,9 +71,9 @@
 
 /obj/item/ammo_casing/energy/laser/scatter
 	projectile_type = /obj/item/projectile/beam/scatter
-	pellets = 5
+	pellets = 3
 	variance = 25
-	select_name = "scatter"
+	select_name = "fire"
 
 /obj/item/ammo_casing/energy/laser/heavy
 	projectile_type = /obj/item/projectile/beam/heavylaser

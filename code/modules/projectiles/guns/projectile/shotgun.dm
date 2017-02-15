@@ -1,5 +1,5 @@
 /obj/item/weapon/gun/projectile/shotgun
-	name = "shotgun"
+	name = "hunting shotgun"
 	desc = "A traditional shotgun with wood furniture and a four-shell capacity underneath."
 	icon_state = "shotgun"
 	item_state = "shotgun"
@@ -9,11 +9,18 @@
 	slot_flags = SLOT_BACK
 	origin_tech = "combat=4;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot
+	fire_sound = 'sound/f13weapons/shotgun.ogg'
+	var/pumpsound = 'sound/weapons/shotgunpump.ogg'
+	var/loadsound = 'sound/effects/wep_magazines/insertShotgun.ogg'
 	var/recentpump = 0 // to prevent spammage
+	mag_load_sound = null
+	mag_unload_sound = null		//Shotguns have their own procs related to loading, unloading, etc.
+	chamber_sound = null
 
 /obj/item/weapon/gun/projectile/shotgun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
 	if(num_loaded)
+		playsound(loc, loadsound, 80)
 		user << "<span class='notice'>You load [num_loaded] shell\s into \the [src]!</span>"
 		A.update_icon()
 		update_icon()
@@ -39,7 +46,7 @@
 
 
 /obj/item/weapon/gun/projectile/shotgun/proc/pump(mob/M)
-	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+	playsound(M, pumpsound, 60, 1)
 	pump_unload(M)
 	pump_reload(M)
 	update_icon()	//I.E. fix the desc
@@ -65,11 +72,22 @@
 // RIOT SHOTGUN //
 
 /obj/item/weapon/gun/projectile/shotgun/riot //for spawn in the armory
-	name = "riot shotgun"
-	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for non-lethal riot control."
+	name = "tactical shotgun"
+	desc = "A sturdy shotgun with a longer magazine and a fixed tactical stock designed for tactical use."
 	icon_state = "riotshotgun"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/riot
+	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	sawn_desc = "Come with me if you want to live."
+	damageG=15
+	damageA=0
+	damageS=0
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/shotgun/riot/New()
+	..()
+	update_icon()
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
+	return
 
 /obj/item/weapon/gun/projectile/shotgun/riot/attackby(obj/item/A, mob/user, params)
 	..()
@@ -87,11 +105,15 @@
 /obj/item/weapon/gun/projectile/shotgun/boltaction
 	name = "Hunting rifle"
 	desc = "This piece of junk looks like something that could have been used 700 years ago. It feels slightly moist."
-	icon_state = "rifle308_scope"
-	item_state = "rifle308_scope"
-	slot_flags = 0 //no SLOT_BACK sprite, alas
+	icon_state = "308"
+	item_state = "assault_rifle"
+	//slot_flags = 0 //no SLOT_BACK sprite, alas
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
-	var/bolt_open = 0
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	pumpsound = 'sound/weapons/boltpump.ogg'
+	loadsound = 'sound/effects/wep_magazines/rifle_load.ogg'
+
+/*	var/bolt_open = 0
 
 /obj/item/weapon/gun/projectile/shotgun/boltaction/pump(mob/M)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
@@ -112,6 +134,7 @@
 /obj/item/weapon/gun/projectile/shotgun/boltaction/examine(mob/user)
 	..()
 	user << "The bolt is [bolt_open ? "open" : "closed"]."
+*/
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -180,8 +203,40 @@
 	origin_tech = "combat=4;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/mad
 	fire_sound = 'sound/f13weapons/max_sawn_off.ogg'
+	damageG=25
+	damageA=0
+	damageS=0
+	rangeG=0
 
+/obj/item/weapon/gun/projectile/revolver/max_sawn_off/New()
+	..()
+	update_icon()
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
+	return
 
+/obj/item/weapon/gun/projectile/revolver/caravan_shotgun
+	name = "caravan shotgun"
+	desc = "An common over under double barreled shotgun."
+	icon_state = "caravan_shotgun"
+	item_state = "shotgun"
+	w_class = 3
+	force = 15
+	unique_reskin = 0
+	origin_tech = "combat=2;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/mad
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/single_shotgun
+	name = "single shotgun"
+	desc = "A dirt cheap single shot shotgun."
+	icon_state = "single_shotgun"
+	item_state = "shotgun"
+	w_class = 3
+	force = 15
+	unique_reskin = 0
+	origin_tech = "combat=2;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
+	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
 
 // IMPROVISED SHOTGUN //
 
@@ -258,7 +313,6 @@
 		return
 	else
 		sawn_state = SAWN_INTACT
-
 
 // Bulldog shotgun //
 

@@ -94,9 +94,9 @@
 	return 1 //Nothing found to block so return success!
 
 /turf/Entered(atom/movable/M)
-	for(var/mob/living/carbon/human/h in range(1,src))
-		h.RefreshView()
-		h.RefreshViewers()
+	//for(var/mob/living/carbon/human/h in range(1,src))
+		//h.RefreshView()
+		//h.RefreshViewers()
 	var/loopsanity = 100
 	for(var/atom/A in range(1))
 		if(loopsanity == 0)
