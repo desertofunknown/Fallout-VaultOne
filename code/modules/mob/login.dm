@@ -58,7 +58,13 @@
 	//add_click_catcher()
 
 	sync_mind()
-
+	switch(alert("By pressing yes you agree that you are 18+ and have read the rules.","You sure?","Yes","No"))
+		if("Yes")
+			usr << "Welcome [usr], thank you for joining fallout 13 enjoy and have a fun time."
+			return
+		if("No")
+			usr.Logout()
+			del usr
 // Calling update_interface() in /mob/Login() causes the Cyborg to immediately be ghosted; because of winget().
 // Calling it in the overriden Login, such as /mob/living/Login() doesn't cause this.
 /mob/proc/update_interface()
