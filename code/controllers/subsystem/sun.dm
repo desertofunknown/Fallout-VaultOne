@@ -1,3 +1,6 @@
+var/day=1
+var/month=1
+var/years=2253
 var/datum/subsystem/sun/SSsun
 //For now it's using for change times of day
 /datum/subsystem/sun
@@ -84,6 +87,7 @@ var/datum/subsystem/sun/SSsun
 			dif = -1
 		else if(current_time_of_day == "Night")
 			current_time_of_day = "Morning"
+			day+=1
 			dif = 1
 			global_sun_light = 0
 		is_working = 1
