@@ -93,7 +93,7 @@ var/global/datum/controller/master/Master = new()
 	world.sleep_offline = 1
 	world.fps = config.fps
 
-	sleep(-1)
+	sleep(1)
 	// Loop.
 	Master.process()
 
@@ -108,7 +108,7 @@ var/global/datum/controller/master/Master = new()
 /datum/controller/master/process()
 	if(!Failsafe)
 		new/datum/controller/failsafe() // (re)Start the failsafe.
-	spawn(0)
+	spawn(1)
 		// Schedule the first run of the Subsystems.
 		var/timer = world.time
 		for(var/datum/subsystem/SS in subsystems)

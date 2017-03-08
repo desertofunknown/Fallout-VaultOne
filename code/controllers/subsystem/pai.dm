@@ -197,7 +197,7 @@ var/datum/subsystem/pai/SSpai
 				question(O.client)
 
 /datum/subsystem/pai/proc/question(client/C)
-	spawn(0)
+	spawn(1)
 		if(!C)	return
 		asked.Add(C.key)
 		asked[C.key] = world.time

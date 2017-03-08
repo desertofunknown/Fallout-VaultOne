@@ -103,7 +103,7 @@ var/datum/subsystem/lighting/SSlighting
 	for(var/thing in changed_turfs)
 		var/turf/T = thing
 		if(T.lighting_changed)
-			spawn(-1)
+			spawn(1)
 				T.redraw_lighting()
 
 	var/msg = "## DEBUG: [time2text(world.timeofday)] [name] subsystem restarted. Reports:\n"

@@ -191,7 +191,7 @@ var/datum/subsystem/ticker/ticker
 			world << "<h4>[holiday.greet()]</h4>"
 
 
-	spawn(0)//Forking here so we dont have to wait for this to finish
+	spawn(1)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
 		//Cleanup some stuff
 		for(var/obj/effect/landmark/start/S in landmarks_list)
@@ -485,5 +485,5 @@ var/datum/subsystem/ticker/ticker
 	//map rotate chance defaults to 75% of the length of the round (in minutes)
 	if (!prob((world.time/600)*config.maprotatechancedelta))
 		return
-	spawn(-1) //compiling a map can lock up the mc for 30 to 60 seconds if we don't spawn
+	spawn(5) //compiling a map can lock up the mc for 30 to 60 seconds if we don't spawn
 		maprotate()
