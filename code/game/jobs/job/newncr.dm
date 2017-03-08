@@ -41,7 +41,7 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
 
 /datum/job/ncrc
 	title = "NCR Colonel"
@@ -170,7 +170,7 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
 /*
 Recruit
 */
@@ -213,7 +213,7 @@ Recruit
 		n.assignment = "NCR Recruit"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] (NCR Recruit)"
-		n.access = list()
+		n.access = list(67)
 
 /*
 Veteran Ranger
@@ -260,7 +260,7 @@ Veteran Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
 /*
 NCR Ranger
 */
@@ -306,7 +306,7 @@ NCR Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
 /datum/job/ncrrecranger
 	title = "NCR Recruit Ranger"
 	flag = NCRRECRANGER
@@ -348,4 +348,4 @@ NCR Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
