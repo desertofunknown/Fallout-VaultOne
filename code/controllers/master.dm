@@ -93,6 +93,7 @@ var/global/datum/controller/master/Master = new()
 	world.sleep_offline = 1
 	world.fps = config.fps
 
+	sleep(-1)
 	// Loop.
 		Master.process()
 
