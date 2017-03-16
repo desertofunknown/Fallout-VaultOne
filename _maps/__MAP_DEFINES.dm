@@ -1,5 +1,5 @@
-		#define CROSSLINKED 0
-		#define SELFLOOPING 0
+		#define CROSSLINKED 2
+		#define SELFLOOPING 1
 		#define UNAFFECTED 0
 		#define MAIN_STATION "Wasteland"
 		#define CENTCOMM "CentComm"

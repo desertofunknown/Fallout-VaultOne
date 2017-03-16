@@ -58,7 +58,7 @@ mob/var/usragreed=null
 	//add_click_catcher()
 
 	sync_mind()
-	if(usr.usragreed=null)
+	/*if(usr.usragreed=null)
 		switch(alert("By pressing yes you agree that you are 18+ and have read the rules.","You sure?","Yes","No"))
 			if("Yes")
 				usr.usragreed=1
@@ -75,7 +75,7 @@ mob/var/usragreed=null
 		usr << "Goodbye [usr]."
 		usr.Del()
 		message_admins("<span class='adminnotice'>[usr] denied that they are either 18+ or denied they read and agreed to the rules and is trying to login again.</span>")
-		usr.Logout()
+		usr.Logout()*/
 // Calling update_interface() in /mob/Login() causes the Cyborg to immediately be ghosted; because of winget().
 // Calling it in the overriden Login, such as /mob/living/Login() doesn't cause this.
 /mob/proc/update_interface()

@@ -27,10 +27,6 @@ var/datum/subsystem/sun/SSsun
 	var/list/solars	= list()
 /datum/subsystem/sun/New()
 	NEW_SS_GLOBAL(SSsun)
-	angle = rand (0,360)			// the station position to the sun is randomised at round start
-	rate = rand(50,200)/100			// 50% - 200% of standard rotation
-	if(prob(50))					// same chance to rotate clockwise than counter-clockwise
-		rate = -rate
 
 /datum/subsystem/sun/Initialize(start_timeofday, zlevel)
 	max_sun = config.max_sunlight
@@ -40,8 +36,8 @@ var/datum/subsystem/sun/SSsun
 	..()
 
 /datum/subsystem/sun/fire()
-	if(!config.sun_enabled)
-		return
+	//if(!config.sun_enabled)
+		//return
 		//<<1.NEED FOR WORK?>>
 	if(is_working)
 		///////////////////////
@@ -63,7 +59,6 @@ var/datum/subsystem/sun/SSsun
 					temp.redraw_lighting()
 					temp.light.update_sunlight()
 			curx--
-			return
 		//<<2.3 Checking finish>>//
 		if(global_sun_light == min_sun || global_sun_light == max_sun)
 
@@ -72,7 +67,6 @@ var/datum/subsystem/sun/SSsun
 			else
 				current_time_of_day = "Night"
 			is_working = 0
-			return
 
 		global_sun_light += dif
 		if(global_sun_light < min_sun)
@@ -87,7 +81,6 @@ var/datum/subsystem/sun/SSsun
 			dif = -1
 		else if(current_time_of_day == "Night")
 			current_time_of_day = "Morning"
-			day+=1
 			dif = 1
 			global_sun_light = 0
 		is_working = 1
@@ -95,21 +88,6 @@ var/datum/subsystem/sun/SSsun
 		is_apply_sunlight = 1
 		next_change = world.time + change_rate
 		curx = world.maxx
-	//now tell the solar control computers to update their status and linked devices
-	var/s = sin(angle)
-	var/c = cos(angle)
-	if(abs(s) < abs(c))
-		dx = s / abs(c)
-		dy = c / abs(c)
-	else
-		dx = s / abs(s)
-		dy = c / abs(s)
-
-	for(var/obj/machinery/power/solar_control/SC in solars)
-		if(!SC.powernet)
-			solars.Remove(SC)
-			continue
-		SC.update()
 
 /datum/subsystem/sun/stat_entry(msg)
 	msg += "Sun\[[global_sun_light]]"

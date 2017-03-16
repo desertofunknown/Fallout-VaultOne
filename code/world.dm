@@ -169,7 +169,7 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 
 	data_core = new /datum/datacore()
 
-	spawn(5)
+	spawn(10)
 		Master.Setup()
 
 	process_teleport_locs()			//Sets up the wizard teleport locations
