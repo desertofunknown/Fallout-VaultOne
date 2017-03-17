@@ -59,6 +59,7 @@ var/datum/subsystem/sun/SSsun
 					temp.redraw_lighting()
 					temp.light.update_sunlight()
 			curx--
+			return
 		//<<2.3 Checking finish>>//
 		if(global_sun_light == min_sun || global_sun_light == max_sun)
 
@@ -67,6 +68,7 @@ var/datum/subsystem/sun/SSsun
 			else
 				current_time_of_day = "Night"
 			is_working = 0
+			return
 
 		global_sun_light += dif
 		if(global_sun_light < min_sun)

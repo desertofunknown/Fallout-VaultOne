@@ -95,7 +95,7 @@ var/global/datum/controller/master/Master = new()
 
 	sleep(-1)
 	// Loop.
-		Master.process()
+	Master.process()
 
 // Notify the MC that the round has started.
 /datum/controller/master/proc/RoundStart()
