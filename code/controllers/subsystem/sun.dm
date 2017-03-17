@@ -36,8 +36,8 @@ var/datum/subsystem/sun/SSsun
 	..()
 
 /datum/subsystem/sun/fire()
-	//if(!config.sun_enabled)
-		//return
+	if(!config.sun_enabled)
+		return
 		//<<1.NEED FOR WORK?>>
 	if(is_working)
 		///////////////////////
