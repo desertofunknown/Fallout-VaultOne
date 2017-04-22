@@ -65,12 +65,12 @@
 	var/sec_start_brig = 0				//makes sec start in brig or dept sec posts
 
 	var/server
-	var/banappeals
+	var/banappeals = "https://cavecrawlers.com/forum/viewforum.php?f=54"
 	var/wikiurl = "http://www.fallss.esy.es/wiki/doku.php?id=ru:start" // default wiki link
-	var/forumurl = "https://vk.com/the_fallout_13" // default forums
-	var/rulesurl = "html/rules.html" // default rules
+	var/forumurl = "https://cavecrawlers.com" // default forums
+	var/rulesurl = "https://cavecrawlers.com/forum/viewtopic.php?f=11&t=4" // default rules
 	var/githuburl = "https://bitbucket.org/Jackerzz/fallout/issues?status=new&status=open" //default github
-	var/discordurl = "https://discord.gg/fECUGbv"
+	var/discordurl = "https://discord.gg/aQ8ch8x"
 	var/forbid_singulo_possession = 0
 	var/useircbot = 0
 
