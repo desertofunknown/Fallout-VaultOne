@@ -170,7 +170,7 @@ mob/proc/set_faction(var/faction)
 	first_spawn = 1
 	late_join = 1
 	color = "#020080"
-	head_status = "Squad Leader"
+	head_status = "Colonel"
 	flag = "ncr"
 	verbs = list(/mob/proc/begin_head_voting)
 	welcome_text = "Your current objectives:<br>\

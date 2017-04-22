@@ -80,7 +80,13 @@ var/list/teleportlocs = list()
 	name = "Gunners"
 	icon_state = "security"
 /area/city1
-	name = "city1"
+	name = "Sunny Dale"
+	icon_state = "centcom"
+/area/city2
+	name = "Klamat"
+	icon_state = "centcom"
+/area/city3
+	name = "The Den"
 	icon_state = "centcom"
 /area/engine/
 
@@ -100,7 +106,7 @@ var/list/teleportlocs = list()
 /area/space
 	icon_state = "space"
 	requires_power = 1
-	always_unpowered = 1
+	always_unpowered = 0
 //	lighting_use_dynamic = DYNAMIC_LIGHTING_DISABLED
 	power_light = 0
 	power_equip = 0
@@ -736,6 +742,9 @@ var/list/teleportlocs = list()
 	music = "signal"
 	ambientsounds = list('sound/ambience/ambimalf.ogg')
 
+/area/chapel
+	name = "Children Of Atom"
+	icon_state = "chapel"
 //MedBay
 
 /area/medical/medbay
@@ -798,6 +807,10 @@ var/list/teleportlocs = list()
 /area/medical/genetics
 	name = "Genetics Lab"
 	icon_state = "genetics"
+
+/area/medical/city1clinic
+	name = "Sunny Dale Clinic"
+	icon_state = "medbay"
 
 /area/medical/genetics_cloning
 	name = "Cloning Lab"

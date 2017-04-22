@@ -10,7 +10,7 @@ Trooper
 	status = "NCR Lieutenant"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of security"
+	supervisors = "The NCR Colonel"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
 	access = list(67)
@@ -52,7 +52,7 @@ Trooper
 	status = "Colonel"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of security"
+	supervisors = "nobody"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
 	access = list(67)
@@ -96,11 +96,11 @@ Sergeant
 	status = "Sergeant"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the head of security"
+	supervisors = "The NCR Lieutenant"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
-	access = list()
-	minimal_access = list()
+	access = list(67)
+	minimal_access = list(67)
 	outfit = /datum/outfit/job/ncrsergeant
 
 /datum/outfit/job/ncrsergeant
@@ -126,7 +126,7 @@ Sergeant
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		n.access = list()
+		n.access = list(67)
 
 /*
 Trooper
@@ -179,7 +179,7 @@ Recruit
 	flag = NCRRECRUIT
 	department_head = list("NCR Sergeant")
 	department_flag = NCR
-	faction = "Desert" // This faction is used for late joins
+	faction = "NCR" // This faction is used for late joins
 	total_positions = 10
 	spawn_positions = -1
 	supervisors = "the head of security"

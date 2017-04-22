@@ -579,6 +579,48 @@
 				counter = 0
 		jobs += "</tr></table>"
 
+	//Legion (Red)
+		counter = 0
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='ffddf0'><th colspan='[length(legion_positions)]'><a href='?src=\ref[src];jobban3=legiondept;jobban4=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in legion_positions)
+			if(!jobPos)	continue
+			var/datum/job/job = SSjob.GetJob(jobPos)
+			if(!job) continue
+
+			if(jobban_isbanned(M, job.title))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 5) //So things dont get squiiiiished!
+				jobs += "</tr><tr align='center'>"
+				counter = 0
+		jobs += "</tr></table>"
+
+	//NCR (Red)
+		counter = 0
+		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
+		jobs += "<tr bgcolor='ffddf0'><th colspan='[length(ncr_positions)]'><a href='?src=\ref[src];jobban3=ncrdept;jobban4=\ref[M]'>Security Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in ncr_positions)
+			if(!jobPos)	continue
+			var/datum/job/job = SSjob.GetJob(jobPos)
+			if(!job) continue
+
+			if(jobban_isbanned(M, job.title))
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'><font color=red>[replacetext(job.title, " ", "&nbsp")]</font></a></td>"
+				counter++
+			else
+				jobs += "<td width='20%'><a href='?src=\ref[src];jobban3=[job.title];jobban4=\ref[M]'>[replacetext(job.title, " ", "&nbsp")]</a></td>"
+				counter++
+
+			if(counter >= 5) //So things dont get squiiiiished!
+				jobs += "</tr><tr align='center'>"
+				counter = 0
+		jobs += "</tr></table>"
+
 	//Engineering (Yellow)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
@@ -837,6 +879,18 @@
 					joblist += temp.title
 			if("securitydept")
 				for(var/jobPos in security_positions)
+					if(!jobPos)	continue
+					var/datum/job/temp = SSjob.GetJob(jobPos)
+					if(!temp) continue
+					joblist += temp.title
+			if(";egiondept")
+				for(var/jobPos in legion_positions)
+					if(!jobPos)	continue
+					var/datum/job/temp = SSjob.GetJob(jobPos)
+					if(!temp) continue
+					joblist += temp.title
+			if("ncrdept")
+				for(var/jobPos in ncr_positions)
 					if(!jobPos)	continue
 					var/datum/job/temp = SSjob.GetJob(jobPos)
 					if(!temp) continue

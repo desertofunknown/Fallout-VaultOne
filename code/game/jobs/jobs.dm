@@ -82,6 +82,9 @@ var/const/NCRTROOPER        	=(1<<6)
 var/const/NCRCOLONEL			=(1<<7)
 var/const/NCRRECRANGER			=(1<<8)
 var/const/NCR        		=(1<<26)
+var/const/WASTELANDWHORE	=(1<<27)
+var/const/PUSHER			=(1<<28)
+var/const/PREACHER			=(1<<29)
 var/list/assistant_occupations = list(
 	"Assistant",
 //	"Chaplain",
@@ -129,7 +132,11 @@ var/list/supply_positions = list(
 //	"Head of Personnel",
 	"Sheriff",
 	"Settler",
+	"Whore",
+	"Pusher",
+	"Preacher",
 //	"Shaft Miner",
+
 )
 
 
@@ -168,7 +175,7 @@ var/list/ncr_positions = list(
 var/list/security_positions = list(
 //	"Head of Security",
 	"Warden",
-	"Detective",
+//	"Detective",
 	"Security Officer"
 )
 
