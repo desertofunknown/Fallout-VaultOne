@@ -404,8 +404,8 @@
 /obj/item/clothing/head/helmet/power_armor/advanced
 	name = "advanced Mk I power helmet"
 	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
-	icon_state = "advanced"
-	item_state = "advanced"
+	icon_state = "t51bhelmet"
+	item_state = "t51bhelmet"
 	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
 	armor = list(melee = 80, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE

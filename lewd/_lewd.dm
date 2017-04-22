@@ -97,7 +97,7 @@
 
 /datum/interaction/lewd/get_action_link_for(var/mob/user, var/mob/target)
 	return "<font color='#FF0000'><b>LEWD:</b></font> [..()]"
-	if(user.stat = DEAD) return
+	if(user.stat == DEAD) return
 
 #define CUM_TARGET_MOUTH "mouth"
 #define CUM_TARGET_VAGINA "vagina"
