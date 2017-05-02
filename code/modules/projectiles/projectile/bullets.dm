@@ -251,3 +251,13 @@
 /obj/item/projectile/bullet/sequoia
 	name = "bullet"
 	damage = 70
+
+/obj/item/projectile/needle
+	name = "needler dart"
+	icon_state = "cbbolt"
+	damage = 32
+
+/obj/item/projectile/needle/ap
+	name = "needler dart"
+	damage = 64
+	armour_penetration = 35

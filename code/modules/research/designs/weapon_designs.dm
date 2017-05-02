@@ -136,7 +136,7 @@
 	materials = list(MAT_METAL = 8000, MAT_SILVER = 2000, MAT_DIAMOND = 1000)
 	build_path = /obj/item/weapon/gun/projectile/automatic/proto
 	category = list("Weapons")
-
+/*
 /datum/design/xray
 	name = "Xray Laser Gun"
 	desc = "Not quite as menacing as it sounds"
@@ -146,6 +146,7 @@
 	materials = list(MAT_GOLD = 5000,MAT_URANIUM = 10000, MAT_METAL = 4000)
 	build_path = /obj/item/weapon/gun/energy/xray
 	category = list("Weapons")
+*/
 
 /datum/design/ioncarbine
 	name = "Ion Carbine"
@@ -157,6 +158,7 @@
 	build_path = /obj/item/weapon/gun/energy/ionrifle/carbine
 	category = list("Weapons")
 
+/*
 /datum/design/wormhole_projector
 	name = "Bluespace Wormhole Projector"
 	desc = "A projector that emits high density quantum-coupled bluespace beams."
@@ -166,6 +168,7 @@
 	materials = list(MAT_SILVER = 1000, MAT_METAL = 5000, MAT_DIAMOND = 3000)
 	build_path = /obj/item/weapon/gun/energy/wormhole_projector
 	category = list("Weapons")
+*/
 
 /datum/design/reciever
 	name = "Modular Receiver"
@@ -178,7 +181,7 @@
 	category = list("Weapons")
 
 //WT550 Mags
-
+/*
 /datum/design/mag_oldsmg
 	name = "WT-550 Auto Gun Magazine (4.6×30mm)"
 	desc = "A 20 round magazine for the out of date security WT-550 Auto Rifle"
@@ -209,7 +212,61 @@
 	id = "mag_oldsmg_tx"
 	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wttx
+*/
+/datum/design/mag_oldsmg
+	name = "ammo (5.56 Match)"
+	desc = "A box of 20 5.56 match grade ammo."
+	id = "mag_oldsmg"
+	req_tech = list("combat" = 1, "materials" = 1)
+	build_type = PROTOLATHE
+	materials = list(MAT_METAL = 4000)
+	build_path = /obj/item/ammo_box/a556
+	category = list("Ammo")
 
+/datum/design/mag_oldsmg/ap_mag
+	name = "ammo armour piercing (5.56 AP)"
+	desc = "A box of 20 armour piercing 5.56 ammo."
+	id = "mag_oldsmg_ap"
+	materials = list(MAT_METAL = 6000, MAT_SILVER = 600)
+	build_path = /obj/item/ammo_box/a556/ap
+
+/datum/design/mag_oldsmg/ic_mag
+	name = "ammo incendiary (5.56 IC)"
+	desc = "A box of 20 incendiary 5.56 ammo."
+	id = "mag_oldsmg_ic"
+	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_GLASS = 1000)
+	build_path = /obj/item/ammo_box/a556/inc
+
+/datum/design/mag_oldsmg/tx_mag
+	name = "ammo uranium tipped (5.56 TX)"
+	desc = "a box of 20 uranium tipped 5.56 ammo."
+	id = "mag_oldsmg_tx"
+	materials = list(MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000)
+	build_path = /obj/item/ammo_box/a556/tox
+
+/datum/design/mag_oldsmge/bleed_mag
+	name = "experimental ammo hemorrhage (5.56 bleed)"
+	desc = "a box of 20 bleeding 5.56 ammo"
+	id = "mag_oldsmg_bleed"
+	req_tech = list("combat" = 6, "engineering" = 5, "syndicate" = 3)
+	materials = list (MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000, MAT_DIAMOND = 1000)
+	build_path = /obj/item/ammo_box/a556/bleed
+
+/datum/design/mag_oldsmge/sleep_mag
+	name = "experimental ammo sleeping (5.56 sopoforic)"
+	desc = "a box of 20 sleeping 5.56 ammo"
+	id = "mag_oldsmg_sleep"
+	req_tech = list("combat" = 6, "engineering" = 5, "syndicate" = 3)
+	materials = list (MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000, MAT_DIAMOND = 1000, MAT_GOLD = 800)
+	build_path = /obj/item/ammo_box/a556/sopoforic
+
+/datum/design/mag_oldsmge/pen_mag
+	name = "experimental ammo penetrator (5.56 penetrator)"
+	desc = "a box of 20 penetrator 5.56 ammo"
+	id = "mag_oldsmg_pen"
+	req_tech = list("combat" = 6, "engineering" = 5, "syndicate" = 3)
+	materials = list (MAT_METAL = 6000, MAT_SILVER = 600, MAT_URANIUM = 2000, MAT_DIAMOND = 2000)
+	build_path = /obj/item/ammo_box/a556/penetrator
 //SABR Mags
 
 /datum/design/mag_smg

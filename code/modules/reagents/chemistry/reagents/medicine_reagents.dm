@@ -962,3 +962,113 @@ datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/M)
 	M.adjustCloneLoss(-3*REM)
 	..()
 	return
+
+datum/reagent/medicine/stimpak
+	name = "stim chemicals"
+	id = "stimpak"
+	description = "Chemicals found in pre-war stimpaks."
+	reagent_state = LIQUID
+	color = "#e50d0d"
+
+/datum/reagent/medicine/stimpak/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-2*REM)
+	M.adjustFireLoss(-2*REM)
+	M.adjustOxyLoss(-2*REM)
+	..()
+
+datum/reagent/medicine/super_stimpak
+	name = "super stim chemicals"
+	id = "super_stimpak"
+	description = "Chemicals found in pre-war stimpaks."
+	reagent_state = LIQUID
+	color = "#e50d0d"
+
+datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
+	M.adjustBruteLoss(-3*REM)
+	M.adjustFireLoss(-3*REM)
+	M.adjustOxyLoss(-3*REM)
+	..()
+	return
+
+/datum/reagent/medicine/radx
+	name = "Rad-X"
+	id = "radx"
+	description = "Reduces massive amounts of radiation and some toxin damage."
+	reagent_state = LIQUID
+	color = "#ff6100"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/radx/on_mob_life(mob/living/M)
+	if(M.radiation > 0)
+		M.radiation -= 4
+	M.adjustToxLoss(-1*REM)
+	if(M.radiation < 0)
+		M.radiation = 0
+	..()
+	return
+
+/datum/reagent/medicine/mentats
+	name = "mentat powder"
+	id = "mentats"
+	description = "A powerful and drug that heals and increases the perception of the user."
+	color = "#C8A5DC"
+
+/datum/reagent/medicine/mentats/on_mob_life(mob/living/M)
+	if(M.disabilities & BLIND)
+		if(prob(20))
+			M << "<span class='warning'>Your vision slowly returns...</span>"
+			M.disabilities &= ~BLIND
+			M.disabilities &= NEARSIGHT
+			M.eye_blurry = 35
+
+	else if(M.disabilities & NEARSIGHT)
+		M << "<span class='warning'>The blackness in your peripheral vision fades.</span>"
+		M.disabilities &= ~NEARSIGHT
+		M.eye_blurry = 10
+
+	else if(M.eye_blind || M.eye_blurry)
+		M.eye_blind = 0
+		M.eye_blurry = 0
+	else if(M.eye_stat > 0)
+		M.eye_stat -= 1
+		M.eye_stat = Clamp(M.eye_stat, 0, INFINITY)
+	var/high_message = pick("Your eyes widen.", "You feel more intelligent.", "You feel like you can solve any problem!")
+	if(prob(5))
+		M << "<span class='notice'>[high_message]</span>"
+	M.adjustBrainLoss(-3*REM)
+	M.setEarDamage(0,0)
+	..()
+	return
+
+/datum/reagent/medicine/healing_powder
+	name = "healing powder"
+	id = "healing_powder"
+	description = "If used in touch-based applications, immediately restores bruising as well as restoring more over time. If ingested through other means, deals minor toxin damage."
+	reagent_state = LIQUID
+	color = "#C8A5DC"
+
+/datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
+	M.adjustFireLoss(-1.5*REM)
+	M.adjustBruteLoss(-1.5*REM)
+	..()
+	M.druggy = max(M.druggy, 15)
+	if(isturf(M.loc) && !istype(M.loc, /turf/space))
+		if(M.canmove)
+			if(prob(10)) step(M, pick(cardinal))
+	if(prob(7))
+		M.emote(pick("twitch","drool","moan","giggle"))
+	..()
+	return
+
+/datum/reagent/medicine/radaway
+	name = "Radaway"
+	id = "radaway"
+	description = "A potent anti-toxin drug."
+	reagent_state = LIQUID
+	color = "#ff7200"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+
+/datum/reagent/medicine/radaway/on_mob_life(mob/living/M)
+	M.adjustToxLoss(-4*REM)
+	..()
+	return

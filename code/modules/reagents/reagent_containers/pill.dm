@@ -146,3 +146,18 @@
 	icon_state = "pill5"
 	list_reagents = list("insulin" = 50)
 	roundstart = 1
+
+/obj/item/weapon/reagent_containers/pill/radx
+	name = "rad-x pill"
+	desc = "Heals some toxin damage and provides toxin resistance while it's in your body."
+	icon_state = "pill8"
+	list_reagents = list("radx" = 50)
+	roundstart = 1
+
+/obj/item/weapon/reagent_containers/pill/mentats
+	name = "mentat"
+	desc = "A powerful mind altering drug that can heal any perception damage and make you feel more aware."
+	icon_state = "pill20"
+	list_reagents = list("mentats" = 50)
+	roundstart = 1
+

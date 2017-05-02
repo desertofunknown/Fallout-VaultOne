@@ -73,17 +73,21 @@ obj
 									del src
 					meds
 						New()
-							switch(rand(1,3))
+							switch(rand(1,4))
 								if(1)
-									var/obj/item/weapon/reagent_containers/pill/patch/stimpak/lb = new
+									var/obj/item/weapon/reagent_containers/stimpak/regular/lb = new
 									lb.loc=src.loc
 									del src
 								if(2)
-									var/obj/item/weapon/reagent_containers/pill/patch/radx/lb = new
+									var/obj/item/weapon/storage/pill_bottle/radx/lb = new
 									lb.loc=src.loc
 									del src
 								if(3)
 									var/obj/item/weapon/reagent_containers/pill/patch/radaway/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/weapon/storage/pill_bottle/mentats/lb = new
 									lb.loc=src.loc
 									del src
 						drugs
@@ -91,17 +95,21 @@ obj
 					equipment
 					meds
 						New()
-							switch(rand(1,3))
+							switch(rand(1,4))
 								if(1)
 									var/obj/item/weapon/reagent_containers/pill/patch/healpowder/lb = new
 									lb.loc=src.loc
 									del src
 								if(2)
-									var/obj/item/weapon/reagent_containers/pill/patch/radx/lb = new
+									var/obj/item/weapon/storage/pill_bottle/radx/lb = new
 									lb.loc=src.loc
 									del src
 								if(3)
 									var/obj/item/weapon/reagent_containers/pill/patch/radaway/lb = new
+									lb.loc=src.loc
+									del src
+								if(4)
+									var/obj/item/weapon/storage/pill_bottle/mentats/lb = new
 									lb.loc=src.loc
 									del src
 						drugs
@@ -130,7 +138,7 @@ obj
 									del src
 					tier2
 						New()
-							switch(rand(1,5))
+							switch(rand(1,6))
 								if(1)
 									var/obj/item/weapon/gun/projectile/revolver/max_sawn_off/lb = new
 									lb.loc=src.loc
@@ -151,9 +159,13 @@ obj
 									var/obj/item/weapon/gun/projectile/shotgun/lb = new
 									lb.loc=src.loc
 									del src
+								if(6)
+									var/obj/item/weapon/gun/projectile/shotgun/automatic/hunting/lb = new
+									lb.loc=src.loc
+									del src
 					tier3
 						New()
-							switch(rand(1,8))
+							switch(rand(1,9))
 								if(1)
 									var/obj/item/weapon/gun/projectile/revolver/that_gun/lb = new
 									lb.loc=src.loc
@@ -186,9 +198,13 @@ obj
 									var/obj/item/weapon/gun/projectile/automatic/mini_uzi/lb = new
 									lb.loc=src.loc
 									del src
+								if(9)
+									var/obj/item/weapon/gun/projectile/shotgun/boltaction/scoped/lb = new
+									lb.loc=src.loc
+									del src
 					tier4
 						New()
-							switch(rand(1,5))
+							switch(rand(1,6))
 								if(1)
 									var/obj/item/weapon/gun/projectile/automatic/assault_rifle/lb = new
 									lb.loc=src.loc
@@ -209,9 +225,13 @@ obj
 									var/obj/item/weapon/gun/energy/laser/plasma_rifle/pistol/lb = new
 									lb.loc=src.loc
 									del src
+								if(6)
+									var/obj/item/weapon/gun/projectile/revolver/needler/lb = new
+									lb.loc=src.loc
+									del src
 					tier5
 						New()
-							switch(rand(1,8))
+							switch(rand(1,9))
 								if(1)
 									var/obj/item/weapon/gun/energy/laser/plasma_rifle/lb = new
 									lb.loc=src.loc
@@ -242,6 +262,10 @@ obj
 									del src
 								if(8)
 									var/obj/item/weapon/gun/energy/stunrevolver/pin/lb = new
+									lb.loc=src.loc
+									del src
+								if(9)
+									var/obj/item/weapon/gun/energy/xray/lb = new
 									lb.loc=src.loc
 									del src
 					ammo
@@ -312,6 +336,10 @@ obj
 										del src
 									if(7)
 										var/obj/item/weapon/stock_parts/cell/device/laser/high/lb = new
+										lb.loc=src.loc
+										del src
+									if(8)
+										var/obj/item/ammo_box/needler/lb = new
 										lb.loc=src.loc
 										del src
 						tier4

@@ -328,3 +328,31 @@
 	desc = "Whose smart idea was it to use toys as crowd control? Ages 18 and up."
 	projectile_type = /obj/item/projectile/bullet/reusable/foam_dart/riot
 	icon_state = "foamdart_riot"
+
+/obj/item/ammo_casing/caseless/needler
+	name = "needler round"
+	desc = "A dart for use in needler pistols."
+	icon_state = "needle"
+	caliber = "needle"
+	projectile_type = /obj/item/projectile/needle
+
+/obj/item/ammo_casing/caseless/needler/ap
+	name = "needler ap round"
+	desc = "A dart for use in needler pistols. This ammo type has excellent armor piercing capabilities."
+	icon_state = "ap"
+	projectile_type = /obj/item/projectile/needle/ap
+
+/obj/item/ammo_casing/caseless/needler/dart
+	name = "needler dart"
+	desc = "A dart for use in needler pistols. Can be injected with up to 10 units of any chemical."
+	icon_state = "dart"
+	projectile_type = /obj/item/projectile/bullet/dart
+
+/obj/item/ammo_casing/caseless/needler/dart/New()
+	..()
+	flags |= NOREACT
+	flags |= OPENCONTAINER
+	create_reagents(10)
+
+/obj/item/ammo_casing/needler/dart/attackby()
+	return

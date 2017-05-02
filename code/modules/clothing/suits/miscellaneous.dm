@@ -381,10 +381,12 @@
 /obj/item/clothing/suit/f13/mfp //Mad Max 1979 babe!
 	name = "mfp jacket"
 	desc = "A Main Force Patrol leather jacket.<br>Offbeat."
-	icon_state = "mfp"
+	icon_state = "wornmfp"
 	item_state = "hostrench"
-	body_parts_covered = CHEST|ARMS
-	armor = list(melee = 20, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
+	body_parts_covered = CHEST|ARMS|LEGS
+	armor = list(melee = 35, bullet = 25, laser = 10,energy = 0, bomb = 10, bio = 0, rad = 10)
+	flags_inv = HIDEJUMPSUIT
+	allowed = list(/obj/item/weapon/gun/energy,/obj/item/weapon/reagent_containers/spray/pepper,/obj/item/weapon/gun/projectile,/obj/item/ammo_box,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/restraints/handcuffs,/obj/item/device/flashlight/seclite,/obj/item/weapon/melee/classic_baton/telescopic)
 
 /obj/item/clothing/suit/f13/veteran
 	name = "merc veteran coat"

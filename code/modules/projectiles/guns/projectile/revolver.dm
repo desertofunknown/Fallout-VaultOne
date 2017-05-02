@@ -138,6 +138,14 @@
 	origin_tech = "combat=2;materials=2"
 	fire_sound = 'sound/f13weapons/policepistol.ogg'
 
+/obj/item/weapon/gun/projectile/revolver/needler
+	name = "needler pistol"
+	desc = "You suspect this Bringham needler pistol was once used in scientific field studies. It uses small hard-plastic hypodermic darts as ammo. "
+	icon_state = "needler"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/revneedler
+	origin_tech = "combat=5;materials=3;biological=3"
+	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
+
 /obj/item/weapon/gun/projectile/revolver/sequoia/scoped
 	name = "Hunting Revolver"
 	desc = "A scoped double action revolver chambered in 45-70."

@@ -585,6 +585,7 @@
 	if(C.stat)
 		user << "<span class='warning'>It would be dishonorable to attack a foe while they cannot retaliate.</span>"
 		return
+/*
 	switch(user.a_intent)
 		if("disarm")
 			if(!wielded)
@@ -616,6 +617,7 @@
 			return
 		else
 			return ..()
+*/
 	return ..()
 
 /obj/item/weapon/twohanded/sledgehammer/hit_reaction(mob/living/carbon/human/owner, attack_text, final_block_chance)

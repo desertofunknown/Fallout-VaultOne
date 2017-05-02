@@ -119,13 +119,12 @@
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
 
 /obj/item/weapon/gun/energy/xray
-	name = "xray laser gun"
-	desc = "A high-power laser gun capable of expelling concentrated xray blasts that pass through multiple soft targets and heavier materials"
-	icon_state = "xray"
+	name = "prototype AER14 laser rifle"
+	desc = "A prototype laser rifle that has it's wiring exposed and extra circuitry taped to the stock. Only few prototypes of these were manufactured and distributed for testing."
+	icon_state = "aer14"
 	item_state = "laser"
 	origin_tech = "combat=5;materials=3;magnets=2;syndicate=2"
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
-	pin = null
 	ammo_x_offset = 3
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
 

@@ -120,7 +120,6 @@ mob
 	area = /area/awaymission
 	view = "15x15"
 	cache_lifespan = 7
-	port = 13377
 	visibility=1
 var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 

@@ -136,6 +136,19 @@
 	user << "The bolt is [bolt_open ? "open" : "closed"]."
 */
 
+/obj/item/weapon/gun/projectile/shotgun/boltaction/scoped
+	name = "scoped hunting rifle"
+	desc = "This piece of junk looks like something that could have been used 700 years ago, but makes up for it with the scope."
+	icon_state = "rifle308_scope"
+	item_state = "assault_rifle"
+	//slot_flags = 0 //no SLOT_BACK sprite, alas
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
+	pumpsound = 'sound/weapons/boltpump.ogg'
+	loadsound = 'sound/effects/wep_magazines/rifle_load.ogg'
+	w_class = 3
+	zoomable = TRUE
+	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
@@ -369,4 +382,13 @@
 	origin_tech = "combat=5;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
 	w_class = 5
+
+/obj/item/weapon/gun/projectile/shotgun/automatic/hunting
+	name = "Colt Rangemaster"
+	desc = "A Colt Rangemaster semi-automatic rifle chambered in .308. Single-shot only."
+	icon_state = "rangemaster"
+	origin_tech = "combat=2;materials=2"
+	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
+	w_class = 4
+	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 

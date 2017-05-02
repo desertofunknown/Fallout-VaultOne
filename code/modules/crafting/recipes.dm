@@ -411,19 +411,21 @@
 
 /datum/table_recipe/stimpak
 	name = "Stimpak"
-	result = /obj/item/weapon/reagent_containers/pill/patch/stimpak
+	result = /obj/item/weapon/reagent_containers/stimpak/regular
 	reqs = list(/obj/item/weapon/reagent_containers/pill/patch/healpowder = 1,
-				/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola = 1)
+				/obj/item/weapon/reagent_containers/syringe = 1)
 	tools = list(/obj/item/weapon/lighter, /obj/item/weapon/reagent_containers/glass/beaker)
 	time = 60
 	category = CAT_MED
 
 /datum/table_recipe/superstimpak
 	name = "Super Stimpak"
-	result = /obj/item/weapon/reagent_containers/pill/patch/supstimpak
-	reqs = list(/obj/item/weapon/reagent_containers/pill/patch/stimpak = 1,
+	result = /obj/item/weapon/reagent_containers/stimpak/super
+	reqs = list(/obj/item/weapon/reagent_containers/stimpak/regular = 1,
 				/obj/item/stack/sheet/gekkonhide = 1,
-				/obj/item/stack/cable_coil = 5)
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/weapon/reagent_containers/food/drinks/bottle/nukacola = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/grown/mutfruit = 1)
 	tools = list(/obj/item/weapon/lighter, /obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
 	time = 90
 	category = CAT_MED
@@ -593,6 +595,7 @@
 	time = 120
 	show = 0
 	category = CAT_ARMOR
+
 
 /////// DEN
 

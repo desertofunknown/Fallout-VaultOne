@@ -60,6 +60,14 @@
 	max_ammo = 5
 	multiple_sprites = 1
 
+/obj/item/ammo_box/needler
+	name = "stripper clip (hypodermic needles)"
+	desc = "A stripper clip."
+	icon_state = "needler"
+	ammo_type = /obj/item/ammo_casing/caseless/needler
+	max_ammo = 5
+	multiple_sprites = 1
+
 /obj/item/ammo_box/foambox
 	name = "ammo box (Foam Darts)"
 	icon = 'icons/obj/guns/toy.dmi'

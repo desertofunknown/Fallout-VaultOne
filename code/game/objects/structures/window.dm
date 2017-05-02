@@ -529,3 +529,9 @@
 	canSmoothWith = null
 	explosion_block = 1
 	level = 3
+
+/obj/structure/window/shuttle/wasteland
+	name = "window"
+	desc = "It's a window. Break it."
+	icon = 'icons/turf/walls.dmi'
+	icon_state = "wastelandwindowfull"

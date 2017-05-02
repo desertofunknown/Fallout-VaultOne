@@ -290,6 +290,13 @@
 	build_path = /obj/item/ammo_casing/shotgun/rubbershot
 	category = list("initial", "Security")
 
+/datum/design/c38
+	name = "Speed loader (.38)"
+	id = "c38"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/c357/c38
+	category = list("initial", "Security")
 
 /datum/design/recorder
 	name = "Universal recorder"
@@ -538,6 +545,30 @@
 	build_type = AUTOLATHE
 	materials = list(MAT_METAL = 30000)
 	build_path = /obj/item/ammo_box/c9mm
+	category = list("hacked", "Security")
+
+/datum/design/a762
+	name = "Stripper clip (7.62)"
+	id = "a762"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 5000)
+	build_path = /obj/item/ammo_box/a762
+	category = list("hacked", "Security")
+
+/datum/design/a357
+	name = "speed loader (.357)"
+	id = "a357"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 30000)
+	build_path = /obj/item/ammo_box/c357
+	category = list("hacked", "Security")
+
+/datum/design/aneedle
+	name = "Stripper clip (HN Needles)"
+	id = "aneedle"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 40000)
+	build_path = /obj/item/ammo_box/needler
 	category = list("hacked", "Security")
 
 /datum/design/spraycan

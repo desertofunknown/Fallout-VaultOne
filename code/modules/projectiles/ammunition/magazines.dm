@@ -89,6 +89,12 @@
 	caliber = "40mm"
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/cylinder/revneedler
+	name = "d-tiv needler cylinder"
+	ammo_type = /obj/item/ammo_casing/needler
+	caliber = "needle"
+	max_ammo = 10
+
 
 // Shotgun internal mags
 /obj/item/ammo_box/magazine/internal/shot

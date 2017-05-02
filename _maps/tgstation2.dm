@@ -15,15 +15,15 @@ z7 = empty space
 
 #if !defined(MAP_FILE)
 
-        #include "map_files\TgStation\tgstation.2.1.3.dmm"
-        #include "map_files\generic\z2.dmm"
+        #include "map_files\wasteland\wasteland.1.1.1.dmm"
+        #include "map_files\wasteland\inner_vault.dmm"
        // #include "map_files\generic\z3.dmm"
        // #include "map_files\generic\z4.dmm"
-        #include "map_files\generic\z5.dmm"
+        #include "map_files\wasteland\underground.dmm"
         //#include "map_files\generic\z6.dmm"
        // #include "map_files\generic\z7.dmm"
 
-        #define MAP_FILE "tgstation.2.1.3.dmm"
+        #define MAP_FILE "wasteland.1.1.1.dmm"
         #define MAP_NAME "Wasteland"
 
         #define MAP_TRANSITION_CONFIG	list(MAIN_STATION = SELFLOOPING, CENTCOMM = SELFLOOPING, ABANDONED_SATELLITE = CROSSLINKED, DERELICT = CROSSLINKED, MINING = CROSSLINKED, EMPTY_AREA_1 = CROSSLINKED, EMPTY_AREA_2 = CROSSLINKED)
