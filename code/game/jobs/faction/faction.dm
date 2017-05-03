@@ -160,7 +160,7 @@ mob/proc/set_faction(var/faction)
 /datum/f13_faction/vault
 	name = "Vault"
 	first_spawn = 1
-	late_join = 1
+	late_join = 0
 	color = "#005A20"
 	head_status = "Overseer"
 	verbs = list(/mob/proc/begin_head_voting)

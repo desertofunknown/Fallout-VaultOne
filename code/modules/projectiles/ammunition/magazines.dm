@@ -91,7 +91,7 @@
 
 /obj/item/ammo_box/magazine/internal/cylinder/revneedler
 	name = "d-tiv needler cylinder"
-	ammo_type = /obj/item/ammo_casing/needler
+	ammo_type = /obj/item/ammo_casing/caseless/needler
 	caliber = "needle"
 	max_ammo = 10
 
