@@ -274,20 +274,82 @@
 	var/mob/living/carbon/human/character = create_character()	//creates the human and transfers vars and mind
 	SSjob.EquipRank(character, rank, 1)					//equips the human
 
-	var/D = pick(latejoin)
-	if(!D)
-		for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
-			if(!T.density)
-				var/clear = 1
-				for(var/obj/O in T)
-					if(O.density)
-						clear = 0
-						break
-				if(clear)
-					D = T
-					continue
+	switch(character.faction)
+		if("Vault")
+			var/D = pick(latejoinv)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
 
-	character.loc = D
+			character.loc = D
+		if("Legion")
+			var/D = pick(latejoinl)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
+
+			character.loc = D
+		if("NCR")
+			var/D = pick(latejoinn)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
+
+			character.loc = D
+		if("Wasteland")
+			var/D = pick(latejoinw)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
+
+			character.loc = D
+	/*else
+		var/D = pick(latejoin)
+		if(!D)
+			for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+				if(!T.density)
+					var/clear = 1
+					for(var/obj/O in T)
+						if(O.density)
+							clear = 0
+							break
+					if(clear)
+						D = T
+						continue
+
+		character.loc = D*/
 	if(SSsun.global_sun_light < 5)
 		for(var/obj/item/I in character.contents)
 			if(istype(I,/obj/item/device/flashlight/flare/torch))

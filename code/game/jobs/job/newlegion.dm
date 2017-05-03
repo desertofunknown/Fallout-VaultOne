@@ -43,7 +43,8 @@ Legion
 	/obj/item/stack/coin/coins = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
-	/obj/item/ammo_box/c357/c38=2)
+	/obj/item/ammo_box/c357/c38=2, \
+	/obj/item/device/flashlight/flare/torch=1)
 
 //decan
 /datum/job/legdecan
@@ -89,7 +90,8 @@ Legion
 	/obj/item/stack/coin/coins = 3, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
-	/obj/item/ammo_box/magazine/d12g=2)
+	/obj/item/ammo_box/magazine/d12g=2, \
+	/obj/item/device/flashlight/flare/torch=1)
 
 //vexillarius
 /datum/job/legvex
@@ -134,7 +136,7 @@ Legion
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/m44=1, \
-	)
+	/obj/item/device/flashlight/flare/torch=1)
 
 //centurion
 /datum/job/legcenturion
@@ -178,7 +180,8 @@ Legion
 	/obj/item/stack/spear/bundle=1, \
 	/obj/item/stack/coin/coins = 3, \
 	/obj/item/weapon/powergauntlet = 1, \
-	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2)
+	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
+	/obj/item/device/flashlight/flare/torch=1)
 
 //legat
 /datum/job/leglegat
@@ -223,7 +226,8 @@ Legion
 	/obj/item/weapon/powergauntlet = 1,\
 	/obj/item/ammo_box/magazine/m556=3, \
 	/obj/item/weapon/restraints/legcuffs/bola/tribal=2, \
-	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2)
+	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
+	/obj/item/device/flashlight/flare/torch=1)
 
 //prime recruit
 /datum/job/legVET
@@ -268,4 +272,5 @@ Legion
 	/obj/item/stack/coin/coins = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/storage/box/lethalshot=1,
-	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2)
+	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
+	/obj/item/device/flashlight/flare/torch=1)
