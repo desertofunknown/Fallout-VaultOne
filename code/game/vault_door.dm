@@ -8,6 +8,7 @@
 	anchored = 1
 	var/is_busy = 0
 	var/destroyed = 0
+	var/isworn=0
 
 /obj/structure/vaultdoor/blob_act()
 	if(prob(1))
@@ -73,4 +74,22 @@
 	activate()
 
 /obj/machinery/doorButtons/vaultButton/attack_hand(mob/user)
+	activate()
+//new vault door button
+/obj/machinery/doorButtons/wornvaultButton
+	name = "worn vault access"
+	icon = 'icons/obj/lever.dmi'
+	icon_state = "lever0"
+	anchored = 1
+	density = 1
+
+/obj/machinery/doorButtons/wornvaultButton/proc/activate()
+	for(var/obj/structure/vaultdoor/vdoor in world)
+		if(vdoor.isworn=1)
+			vdoor.vaultactivate()
+
+/obj/machinery/doorButtons/wornvaultButton/attackby(obj/item/weapon/W, mob/user, params)
+	activate()
+
+/obj/machinery/doorButtons/wornvaultButton/attack_hand(mob/user)
 	activate()
