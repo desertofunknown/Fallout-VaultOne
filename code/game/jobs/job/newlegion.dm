@@ -193,6 +193,7 @@ Legion
 	status = "Legat"
 	total_positions = 1
 	spawn_positions = 1
+	donaters = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -239,6 +240,7 @@ Legion
 	status = "Veteran"
 	total_positions = 10
 	spawn_positions = 6
+	donaters = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7

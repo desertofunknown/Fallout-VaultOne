@@ -13,6 +13,7 @@ AI
 	selection_color = "#005A20"
 	supervisors = "your laws"
 	req_admin_notify = 1
+	donaters = 1
 	minimal_player_age = 30
 
 /datum/job/ai/equip(mob/living/carbon/human/H)

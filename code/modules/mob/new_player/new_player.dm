@@ -320,6 +320,36 @@
 							continue
 
 			character.loc = D
+		if("BOS")
+			var/D = pick(latejoinb)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
+
+			character.loc = D
+		if("Den")
+			var/D = pick(latejoind)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
+
+			character.loc = D
 		if("Wasteland")
 			var/D = pick(latejoinw)
 			if(!D)

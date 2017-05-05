@@ -1,5 +1,9 @@
 var/const/MESSIAH			=(1<<50)
 var/const/SLIMEMAN			=(1<<51)
+var/const/BOSI			=(1<<52)
+var/const/BOSK			=(1<<53)
+var/const/BOSS			=(1<<54)
+var/const/BOSP			=(1<<55)
 //SourcePony
 /datum/job/messiah
 	title = "Messiah"
@@ -68,3 +72,80 @@ var/const/SLIMEMAN			=(1<<51)
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 	ears = /obj/item/device/radio/headset
+
+//SEPERATED
+
+/datum/job/bosinitiate
+	title = "BOS Initiate"
+	flag = BOSI
+	department_head = list("Head of Security")
+	department_flag = ENGSEC
+	faction = "BOS"
+	status = "Initiate"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the head of security"
+	selection_color = "#ffddf0"
+	minimal_player_age = 7
+	donaters = 1
+	outfit = /datum/outfit/bos_initiate
+
+	access = list()
+	minimal_access = list()
+
+
+//SourcePony
+
+/datum/job/bosscribe
+	title = "BOS Scribe"
+	flag = BOSS
+	department_head = list("Head of Security")
+	department_flag = ENGSEC
+	faction = "BOS"
+	status = "Scribe"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Paladin"
+	selection_color = "#ffddf0"
+	minimal_player_age = 7
+	donaters = 1
+	outfit = /datum/outfit/bos_scribe
+
+	access = list()
+	minimal_access = list()
+
+/datum/job/bosknight
+	title = "BOS Knight"
+	flag = BOSK
+	department_head = list("Head of Security")
+	department_flag = ENGSEC
+	faction = "BOS"
+	status = "Knight"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "the Paladin"
+	selection_color = "#ffddf0"
+	minimal_player_age = 7
+	donaters = 1
+	outfit = /datum/outfit/bos_knight
+
+	access = list()
+	minimal_access = list()
+
+/datum/job/bospaladin
+	title = "BOS Paladin"
+	flag = BOSP
+	department_head = list("Head of Security")
+	department_flag = ENGSEC
+	faction = "BOS"
+	status = "Paladin"
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "none"
+	selection_color = "#ffddf0"
+	minimal_player_age = 7
+	donaters = 1
+	outfit = /datum/outfit/bos_paladin
+
+	access = list()
+	minimal_access = list()

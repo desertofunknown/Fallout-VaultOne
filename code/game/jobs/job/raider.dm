@@ -8,6 +8,7 @@ Raider
 	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
 	status = "Raider"
 	total_positions = 3
+	donaters = 1
 	spawn_positions = -1 //does not matter for late join
 	supervisors = "nobody"
 	selection_color = "#dddddd"

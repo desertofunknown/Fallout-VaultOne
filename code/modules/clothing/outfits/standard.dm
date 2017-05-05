@@ -471,7 +471,7 @@
 /datum/outfit/bos_paladin
 	name = "BoS Paladin"
 	id = /obj/item/weapon/card/id/bos
-	uniform = /obj/item/clothing/under/f13/recon
+	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/device/radio/headset/heads/hos/alt

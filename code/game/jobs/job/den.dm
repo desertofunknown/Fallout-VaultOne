@@ -6,6 +6,7 @@
 	status = "Sheriff"
 	total_positions = 1
 	spawn_positions = 1 //does not matter for late join
+	donaters = 1
 	supervisors = "nobody"
 	selection_color = "#804B00"
 	access = list()

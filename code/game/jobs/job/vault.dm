@@ -11,6 +11,7 @@
 	selection_color = "#005A20"
 	req_admin_notify = 1
 	minimal_player_age = 14
+	donaters = 1
 
 	outfit = /datum/outfit/job/captain
 

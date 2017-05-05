@@ -10,6 +10,7 @@ Trooper
 	status = "NCR Lieutenant"
 	total_positions = 1
 	spawn_positions = 1
+	donaters = 1
 	supervisors = "The NCR Colonel"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
@@ -52,6 +53,7 @@ Trooper
 	status = "Colonel"
 	total_positions = 1
 	spawn_positions = 1
+	donaters = 1
 	supervisors = "nobody"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
@@ -96,6 +98,7 @@ Sergeant
 	status = "Sergeant"
 	total_positions = 2
 	spawn_positions = 2
+	donaters = 1
 	supervisors = "The NCR Lieutenant"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
@@ -227,6 +230,7 @@ Veteran Ranger
 	status = "Vetran Ranger"
 	total_positions = 1
 	spawn_positions = 1
+	donaters = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 0
