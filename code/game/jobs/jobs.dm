@@ -163,7 +163,7 @@ var/list/legion_positions = list(
 )
 
 var/list/ncr_positions = list(
-	"NCR Colonel",
+	"NCR Major",
 	"NCR Lieutenant",
 	"NCR Trooper",
 	"NCR Veteran Ranger",

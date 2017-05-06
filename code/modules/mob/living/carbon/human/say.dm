@@ -23,7 +23,7 @@
 					temp_message[H] = "HONK"
 					pick_list -= H //Make sure that you dont HONK the same word twice
 				message = list2text(temp_message, " ")
-	message = ..(message)
+	message = ..("[message]")
 	message = dna.mutations_say_mods(message)
 	return message
 
