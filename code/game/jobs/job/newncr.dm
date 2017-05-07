@@ -2,7 +2,7 @@
 Trooper
 */
 /datum/job/ncrlieutenant
-	title = "NCR Lieutenant"
+	title = "Lieutenant"
 	flag = NCRLIEUTENANT
 	department_head = list("NCR Lieutenant")
 	department_flag = NCR
@@ -19,7 +19,7 @@ Trooper
 	outfit = /datum/outfit/job/ncrlieutenant
 
 /datum/outfit/job/ncrlieutenant
-	name = "NCR Lieutenant"
+	name = "Lieutenant"
 	id = /obj/item/weapon/card/id/ncr
 	gloves = /obj/item/clothing/gloves/f13/legion/ncr
 	uniform = /obj/item/clothing/under/f13/ncr
@@ -40,10 +40,11 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Lieutenant"
 		n.access = list(67,69,70,71,72,20)
 
 /datum/job/ncrc
-	title = "NCR Major"
+	title = "Major"
 	flag = NCRCOLONEL
 	department_head = list("NCR Major")
 	department_flag = NCR
@@ -80,13 +81,14 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Major"
 		n.access = list(67,68,69,70,71,72)
 
 /*
 Sergeant
 */
 /datum/job/ncrsergeant
-	title = "NCR Sergeant"
+	title = "Sergeant"
 	flag = NCRSERGEANT
 	department_head = list("NCR Lieutenant")
 	department_flag = NCR
@@ -103,7 +105,7 @@ Sergeant
 	outfit = /datum/outfit/job/ncrsergeant
 
 /datum/outfit/job/ncrsergeant
-	name = "NCR Sergeant"
+	name = "Sergeant"
 	id = /obj/item/weapon/card/id/ncr
 	gloves = /obj/item/clothing/gloves/f13/legion/ncr
 	uniform = /obj/item/clothing/under/f13/ncr
@@ -123,13 +125,14 @@ Sergeant
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Sergant"
 		n.access = list(67,72)
 
 /*
 Trooper
 */
 /datum/job/ncrtrooper
-	title = "NCR Trooper"
+	title = "Trooper"
 	flag = NCRTROOPER
 	department_head = list("NCR Sergeant")
 	department_flag = NCR
@@ -145,7 +148,7 @@ Trooper
 	outfit = /datum/outfit/job/ncrtrooper
 
 /datum/outfit/job/ncrtrooper
-	name = "NCR Trooper"
+	name = "Trooper"
 	id = /obj/item/weapon/card/id/ncr
 	gloves = /obj/item/clothing/gloves/f13/legion/ncr
 	uniform = /obj/item/clothing/under/f13/ncr
@@ -165,12 +168,13 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Trooper"
 		n.access = list(67)
 /*
 Recruit
 */
 /datum/job/ncrrecruit
-	title = "NCR Recruit"
+	title = "Recruit"
 	flag = NCRRECRUIT
 	department_head = list("NCR Sergeant")
 	department_flag = NCR
@@ -185,7 +189,7 @@ Recruit
 	outfit = /datum/outfit/job/ncrrecruit
 
 /datum/outfit/job/ncrrecruit
-	name = "NCR Recruit"
+	name = "Recruit"
 	id = /obj/item/weapon/card/id/ncr
 	gloves = /obj/item/clothing/gloves/f13/legion/ncr
 	uniform = /obj/item/clothing/under/f13/ncr
@@ -206,13 +210,14 @@ Recruit
 		n.assignment = "NCR Recruit"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] (NCR Recruit)"
+		H.status="Recruit"
 		n.access = list(67)
 
 /*
 Veteran Ranger
 */
 /datum/job/ncrvetranger
-	title = "NCR Veteran Ranger"
+	title = "Veteran Ranger"
 	flag = NCRVETRANGER
 	department_head = list("NCR Sergeant")
 	department_flag = NCR
@@ -231,7 +236,7 @@ Veteran Ranger
 	minimal_access = list(67)
 
 /datum/outfit/job/ncrvetranger
-	name = "NCR Veteran Ranger"
+	name = "Veteran Ranger"
 	id = /obj/item/weapon/card/id/ncr/ranger
 	gloves = /obj/item/clothing/gloves/combat
 	uniform = /obj/item/clothing/under/f13/cowboyb
@@ -252,12 +257,13 @@ Veteran Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Vet Ranger"
 		n.access = list(67)
 /*
 NCR Ranger
 */
 /datum/job/ncrranger
-	title = "NCR Ranger"
+	title = "Ranger"
 	flag = NCRRANGER
 	department_head = list("NCR Sergeant")
 	department_flag = NCR
@@ -296,6 +302,7 @@ NCR Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Ranger"
 		n.access = list(67)
 /datum/job/ncrrecranger
 	title = "NCR Recruit Ranger"
@@ -313,7 +320,7 @@ NCR Ranger
 	outfit = /datum/outfit/job/ncrrecranger
 
 /datum/outfit/job/ncrrecranger
-	name = "NCR Recruit Ranger"
+	name = "Recruit Ranger"
 	id = /obj/item/weapon/card/id/ncr/ranger
 	uniform = /obj/item/clothing/under/f13/ranger
 	shoes = /obj/item/clothing/shoes/workboots
@@ -337,4 +344,5 @@ NCR Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
+		H.status="Rec Ranger"
 		n.access = list(67)

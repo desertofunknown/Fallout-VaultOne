@@ -3,7 +3,7 @@ Legion
 */
 //recruit
 /datum/job/legrecruit
-	title = "Legion Recruit"
+	title = "Legionary"
 	flag = LEGRECRUIT
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -20,7 +20,7 @@ Legion
 	minimal_access = list()
 
 /datum/outfit/job/legrecruit
-	name = "Legion Recruit"
+	name = "Recruit"
 	id = null
 	ears = null
 	belt = null
@@ -48,7 +48,7 @@ Legion
 
 //decan
 /datum/job/legdecan
-	title = "Legion Decan"
+	title = "Decan"
 	flag = LEGDECAN
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -66,7 +66,7 @@ Legion
 	minimal_access = list()
 
 /datum/outfit/job/legdecan
-	name = "Legion Decan"
+	name = "Decan"
 	id = null
 	ears = null
 	belt = null
@@ -95,7 +95,7 @@ Legion
 
 //vexillarius
 /datum/job/legvex
-	title = "Legion Vexillarius"
+	title = "Vexillarius"
 	flag = LEGVEX
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -140,7 +140,7 @@ Legion
 
 //centurion
 /datum/job/legcenturion
-	title = "Legion Centurion"
+	title = "Centurion"
 	flag = LEGCENTURION
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -185,7 +185,7 @@ Legion
 
 //legat
 /datum/job/leglegat
-	title = "Legion Legat"
+	title = "Legat"
 	flag = LEGLEGAT
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -204,7 +204,7 @@ Legion
 	minimal_access = list()
 
 /datum/outfit/job/leglegat
-	name = "Legion Legat"
+	name = "Legat"
 	id = null
 	ears = null
 	belt = null
@@ -232,7 +232,7 @@ Legion
 
 //prime recruit
 /datum/job/legVET
-	title = "Legion Veteran"
+	title = "Veteran"
 	flag = LEGVET
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -251,7 +251,7 @@ Legion
 	minimal_access = list()
 
 /datum/outfit/job/legvet
-	name = "Legion Veteran"
+	name = "Veteran"
 	id = null
 	ears = null
 	belt = null

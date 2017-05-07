@@ -76,7 +76,7 @@ var/const/BOSP			=(1<<55)
 //SEPERATED
 
 /datum/job/bosinitiate
-	title = "BOS Initiate"
+	title = "Initiate"
 	flag = BOSI
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -97,7 +97,7 @@ var/const/BOSP			=(1<<55)
 //SourcePony
 
 /datum/job/bosscribe
-	title = "BOS Scribe"
+	title = "Scribe"
 	flag = BOSS
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -115,7 +115,7 @@ var/const/BOSP			=(1<<55)
 	minimal_access = list()
 
 /datum/job/bosknight
-	title = "BOS Knight"
+	title = "Knight"
 	flag = BOSK
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
@@ -133,7 +133,7 @@ var/const/BOSP			=(1<<55)
 	minimal_access = list()
 
 /datum/job/bospaladin
-	title = "BOS Paladin"
+	title = "Paladin"
 	flag = BOSP
 	department_head = list("Head of Security")
 	department_flag = ENGSEC

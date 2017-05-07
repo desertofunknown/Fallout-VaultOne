@@ -114,7 +114,7 @@ var/list/engineering_positions = list(
 
 var/list/medical_positions = list(
 //	"Chief Medical Officer",
-	"Medical Doctor",
+	"Doctor",
 //	"Geneticist",
 //	"Virologist",
 //	"Chemist"
@@ -150,33 +150,33 @@ var/list/civilian_positions = list(
 //	"Chaplain",
 //	"Clown",
 //	"Mime",
-	"Vault Dweller"
+	"Dweller"
 )
 
 var/list/legion_positions = list(
-	"Legion Recruit",
-	"Legion Decan",
-	"Legion Vexillarius",
-	"Legion Centurion",
-	"Legion Legat",
-	"Legion Prime Recruit",
+	"Legionary",
+	"Decan",
+	"Vexillarius",
+	"Centurion",
+	"Legat",
+	"Prime Recruit",
 )
 
 var/list/ncr_positions = list(
-	"NCR Major",
-	"NCR Lieutenant",
-	"NCR Trooper",
-	"NCR Veteran Ranger",
-	"NCR Recruit Ranger",
-	"NCR Ranger",
-	"NCR Sergeant",
-	"NCR Recruit",
+	"Major",
+	"Lieutenant",
+	"Trooper",
+	"Veteran Ranger",
+	"Recruit Ranger",
+	"Ranger",
+	"Sergeant",
+	"Recruit",
 )
 var/list/security_positions = list(
 //	"Head of Security",
 	"Warden",
 //	"Detective",
-	"Security Officer"
+	"Officer"
 )
 
 

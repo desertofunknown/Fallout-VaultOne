@@ -60,7 +60,7 @@
 	department_head = list("Chief Engineer")
 	department_flag = ENGSEC
 	faction = "Vault"
-	status = "Member"
+	status = "Dweller"
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the chief engineer"
@@ -88,12 +88,12 @@
 	box = /obj/item/weapon/storage/box/engineer
 	pda_slot = slot_l_store
 /datum/job/doctor
-	title = "Medical Doctor"
+	title = "Doctor"
 	flag = DOCTOR
 	department_head = list("Chief Medical Officer")
 	department_flag = MEDSCI
 	faction = "Vault"
-	status = "Member"
+	status = "Dweller"
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the chief medical officer"
@@ -105,7 +105,7 @@
 	minimal_access = list(access_medical, access_morgue, access_surgery)
 
 /datum/outfit/job/doctor
-	name = "Medical Doctor"
+	name = "Doctor"
 
 	gloves = /obj/item/clothing/gloves/pda/medical
 	ears = /obj/item/device/radio/headset/headset_vlt
@@ -124,7 +124,7 @@
 	department_head = list("Research Director")
 	department_flag = MEDSCI
 	faction = "Vault"
-	status = "Member"
+	status = "Dweller"
 	total_positions = 6
 	spawn_positions = 6
 	supervisors = "the research director"
@@ -149,7 +149,7 @@
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
 	faction = "Vault"
-	status = "Member"
+	status = "Dweller"
 	total_positions = 8 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	spawn_positions = 8 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	supervisors = "the head of security, and the head of your assigned department (if applicable)"
@@ -169,7 +169,7 @@
 var/list/sec_departments = list("engineering", "supply", "medical", "science")
 
 /datum/outfit/job/security
-	name = "Security Officer"
+	name = "Officer"
 
 	gloves = /obj/item/clothing/gloves/pda/security
 	ears = /obj/item/device/radio/headset/headset_vlt
@@ -288,11 +288,11 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	keyslot2 = new /obj/item/device/encryptionkey/headset_sci
 
 /datum/job/assistant
-	title = "Vault dweller"
+	title = "Dweller"
 	flag = ASSISTANT
 	department_flag = CIVILIAN
 	faction = "Vault"
-	status = "Member"
+	status = "Dweller"
 	total_positions = -1
 	spawn_positions = -1
 	supervisors = "absolutely everyone"
@@ -317,7 +317,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 
 
 /datum/outfit/job/assistant
-	name = "Vault dweller"
+	name = "Dweller"
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
