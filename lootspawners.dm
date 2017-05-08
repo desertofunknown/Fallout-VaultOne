@@ -487,22 +487,16 @@ obj
 								del src
 				tier3
 					New()
-						switch(rand(1,2))
+						switch(rand(1))
 							if(1)
 								var/obj/item/clothing/suit/armor/fluff/chestplate/mk2/lb = new
 								var/obj/item/clothing/head/helmet/f13/metalmask/mk2/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
 								del src
-							if(2)
-								var/obj/item/clothing/suit/armor/f13/combat/lb = new
-								var/obj/item/clothing/head/helmet/f13/combat/lb2 = new
-								lb.loc=src.loc
-								lb2.loc=src.loc
-								del src
 				tier4
 					New()
-						switch(rand(1,4))
+						switch(rand(1,5))
 							if(1)
 								var/obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor/salvaged/lb = new
 								var/obj/item/clothing/head/helmet/f13/power_armor/broken/lb2 = new
@@ -524,6 +518,12 @@ obj
 							if(4)
 								var/obj/item/weapon/storage/belt/webbing/alt/lb = new
 								lb.loc=src.loc
+								del src
+							if(5)
+								var/obj/item/clothing/suit/armor/f13/combat/lb = new
+								var/obj/item/clothing/head/helmet/f13/combat/lb2 = new
+								lb.loc=src.loc
+								lb2.loc=src.loc
 								del src
 				tier5
 					New()

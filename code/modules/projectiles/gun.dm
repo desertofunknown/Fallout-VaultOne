@@ -36,9 +36,11 @@
 	var/semicd = 0						//cooldown handler
 	var/heavy_weapon = 0
 
+/*
 	var/safetyposition = 1				//the safety position you see not the one you have 0 = off
 	var/safetyon = 0				//the safetys actual position
 	var/safetybroken = 0				//whether the safetys lever is atached
+*/
 
 	var/damageG=0
 	var/damageA=0
@@ -98,11 +100,12 @@
 		user << "It has [pin] installed."
 	else
 		user << "It doesn't have a firing pin installed, and won't fire."
-
+/*
 	if(safetyposition == 1)
 		user << "The safety lever points to SAFE."
 	else
 		user << "The safety lever points to FIRE."
+*/
 
 /obj/item/weapon/gun/proc/process_chamber()
 	return 0
@@ -175,10 +178,12 @@
 		if(!can_trigger_gun(L))
 			return
 
+/*
 	if(safetyon == 1)
 		shoot_with_empty_chamber(user)
 		user << "<span class='warning'>The gun can't fire with safety on!</span>"
 		return
+*/
 
 	//DUAL WIELDING
 	var/obj/item/weapon/gun/off_hand
@@ -334,6 +339,7 @@
 				update_icon()
 				verbs -= /obj/item/weapon/gun/proc/toggle_gunlight
 
+/*
 	if(istype(A, /obj/item/weapon/wirecutters))
 		if(safetybroken == 0)
 			user << "<span class='notice'>You disconnect the safety lever from the internal mechanism.</span>"
@@ -341,6 +347,7 @@
 		else
 			user << "<span class='notice'>You reconnect the safety lever to the internal mechanism.</span>"
 			safetybroken = 0
+*/
 
 	if(unique_rename)
 		if(istype(A, /obj/item/weapon/pen))
@@ -407,7 +414,7 @@
 		azoom.Remove(user)
 
 
-
+/*
 /obj/item/weapon/gun/AltClick(mob/user)
 	..()
 	if(istype(user, /mob/living))
@@ -431,6 +438,7 @@
 			safetyposition = 1
 			if(safetybroken == 0)
 				safetyon = !safetyon
+*/
 
 /obj/item/weapon/gun/proc/reskin_gun(mob/M)
 	var/choice = input(M,"Warning, you can only reskin your weapon once!","Reskin Gun") in options
