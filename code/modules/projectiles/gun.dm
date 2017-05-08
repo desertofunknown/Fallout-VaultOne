@@ -19,6 +19,7 @@
 	origin_tech = "combat=1"
 	needs_permit = 1
 	attack_verb = list("struck", "hit", "bashed")
+	drawsound = 'sound/items/unholster.ogg'
 
 	var/fire_sound = "gunshot"
 	var/suppressed = 0					//whether or not a message is displayed when fired

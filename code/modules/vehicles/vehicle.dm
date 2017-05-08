@@ -148,8 +148,13 @@
 /obj/vehicle/relaymove(mob/user, direction)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.wear_suit,/obj/item/clothing/suit/armor/power_armor))
-			user << "<span class='notice'>Armor is too heavy to go.</span>"
+		if(istype(H.wear_suit,/obj/item/clothing/suit/armor/f13/power_armor))
+			user << "<span class='notice'>Your power armor bogs down the vehicle.</span>"
+			return
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(istype(H.wear_suit,/obj/item/clothing/head/helmet/f13/power_armor))
+			user << "<span class='notice'>Your power armor helmet bogs down the vehicle.</span>"
 			return
 	if(user.incapacitated())
 		unbuckle_mob()

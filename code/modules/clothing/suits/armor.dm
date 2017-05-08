@@ -498,85 +498,6 @@
 	put_on_delay = 60
 	strip_delay = 60
 
-/obj/item/clothing/suit/armor/power_armor/ncr
-	name = "NCR power armor"
-	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors."
-	icon_state = "t45bpowerarmor"
-	item_state = "t45bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 60, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 60)
-	slowdown = 2
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	put_on_delay = 100
-	strip_delay = 200
-
-/obj/item/clothing/suit/armor/f13/t45bpowerarmor
-	name = "NCR salvaged power armor"
-	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors.<br>Due to the lack of servomotors in the limbs, this armor is so heavy that it feels like you're carrying a brahmin on your back!"
-	icon_state = "t45bpowerarmor"
-	item_state = "t45bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
-	slowdown = 3
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 100
-	strip_delay = 100
-/obj/item/clothing/suit/armor/power_armor/t45d
-	name = "T-45d power armor"
-	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
-	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 70)
-	slowdown = 1
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	put_on_delay = 100
-	strip_delay = 200
-/obj/item/clothing/suit/armor/f13/t45dpowerarmor/salvaged
-	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
-	name = "Salvaged T-45d power armor"
-	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle. This suit appears worn and battered."
-	armor = list(melee = 60, bullet = 50, laser = 50, energy = 50, bomb = 60, bio = 100, rad = 80)
-
-/obj/item/clothing/suit/armor/power_armor/advanced
-	name = "advanced power armor Mk I"
-	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
-	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 1
-	armor = list(melee = 80, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 80)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	unacidable = 1
-	put_on_delay = 100
-	strip_delay = 200
-
-/obj/item/clothing/suit/armor/power_armor/superadvanced
-	name = "advanced power armor Mk II"
-	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
-	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 1
-	armor = list(melee = 90, bullet = 80, laser = 80, energy = 80, bomb = 80, bio = 100, rad = 90)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	unacidable = 1
-	put_on_delay = 100
-	strip_delay = 200
-
 //Fallout 13
 
 /obj/item/clothing/suit/armor/f13/kit
@@ -726,23 +647,6 @@
 	item_state = "elite_riot"
 	armor = list(melee = 75, bullet = 75, laser = 60, energy = 35, bomb = 35, bio = 0, rad = 100)
 
-/obj/item/clothing/suit/armor/f13/t51bpowerarmor
-	name = "t51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
-	icon_state = "t51bpowerarmor"
-	item_state = "t51bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 1
-	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	put_on_delay = 100
-	strip_delay = 200
-
-
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR vest"
 	desc = "A standard issue NCR protective vest."
@@ -759,3 +663,60 @@
 	icon_state = "ncr_mantle"
 	item_state = "ncr_mantle"
 	armor = list(melee = 35, bullet = 40, laser = 15, energy = 10, bomb = 40, bio = 0, rad = 0)
+
+//power armor//
+
+/obj/item/clothing/suit/armor/f13/power_armor
+	name = "T-45d power armor"
+	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
+	icon_state = "t45dpowerarmor"
+	item_state = "t45dpowerarmor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list(melee = 80, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 80)
+	slowdown = 2
+	flags = STOPSPRESSUREDMAGE
+	flags_inv = HIDEJUMPSUIT
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	put_on_delay = 100
+	strip_delay = 200
+
+/obj/item/clothing/suit/armor/f13/power_armor/t51bpowerarmor
+	name = "t51b power armor"
+	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	icon_state = "t51bpowerarmor"
+	item_state = "t51bpowerarmor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	slowdown = 1
+	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
+	flags = STOPSPRESSUREDMAGE
+	flags_inv = HIDEJUMPSUIT
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
+	put_on_delay = 100
+	strip_delay = 200
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor
+	name = "NCR power armor"
+	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War. This version has it's joint-servos intact."
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
+	slowdown = 1
+	flags_inv = HIDEJUMPSUIT
+	put_on_delay = 100
+	strip_delay = 100
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor/salvaged
+	name = "NCR salvaged power armor"
+	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors.<br>Due to the lack of servomotors in the limbs, this armor is so heavy that it feels like you're carrying a brahmin on your back!"
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
+	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
+	slowdown = 3
+	flags_inv = HIDEJUMPSUIT
+	put_on_delay = 100
+	strip_delay = 100
+
