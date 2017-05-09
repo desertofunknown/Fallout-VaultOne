@@ -343,6 +343,20 @@
 	strip_delay = 50
 	burn_state = FIRE_PROOF
 
+/obj/item/clothing/head/helmet/f13/rangercombat
+	name = "ranger combat helmet"
+	desc = "An old combat helmet, out of use around the time of the war."
+	icon_state = "ranger"
+	item_state = "ranger"
+	armor = list(melee = 70, bullet = 60, laser = 40, energy = 40, bomb = 40, bio = 0, rad = 80)
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	put_on_delay = 10
+	strip_delay = 50
+	burn_state = FIRE_PROOF
+	darkness_view = 8
+	invis_view = SEE_INVISIBLE_MINIMUM
+
 /obj/item/clothing/head/helmet/f13/rangercombat/desert
 	name = "desert ranger combat helmet"
 	desc = "An U.S Marine Corps helmet, used by the legendary Desert Rangers."
@@ -392,20 +406,6 @@
 		return 0
 	if (prob(hit_reflect_chance))
 		return 1
-
-/obj/item/clothing/head/helmet/f13/rangercombat
-	name = "ranger combat helmet"
-	desc = "An old combat helmet, out of use around the time of the war."
-	icon_state = "ranger"
-	item_state = "ranger"
-	armor = list(melee = 70, bullet = 60, laser = 40, energy = 40, bomb = 40, bio = 0, rad = 80)
-	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-	put_on_delay = 10
-	strip_delay = 50
-	burn_state = FIRE_PROOF
-	//darkness_view = 8
-	//invis_view = SEE_INVISIBLE_MINIMUM
 
 //Power armor helmets//
 

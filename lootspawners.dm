@@ -83,7 +83,7 @@ obj
 									lb.loc=src.loc
 									del src
 								if(3)
-									var/obj/item/weapon/reagent_containers/pill/patch/radaway/lb = new
+									var/obj/item/weapon/reagent_containers/blood/radaway/lb = new
 									lb.loc=src.loc
 									del src
 								if(4)
@@ -105,7 +105,7 @@ obj
 									lb.loc=src.loc
 									del src
 								if(3)
-									var/obj/item/weapon/reagent_containers/pill/patch/radaway/lb = new
+									var/obj/item/weapon/reagent_containers/blood/radaway/lb = new
 									lb.loc=src.loc
 									del src
 								if(4)

@@ -34,7 +34,7 @@ var/const/BOSP			=(1<<55)
 	glasses = /obj/item/clothing/glasses/night
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=2, \
-		/obj/item/weapon/reagent_containers/pill/patch/stimpak = 2, \
+		/obj/item/weapon/reagent_containers/stimpak/regular = 2, \
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 	ears = /obj/item/device/radio/headset
@@ -68,7 +68,7 @@ var/const/BOSP			=(1<<55)
 	glasses = /obj/item/clothing/glasses/night
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=2, \
-		/obj/item/weapon/reagent_containers/pill/patch/stimpak = 2, \
+		/obj/item/weapon/reagent_containers/stimpak/regular = 2, \
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 	ears = /obj/item/device/radio/headset

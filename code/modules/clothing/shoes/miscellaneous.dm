@@ -248,7 +248,7 @@
 	item_state = "diesel"
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
 	cold_protection = FEET
-	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT|
+	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	can_insert_knife = 1
 
 /obj/item/clothing/shoes/fluff/moon

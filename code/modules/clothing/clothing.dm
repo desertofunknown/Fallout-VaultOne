@@ -18,6 +18,8 @@
 	var/can_flashlight = 0
 	var/gang //Is this a gang outfit?
 	var/scan_reagents = 0 //Can the wearer see reagents while it's equipped?
+	var/darkness_view = 2//Base human is 2
+	var/invis_view = SEE_INVISIBLE_LIVING
 
 //Ears: currently only used for headsets and earmuffs
 /obj/item/clothing/ears
@@ -56,8 +58,6 @@
 	flags_cover = GLASSESCOVERSEYES
 	slot_flags = SLOT_EYES
 	var/vision_flags = 0
-	var/darkness_view = 2//Base human is 2
-	var/invis_view = SEE_INVISIBLE_LIVING
 	var/invis_override = 0 //Override to allow glasses to set higher than normal see_invis
 	var/emagged = 0
 	var/list/icon/current = list() //the current hud icons

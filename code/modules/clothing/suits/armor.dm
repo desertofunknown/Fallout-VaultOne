@@ -674,49 +674,37 @@
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 80, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 80)
 	slowdown = 2
-	flags = STOPSPRESSUREDMAGE
+	flags = STOPSPRESSUREDMAGE|NODROP
 	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	put_on_delay = 100
 	strip_delay = 200
+	unacidable = 1
+	w_class = 4
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51bpowerarmor
 	name = "t51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	slowdown = 1
 	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	put_on_delay = 100
-	strip_delay = 200
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor
 	name = "NCR power armor"
 	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War. This version has it's joint-servos intact."
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
 	slowdown = 1
 	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 100
-	strip_delay = 100
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor/salvaged
 	name = "NCR salvaged power armor"
 	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors.<br>Due to the lack of servomotors in the limbs, this armor is so heavy that it feels like you're carrying a brahmin on your back!"
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
 	slowdown = 3
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 100
-	strip_delay = 100
 

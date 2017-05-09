@@ -31,14 +31,6 @@
 	desc = "Helps with burn injuries."
 	list_reagents = list("silver_sulfadiazine" = 60)
 
-/obj/item/weapon/reagent_containers/pill/patch/stimpak
-	name = "Stimpak"
-	desc = "Stimpak, or stimulation delivery package, is a type of hand-held medication used for healing the body. This item consists of a syringe for containing and delivering the medication and a gauge for measuring the status of the stimpak's contents. When the medicine is injected, it provides immediate healing of the body's minor wounds."
-	list_reagents = list("styptic_powder" = 30, "silver_sulfadiazine" = 30, "omnizine" = 10)
-	icon = 'icons/obj/syringe.dmi'
-	item_state = "syringe_15"
-	icon_state = "15"
-
 /obj/item/weapon/reagent_containers/pill/patch/healpowder
 	name = "Healing powder"
 	desc = "Soldiers of the Legion use healing powder as their primary source of medicine and healing, since the Legion bans the use of other chems, such as stimpaks."
@@ -46,23 +38,6 @@
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "bandaid"
 	icon_state = "heal_powder"
-
-/obj/item/weapon/reagent_containers/pill/patch/supstimpak
-	name = "SuperStimpak"
-	desc = "The super version comes in a hypodermic, but with an additional vial containing more powerful drugs than the basic model and a leather belt to strap the needle to the injured limb."
-	list_reagents = list("styptic_powder" = 60, "silver_sulfadiazine" = 60, "omnizine" = 15)
-	icon = 'icons/obj/syringe.dmi'
-	item_state = "syringe_15"
-	icon_state = "superstim_15"
-
-
-/obj/item/weapon/reagent_containers/pill/patch/radaway
-	name = "RadAway"
-	desc = "RadAway is an intravenous chemical solution that bonds with radiation particles and passes them through the body's system. It takes some time to work, and is also a potent diuretic."
-	list_reagents = list("charcoal" = 50)
-	icon = 'icons/obj/bloodpack.dmi'
-	item_state = "syringe_15"
-	icon_state = "radaway"
 
 /obj/item/weapon/reagent_containers/pill/patch/jet
 	name = "Jet"
@@ -87,14 +62,6 @@
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_15"
 	icon_state = "medx"
-
-/obj/item/weapon/reagent_containers/pill/patch/radx
-	name = "Rad-X"
-	desc = "Rad-X is an anti-radiation chemical that can significantly reduce the danger of irradiated areas."
-	list_reagents = list("potass_iodide" = 30, "pen_acid" = 10)
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "radx"
-	item_state = "radx"
 
 /obj/item/weapon/reagent_containers/pill/patch/turbo
 	name = "Turbo"

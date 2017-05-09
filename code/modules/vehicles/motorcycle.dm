@@ -10,6 +10,7 @@
 	pixel_y = -2
 	var/static/image/bikecover = null
 	var/engine_sound = 'sound/f13machines/bike_start.ogg'
+	var/health = 450
 
 /obj/vehicle/motorcycle/New()
 	..()
@@ -74,6 +75,15 @@ obj/vehicle/motorcycle/attackby(obj/item/weapon/W, mob/user, params)
 				buckled_mob.pixel_x = 2
 				buckled_mob.pixel_y = 5
 
+/obj/vehicle/motorcycle/bullet_act(obj/item/projectile/Proj)
+	..()
+	if((Proj.damage_type == BRUTE || Proj.damage_type == BURN))
+		health -= Proj.damage
+		if(health <= 0)
+			unbuckle_mob()
+			explosion(src.loc,1,2,4,flame_range = 2)
+			qdel(src)
+	return
 
 /obj/vehicle/motorcycle/rust
 	name = "rusty motorcycle"

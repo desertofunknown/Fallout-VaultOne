@@ -1048,8 +1048,8 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	color = "#C8A5DC"
 
 /datum/reagent/medicine/healing_powder/on_mob_life(mob/living/M)
-	M.adjustFireLoss(-1.5*REM)
-	M.adjustBruteLoss(-1.5*REM)
+	M.adjustFireLoss(-2*REM)
+	M.adjustBruteLoss(-2*REM)
 	..()
 	M.druggy = max(M.druggy, 15)
 	if(isturf(M.loc) && !istype(M.loc, /turf/space))
