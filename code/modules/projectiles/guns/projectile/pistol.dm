@@ -51,8 +51,8 @@
 
 // 10-mm pistol
 /obj/item/weapon/gun/projectile/automatic/pistol/n99
-	name = "10-mm pistol"
-	desc = "Self-loading pistol Colt 6520 10mm. After each shot, the weapon recharges long until the end of the store."
+	name = "N99 pistol"
+	desc = "The large-framed, gas-operated N99 was selected as the standard issue conventional sidearm of the United States military. The N99 is designed to withstand the most extreme conditions, which was one of the requirements for a new service sidearm. It can also be repaired easily by anyone with even the most basic technical knowledge."
 	icon_state = "n99"
 	w_class = 3
 	force = 13

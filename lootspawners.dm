@@ -165,7 +165,7 @@ obj
 									del src
 					tier3
 						New()
-							switch(rand(1,9))
+							switch(rand(1,10))
 								if(1)
 									var/obj/item/weapon/gun/projectile/revolver/that_gun/lb = new
 									lb.loc=src.loc
@@ -200,6 +200,10 @@ obj
 									del src
 								if(9)
 									var/obj/item/weapon/gun/projectile/shotgun/boltaction/scoped/lb = new
+									lb.loc=src.loc
+									del src
+								if(10)
+									var/obj/item/weapon/gun/projectile/revolver/colt6250/lb = new
 									lb.loc=src.loc
 									del src
 					tier4

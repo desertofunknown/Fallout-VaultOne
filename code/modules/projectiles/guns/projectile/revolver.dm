@@ -146,6 +146,23 @@
 	origin_tech = "combat=5;materials=3;biological=3"
 	fire_sound = 'sound/weapons/gunshot_silenced.ogg'
 
+/obj/item/weapon/gun/projectile/revolver/colt6250
+	name = "colt 6250"
+	desc = "The Colt 6520 10mm autoloading pistol is a highly durable and efficient weapon developed by Colt Firearms prior to the Great War.It proved to be resistant to the desert-like conditions of the post-nuclear wasteland and is a fine example of workmanship and quality construction."
+	icon_state = "colt6250"
+	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/rev6250
+	fire_sound = 'sound/f13weapons/10mm_fire_02.ogg'
+	damageG=5
+	damageA=0
+	damageS=0
+	rangeG=0
+
+/obj/item/weapon/gun/projectile/revolver/colt6250/New()
+	..()
+	update_icon()
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
+	return
+
 /obj/item/weapon/gun/projectile/revolver/sequoia/scoped
 	name = "Hunting Revolver"
 	desc = "A scoped double action revolver chambered in 45-70."

@@ -61,7 +61,7 @@ var/list/image/ghost_darkness_images = list() //this is a list of images for thi
 
 	if(!fun_verbs)
 		verbs -= /mob/dead/observer/verb/boo
-		verbs -= /mob/dead/observer/verb/possess
+//		verbs -= /mob/dead/observer/verb/possess
 
 	animate(src, pixel_y = 2, time = 10, loop = -1)
 	..()
@@ -336,6 +336,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		if (ghostimage)
 			client.images -= ghostimage //remove ourself
 
+/*
 /mob/dead/observer/verb/possess()
 	set category = "Ghost"
 	set name = "Possess!"
@@ -359,7 +360,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	target.key = key
 	return 1
-
+*/
 
 //this is a mob verb instead of atom for performance reasons
 //see /mob/verb/examinate() in mob.dm for more info

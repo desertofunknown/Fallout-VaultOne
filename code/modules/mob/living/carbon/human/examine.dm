@@ -1,11 +1,13 @@
 /mob/living/carbon/human/examine(mob/user)
 
+	user.visible_message("<small>[user] looks at [src].</small>")
 	var/list/obscured = check_obscured_slots()
 	var/skipface = 0
 	if(wear_mask)
 		skipface |= wear_mask.flags_inv & HIDEFACE
 	else if(head)
 		skipface |= head.flags_inv & HIDEFACE
+
 	// crappy hacks because you can't do \his[src] etc. I'm sorry this proc is so unreadable, blame the text macros :<
 	var/t_He = "It" //capitalised for use at the start of each line.
 	var/t_his = "its"

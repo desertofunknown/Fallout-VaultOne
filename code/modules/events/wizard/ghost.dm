@@ -23,5 +23,5 @@
 /datum/round_event/wizard/possession/start()
 	for(var/mob/dead/observer/G in player_list)
 		G.verbs += /mob/dead/observer/verb/boo
-		G.verbs += /mob/dead/observer/verb/possess
+//		G.verbs += /mob/dead/observer/verb/possess
 		G << "You suddenly feel a welling of new spooky powers..."

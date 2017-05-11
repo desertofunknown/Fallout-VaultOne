@@ -28,6 +28,7 @@
 	unsuitable_atmos_damage = 15
 	faction = list("syndicate")
 	status_flags = CANPUSH
+	environment_smash = 0
 
 /mob/living/simple_animal/hostile/syndicate/death(gibbed)
 	..(gibbed)
@@ -140,3 +141,36 @@
 	visible_message("<span class='danger'><b>[src]</b> is smashed into pieces!</span>")
 	qdel(src)
 	return
+
+/mob/living/simple_animal/hostile/gutsy
+	name = "mister gutsy"
+	desc = "Fucking robot, it finna cut you."
+	icon = 'icons/mob/robots.dmi'
+	icon_state = "secborg"
+	icon_living = "secborg"
+	maxHealth = 400
+	health = 400
+	armour_penetration = 20
+	attacktext = "saws"
+	attack_sound = 'sound/weapons/bladeslice.ogg'
+	faction = list("syndicate")
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	gold_core_spawnable = 1
+
+/mob/living/simple_animal/hostile/gutsy/death(gibbed)
+	..(gibbed)
+	visible_message("<span class='danger'><b>[src]</b> is smashed into pieces!</span>")
+	qdel(src)
+	return
+
+/mob/living/simple_animal/hostile/gutsy/ranged
+	name = "mister gutsy"
+	desc = "Fucking robot, it finna shoot you."
+	ranged = 1
+	rapid = 1
+	retreat_distance = 2
+	minimum_distance = 2
+	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
+	var/weapon1
+	weapon1 = /obj/item/weapon/gun/energy/laser/plasma_rifle
