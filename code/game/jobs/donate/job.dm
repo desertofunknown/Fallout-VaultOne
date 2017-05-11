@@ -90,8 +90,8 @@ var/const/BOSP			=(1<<55)
 	donaters = 1
 	outfit = /datum/outfit/bos_initiate
 
-	access = list()
-	minimal_access = list()
+	access = list(73)
+	minimal_access = list(73)
 
 
 //SourcePony
@@ -111,8 +111,8 @@ var/const/BOSP			=(1<<55)
 	donaters = 1
 	outfit = /datum/outfit/bos_scribe
 
-	access = list()
-	minimal_access = list()
+	access = list(73)
+	minimal_access = list(73)
 
 /datum/job/bosknight
 	title = "Knight"
@@ -129,8 +129,8 @@ var/const/BOSP			=(1<<55)
 	donaters = 1
 	outfit = /datum/outfit/bos_knight
 
-	access = list()
-	minimal_access = list()
+	access = list(73)
+	minimal_access = list(73)
 
 /datum/job/bospaladin
 	title = "Paladin"
@@ -147,5 +147,5 @@ var/const/BOSP			=(1<<55)
 	donaters = 1
 	outfit = /datum/outfit/bos_paladin
 
-	access = list()
-	minimal_access = list()
+	access = list(73)
+	minimal_access = list(73)
