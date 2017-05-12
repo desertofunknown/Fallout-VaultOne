@@ -68,9 +68,9 @@ var/global/datum/controller/master/Master = new()
 
 	preloadTemplates()
 	// Pick a random away mission.
-	createRandomZlevel()
-	// Generate asteroid.
-	make_mining_asteroid_secrets()
+	//createRandomZlevel()
+	// Generate wasteland.
+	//make_mining_wasteland_secrets()
 	// Set up Z-level transistions.
 	setup_map_transitions()
 
@@ -81,11 +81,11 @@ var/global/datum/controller/master/Master = new()
 	if (zlevel && zlevel > 0 && zlevel <= world.maxz)
 		for(var/datum/subsystem/SS in subsystems)
 			SS.Initialize(world.timeofday, zlevel)
-			sleep(1)
+			sleep(-1)
 	else
 		for(var/datum/subsystem/SS in subsystems)
 			SS.Initialize(world.timeofday, zlevel)
-			sleep(1)
+			sleep(-1)
 
 	sortTim(subsystems, /proc/cmp_subsystem_display)
 
@@ -108,7 +108,7 @@ var/global/datum/controller/master/Master = new()
 /datum/controller/master/process()
 	if(!Failsafe)
 		new/datum/controller/failsafe() // (re)Start the failsafe.
-	spawn(1)
+	spawn(0)
 		// Schedule the first run of the Subsystems.
 		var/timer = world.time
 		for(var/datum/subsystem/SS in subsystems)

@@ -5,7 +5,7 @@ var/datum/subsystem/lighting/SSlighting
 /datum/subsystem/lighting
 	name = "Lighting"
 	priority = 1
-	wait = 0.1
+	wait = 1
 
 	display = 5
 

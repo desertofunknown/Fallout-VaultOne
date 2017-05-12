@@ -150,7 +150,7 @@
 #include "code\controllers\failsafe.dm"
 #include "code\controllers\master.dm"
 #include "code\controllers\subsystem.dm"
-#include "code\controllers\subsystem\air.dm"
+#include "code\controllers\subsystem\airnew.dm"
 #include "code\controllers\subsystem\assets.dm"
 #include "code\controllers\subsystem\diseases.dm"
 #include "code\controllers\subsystem\events.dm"

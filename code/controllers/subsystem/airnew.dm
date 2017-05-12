@@ -1,6 +1,11 @@
-/turf/open/space/resolve_active_graph()
+turf/ground
+	var/excited_group
+	var/air
+	var/excited
+	//var/blocks_air=0
+/turf/ground/desert/resolve_active_graph()
 	return list()
-/turf/open/proc/resolve_active_graph()
+/turf/ground/proc/resolve_active_graph()
 	. = list()
 	var/datum/excited_group/EG = excited_group
 	if (blocks_air || !air)
@@ -9,7 +14,7 @@
 		EG = new
 		EG.add_turf(src)
 
-	for (var/turf/open/ET in atmos_adjacent_turfs)
+	for (var/turf/ground/ET in atmos_adjacent_turfs)
 		if ( ET.blocks_air || !ET.air)
 			continue
 
