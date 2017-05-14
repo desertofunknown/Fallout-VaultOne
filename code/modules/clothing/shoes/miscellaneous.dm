@@ -1,30 +1,3 @@
-/obj/item/clothing/shoes
-	var/obj/item/weapon/kitchen/knife
-	var/can_insert_knife = 0
-	attack_hand(var/mob/living/M)
-		if(can_insert_knife)
-			if(knife)
-				knife.loc = get_turf(src)
-				if(M.put_in_active_hand(knife))
-					M << "<div class='notice'>You slide the [knife] out of the [src].</div>"
-					knife = 0
-					overlays -= image('icons/obj/clothing/shoes.dmi', icon_state = "knife")
-				return
-			..()
-		else
-			return
-	attackby(var/obj/item/I, var/mob/living/M)
-		if(can_insert_knife)
-			if(istype(I, /obj/item/weapon/kitchen/knife))
-				if(knife)	return
-				M.drop_item()
-				knife = I
-				I.loc = src
-				M << "<div class='notice'>You slide the [I] into the [src].</div>"
-				overlays += image('icons/obj/clothing/shoes.dmi', icon_state = "knife")
-		else
-			return
-
 /obj/item/clothing/shoes/proc/step_action() //this was made to rewrite clown shoes squeaking
 
 /obj/item/clothing/shoes/suicide_act(mob/user)
@@ -57,13 +30,6 @@
 	armor = list(melee = 25, bullet = 25, laser = 25, energy = 25, bomb = 50, bio = 10, rad = 0)
 	strip_delay = 70
 	burn_state = FIRE_PROOF
-	can_insert_knife = 1
-
-/obj/item/clothing/shoes/combat/ncr
-	name = "NCR boots"
-	desc = "Standard issue high speed low drag NCR boots."
-	icon_state = "ncr_boots"
-	item_state = "ncr_boots"
 
 /obj/item/clothing/shoes/combat/swat //overpowered boots for death squads
 	name = "\improper SWAT boots"
@@ -71,16 +37,6 @@
 	permeability_coefficient = 0.01
 	flags = NOSLIP
 	armor = list(melee = 40, bullet = 30, laser = 25, energy = 25, bomb = 50, bio = 30, rad = 30)
-	can_insert_knife = 1
-
-/obj/item/clothing/shoes/combat/plate
-	name = "plated combat boots"
-	desc = "A robust pair of combat boots."
-	icon_state = "legionmetal"
-	item_state = "legionmetal"
-	item_color = "cult"
-	armor = list(melee = 40, bullet = 30, laser = 25, energy = 25, bomb = 50, bio = 30, rad = 30)
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
@@ -134,14 +90,13 @@
 
 /obj/item/clothing/shoes/jackboots
 	name = "jackboots"
-	desc = "Security combat boots for combat scenarios or combat situations. All combat, all the time."
+	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots"
 	item_state = "jackboots"
 	item_color = "hosred"
 	strip_delay = 50
 	put_on_delay = 50
 	burn_state = FIRE_PROOF
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/winterboots
 	name = "winter boots"
@@ -152,7 +107,6 @@
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	heat_protection = FEET|LEGS
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/workboots
 	name = "work boots"
@@ -161,7 +115,6 @@
 	item_state = "jackboots"
 	strip_delay = 40
 	put_on_delay = 40
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/cult
 	name = "nar-sian invoker boots"
@@ -174,7 +127,6 @@
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
 	heat_protection = FEET
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/legionleather
 	name = "legion leather boots"
@@ -183,7 +135,6 @@
 	item_state = "legionleather"
 	item_color = "cult"
 	armor = list(melee = 15, bullet = 10, laser = 5, energy = 0, bomb = 20, bio = 0, rad = 0)
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/legionmetal
 	name = "legion metal boots"
@@ -192,7 +143,6 @@
 	item_state = "legionmetal"
 	item_color = "cult"
 	armor = list(melee = 25, bullet = 20, laser = 25, energy = 10, bomb = 30, bio = 0, rad = 15)
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/legionlegat
 	name = "legion legat boots"
@@ -201,7 +151,6 @@
 	item_state = "legionlegat"
 	item_color = "cult"
 	armor = list(melee = 35, bullet = 25, laser = 30, energy = 10, bomb = 30, bio = 0, rad = 15)
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/cult/alt
 	name = "cultist boots"
@@ -249,7 +198,6 @@
 	armor = list(melee = 20, bullet = 10, laser = 10, energy = 10, bomb = 10, bio = 0, rad = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/fluff/moon
 	name = "moon boots"
@@ -263,6 +211,11 @@
 	max_heat_protection_temperature = SHOES_MAX_TEMP_PROTECT
 	flags = NOSLIP
 
+/obj/item/clothing/shoes/combat/ncr
+	name = "NCR boots"
+	desc = "Standard issue high speed low drag NCR boots."
+	icon_state = "ncr_boots"
+	item_state = "ncr_boots"
 /obj/item/clothing/shoes/fluff/miner
 	name = "mining boots"
 	desc = "A heavy-duty work boots with steel reinforced toes and some fluffy wool for extra warmth."
@@ -271,14 +224,12 @@
 	armor = list(melee = 40, bullet = 0, laser = 0, energy = 0, bomb = 20, bio = 0, rad = 0)
 	cold_protection = FEET
 	min_cold_protection_temperature = SHOES_MIN_TEMP_PROTECT
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/fluff/cowboy
 	name = "cowboy boots"
 	desc = "A pair of cowhide boots with spurs.<br>They have a Cuban heel, rounded to pointed toe, high shaft, and, traditionally, no lacing."
 	icon_state = "cowboy"
 	item_state = "cowboy"
-	can_insert_knife = 1
 
 /obj/item/clothing/shoes/fluff/brownie
 	name = "brown shoes"

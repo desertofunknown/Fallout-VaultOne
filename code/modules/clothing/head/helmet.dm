@@ -467,8 +467,19 @@
 	desc = "It's a t51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 	icon_state = "t51bhelmet"
 	item_state = "t51bhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
 	armor = list(melee = 80, bullet = 60, laser = 60,energy = 60, bomb = 40, bio = 100, rad = 60)
-	helmet_light = 0
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
+	put_on_delay = 20
+	strip_delay = 200
+	burn_state = FIRE_PROOF
+	unacidable = 1
+	flash_protect = 2
+	tint = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/broken
 	name = "broken power helmet"
@@ -479,12 +490,18 @@
 	helmet_light = 0
 
 /obj/item/clothing/head/helmet/f13/power_armor/t45bhelmet
-	name = "t45b power helmet"
+	name = "salvaged power helmet"
 	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
 	icon_state = "t45bhelmet"
 	item_state = "t45bhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
 	armor = list(melee = 70, bullet = 50, laser = 50,energy = 50, bomb = 30, bio = 100, rad = 20)
-	helmet_light = 0
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	put_on_delay = 20
+	strip_delay = 100
+	burn_state = FIRE_PROOF
+	flash_protect = 2
+	tint = 0
 
 //LightToggle
 
