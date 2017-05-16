@@ -179,6 +179,19 @@ You can set verify to TRUE if you want send() to sleep until the client has the 
 		"nanoui.css"				= 'nano/assets/nanoui.css',
 	)
 
+/datum/asset/simple/goonchat
+	assets = list(
+	"jquery.min.js" = 'code/modules/html_interface/js/jquery.min.js',
+	"json2.min.js" = 'goon/browserassets/js/json2.min.js',
+	"browserOutput.js" = 'goon/browserassets/js/browserOutput.js',
+	"fontawesome-webfont.eot" = 'goon/browserassets/css/fonts/fontawesome-webfont.eot',
+	"fontawesome-webfont.svg" = 'goon/browserassets/css/fonts/fontawesome-webfont.svg',
+	"fontawesome-webfont.ttf" = 'goon/browserassets/css/fonts/fontawesome-webfont.ttf',
+	"fontawesome-webfont.woff" = 'goon/browserassets/css/fonts/fontawesome-webfont.woff',
+	"font-awesome.css" = 'goon/browserassets/css/font-awesome.css',
+	"browserOutput.css" = 'goon/browserassets/css/browserOutput.css'
+)
+
 /datum/asset/simple/pda
 	assets = list(
 		"pda_atmos.png"			= 'icons/pda_icons/pda_atmos.png',

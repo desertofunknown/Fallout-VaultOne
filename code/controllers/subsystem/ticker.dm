@@ -52,7 +52,7 @@ var/datum/subsystem/ticker/ticker
 /datum/subsystem/ticker/New()
 	NEW_SS_GLOBAL(ticker)
 
-	login_music = pickweight(list('sound/f13music/AKISS.ogg' = 5, 'sound/f13music/20CAR.ogg' = 5, 'sound/f13music/17ARROYO.ogg' = 5, 'sound/f13music/13CARVRN.ogg' = 5, 'sound/f13music/f13standby.ogg' = 40, 'sound/f13music/11-the-brotherhood-of-steel.ogg' = 40)) // choose title music!
+	login_music = pickweight(list('sound/f13music/new_vegas_show_1.ogg' = 49, 'sound/f13music/new_vegas_show_2.ogg' = 49, 'sound/f13music/new_vegas_show_3.ogg' = 49, 'sound/f13music/new_vegas_show_4.ogg' = 49, 'sound/f13music/new_vegas_show_5.ogg' = 49, 'sound/f13music/new_vegas_show_6.ogg' = 49, 'sound/f13music/new_vegas_show_7.ogg' = 49)) // choose title music!
 	if(SSevent.holidays && SSevent.holidays[APRIL_FOOLS])
 		login_music = 'sound/f13music/mysterious_stranger.ogg'
 
@@ -69,7 +69,7 @@ var/datum/subsystem/ticker/ticker
 		if(GAME_STATE_STARTUP)
 			timeLeft = config.lobby_countdown * 10
 			world << "<b><font color='blue'>Welcome to the pre-game lobby!</font></b>"
-			world << "Please, setup your character and select ready, and prepare to survive. Game will start in [config.lobby_countdown] seconds"
+			world << "Please, setup your character and select ready. Game will start in [config.lobby_countdown] seconds"
 			current_state = GAME_STATE_PREGAME
 
 		if(GAME_STATE_PREGAME)
@@ -191,7 +191,7 @@ var/datum/subsystem/ticker/ticker
 			world << "<h4>[holiday.greet()]</h4>"
 
 
-	spawn(1)//Forking here so we dont have to wait for this to finish
+	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
 		//Cleanup some stuff
 		for(var/obj/effect/landmark/start/S in landmarks_list)
@@ -485,5 +485,5 @@ var/datum/subsystem/ticker/ticker
 	//map rotate chance defaults to 75% of the length of the round (in minutes)
 	if (!prob((world.time/600)*config.maprotatechancedelta))
 		return
-	spawn(5) //compiling a map can lock up the mc for 30 to 60 seconds if we don't spawn
+	spawn(-1) //compiling a map can lock up the mc for 30 to 60 seconds if we don't spawn
 		maprotate()

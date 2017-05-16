@@ -47,7 +47,7 @@ var/global/list/rockTurfEdgeCache
 	return
 
 /turf/simulated/mineral/New()
-	if(!rockTurfEdgeCache || !rockTurfEdgeCache.len)
+	/*if(!rockTurfEdgeCache || !rockTurfEdgeCache.len)
 		rockTurfEdgeCache = list()
 		rockTurfEdgeCache.len = 4
 		rockTurfEdgeCache[NORTH_EDGING] = image('icons/turf/mining.dmi', "rock_side_n", layer = 6)
@@ -72,7 +72,7 @@ var/global/list/rockTurfEdgeCache
 		if((istype(get_step(src, WEST), /turf/simulated/floor)) || (istype(get_step(src, WEST), /turf/space) || istype(get_step(src, WEST),/turf/ground)))
 			T = get_step(src, WEST)
 			if (T)
-				T.overlays += rockTurfEdgeCache[EAST_EDGING]
+				T.overlays += rockTurfEdgeCache[EAST_EDGING]*/
 
 	if (mineralType && mineralAmt && spread && spreadChance)
 		for(var/dir in cardinal)
@@ -81,7 +81,7 @@ var/global/list/rockTurfEdgeCache
 				if(istype(T, /turf/simulated/mineral/random))
 					Spread(T)
 
-	HideRock()
+	//HideRock()
 	return
 
 /turf/simulated/mineral/proc/HideRock()
@@ -577,7 +577,8 @@ var/global/list/rockTurfEdgeCache
 	return
 
 /turf/proc/updateMineralOverlays()
-	src.overlays.Cut()
+	return
+	/*src.overlays.Cut()
 
 	if(istype(get_step(src, NORTH), /turf/simulated/mineral))
 		src.overlays += rockTurfEdgeCache[NORTH_EDGING]
@@ -586,7 +587,7 @@ var/global/list/rockTurfEdgeCache
 	if(istype(get_step(src, EAST), /turf/simulated/mineral))
 		src.overlays += rockTurfEdgeCache[EAST_EDGING]
 	if(istype(get_step(src, WEST), /turf/simulated/mineral))
-		src.overlays += rockTurfEdgeCache[WEST_EDGING]
+		src.overlays += rockTurfEdgeCache[WEST_EDGING]*/
 
 /turf/simulated/mineral/updateMineralOverlays()
 	return

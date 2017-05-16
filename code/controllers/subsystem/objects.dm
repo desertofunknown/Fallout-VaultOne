@@ -16,7 +16,6 @@ var/datum/subsystem/objects/SSobj
 	NEW_SS_GLOBAL(SSobj)
 
 /datum/subsystem/objects/Initialize(timeofday, zlevel)
-	spawn(-1)
 	setupGenetics()
 	for(var/V in world)
 		var/atom/A = V
