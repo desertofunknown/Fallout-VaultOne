@@ -433,7 +433,7 @@
 		if(job && IsJobAvailable(job.title))
 			available_job_count++;*/
 
-	dat += "<div class='clearBoth'>Spawn as some wastelander:</div><br>"
+	dat += "<div class='clearBoth'>Spawn as a wasteland role:</div><br>"
 	dat += "<div class='jobs'><div class='jobsColumn'>"
 	/*var/job_count = 0
 	for(var/datum/job/job in SSjob.occupations)
@@ -452,9 +452,12 @@
 			break*/
 
 	for(var/datum/job/job in SSjob.desert_occupations)
-		if(job.donaters && !check_whitelist(src, job.title))
-			continue
-		dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+		if(job.donaters && src.donator==1 && src.donatorrank>=job.donatorrank)
+			//dat += "<div class='clearBoth'>Spawn as a whitelist role:</div><br>"
+			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+		if(job.donaters==0)
+			//dat += "<div class='clearBoth'>Spawn as a wasteland role:</div><br>"
+			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
 		//break
 
 	dat += "</div></div>"

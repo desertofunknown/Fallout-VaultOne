@@ -9,6 +9,7 @@ Raider
 	status = "Raider"
 	total_positions = 3
 	donaters = 1
+	donatorrank = 1
 	spawn_positions = -1 //does not matter for late join
 	supervisors = "nobody"
 	selection_color = "#dddddd"
@@ -42,7 +43,7 @@ Raider
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1,\
 	/obj/item/weapon/pipe=1, \
 	/obj/item/weapon/storage/wallet=1, \
-	/obj/item/stack/coin/coins = 2)
+	/obj/item/stack/caps = 1)
 	if (prob(50))
 		glasses = /obj/item/clothing/glasses/sunglasses
 	if (prob(80))

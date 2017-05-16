@@ -18,6 +18,7 @@ var/const/BOSP			=(1<<55)
 	selection_color = "#ffddf0"
 	minimal_player_age = 7
 	donaters = 1
+	donatorrank = 3
 	outfit = /datum/outfit/job/messiah
 
 	access = list()
@@ -53,6 +54,7 @@ var/const/BOSP			=(1<<55)
 	selection_color = "#ffddf0"
 	minimal_player_age = 7
 	donaters = 1
+	donatorrank = 3
 	outfit = /datum/outfit/job/slimeman
 
 	access = list()
@@ -82,12 +84,13 @@ var/const/BOSP			=(1<<55)
 	department_flag = ENGSEC
 	faction = "BOS"
 	status = "Initiate"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 3
+	spawn_positions = 3
 	supervisors = "the head of security"
 	selection_color = "#ffddf0"
 	minimal_player_age = 7
 	donaters = 1
+	donatorrank = 3
 	outfit = /datum/outfit/bos_initiate
 
 	access = list(73)
@@ -109,6 +112,7 @@ var/const/BOSP			=(1<<55)
 	selection_color = "#ffddf0"
 	minimal_player_age = 7
 	donaters = 1
+	donatorrank = 3
 	outfit = /datum/outfit/bos_scribe
 
 	access = list(73)
@@ -127,6 +131,7 @@ var/const/BOSP			=(1<<55)
 	selection_color = "#ffddf0"
 	minimal_player_age = 7
 	donaters = 1
+	donatorrank = 4
 	outfit = /datum/outfit/bos_knight
 
 	access = list(73)
@@ -145,6 +150,7 @@ var/const/BOSP			=(1<<55)
 	selection_color = "#ffddf0"
 	minimal_player_age = 7
 	donaters = 1
+	donatorrank = 4
 	outfit = /datum/outfit/bos_paladin
 
 	access = list(73)

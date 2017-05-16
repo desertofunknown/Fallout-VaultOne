@@ -11,6 +11,7 @@ Trooper
 	total_positions = 1
 	spawn_positions = 1
 	donaters = 1
+	donatorrank = 3
 	supervisors = "The NCR Major"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
@@ -43,9 +44,9 @@ Trooper
 		H.status="Lieutenant"
 		n.access = list(67,69,70,71,72,20)
 
-/datum/job/ncrc
+/datum/job/ncrm
 	title = "Major"
-	flag = NCRCOLONEL
+	flag = NCRMAJOR
 	department_head = list("NCR Major")
 	department_flag = NCR
 	faction = "NCR" // This faction is used for late joins
@@ -53,6 +54,25 @@ Trooper
 	total_positions = 1
 	spawn_positions = 1
 	donaters = 1
+	donatorrank = 4
+	supervisors = "Colonel"
+	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
+	selection_color = "#ffeeee"
+	access = list(67,68,69,70,71,72)
+	minimal_access = list(67,68,69,70,71,72,20)
+	outfit = /datum/outfit/job/ncrmajor
+
+/datum/job/ncrc
+	title = "Colonel"
+	flag = NCRCOLONEL
+	department_head = list("NCR Major")
+	department_flag = NCR
+	faction = "NCR" // This faction is used for late joins
+	status = "Colonel"
+	total_positions = 1
+	spawn_positions = 1
+	donaters = 1
+	donatorrank = 5
 	supervisors = "nobody"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/commander)
 	selection_color = "#ffeeee"
@@ -81,9 +101,32 @@ Trooper
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		H.status="Major"
+		H.status="Colonel"
 		n.access = list(67,68,69,70,71,72)
 
+/datum/outfit/job/ncrmajor
+	id = /obj/item/weapon/card/id/ncr
+	gloves = /obj/item/clothing/gloves/f13/legion/ncr
+	uniform = /obj/item/clothing/under/f13/ncr
+	shoes = /obj/item/clothing/shoes/combat/ncr
+	belt = /obj/item/weapon/storage/belt/webbing/alt
+	ears = /obj/item/device/radio/headset/headset_ncr
+	suit = /obj/item/clothing/suit/armor/f13/ncrarmor/mantle
+	head = /obj/item/clothing/head/beret/ncr
+	glasses = /obj/item/clothing/glasses/sunglasses/swat
+	suit_store = /obj/item/weapon/gun/projectile/automatic/shotgun/pancor
+	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
+		/obj/item/ammo_box/magazine/d12g=3, \
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
+/datum/outfit/job/ncrmajor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
+		n.registered_name = H.real_name
+		n.assignment = "[H.job]"
+		//n.update_label(W.registered_name, W.assignment)
+		n.name="[H.real_name] ([H.job])"
+		H.status="Major"
+		n.access = list(67,68,69,70,71,72)
 /*
 Sergeant
 */
@@ -97,6 +140,7 @@ Sergeant
 	total_positions = 2
 	spawn_positions = 2
 	donaters = 1
+	donatorrank = 1
 	supervisors = "The NCR Lieutenant"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
@@ -226,6 +270,7 @@ Veteran Ranger
 	total_positions = 1
 	spawn_positions = 1
 	donaters = 1
+	donatorrank = 3
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 0
@@ -257,7 +302,7 @@ Veteran Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		H.status="Vet Ranger"
+		H.status="Veteran Ranger"
 		n.access = list(67)
 /*
 NCR Ranger
@@ -271,6 +316,8 @@ NCR Ranger
 	status = "Ranger"
 	total_positions = 3
 	spawn_positions = 3
+	donaters = 1
+	donatorrank = 2
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 0
@@ -305,13 +352,15 @@ NCR Ranger
 		H.status="Ranger"
 		n.access = list(67)
 /datum/job/ncrrecranger
-	title = "NCR Recruit Ranger"
+	title = "Recruit Ranger"
 	flag = NCRRECRANGER
 	department_flag = NCR
 	faction = "NCR" //desert faction shall disable appearing as scavenger after readying
 	status = "Recruit Ranger"
-	total_positions = 5
-	spawn_positions = 5 //does not matter for late join
+	total_positions = 3
+	spawn_positions = 3 //does not matter for late join
+	donaters = 1
+	donatorrank = 3
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 0
@@ -344,5 +393,5 @@ NCR Ranger
 		n.assignment = "[H.job]"
 		//n.update_label(W.registered_name, W.assignment)
 		n.name="[H.real_name] ([H.job])"
-		H.status="Rec Ranger"
+		H.status="Recruit Ranger"
 		n.access = list(67)

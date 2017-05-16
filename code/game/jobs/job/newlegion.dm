@@ -40,7 +40,7 @@ Legion
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/legcuffs/bola=1, \
 	/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/coin/coins = 1, \
+	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/c357/c38=2, \
@@ -87,7 +87,7 @@ Legion
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/legcuffs/bola/raider=1, \
 	/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/coin/coins = 3, \
+	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/magazine/d12g=2, \
@@ -132,7 +132,7 @@ Legion
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/legcuffs/bola/raider=1, \
 	/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/coin/coins = 3, \
+	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/m44=1, \
@@ -178,7 +178,7 @@ Legion
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1, \
 	/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/coin/coins = 3, \
+	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/powergauntlet = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
 	/obj/item/device/flashlight/flare/torch=1)
@@ -194,6 +194,7 @@ Legion
 	total_positions = 1
 	spawn_positions = 1
 	donaters = 1
+	donatorrank = 3
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -223,7 +224,7 @@ Legion
 	r_hand = /obj/item/weapon/claymore/hog
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/coin/coins = 3, \
+	/obj/item/stack/caps = 100, \
 	/obj/item/weapon/powergauntlet = 1,\
 	/obj/item/ammo_box/magazine/m556=3, \
 	/obj/item/weapon/restraints/legcuffs/bola/tribal=2, \
@@ -241,6 +242,7 @@ Legion
 	total_positions = 10
 	spawn_positions = 6
 	donaters = 1
+	donatorrank = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -271,7 +273,7 @@ Legion
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/restraints/legcuffs/bola/raider=1, \
 	/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/coin/coins = 1, \
+	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/storage/box/lethalshot=1,
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \

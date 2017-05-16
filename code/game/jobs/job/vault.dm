@@ -12,7 +12,7 @@
 	req_admin_notify = 1
 	minimal_player_age = 14
 	donaters = 1
-
+	donatorrank = 3
 	outfit = /datum/outfit/job/captain
 
 	access = list() 			//See get_access()
@@ -61,8 +61,8 @@
 	department_flag = ENGSEC
 	faction = "Vault"
 	status = "Dweller"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the chief engineer"
 	selection_color = "#005A20"
 
@@ -94,8 +94,8 @@
 	department_flag = MEDSCI
 	faction = "Vault"
 	status = "Dweller"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the chief medical officer"
 	selection_color = "#005A20"
 
@@ -125,8 +125,8 @@
 	department_flag = MEDSCI
 	faction = "Vault"
 	status = "Dweller"
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "the research director"
 	selection_color = "#005A20"
 
@@ -144,14 +144,14 @@
 	//shoes = /obj/item/clothing/shoes/sneakers/white
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 /datum/job/officer
-	title = "Security Officer"
+	title = "Officer"
 	flag = OFFICER
 	department_head = list("Head of Security")
 	department_flag = ENGSEC
 	faction = "Vault"
 	status = "Dweller"
-	total_positions = 8 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
-	spawn_positions = 8 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	total_positions = 4 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
+	spawn_positions = 4 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
 	supervisors = "the head of security, and the head of your assigned department (if applicable)"
 	selection_color = "#005A20"
 	minimal_player_age = 7

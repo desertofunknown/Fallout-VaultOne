@@ -81,6 +81,7 @@ var/const/NCRRANGER       		=(1<<5)
 var/const/NCRTROOPER        	=(1<<6)
 var/const/NCRCOLONEL			=(1<<7)
 var/const/NCRRECRANGER			=(1<<8)
+var/const/NCRMAJOR			    =(1<<9)
 var/const/NCR        		=(1<<26)
 var/const/WASTELANDWHORE	=(1<<27)
 var/const/PUSHER			=(1<<28)
@@ -163,6 +164,7 @@ var/list/legion_positions = list(
 )
 
 var/list/ncr_positions = list(
+	"Colonel",
 	"Major",
 	"Lieutenant",
 	"Trooper",
