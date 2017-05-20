@@ -120,3 +120,10 @@
 /obj/item/projectile/beam/robotlaser
 	name = "laser beam"
 	damage = 65
+
+/obj/item/projectile/beam/protolaser
+	icon_state = "bluelaser"
+	damage = 15
+	range = 10
+	irradiate = 5
+	eyeblur = 2

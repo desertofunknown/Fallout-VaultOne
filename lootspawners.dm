@@ -502,28 +502,22 @@ obj
 					New()
 						switch(rand(1,5))
 							if(1)
-								var/obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor/salvaged/lb = new
-								var/obj/item/clothing/head/helmet/f13/power_armor/broken/lb2 = new
-								lb.loc=src.loc
-								lb2.loc=src.loc
-								del src
-							if(2)
 								var/obj/item/clothing/suit/armor/f13/rangercombat/lb = new
 								var/obj/item/clothing/head/helmet/f13/rangercombat/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
 								del src
-							if(3)
+							if(2)
 								var/obj/item/clothing/suit/armor/f13/combat/brotherhood/lb = new
 								var/obj/item/clothing/head/helmet/f13/combat/brotherhood/lb2 = new
 								lb.loc=src.loc
 								lb2.loc=src.loc
 								del src
-							if(4)
+							if(3)
 								var/obj/item/weapon/storage/belt/webbing/alt/lb = new
 								lb.loc=src.loc
 								del src
-							if(5)
+							if(4)
 								var/obj/item/clothing/suit/armor/f13/combat/lb = new
 								var/obj/item/clothing/head/helmet/f13/combat/lb2 = new
 								lb.loc=src.loc
@@ -549,32 +543,14 @@ obj
 								lb2.loc=src.loc
 								del src
 							if(4)
-								var/obj/item/clothing/suit/armor/f13/power_armor/t51bpowerarmor/lb = new
-								var/obj/item/clothing/head/helmet/f13/power_armor/t51b/lb2 = new
-								var/obj/item/clothing/under/f13/recon/lb3 = new
-								lb.loc=src.loc
-								lb2.loc=src.loc
-								lb3.loc=src.loc
-								del src
+								return
 							if(5)
 								var/obj/item/weapon/storage/belt/webbing/lb = new
 								lb.loc=src.loc
 								del src
 							if(6)
-								var/obj/item/clothing/suit/armor/f13/power_armor/lb = new
-								var/obj/item/clothing/head/helmet/f13/power_armor/lb2 = new
-								lb.loc=src.loc
-								lb2.loc=src.loc
-								del src
+								return
 							if(7)
-								var/obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor/lb = new
-								var/obj/item/clothing/head/helmet/f13/power_armor/t45bhelmet/lb2 = new
-								lb.loc=src.loc
-								lb2.loc=src.loc
-								del src
+								return
 							if(8)
-								var/obj/item/clothing/suit/armor/f13/power_armor/t45bpowerarmor/salvaged/lb = new
-								var/obj/item/clothing/head/helmet/f13/power_armor/t45bhelmet/lb2 = new
-								lb.loc=src.loc
-								lb2.loc=src.loc
-								del src
+								return

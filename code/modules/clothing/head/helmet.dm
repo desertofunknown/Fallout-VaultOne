@@ -224,6 +224,15 @@
 	armor = list(melee = 20, bullet = 10, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 0)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 
+/obj/item/clothing/head/helmet/f13/broken
+	name = "broken power helmet"
+	desc = "This power armor helmet is so decrepit and battle-worn that it have ceased it's primary function of protecting the wearer from harm.<br>It still can provide some very basic protection though."
+	icon_state = "brokenhelmet"
+	item_state = "brokenhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
+	armor = list(melee = 30, bullet = 20, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 10)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+
 /obj/item/clothing/head/helmet/f13/yankee
 	name = "yankee raider helmet"
 	desc = "Long time ago, it has belonged to a football player, now it belongs to wasteland."
@@ -289,12 +298,10 @@
 	put_on_delay = 10
 	strip_delay = 50
 	burn_state = FIRE_PROOF
-
 /obj/item/clothing/head/helmet/riot/vaultsec
 	name = "security helmet"
 	desc = "A standard issue vault security helmet, pretty robust."
 	armor = list(melee = 60, bullet = 25, laser = 25,energy = 10, bomb = 25, bio = 2, rad = 0)
-
 /obj/item/clothing/head/helmet/f13/legvexil
 	name = "legion vexillarius helmet"
 	desc = "It's leather legion vexillarius helmet."
@@ -342,20 +349,6 @@
 	put_on_delay = 10
 	strip_delay = 50
 	burn_state = FIRE_PROOF
-
-/obj/item/clothing/head/helmet/f13/rangercombat
-	name = "ranger combat helmet"
-	desc = "An old combat helmet, out of use around the time of the war."
-	icon_state = "ranger"
-	item_state = "ranger"
-	armor = list(melee = 70, bullet = 60, laser = 40, energy = 40, bomb = 40, bio = 0, rad = 80)
-	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
-	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-	put_on_delay = 10
-	strip_delay = 50
-	burn_state = FIRE_PROOF
-	darkness_view = 8
-	invis_view = SEE_INVISIBLE_MINIMUM
 
 /obj/item/clothing/head/helmet/f13/rangercombat/desert
 	name = "desert ranger combat helmet"
@@ -407,62 +400,53 @@
 	if (prob(hit_reflect_chance))
 		return 1
 
-//Power armor helmets//
+/obj/item/clothing/head/helmet/f13/rangercombat
+	name = "ranger combat helmet"
+	desc = "An old combat helmet, out of use around the time of the war."
+	icon_state = "ranger"
+	item_state = "ranger"
+	armor = list(melee = 70, bullet = 60, laser = 40, energy = 40, bomb = 40, bio = 0, rad = 80)
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	put_on_delay = 10
+	strip_delay = 50
+	burn_state = FIRE_PROOF
+	ispowerarmor = 1
+	//darkness_view = 8
+	//invis_view = SEE_INVISIBLE_MINIMUM
+//Power armor helmets
 
-/obj/item/clothing/head/helmet/f13/power_armor
-	name = "T-45d power helmet"
-	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
-	icon_state = "t45dhelmet"
-	item_state = "t45dhelmet"
+/obj/item/clothing/head/helmet/power_armor/advanced
+	name = "advanced Mk I power helmet"
+	desc = "It's an advanced power armor Mk I helmet, typically used by the Enclave. It looks somewhat threatening."
+	icon_state = "t51bhelmet"
+	item_state = "t51bhelmet"
 	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
-	armor = list(melee = 70, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 70)
+	armor = list(melee = 80, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 80)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	heat_protection = HEAD
+	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
+	unacidable = 1
+	ispowerarmor = 1
 	put_on_delay = 20
+	strip_delay = 200
+	burn_state = FIRE_PROOF
+
+/obj/item/clothing/head/helmet/power_armor/ncr
+	name = "NCR power helmet"
+	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
+	icon_state = "t45bhelmet"
+	item_state = "t45bhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | BLOCKHAIR
+	armor = list(melee = 70, bullet = 60, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 60)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	put_on_delay = 20
+	ispowerarmor = 1
 	strip_delay = 100
 	burn_state = FIRE_PROOF
-	flash_protect = 2
-	tint = 0
-	action_button_name = "Toggle Helmet Light"
-	var/helmet_light = 0
-	var/brightness_on = 4 //luminosity when the light is on
-	var/on = 0
-
-/obj/item/clothing/head/helmet/f13/power_armor/attack_self(mob/user)
-	if(helmet_light)
-		if(!isturf(user.loc))
-			user << "<span class='warning'>You cannot turn the light on while in this [user.loc]!</span>" //To prevent some lighting anomalities.
-			return
-		on = !on
-		icon_state = "t45dhelmet-light"
-		item_state = "t45dhelmet-light"
-		user.update_inv_head()	//so our mob-overlays update
-	else
-		return
-
-	if(on)
-		turn_on(user)
-	else
-		turn_off(user)
-
-/obj/item/clothing/head/helmet/f13/power_armor/pickup(mob/user)
-	if(on)
-		user.AddLuminosity(brightness_on)
-		SetLuminosity(0)
-
-/obj/item/clothing/head/helmet/f13/power_armor/dropped(mob/user)
-	if(on)
-		user.AddLuminosity(-brightness_on)
-		SetLuminosity(brightness_on)
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_on(mob/user)
-	user.AddLuminosity(brightness_on)
-
-/obj/item/clothing/head/helmet/f13/power_armor/proc/turn_off(mob/user)
-	user.AddLuminosity(-brightness_on)
-
-/obj/item/clothing/head/helmet/f13/power_armor/t51b
+/obj/item/clothing/head/helmet/f13/t51bhelmet
 	name = "t51b power helmet"
 	desc = "It's a t51b power helmet, typically used by the Brotherhood. It looks somewhat charming."
 	icon_state = "t51bhelmet"
@@ -475,21 +459,62 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
 	put_on_delay = 20
+	ispowerarmor = 1
 	strip_delay = 200
 	burn_state = FIRE_PROOF
 	unacidable = 1
 	flash_protect = 2
 	tint = 0
+/obj/item/clothing/head/helmet/f13/t45dhelmet
+	name = "T-45d power helmet"
+	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	icon_state = "t45dhelmet"
+	item_state = "t45dhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
+	armor = list(melee = 80, bullet = 60, laser = 60,energy = 60, bomb = 40, bio = 100, rad = 40)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	cold_protection = HEAD
+	flash_protect = 2
+	tint = 0
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	put_on_delay = 20
+	ispowerarmor = 1
+	strip_delay = 100
+	burn_state = FIRE_PROOF
+	action_button_name = "Toggle Helmet Light"
+	var/brightness_on = 4 //luminosity when the light is on
+	var/on = 0
 
-/obj/item/clothing/head/helmet/f13/power_armor/broken
-	name = "broken power helmet"
-	desc = "This power armor helmet is so decrepit and battle-worn that it have ceased it's primary function of protecting the wearer from harm.<br>It still can provide some very basic protection though."
-	icon_state = "brokenhelmet"
-	item_state = "brokenhelmet"
-	armor = list(melee = 30, bullet = 20, laser = 0,energy = 0, bomb = 10, bio = 0, rad = 10)
-	helmet_light = 0
+/obj/item/clothing/head/helmet/f13/t45dhelmet/attack_self(mob/user)
+	if(!isturf(user.loc))
+		user << "<span class='warning'>You cannot turn the light on while in this [user.loc]!</span>" //To prevent some lighting anomalities.
+		return
+	on = !on
+	icon_state = "t45dhelmet-light"
+	item_state = "t45dhelmet-light"
+	user.update_inv_head()	//so our mob-overlays update
 
-/obj/item/clothing/head/helmet/f13/power_armor/t45bhelmet
+	if(on)
+		turn_on(user)
+	else
+		turn_off(user)
+
+/obj/item/clothing/head/helmet/f13/t45dhelmet/pickup(mob/user)
+	if(on)
+		user.AddLuminosity(brightness_on)
+		SetLuminosity(0)
+
+/obj/item/clothing/head/helmet/f13/t45dhelmet/dropped(mob/user)
+	if(on)
+		user.AddLuminosity(-brightness_on)
+		SetLuminosity(brightness_on)
+
+/obj/item/clothing/head/helmet/f13/t45dhelmet/proc/turn_on(mob/user)
+	user.AddLuminosity(brightness_on)
+
+/obj/item/clothing/head/helmet/f13/t45dhelmet/proc/turn_off(mob/user)
+	user.AddLuminosity(-brightness_on)
+/obj/item/clothing/head/helmet/f13/t45bhelmet
 	name = "salvaged power helmet"
 	desc = "It's a pre-War power armor helmet, recovered and maintained by NCR engineers."
 	icon_state = "t45bhelmet"
@@ -498,10 +523,58 @@
 	armor = list(melee = 70, bullet = 50, laser = 50,energy = 50, bomb = 30, bio = 100, rad = 20)
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
 	put_on_delay = 20
+	ispowerarmor = 1
 	strip_delay = 100
 	burn_state = FIRE_PROOF
 	flash_protect = 2
 	tint = 0
+/obj/item/clothing/head/helmet/power_armor/t45d
+	name = "T-45d power helmet"
+	desc = "It's an old pre-War power armor helmet. It's pretty hot inside of it."
+	icon_state = "t45dhelmet"
+	item_state = "t45dhelmet"
+	flags = HEADCOVERSEYES | HEADCOVERSMOUTH | STOPSPRESSUREDMAGE | BLOCKHAIR
+	armor = list(melee = 70, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 70)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
+	cold_protection = HEAD
+	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
+	put_on_delay = 20
+	ispowerarmor = 1
+	strip_delay = 100
+	burn_state = FIRE_PROOF
+	action_button_name = "Toggle Helmet Light"
+	var/brightness_on = 4 //luminosity when the light is on
+	var/on = 0
+
+/obj/item/clothing/head/helmet/power_armor/t45d/attack_self(mob/user)
+	if(!isturf(user.loc))
+		user << "<span class='warning'>You cannot turn the light on while in this [user.loc]!</span>" //To prevent some lighting anomalities.
+		return
+	on = !on
+	icon_state = "t45dhelmet-light"
+	item_state = "t45dhelmet-light"
+	user.update_inv_head()	//so our mob-overlays update
+
+	if(on)
+		turn_on(user)
+	else
+		turn_off(user)
+
+/obj/item/clothing/head/helmet/power_armor/t45d/pickup(mob/user)
+	if(on)
+		user.AddLuminosity(brightness_on)
+		SetLuminosity(0)
+
+/obj/item/clothing/head/helmet/power_armor/t45d/dropped(mob/user)
+	if(on)
+		user.AddLuminosity(-brightness_on)
+		SetLuminosity(brightness_on)
+
+/obj/item/clothing/head/helmet/power_armor/t45d/proc/turn_on(mob/user)
+	user.AddLuminosity(brightness_on)
+
+/obj/item/clothing/head/helmet/power_armor/t45d/proc/turn_off(mob/user)
+	user.AddLuminosity(-brightness_on)
 
 //LightToggle
 

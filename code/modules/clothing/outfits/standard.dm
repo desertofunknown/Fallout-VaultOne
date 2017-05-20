@@ -475,8 +475,8 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/device/radio/headset/heads/hos/alt
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51bpowerarmor
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b
+	suit = /obj/item/clothing/suit/armor/power_armor/t45d
+	head = /obj/item/clothing/head/helmet/f13/t45dhelmet
 	suit_store = /obj/item/weapon/gun/energy/laser/scatter
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel
@@ -509,8 +509,8 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/device/radio/headset/heads/hos/alt
-	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51bpowerarmor
-	head = /obj/item/clothing/head/helmet/f13/power_armor/t51b
+	suit = /obj/item/clothing/suit/armor/power_armor/t45d
+	head = /obj/item/clothing/head/helmet/f13/t45dhelmet
 	suit_store = /obj/item/weapon/gun/energy/laser/scatter
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel

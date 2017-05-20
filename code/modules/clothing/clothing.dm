@@ -20,6 +20,7 @@
 	var/scan_reagents = 0 //Can the wearer see reagents while it's equipped?
 	var/darkness_view = 2//Base human is 2
 	var/invis_view = SEE_INVISIBLE_LIVING
+	var/ispowerarmor
 
 //Ears: currently only used for headsets and earmuffs
 /obj/item/clothing/ears

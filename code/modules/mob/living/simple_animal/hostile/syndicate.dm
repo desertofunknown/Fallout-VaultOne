@@ -150,6 +150,7 @@
 	icon_living = "secborg"
 	maxHealth = 400
 	health = 400
+	a_intent = "harm"
 	armour_penetration = 20
 	attacktext = "saws"
 	attack_sound = 'sound/weapons/bladeslice.ogg'
@@ -169,6 +170,7 @@
 	desc = "Fucking robot, it finna shoot you."
 	ranged = 1
 	rapid = 1
+	a_intent = "harm"
 	retreat_distance = 2
 	minimum_distance = 2
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'

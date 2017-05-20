@@ -961,7 +961,7 @@
 		Parent_Turret.on = 1
 
 /obj/machinery/porta_turret/stationary
-	emagged = 1
+	emagged = 0
 
 /obj/machinery/porta_turret/stationary/New()
 		installation = new/obj/item/weapon/gun/energy/laser(loc)

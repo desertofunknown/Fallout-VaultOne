@@ -148,14 +148,26 @@
 /obj/vehicle/relaymove(mob/user, direction)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.wear_suit,/obj/item/clothing/suit/armor/f13/power_armor))
-			user << "<span class='notice'>Your power armor bogs down the vehicle.</span>"
-			return
+		for(var/obj/item/clothing/suit/armor/C in H)
+			if(C.ispowerarmor == 1)
+				user << "<span class='notice'>Your power armor bogs down the vehicle.</span>"
+				return
+			for(var/obj/item/weapon/storage/S in H)
+				for(C in S)
+					if(C.ispowerarmor == 1)
+						user << "<span class='notice'>Your power armor bogs down the vehicle.</span>"
+						return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		if(istype(H.wear_suit,/obj/item/clothing/head/helmet/f13/power_armor))
-			user << "<span class='notice'>Your power armor helmet bogs down the vehicle.</span>"
-			return
+		for(var/obj/item/clothing/head/helmet/C in H)
+			if(C.ispowerarmor == 1)
+				user << "<span class='notice'>Your power armor helmet bogs down the vehicle.</span>"
+				return
+			for(var/obj/item/weapon/storage/S in H)
+				for(C in S)
+					if(C.ispowerarmor == 1)
+						user << "<span class='notice'>Your power armor helmet bogs down the vehicle.</span>"
+						return
 	if(user.incapacitated())
 		unbuckle_mob()
 	if(bcell && bcell.charge > movecost)

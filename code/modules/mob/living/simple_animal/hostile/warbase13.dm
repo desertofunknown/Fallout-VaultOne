@@ -46,5 +46,5 @@
 	desc = "Pre-war type of protectron, hmmm... its really dangerous machine."
 	rapid = 1
 	ranged = 1
-	projectiletype = /obj/item/projectile/beam/robotlaser
+	projectiletype = /obj/item/projectile/beam/protolaser
 	projectilesound = 'sound/weapons/laser.ogg'
