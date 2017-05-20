@@ -543,14 +543,17 @@ obj
 								lb2.loc=src.loc
 								del src
 							if(4)
+								del src
 								return
 							if(5)
 								var/obj/item/weapon/storage/belt/webbing/lb = new
 								lb.loc=src.loc
 								del src
 							if(6)
+								del src
 								return
 							if(7)
 								return
 							if(8)
+								del src
 								return
