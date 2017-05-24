@@ -5,7 +5,7 @@ AI
 /datum/job/ai
 	title = "AI"
 	flag = AI
-	department_flag = ENGSEC
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Member"
 	total_positions = 0
@@ -30,7 +30,7 @@ Cyborg
 /datum/job/cyborg
 	title = "Cyborg"
 	flag = CYBORG
-	department_flag = ENGSEC
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Member"
 	total_positions = 0

@@ -4,9 +4,9 @@ Legion
 //recruit
 /datum/job/legrecruit
 	title = "Legionary"
-	flag = LEGRECRUIT
+	flag = LEGIONARY
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = LEGION
 	faction = "Desert"
 	total_positions = 10
 	spawn_positions = -1
@@ -51,7 +51,7 @@ Legion
 	title = "Decan"
 	flag = LEGDECAN
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = LEGION
 	faction = "Legion"
 	status = "Decan"
 	total_positions = 2
@@ -98,7 +98,7 @@ Legion
 	title = "Vexillarius"
 	flag = LEGVEX
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = LEGION
 	faction = "Legion"
 	status = "Vexillarius"
 	total_positions = 2
@@ -143,7 +143,7 @@ Legion
 	title = "Centurion"
 	flag = LEGCENTURION
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = LEGION
 	faction = "Legion"
 	status = "Centurion"
 	total_positions = 1
@@ -188,7 +188,7 @@ Legion
 	title = "Legat"
 	flag = LEGLEGAT
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = LEGION
 	faction = "Legion"
 	status = "Legat"
 	total_positions = 1
@@ -236,7 +236,7 @@ Legion
 	title = "Veteran"
 	flag = LEGVET
 	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_flag = LEGION
 	faction = "Legion"
 	status = "Veteran"
 	total_positions = 10

@@ -1,5 +1,59 @@
+var/const/NCR					=(1<<0)
+var/const/NCRCOLONEL			=(1<<0)
+var/const/NCRMAJOR			    =(1<<1)
+var/const/NCRLIEUTENANT      	=(1<<2)
+var/const/NCRSERGEANT        	=(1<<3)
+var/const/NCRTROOPER        	=(1<<4)
+var/const/NCRRECRUIT        	=(1<<5)
+var/const/NCRVETRANGER			=(1<<6)
+var/const/NCRRANGER       		=(1<<7)
+var/const/NCRRECRANGER			=(1<<8)
 
-var/const/ENGSEC			=(1<<0)
+var/const/LEGION			=(1<<1)
+var/const/LEGLEGAT			=(1<<0)
+var/const/LEGCENTURION		=(1<<1)
+var/const/LEGVEX			=(1<<2)
+var/const/LEGDECAN			=(1<<3)
+var/const/LEGVET			=(1<<4)
+var/const/LEGIONARY			=(1<<5)
+
+var/const/BOS				=(1<<2)
+var/const/PALADIN			=(1<<0)
+var/const/KNIGHT			=(1<<1)
+var/const/SCRIBE			=(1<<2)
+var/const/INITIATE			=(1<<3)
+
+var/const/DEN				=(1<<3)
+var/const/SHERIFF			=(1<<0)
+var/const/SETTLER			=(1<<1)
+
+var/const/VAULT				=(1<<4)
+var/const/OVERSEER			=(1<<0)
+var/const/DOCTOR			=(1<<1)
+var/const/SCIENTIST			=(1<<2)
+var/const/OFFICER			=(1<<3)
+var/const/ENGINEER			=(1<<4)
+var/const/DWELLER			=(1<<5)
+var/const/AI				=(1<<6)
+var/const/CYBORG			=(1<<7)
+
+var/const/WASTELAND			=(1<<5)
+var/const/MERCENARY			=(1<<0)
+var/const/CULTLEADER		=(1<<1)
+var/const/WASTELANDER		=(1<<2)
+var/const/RAIDER			=(1<<3)
+var/const/WHORE				=(1<<4)
+var/const/PUSHER			=(1<<5)
+var/const/PREACHER			=(1<<6)
+
+var/const/ENCLAVE		=(1<<6)
+var/const/USCOMMANDER	=(1<<0)
+var/const/USMEDIC		=(1<<1)
+var/const/USPRIVATE		=(1<<2)
+var/const/USSCIENTIST	=(1<<3)
+var/const/USENGINEER	=(1<<4)
+var/const/USCOLONIST	=(1<<5)
+/*var/const/ENGSEC			=(1<<0)
 
 var/const/CAPTAIN			=(1<<0)
 //var/const/LEGRECRUIT		=(1<<1)
@@ -23,8 +77,6 @@ var/const/ENGINEER			=(1<<6)
 
 //var/const/ROBOTICIST		=(1<<8)
 
-var/const/AI				=(1<<9)
-var/const/CYBORG			=(1<<10)
 //var/const/LEGCENTURION		=(1<<11)
 //var/const/LEGLEGAT			=(1<<12)
 
@@ -85,73 +137,17 @@ var/const/NCRMAJOR			    =(1<<9)
 var/const/NCR        		=(1<<26)
 var/const/WASTELANDWHORE	=(1<<27)
 var/const/PUSHER			=(1<<28)
-var/const/PREACHER			=(1<<29)
-var/list/assistant_occupations = list(
-	"Assistant",
-//	"Chaplain",
-//	"Lawyer",
-//	"Librarian",
+var/const/PREACHER			=(1<<29)*/
+var/list/assistant_occupations = list()
+
+var/list/wasteland_occupations = list(
+	"Mercenary",
+	"Cult Leader",
 	"Wastelander",
-	"Raider"
-)
-
-
-var/list/command_positions = list(
-	"Overseer",
-//	"Head of Personnel",
-//	"Head of Security",
-//	"Chief Engineer",
-//	"Research Director",
-//	"Chief Medical Officer"
-)
-
-
-var/list/engineering_positions = list(
-//	"Chief Engineer",
-	"Engineer",
-//	"Atmospheric Technician",
-)
-
-
-var/list/medical_positions = list(
-//	"Chief Medical Officer",
-	"Doctor",
-//	"Geneticist",
-//	"Virologist",
-//	"Chemist"
-)
-
-
-var/list/science_positions = list(
-//	"Research Director",
-	"Scientist",
-//	"Roboticist"
-)
-
-
-var/list/supply_positions = list(
-//	"Head of Personnel",
-	"Sheriff",
-	"Settler",
+	"Raider",
 	"Whore",
 	"Pusher",
-	"Preacher",
-//	"Shaft Miner",
-
-)
-
-
-var/list/civilian_positions = list(
-//	"Bartender",
-//	"Botanist",
-//	"Cook",
-//	"Janitor",
-//	"Librarian",
-//	"Lawyer",
-//	"Chaplain",
-//	"Clown",
-//	"Mime",
-	"Dweller"
+	"Preacher"
 )
 
 var/list/legion_positions = list(
@@ -160,26 +156,63 @@ var/list/legion_positions = list(
 	"Vexillarius",
 	"Centurion",
 	"Legat",
-	"Prime Recruit",
+	"Prime Recruit"
 )
 
 var/list/ncr_positions = list(
 	"Colonel",
 	"Major",
 	"Lieutenant",
-	"Trooper",
-	"Veteran Ranger",
-	"Recruit Ranger",
-	"Ranger",
 	"Sergeant",
+	"Trooper",
 	"Recruit",
+	"Veteran Ranger",
+	"Ranger",
+	"Recruit Ranger"
 )
-var/list/security_positions = list(
-//	"Head of Security",
-	"Warden",
-//	"Detective",
-	"Officer"
+
+var/list/vault_occupations = list(
+	"Overseer",
+	"Engineer",
+	"Doctor",
+	"Officer",
+	"Scientist",
+	"Dweller"
 )
+
+var/list/bos_occupations = list(
+	"Paladin",
+	"Knight",
+	"Scribe",
+	"Initiate"
+)
+
+var/list/den_occupations = list(
+	"Sheriff",
+	"Settler"
+)
+
+var/list/enclave_occupations = list()
+
+var/list/command_positions = list()
+
+
+var/list/engineering_positions = list()
+
+
+var/list/medical_positions = list()
+
+
+var/list/science_positions = list()
+
+
+var/list/supply_positions = list()
+
+
+var/list/civilian_positions = list()
+
+
+var/list/security_positions = list()
 
 
 var/list/nonhuman_positions = list(

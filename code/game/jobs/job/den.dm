@@ -1,7 +1,7 @@
 /datum/job/sheriff
 	title = "Sheriff"
 	flag = SHERIFF
-	department_flag = CIVILIAN
+	department_flag = DEN
 	faction = "Den" //desert faction shall disable appearing as scavenger after readying
 	status = "Sheriff"
 	total_positions = 1
@@ -36,7 +36,7 @@
 /datum/job/settler
 	title = "Settler"
 	flag = SETTLER
-	department_flag = CIVILIAN
+	department_flag = DEN
 	faction = "Den" //desert faction shall disable appearing as scavenger after readying
 	status = "Member"
 	total_positions = 10

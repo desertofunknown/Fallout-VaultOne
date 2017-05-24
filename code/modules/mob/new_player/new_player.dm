@@ -239,7 +239,7 @@
 	if(!job)
 		return 0
 	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
-		if(job.title == "Assistant")
+		if(job.title == "Wastelander")
 			if(isnum(client.player_age) && client.player_age <= 14) //Newbies can always be assistants
 				return 1
 			for(var/datum/job/J in SSjob.occupations)
@@ -452,12 +452,13 @@
 			break*/
 
 	for(var/datum/job/job in SSjob.desert_occupations)
+		var/J_opPos = html_encode(job.total_positions - (job.total_positions - job.current_positions))
 		if(job.donaters && src.donator==1 && src.donatorrank>=job.donatorrank)
 			//dat += "<div class='clearBoth'>Spawn as a whitelist role:</div><br>"
-			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a><br>"
 		if(job.donaters==0)
 			//dat += "<div class='clearBoth'>Spawn as a wasteland role:</div><br>"
-			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
+			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a><br>"
 		//break
 
 	dat += "</div></div>"

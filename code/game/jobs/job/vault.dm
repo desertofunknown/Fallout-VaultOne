@@ -1,8 +1,8 @@
 /datum/job/captain
 	title = "Overseer"
-	flag = CAPTAIN
+	flag = OVERSEER
 	department_head = list("Centcom")
-	department_flag = ENGSEC
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Overseer"
 	total_positions = 1
@@ -58,12 +58,12 @@
 	title = "Engineer"
 	flag = ENGINEER
 	department_head = list("Chief Engineer")
-	department_flag = ENGSEC
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Dweller"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the chief engineer"
+	supervisors = "Overseer"
 	selection_color = "#005A20"
 
 	outfit = /datum/outfit/job/engineer
@@ -91,12 +91,12 @@
 	title = "Doctor"
 	flag = DOCTOR
 	department_head = list("Chief Medical Officer")
-	department_flag = MEDSCI
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Dweller"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the chief medical officer"
+	supervisors = "Overseer"
 	selection_color = "#005A20"
 
 	outfit = /datum/outfit/job/doctor
@@ -122,12 +122,12 @@
 	title = "Scientist"
 	flag = SCIENTIST
 	department_head = list("Research Director")
-	department_flag = MEDSCI
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Dweller"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the research director"
+	supervisors = "Overseer"
 	selection_color = "#005A20"
 
 	outfit = /datum/outfit/job/scientist
@@ -146,8 +146,8 @@
 /datum/job/officer
 	title = "Officer"
 	flag = OFFICER
-	department_head = list("Head of Security")
-	department_flag = ENGSEC
+	department_head = list("Overseer")
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Dweller"
 	total_positions = 4 //Handled in /datum/controller/occupations/proc/setup_officer_positions()
@@ -289,13 +289,13 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 
 /datum/job/assistant
 	title = "Dweller"
-	flag = ASSISTANT
-	department_flag = CIVILIAN
+	flag = DWELLER
+	department_flag = VAULT
 	faction = "Vault"
 	status = "Dweller"
 	total_positions = -1
 	spawn_positions = -1
-	supervisors = "absolutely everyone"
+	supervisors = "Overseer"
 	selection_color = "#005A20"
 	access = list()			//See /datum/job/assistant/get_access()
 	minimal_access = list()	//See /datum/job/assistant/get_access()

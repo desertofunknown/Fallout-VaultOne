@@ -4,7 +4,7 @@ Raider
 /datum/job/raider
 	title = "Raider"
 	flag = RAIDER
-	department_flag = CIVILIAN
+	department_flag = WASTELAND
 	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
 	status = "Raider"
 	total_positions = 3

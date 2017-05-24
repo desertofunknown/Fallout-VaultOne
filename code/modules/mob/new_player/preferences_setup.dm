@@ -22,8 +22,8 @@
 
 /datum/preferences/proc/update_preview_icon()
 	// Silicons only need a very basic preview since there is no customization for them.
-	if(job_engsec_high)
-		switch(job_engsec_high)
+	if(job_vault_high)
+		switch(job_vault_high)
 			if(AI)
 				preview_icon = icon('icons/mob/AI.dmi', "AI", SOUTH)
 				preview_icon.Scale(64, 64)
@@ -39,19 +39,26 @@
 
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob
-	var/highRankFlag = job_civilian_high | job_medsci_high | job_engsec_high
+	var/highRankFlag = job_ncr_high | job_legion_high | job_bos_high | job_wasteland_high | job_vault_high | job_enclave_high
 
-	if(job_civilian_low & ASSISTANT)
-		previewJob = SSjob.GetJob("Assistant")
+	if(job_wasteland_low & WASTELAND)
+		previewJob = SSjob.GetJob("Wastelander")
 	else if(highRankFlag)
 		var/highDeptFlag
-		if(job_civilian_high)
-			highDeptFlag = CIVILIAN
-		else if(job_medsci_high)
-			highDeptFlag = MEDSCI
-		else if(job_engsec_high)
-			highDeptFlag = ENGSEC
-
+		if(job_ncr_high)
+			highDeptFlag = NCR
+		else if(job_legion_high)
+			highDeptFlag = LEGION
+		else if(job_den_high)
+			highDeptFlag = DEN
+		else if(job_bos_high)
+			highDeptFlag = BOS
+		else if(job_wasteland_high)
+			highDeptFlag = WASTELAND
+		else if(job_vault_high)
+			highDeptFlag = VAULT
+		else if(job_enclave_high)
+			highDeptFlag = ENCLAVE
 		for(var/datum/job/job in SSjob.occupations)
 			if(job.flag == highRankFlag && job.department_flag == highDeptFlag)
 				previewJob = job

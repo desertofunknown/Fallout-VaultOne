@@ -295,18 +295,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Jobs
 	S["userandomjob"]		>> userandomjob
-	S["job_civilian_high"]	>> job_civilian_high
-	S["job_civilian_med"]	>> job_civilian_med
-	S["job_civilian_low"]	>> job_civilian_low
-	S["job_medsci_high"]	>> job_medsci_high
-	S["job_medsci_med"]		>> job_medsci_med
-	S["job_medsci_low"]		>> job_medsci_low
-	S["job_engsec_high"]	>> job_engsec_high
-	S["job_engsec_med"]		>> job_engsec_med
-	S["job_engsec_low"]		>> job_engsec_low
 	S["job_ncr_high"]		>> job_ncr_high
 	S["job_ncr_med"]		>> job_ncr_med
 	S["job_ncr_low"]		>> job_ncr_low
+	S["job_legion_high"]	>> job_legion_high
+	S["job_legion_med"]		>> job_legion_med
+	S["job_legion_low"]		>> job_legion_low
+	S["job_bos_high"]		>> job_bos_high
+	S["job_bos_med"]		>> job_bos_med
+	S["job_bos_low"]		>> job_bos_low
+	S["job_den_high"]		>> job_den_high
+	S["job_den_med"]		>> job_den_med
+	S["job_den_low"]		>> job_den_low
+	S["job_wasteland_high"]		>> job_wasteland_high
+	S["job_wasteland_med"]		>> job_wasteland_med
+	S["job_wasteland_low"]		>> job_wasteland_low
+	S["job_vault_high"]		>> job_vault_high
+	S["job_vault_med"]		>> job_vault_med
+	S["job_vault_low"]		>> job_vault_low
+	S["job_enclave_high"]		>> job_enclave_high
+	S["job_enclave_med"]		>> job_enclave_med
+	S["job_enclave_low"]		>> job_enclave_low
 	//try to fix any outdated data if necessary
 	if(needs_update >= 0)
 		update_character(needs_update)		//needs_update == savefile_version if we need an update (positive integer)
@@ -350,18 +359,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["body_markings"] 	= sanitize_inlist(features["body_markings"], body_markings_list)
 
 	userandomjob	= sanitize_integer(userandomjob, 0, 1, initial(userandomjob))
-	job_civilian_high = sanitize_integer(job_civilian_high, 0, 65535, initial(job_civilian_high))
-	job_civilian_med = sanitize_integer(job_civilian_med, 0, 65535, initial(job_civilian_med))
-	job_civilian_low = sanitize_integer(job_civilian_low, 0, 65535, initial(job_civilian_low))
-	job_medsci_high = sanitize_integer(job_medsci_high, 0, 65535, initial(job_medsci_high))
-	job_medsci_med = sanitize_integer(job_medsci_med, 0, 65535, initial(job_medsci_med))
-	job_medsci_low = sanitize_integer(job_medsci_low, 0, 65535, initial(job_medsci_low))
-	job_engsec_high = sanitize_integer(job_engsec_high, 0, 65535, initial(job_engsec_high))
-	job_engsec_med = sanitize_integer(job_engsec_med, 0, 65535, initial(job_engsec_med))
-	job_engsec_low = sanitize_integer(job_engsec_low, 0, 65535, initial(job_engsec_low))
 	job_ncr_high = sanitize_integer(job_ncr_high, 0, 65535, initial(job_ncr_high))
 	job_ncr_med = sanitize_integer(job_ncr_med, 0, 65535, initial(job_ncr_med))
 	job_ncr_low = sanitize_integer(job_ncr_low, 0, 65535, initial(job_ncr_low))
+	job_legion_high = sanitize_integer(job_legion_high, 0, 65535, initial(job_legion_high))
+	job_legion_med = sanitize_integer(job_legion_med, 0, 65535, initial(job_legion_med))
+	job_legion_low = sanitize_integer(job_legion_low, 0, 65535, initial(job_legion_low))
+	job_bos_high = sanitize_integer(job_bos_high, 0, 65535, initial(job_bos_high))
+	job_bos_med = sanitize_integer(job_bos_med, 0, 65535, initial(job_bos_med))
+	job_bos_low = sanitize_integer(job_bos_low, 0, 65535, initial(job_bos_low))
+	job_enclave_high = sanitize_integer(job_enclave_high, 0, 65535, initial(job_enclave_high))
+	job_enclave_med = sanitize_integer(job_enclave_med, 0, 65535, initial(job_enclave_med))
+	job_enclave_low = sanitize_integer(job_enclave_low, 0, 65535, initial(job_enclave_low))
+	job_vault_high = sanitize_integer(job_vault_high, 0, 65535, initial(job_vault_high))
+	job_vault_med = sanitize_integer(job_vault_med, 0, 65535, initial(job_vault_med))
+	job_vault_low = sanitize_integer(job_vault_low, 0, 65535, initial(job_vault_low))
+	job_wasteland_high = sanitize_integer(job_wasteland_high, 0, 65535, initial(job_wasteland_high))
+	job_wasteland_med = sanitize_integer(job_wasteland_med, 0, 65535, initial(job_wasteland_med))
+	job_wasteland_low = sanitize_integer(job_wasteland_low, 0, 65535, initial(job_wasteland_low))
+	job_den_high = sanitize_integer(job_den_high, 0, 65535, initial(job_den_high))
+	job_den_med = sanitize_integer(job_den_med, 0, 65535, initial(job_den_med))
+	job_den_low = sanitize_integer(job_den_low, 0, 65535, initial(job_den_low))
 	return 1
 
 /datum/preferences/proc/save_character()
@@ -408,18 +426,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	//Jobs
 	S["userandomjob"]		<< userandomjob
-	S["job_civilian_high"]	<< job_civilian_high
-	S["job_civilian_med"]	<< job_civilian_med
-	S["job_civilian_low"]	<< job_civilian_low
-	S["job_medsci_high"]	<< job_medsci_high
-	S["job_medsci_med"]		<< job_medsci_med
-	S["job_medsci_low"]		<< job_medsci_low
-	S["job_engsec_high"]	<< job_engsec_high
-	S["job_engsec_med"]		<< job_engsec_med
-	S["job_engsec_low"]		<< job_engsec_low
 	S["job_ncr_high"]		<< job_ncr_high
 	S["job_ncr_med"]		<< job_ncr_med
 	S["job_ncr_low"]		<< job_ncr_low
+	S["job_legion_high"]	>> job_legion_high
+	S["job_legion_med"]		>> job_legion_med
+	S["job_legion_low"]		>> job_legion_low
+	S["job_bos_high"]		>> job_bos_high
+	S["job_bos_med"]		>> job_bos_med
+	S["job_bos_low"]		>> job_bos_low
+	S["job_den_high"]		>> job_den_high
+	S["job_den_med"]		>> job_den_med
+	S["job_den_low"]		>> job_den_low
+	S["job_wasteland_high"]		>> job_wasteland_high
+	S["job_wasteland_med"]		>> job_wasteland_med
+	S["job_wasteland_low"]		>> job_wasteland_low
+	S["job_vault_high"]		>> job_vault_high
+	S["job_vault_med"]		>> job_vault_med
+	S["job_vault_low"]		>> job_vault_low
+	S["job_enclave_high"]		>> job_enclave_high
+	S["job_enclave_med"]		>> job_enclave_med
+	S["job_enclave_low"]		>> job_enclave_low
 	return 1
 
 

@@ -1,7 +1,7 @@
 /datum/job/wastelander
 	title = "Wastelander"
 	flag = WASTELANDER
-	department_flag = CIVILIAN
+	department_flag = WASTELAND
 	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
 	status = "Wastelander"
 	total_positions = 4
@@ -25,8 +25,8 @@ Wastelandwhore
 */
 /datum/job/wastelandwhore
 	title = "Whore"
-	flag = WASTELANDWHORE
-	department_flag = CIVILIAN
+	flag = WHORE
+	department_flag = WASTELAND
 	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
 	total_positions = 3
 	spawn_positions = 3 //does not matter for late join
@@ -60,7 +60,7 @@ Wastelandpusher
 /datum/job/pusher
 	title = "Pusher"
 	flag = PUSHER
-	department_flag = CIVILIAN
+	department_flag = WASTELAND
 	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
 	total_positions = 1
 	spawn_positions = 1 //does not matter for late join
@@ -119,7 +119,7 @@ Chaplain
 	title = "Preacher"
 	flag = PREACHER
 	//department_head = list("Head of Personnel")
-	department_flag = CIVILIAN
+	department_flag = WASTELAND
 	faction = "Vault"
 	total_positions = 1
 	spawn_positions = 1

@@ -16,7 +16,7 @@
 	var/server_name = null				// server name (the name of the game window)
 	var/station_name = null				// station name (the name of the station in-game)
 	var/server_suffix = 0				// generate numeric suffix based on server port
-	var/lobby_countdown = 120			// In between round countdown.
+	var/lobby_countdown = 5			// In between round countdown.
 	var/round_end_countdown = 25		// Post round murder death kill countdown
 
 	var/log_ooc = 0						// log OOC channel
@@ -52,7 +52,7 @@
 	var/min_sunlight = 0.3
 	var/time_of_day_rate = 18000
 
-	var/hostedby = "Enclave"
+	var/hostedby = "Godsring"
 	var/respawn = 1
 	var/guest_jobban = 1
 	var/usewhitelist = 0
@@ -65,10 +65,10 @@
 	var/sec_start_brig = 0				//makes sec start in brig or dept sec posts
 
 	var/server
-	var/banappeals = "https://cavecrawlers.com/forum/viewforum.php?f=54"
+	var/banappeals = "https://fallout13.us/viewforum.php?f=54&sid=3e22d9ba8496594efce8d590d3260e21"
 	var/wikiurl = "http://www.fallss.esy.es/wiki/doku.php?id=ru:start" // default wiki link
-	var/forumurl = "https://cavecrawlers.com" // default forums
-	var/rulesurl = "https://cavecrawlers.com/forum/viewtopic.php?f=11&t=4" // default rules
+	var/forumurl = "https://fallout13.us/" // default forums
+	var/rulesurl = "https://fallout13.us/viewtopic.php?f=12&t=128&sid=3e22d9ba8496594efce8d590d3260e21" // default rules
 	var/githuburl = "https://bitbucket.org/Jackerzz/fallout/issues?status=new&status=open" //default github
 	var/discordurl = "https://discord.gg/aQ8ch8x"
 	var/forbid_singulo_possession = 0
@@ -126,12 +126,12 @@
 	var/no_summon_magic		//Fun
 	var/no_summon_events	//Allowed
 
-	var/alert_desc_green = "All threats to the station have passed. Security may not have weapons visible, privacy laws are once again fully enforced."
-	var/alert_desc_blue_upto = "The station has received reliable information about possible hostile activity on the station. Security staff may have weapons visible, random searches are permitted."
-	var/alert_desc_blue_downto = "The immediate threat has passed. Security may no longer have weapons drawn at all times, but may continue to have them visible. Random searches are still allowed."
-	var/alert_desc_red_upto = "There is an immediate serious threat to the station. Security may have weapons unholstered at all times. Random searches are allowed and advised."
-	var/alert_desc_red_downto = "The station's destruction has been averted. There is still however an immediate serious threat to the station. Security may have weapons unholstered at all times, random searches are allowed and advised."
-	var/alert_desc_delta = "Destruction of the station is imminent. All crew are instructed to obey all instructions given by heads of staff. Any violations of these orders can be punished by death. This is not a drill."
+	var/alert_desc_green = "Attention region all threats have passed."
+	var/alert_desc_blue_upto = "Attention region a moderate threat has been found. Code Blue."
+	var/alert_desc_blue_downto = "Attention region the serious threat has passed we will monitor the sitation. Code Blue."
+	var/alert_desc_red_upto = "Attention region a serious threat has been found. Code Red."
+	var/alert_desc_red_downto = "Attention the regions destruction has been adverted, assume the region is still at serious risk. Code Red."
+	var/alert_desc_delta = "Attention the regions desctruction is imminent. Code Delta. This is not a drill."
 
 	var/health_threshold_crit = 0
 	var/health_threshold_dead = -100
@@ -240,13 +240,13 @@
 		if(type == "config")
 			switch(name)
 				if("admin_legacy_system")
-					config.admin_legacy_system = 1
+					config.admin_legacy_system = 0
 				if("ban_legacy_system")
-					config.ban_legacy_system = 1
+					config.ban_legacy_system = 0
 				if("use_age_restriction_for_jobs")
 					config.use_age_restriction_for_jobs = 1
 				if("lobby_countdown")
-					config.lobby_countdown = 50
+					config.lobby_countdown = 5
 				if("round_end_countdown")
 					config.round_end_countdown = text2num(value)
 				if("log_ooc")

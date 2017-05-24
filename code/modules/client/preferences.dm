@@ -63,21 +63,33 @@ var/list/preferences_datums = list()
 	var/icon/preview_icon = null
 
 		//Jobs, uses bitflags
-	var/job_civilian_high = 0
-	var/job_civilian_med = 0
-	var/job_civilian_low = 0
-
-	var/job_medsci_high = 0
-	var/job_medsci_med = 0
-	var/job_medsci_low = 0
-
-	var/job_engsec_high = 0
-	var/job_engsec_med = 0
-	var/job_engsec_low = 0
-
 	var/job_ncr_high = 0
 	var/job_ncr_med = 0
 	var/job_ncr_low = 0
+
+	var/job_legion_high = 0
+	var/job_legion_med = 0
+	var/job_legion_low = 0
+
+	var/job_bos_high = 0
+	var/job_bos_med = 0
+	var/job_bos_low = 0
+
+	var/job_wasteland_high = 0
+	var/job_wasteland_med = 0
+	var/job_wasteland_low = 0
+
+	var/job_enclave_high = 0
+	var/job_enclave_med = 0
+	var/job_enclave_low = 0
+
+	var/job_den_high = 0
+	var/job_den_med = 0
+	var/job_den_low = 0
+
+	var/job_vault_high = 0
+	var/job_vault_med = 0
+	var/job_vault_low = 0
 
 		// Want randomjob if preferences already filled - Donkie
 	var/userandomjob = 1 //defaults to 1 for fewer assistants
@@ -457,7 +469,7 @@ var/list/preferences_datums = list()
 			var/available_in_days = job.available_in_days(user.client)
 			HTML += "<font color=red>[rank]</font></td><td><font color=red> \[IN [(available_in_days)] DAYS\]</font></td></tr>"
 			continue
-		if((job_civilian_low & ASSISTANT) && (rank != "Assistant") && !jobban_isbanned(user, "Assistant"))
+		if((job_wasteland_low & WASTELAND) && (rank != "Wastelander") && !jobban_isbanned(user, "Wastelander"))
 			HTML += "<font color=orange>[rank]</font></td><td></td></tr>"
 			continue
 		if(config.enforce_human_authority && !user.client.prefs.pref_species.qualifies_for_rank(rank, user.client.prefs.features))
@@ -502,8 +514,8 @@ var/list/preferences_datums = list()
 
 		HTML += "<a class='white' href='?_src_=prefs;preference=job;task=setJobLevel;level=[prefUpperLevel];text=[rank]' oncontextmenu='javascript:return setJobPrefRedirect([prefLowerLevel], \"[rank]\");'>"
 
-		if(rank == "Assistant")//Assistant is special
-			if(job_civilian_low & ASSISTANT)
+		if(rank == "Wastelander")//Assistant is special
+			if(job_wasteland_low & WASTELAND)
 				HTML += "<font color=green>Yes</font>"
 			else
 				HTML += "<font color=red>No</font>"
@@ -537,56 +549,13 @@ var/list/preferences_datums = list()
 
 	if (level == 1) // to high
 		// remove any other job(s) set to high
-		job_civilian_med |= job_civilian_high
-		job_engsec_med |= job_engsec_high
-		job_medsci_med |= job_medsci_high
-		job_civilian_high = 0
-		job_engsec_high = 0
-		job_medsci_high = 0
 		job_ncr_high = 0
+		job_bos_high = 0
+		job_legion_high = 0
+		job_den_high = 0
+		job_wasteland_high = 0
+		job_enclave_high = 0
 
-	if (job.department_flag == CIVILIAN)
-		job_civilian_low &= ~job.flag
-		job_civilian_med &= ~job.flag
-		job_civilian_high &= ~job.flag
-
-		switch(level)
-			if (1)
-				job_civilian_high |= job.flag
-			if (2)
-				job_civilian_med |= job.flag
-			if (3)
-				job_civilian_low |= job.flag
-
-		return 1
-	else if (job.department_flag == ENGSEC)
-		job_engsec_low &= ~job.flag
-		job_engsec_med &= ~job.flag
-		job_engsec_high &= ~job.flag
-
-		switch(level)
-			if (1)
-				job_engsec_high |= job.flag
-			if (2)
-				job_engsec_med |= job.flag
-			if (3)
-				job_engsec_low |= job.flag
-
-		return 1
-	else if (job.department_flag == MEDSCI)
-		job_medsci_low &= ~job.flag
-		job_medsci_med &= ~job.flag
-		job_medsci_high &= ~job.flag
-
-		switch(level)
-			if (1)
-				job_medsci_high |= job.flag
-			if (2)
-				job_medsci_med |= job.flag
-			if (3)
-				job_medsci_low |= job.flag
-
-		return 1
 	else if (job.department_flag == NCR)
 		job_ncr_low &= ~job.flag
 		job_ncr_med &= ~job.flag
@@ -599,6 +568,96 @@ var/list/preferences_datums = list()
 				job_ncr_med |= job.flag
 			if (3)
 				job_ncr_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == BOS)
+		job_bos_low &= ~job.flag
+		job_bos_med &= ~job.flag
+		job_bos_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_bos_high |= job.flag
+			if (2)
+				job_bos_med |= job.flag
+			if (3)
+				job_bos_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == LEGION)
+		job_legion_low &= ~job.flag
+		job_legion_med &= ~job.flag
+		job_legion_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_legion_high |= job.flag
+			if (2)
+				job_legion_med |= job.flag
+			if (3)
+				job_legion_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == WASTELAND)
+		job_ncr_low &= ~job.flag
+		job_ncr_med &= ~job.flag
+		job_ncr_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_wasteland_high |= job.flag
+			if (2)
+				job_wasteland_med |= job.flag
+			if (3)
+				job_wasteland_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == DEN)
+		job_den_low &= ~job.flag
+		job_den_med &= ~job.flag
+		job_den_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_den_high |= job.flag
+			if (2)
+				job_den_med |= job.flag
+			if (3)
+				job_den_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == ENCLAVE)
+		job_enclave_low &= ~job.flag
+		job_enclave_med &= ~job.flag
+		job_enclave_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_enclave_high |= job.flag
+			if (2)
+				job_enclave_med |= job.flag
+			if (3)
+				job_enclave_low |= job.flag
+
+		return 1
+
+	else if (job.department_flag == VAULT)
+		job_vault_low &= ~job.flag
+		job_vault_med &= ~job.flag
+		job_vault_high &= ~job.flag
+
+		switch(level)
+			if (1)
+				job_vault_high |= job.flag
+			if (2)
+				job_vault_med |= job.flag
+			if (3)
+				job_vault_low |= job.flag
 
 		return 1
 
@@ -619,11 +678,11 @@ var/list/preferences_datums = list()
 		ShowChoices(user)
 		return
 
-	if(role == "Assistant")
-		if(job_civilian_low & job.flag)
-			job_civilian_low &= ~job.flag
+	if(role == "Wastelander")
+		if(job_wasteland_low & job.flag)
+			job_wasteland_low &= ~job.flag
 		else
-			job_civilian_low |= job.flag
+			job_wasteland_low |= job.flag
 		SetChoices(user)
 		return 1
 
@@ -634,50 +693,37 @@ var/list/preferences_datums = list()
 
 
 /datum/preferences/proc/ResetJobs()
-
-	job_civilian_high = 0
-	job_civilian_med = 0
-	job_civilian_low = 0
-
-	job_medsci_high = 0
-	job_medsci_med = 0
-	job_medsci_low = 0
-
-	job_engsec_high = 0
-	job_engsec_med = 0
-	job_engsec_low = 0
-
 	job_ncr_high = 0
 	job_ncr_med = 0
 	job_ncr_low = 0
 
+	job_legion_high = 0
+	job_legion_med = 0
+	job_legion_low = 0
+
+	job_bos_high = 0
+	job_bos_med = 0
+	job_bos_low = 0
+
+	job_wasteland_high = 0
+	job_wasteland_med = 0
+	job_wasteland_low = 0
+
+	job_enclave_high = 0
+	job_enclave_med = 0
+	job_enclave_low = 0
+
+	job_den_high = 0
+	job_den_med = 0
+	job_den_low = 0
+
+	job_vault_high = 0
+	job_vault_med = 0
+	job_vault_low = 0
+
 /datum/preferences/proc/GetJobDepartment(datum/job/job, level)
 	if(!job || !level)	return 0
 	switch(job.department_flag)
-		if(CIVILIAN)
-			switch(level)
-				if(1)
-					return job_civilian_high
-				if(2)
-					return job_civilian_med
-				if(3)
-					return job_civilian_low
-		if(MEDSCI)
-			switch(level)
-				if(1)
-					return job_medsci_high
-				if(2)
-					return job_medsci_med
-				if(3)
-					return job_medsci_low
-		if(ENGSEC)
-			switch(level)
-				if(1)
-					return job_engsec_high
-				if(2)
-					return job_engsec_med
-				if(3)
-					return job_engsec_low
 		if(NCR)
 			switch(level)
 				if(1)
@@ -686,6 +732,57 @@ var/list/preferences_datums = list()
 					return job_ncr_med
 				if(3)
 					return job_ncr_low
+		if(LEGION)
+			switch(level)
+				if(1)
+					return job_legion_high
+				if(2)
+					return job_legion_med
+				if(3)
+					return job_legion_low
+		if(BOS)
+			switch(level)
+				if(1)
+					return job_bos_high
+				if(2)
+					return job_bos_med
+				if(3)
+					return job_bos_low
+		if(DEN)
+			switch(level)
+				if(1)
+					return job_den_high
+				if(2)
+					return job_den_med
+				if(3)
+					return job_den_low
+
+		if(WASTELAND)
+			switch(level)
+				if(1)
+					return job_wasteland_high
+				if(2)
+					return job_wasteland_med
+				if(3)
+					return job_wasteland_low
+
+		if(VAULT)
+			switch(level)
+				if(1)
+					return job_vault_high
+				if(2)
+					return job_vault_med
+				if(3)
+					return job_vault_low
+
+		if(ENCLAVE)
+			switch(level)
+				if(1)
+					return job_enclave_high
+				if(2)
+					return job_enclave_med
+				if(3)
+					return job_enclave_low
 	return 0
 
 /datum/preferences/proc/process_link(mob/user, list/href_list)
