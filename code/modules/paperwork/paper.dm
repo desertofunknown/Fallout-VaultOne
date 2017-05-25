@@ -288,7 +288,7 @@
 
 	if(istype(P, /obj/item/weapon/pen) || istype(P, /obj/item/toy/crayon))
 		if(user.IsAdvancedToolUser())
-			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links]<HR>[stamps]</BODY></HTML>", "window=[name]")
+			user << "<span class='warning'>[P]'s ink fades away shortly after it is written.</span>"
 			return
 		else
 			user << "<span class='notice'>You don't know how to read or write.</span>"
