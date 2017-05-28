@@ -80,17 +80,18 @@
 				user.dna.add_mutation(LASEREYES)
 				user.dna.add_mutation(COLDRES)
 				user.dna.add_mutation(XRAY)
-				user.set_species(/datum/species/shadow)
+				user.set_species(/datum/species/ghoul)
+				user.ear_deaf=1
 			if("Wealth")
 				user << "<B>Your wish is granted, but at a terrible cost...</B>"
 				user << "The Wish Granter punishes you for your selfishness, claiming your soul and warping your body to match the darkness in your heart."
 				new /obj/structure/closet/syndicate/resources/everything(loc)
-				user.set_species(/datum/species/shadow)
+				user.set_species(/datum/species/ghoul)
 			if("Immortality")
 				user << "<B>Your wish is granted, but at a terrible cost...</B>"
 				user << "The Wish Granter punishes you for your selfishness, claiming your soul and warping your body to match the darkness in your heart."
 				user.verbs += /mob/living/carbon/proc/immortality
-				user.set_species(/datum/species/shadow)
+				user.set_species(/datum/species/ghoul)
 			if("To Kill")
 				user << "<B>Your wish is granted, but at a terrible cost...</B>"
 				user << "The Wish Granter punishes you for your wickedness, claiming your soul and warping your body to match the darkness in your heart."
@@ -98,13 +99,14 @@
 				user.mind.special_role = "traitor"
 				var/datum/objective/hijack/hijack = new
 				hijack.owner = user.mind
+				user.dna.add_mutation(HULK)
 				user.mind.objectives += hijack
 				user << "<B>Your inhibitions are swept away, the bonds of loyalty broken, you are free to murder as you please!</B>"
 				var/obj_count = 1
 				for(var/datum/objective/OBJ in user.mind.objectives)
 					user << "<B>Objective #[obj_count]</B>: [OBJ.explanation_text]"
 					obj_count++
-				user.set_species(/datum/species/shadow)
+				user.set_species(/datum/species/ghoul)
 			if("Peace")
 				user << "<B>Whatever alien sentience that the Wish Granter possesses is satisfied with your wish. There is a distant wailing as the last of the Faithless begin to die, then silence.</B>"
 				user << "You feel as if you just narrowly avoided a terrible fate..."
@@ -112,6 +114,7 @@
 					F.health = -10
 					F.stat = 2
 					F.icon_state = "faithless_dead"
+				user.set_species(/datum/species/abductor)
 
 
 ///////////////Meatgrinder//////////////
