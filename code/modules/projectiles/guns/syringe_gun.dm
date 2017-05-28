@@ -89,3 +89,13 @@
 	force = 2 //Also very weak because it's smaller
 	suppressed = 1 //Softer fire sound
 	can_unsuppress = 0 //Permanently silenced
+
+/obj/item/weapon/gun/syringe/syringer
+	name = "syringer rifle"
+	desc = "A scoped syringe rifle."
+	icon_state = "syringer"
+	item_state = "shotgun"
+	w_class = 4
+	zoomable = TRUE
+	zoom_amt = 7
+

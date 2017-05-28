@@ -234,6 +234,8 @@
 
 /obj/item/clothing/head/helmet/f13/raider/blastmaster
 	name = "raider blastmaster helmet"
+	icon_state = "blastmaster"
+	item_state = "blastmaster"
 	burn_state = FIRE_PROOF
 	armor = list(melee = 30, bullet = 10, laser = 0,energy = 0, bomb = 10, bio = 50, rad = 30)
 

@@ -66,6 +66,14 @@
 	flags = NOSLIP
 	armor = list(melee = 40, bullet = 30, laser = 25, energy = 25, bomb = 50, bio = 30, rad = 30)
 
+/obj/item/clothing/shoes/combat/plate
+	name = "plated combat boots"
+	desc = "A pair of boots with armored plates on them"
+	armor = list(melee = 40, bullet = 30, laser = 25, energy = 25, bomb = 50, bio = 30, rad = 30)
+	icon_state = "legionmetal"
+	item_state = "legionmetal"
+	item_color = "cult"
+
 /obj/item/clothing/shoes/sandal
 	desc = "A pair of rather plain, wooden sandals."
 	name = "sandals"
