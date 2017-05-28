@@ -371,7 +371,7 @@
 	put_on_delay = 30
 	strip_delay = 30
 
-/obj/item/clothing/suit/armor/f13/supafly
+/obj/item/clothing/suit/armor/f13/raider
 	name = "supa-fly raider armor"
 	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
 	icon_state = "supafly"
@@ -382,7 +382,20 @@
 	put_on_delay = 20
 	strip_delay = 40
 
-/obj/item/clothing/suit/armor/f13/yankee
+/obj/item/clothing/suit/armor/f13/raider/sadist
+	name = "raider sadist armor"
+	icon_state = "sadist"
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/f13/raider/blastmaster
+	name = "raider blastmaster armor"
+	icon_state = "blastmaster"
+	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
+	burn_state = FIRE_PROOF
+	flash_protect = 2
+	flags_inv = HIDEJUMPSUIT
+
+/obj/item/clothing/suit/armor/f13/raider/yankee
 	name = "yankee raider armor"
 	desc = "A set of armor made from football player protective wear. Together we play."
 	icon_state = "yankee"
@@ -498,89 +511,69 @@
 	put_on_delay = 60
 	strip_delay = 60
 
-/obj/item/clothing/suit/armor/power_armor/ncr
-	name = "NCR power armor"
-	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors."
-	icon_state = "t45bpowerarmor"
-	item_state = "t45bpowerarmor"
+/obj/item/clothing/suit/armor/f13/power_armor
+	unacidable = 1
+	slowdown = 1
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 60, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 60)
-	slowdown = 2
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
+	flags_inv = HIDEJUMPSUIT
 	put_on_delay = 100
 	strip_delay = 200
 
-/obj/item/clothing/suit/armor/f13/t45bpowerarmor
-	name = "NCR salvaged power armor"
+/obj/item/clothing/suit/armor/f13/power_armor/t45b
+	name = "T-45b power armor"
+	desc = "It's a set of T-45b power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors."
+	icon_state = "t45bpowerarmor"
+	item_state = "t45bpowerarmor"
+	armor = list(melee = 70, bullet = 60, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 60)
+	slowdown = 2
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45b/salvaged
+	name = "Salvaged T-45b power armor"
 	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors.<br>Due to the lack of servomotors in the limbs, this armor is so heavy that it feels like you're carrying a brahmin on your back!"
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
+	armor = list(melee = 60, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
 	slowdown = 3
-	ispowerarmor = 1
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 100
-	strip_delay = 100
-/obj/item/clothing/suit/armor/power_armor/t45d
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 70, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 70)
-	slowdown = 1
-	ispowerarmor = 1
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	put_on_delay = 100
-	strip_delay = 200
-/obj/item/clothing/suit/armor/f13/t45dpowerarmor/salvaged
+
+/obj/item/clothing/suit/armor/f13/power_armor/t45d/salvaged
+	name = "Salvaged T-45d power armor"
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
 	name = "Salvaged T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle. This suit appears worn and battered."
-	ispowerarmor = 1
 	armor = list(melee = 60, bullet = 50, laser = 50, energy = 50, bomb = 60, bio = 100, rad = 80)
+	slowdown = 3
 
-/obj/item/clothing/suit/armor/power_armor/advanced
-	name = "advanced power armor Mk I"
+/obj/item/clothing/suit/armor/f13/power_armor/advanced
+	name = "Advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
-	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 1
-	ispowerarmor = 1
+	icon_state = "advpowerarmor"
+	item_state = "advpowerarmor"
 	armor = list(melee = 80, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 80)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	unacidable = 1
-	put_on_delay = 100
-	strip_delay = 200
 
-/obj/item/clothing/suit/armor/power_armor/superadvanced
-	name = "advanced power armor Mk II"
+/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
+	name = "Advanced power armor MKII"
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
-	icon_state = "t45dpowerarmor"
-	item_state = "t45dpowerarmor"
+	icon_state = "advpowerarmor"
+	item_state = "advpowerarmor"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 1
-	ispowerarmor = 1
 	armor = list(melee = 90, bullet = 80, laser = 80, energy = 80, bomb = 80, bio = 100, rad = 90)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	unacidable = 1
-	put_on_delay = 100
-	strip_delay = 200
+
+/obj/item/clothing/suit/armor/f13/power_armor/t51b
+	name = "T-51b power armor"
+	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
+	icon_state = "t51bpowerarmor"
+	item_state = "t51bpowerarmor"
+	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
 
 //Fallout 13
 
@@ -593,28 +586,6 @@
 	armor = list(melee = 30, bullet = 15, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0)
 	put_on_delay = 30
 	strip_delay = 30
-
-/obj/item/clothing/suit/armor/f13/supafly
-	name = "supa-fly raider armor"
-	desc = "Fabulous mutant powers were revealed to me the day I held aloft my bumper sword and said...<br>BY THE POWER OF NUKA-COLA, I AM RAIDER MAN!"
-	icon_state = "supafly"
-	item_state = "supafly"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 50, bullet = 20, laser = 5, energy = 5, bomb = 5, bio = 0, rad = 0)
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 20
-	strip_delay = 40
-
-/obj/item/clothing/suit/armor/f13/yankee
-	name = "yankee raider armor"
-	desc = "A set of armor made from football player protective wear. Together we play."
-	icon_state = "yankee"
-	item_state = "yankee"
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	armor = list(melee = 60, bullet = 20, laser = 5, energy = 5, bomb = 5, bio = 0, rad = 0)
-	flags_inv = HIDEJUMPSUIT
-	put_on_delay = 40
-	strip_delay = 40
 
 /obj/item/clothing/suit/armor/f13/leatherarmor
 	name = "leather armor"
@@ -730,23 +701,6 @@
 	icon_state = "elite_riot"
 	item_state = "elite_riot"
 	armor = list(melee = 75, bullet = 75, laser = 60, energy = 35, bomb = 35, bio = 0, rad = 100)
-
-/obj/item/clothing/suit/armor/f13/t51bpowerarmor
-	name = "t51b power armor"
-	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
-	icon_state = "t51bpowerarmor"
-	item_state = "t51bpowerarmor"
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	slowdown = 1
-	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
-	flags = STOPSPRESSUREDMAGE
-	flags_inv = HIDEJUMPSUIT
-	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
-	put_on_delay = 100
-	strip_delay = 200
-
 
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR vest"

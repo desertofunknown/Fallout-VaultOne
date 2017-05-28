@@ -33,10 +33,15 @@ Raider
 	uniform = pick(/obj/item/clothing/under/f13/mercadv,\
 		/obj/item/clothing/under/f13/merccharm)
 	shoes = /obj/item/clothing/shoes/jackboots
-	suit = pick(/obj/item/clothing/suit/armor/f13/supafly,\
+	suit = pick(/obj/item/clothing/head/helmet/f13/raider,\
 		/obj/item/clothing/suit/armor/f13/bmetalarmor,\
-		/obj/item/clothing/suit/armor/f13/yankee)
-	head = /obj/item/clothing/head/helmet/f13/supaflyhelmet
+		/obj/item/clothing/suit/armor/f13/raider/yankee, \
+		/obj/item/clothing/suit/armor/f13/raider/sadist, \
+		/obj/item/clothing/suit/armor/f13/raider/blastmaster)
+	head = pick(/obj/item/clothing/head/helmet/f13/raider,\
+		/obj/item/clothing/head/helmet/f13/raider/arclight,\
+		/obj/item/clothing/head/helmet/f13/raider/blastmaster,\
+		/obj/item/clothing/head/helmet/f13/raider/yankee)
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm

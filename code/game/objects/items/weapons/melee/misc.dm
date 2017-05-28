@@ -63,7 +63,7 @@
 			H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
 								   "<span class='userdanger'>[pick(fluffmessages)]</span>")
 			playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
-			H.adjustStaminaLoss(rand(13,20))
+			H.adjustStaminaLoss(rand(25,40))
 			if(prob(10))
 				H.visible_message("<span class='warning'>[H] collapses!</span>", \
 									   "<span class='userdanger'>Your legs give out!</span>")
@@ -210,7 +210,7 @@
 				H.visible_message("<span class='warning'>[pick(fluffmessages)]</span>", \
 									   "<span class='userdanger'>[pick(fluffmessages)]</span>")
 				playsound(get_turf(user), 'sound/effects/woodhit.ogg', 75, 1, -1)
-				H.adjustStaminaLoss(rand(13,20))
+				H.adjustStaminaLoss(rand(25,40))
 				if(prob(10))
 					H.visible_message("<span class='warning'>[H] collapses!</span>", \
 										   "<span class='userdanger'>Your legs give out!</span>")

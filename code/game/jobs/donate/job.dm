@@ -6,7 +6,7 @@ var/const/BOSS			=(1<<54)
 var/const/BOSP			=(1<<55)*/
 //SourcePony
 /datum/job/messiah
-	title = "Cult Leader"
+	title = "Messiah"
 	flag = CULTLEADER
 	department_head = list("nobody")
 	department_flag = WASTELAND
@@ -27,18 +27,14 @@ var/const/BOSP			=(1<<55)*/
 /datum/outfit/job/messiah
 	name = "Messiah"
 	id = null
-	gloves = /obj/item/clothing/gloves/combat
-	uniform = /obj/item/clothing/under/f13/cowboyb
+	gloves = /obj/item/clothing/gloves/fingerless
+	uniform = /obj/item/clothing/under/rank/chaplain
 	shoes = /obj/item/clothing/shoes/combat/swat
-	suit = /obj/item/clothing/suit/armor/f13/rangercombat
-	head = /obj/item/clothing/head/helmet/f13/rangercombat
-	glasses = /obj/item/clothing/glasses/night
-	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
-	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=2, \
-		/obj/item/weapon/reagent_containers/stimpak/regular = 2, \
+	suit = /obj/item/clothing/shoes/jackboots
+	backpack_contents = list(/obj/item/ammo_box/a762=2, \
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
-	mask = /obj/item/clothing/mask/gas/sechailer
-	ears = /obj/item/device/radio/headset
+	mask = /obj/item/clothing/mask/gas/syndicate
+	r_hand = /obj/item/weapon/gun/projectile/shotgun/boltaction/scoped
 
 //SourcePony
 /datum/job/slimeman
@@ -61,19 +57,15 @@ var/const/BOSP			=(1<<55)*/
 	minimal_access = list()
 
 /datum/outfit/job/slimeman
-	name = "Slime Dude"
+	name = "Mercenary"
 	id = null
-	uniform = /obj/item/clothing/under/rank/scientist
-	shoes = /obj/item/clothing/shoes/sneakers/black
-	suit = /obj/item/clothing/suit/armor/f13/rangercombat
-	head = /obj/item/clothing/head/helmet/f13/rangercombat
-	glasses = /obj/item/clothing/glasses/night
+	uniform = /obj/item/clothing/under/f13/mercadv
+	shoes = /obj/item/clothing/shoes/jackboots
+	suit = /obj/item/clothing/suit/armor/fluff/chestplate/mk2
+	head = /obj/item/clothing/head/helmet/f13/metalmask/mk2
+	glasses = /obj/item/clothing/glasses/sunglasses
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
-	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=2, \
-		/obj/item/weapon/reagent_containers/stimpak/regular = 2, \
-		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
-	mask = /obj/item/clothing/mask/gas/sechailer
-	ears = /obj/item/device/radio/headset
+	backpack_contents = list(/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 
 //SEPERATED
 

@@ -3,8 +3,8 @@
 
 /obj/item/weapon/gun/projectile/revolver/grenadelauncher//this is only used for underbarrel grenade launchers at the moment, but admins can still spawn it if they feel like being assholes
 	desc = "A break-operated grenade launcher."
-	name = "grenade launcher"
-	icon_state = "dshotgun-sawn"
+	name = "M79 Grenade Launcher"
+	icon_state = "m79"
 	item_state = "gun"
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
@@ -18,6 +18,12 @@
 	..()
 	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
 		chamber_round()
+
+/obj/item/weapon/gun/projectile/shotgun/grenadelauncher
+	name = "China Lake Grenade Launcher"
+	desc = "A pump-action three shot, one in the chamber grenade launcher."
+	icon_state = "china_lake"
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 
 /obj/item/weapon/gun/projectile/revolver/grenadelauncher/cyborg
 	desc = "A 6-shot grenade launcher."

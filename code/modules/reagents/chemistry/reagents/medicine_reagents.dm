@@ -1072,3 +1072,85 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjustToxLoss(-4*REM)
 	..()
 	return
+
+/datum/reagent/medicine/medx
+	name = "Med-X"
+	id = "medx"
+	description = "Med-X is a potent opiate analgesic that binds to opioid receptors in the brain and central nervous system, reducing the perception of pain as well as the emotional response to pain."
+	reagent_state = LIQUID
+	color = "#6D6374"
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
+	overdose_threshold = 20
+	addiction_threshold = 10
+
+/datum/reagent/medicine/medx/on_mob_life(mob/living/M)
+	if(iscarbon(M))
+		var/mob/living/carbon/N = M
+		N.hal_screwyhud = 5
+	M.adjustBruteLoss(-0.50*REM)
+	M.adjustFireLoss(-0.50*REM)
+	M.AdjustStunned(-2)
+	..()
+
+/datum/reagent/medicine/medx/reaction_mob(mob/living/M, method=INJECT, reac_volume, show_message = 1)
+	if(iscarbon(M) && M.stat != DEAD)
+		if(method=INJECT)
+			if(show_message)
+				M << "<span class>Your senses start to numb through out your body...</span>" //It's a painkiller, after all
+	..()
+
+/datum/reagent/medicine/medx/on_mob_delete(mob/living/M)
+	if(iscarbon(M))
+		var/mob/living/carbon/N = M
+		N.hal_screwyhud = 0
+	..()
+
+/datum/reagent/medicine/medx/overdose_process(mob/living/M)
+	var/obj/item/I = M.get_active_hand()
+	if(I)
+		M.drop_item()
+	M.Dizzy(2)
+	M.Jitter(2)
+	M.sleeping += 1
+	..()
+	return
+
+/datum/reagent/medicine/medx/addiction_act_stage1(mob/living/M)
+	if(prob(33))
+		var/obj/item/I = M.get_active_hand()
+		if(I)
+			M.drop_item()
+		M.Dizzy(2)
+		M.Jitter(2)
+	..()
+	return
+/datum/reagent/medicine/medx/addiction_act_stage2(mob/living/M)
+	if(prob(33))
+		var/obj/item/I = M.get_active_hand()
+		if(I)
+			M.drop_item()
+		M.adjustToxLoss(1*REM)
+		M.Dizzy(3)
+		M.Jitter(3)
+	..()
+	return
+/datum/reagent/medicine/medx/addiction_act_stage3(mob/living/M)
+	if(prob(33))
+		var/obj/item/I = M.get_active_hand()
+		if(I)
+			M.drop_item()
+		M.adjustToxLoss(2*REM)
+		M.Dizzy(4)
+		M.Jitter(4)
+	..()
+	return
+/datum/reagent/medicine/medx/addiction_act_stage4(mob/living/M)
+	if(prob(33))
+		var/obj/item/I = M.get_active_hand()
+		if(I)
+			M.drop_item()
+		M.adjustToxLoss(3*REM)
+		M.Dizzy(5)
+		M.Jitter(5)
+	..()
+	return

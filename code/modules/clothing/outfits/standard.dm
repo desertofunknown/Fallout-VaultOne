@@ -475,18 +475,15 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/device/radio/headset/heads/hos/alt
-	suit = /obj/item/clothing/suit/armor/power_armor/t45d
-	head = /obj/item/clothing/head/helmet/f13/t45dhelmet
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = /obj/item/clothing/head/helmet/power_armor/f13/t51b
 	suit_store = /obj/item/weapon/gun/energy/laser/scatter
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel
 	glasses = /obj/item/clothing/glasses/night
-	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 6, \
+	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/storage/firstaid/tactical=1,\
-		/obj/item/weapon/gun/energy/stunrevolver/pin=1,\
-		/obj/item/weapon/gun/energy/laser/pistol=1,\
-		/obj/item/weapon/gun/energy/laser/plasma_rifle/multiplas=1)
+		/obj/item/weapon/gun/projectile/revolver/colt6250=1)
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 
 /datum/outfit/bos_paladin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -509,17 +506,15 @@
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/device/radio/headset/heads/hos/alt
-	suit = /obj/item/clothing/suit/armor/power_armor/t45d
-	head = /obj/item/clothing/head/helmet/f13/t45dhelmet
+	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
+	head = /obj/item/clothing/head/helmet/power_armor/f13/t51b
 	suit_store = /obj/item/weapon/gun/energy/laser/scatter
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel
 	glasses = /obj/item/clothing/glasses/night
-	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 6, \
+	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/storage/firstaid/tactical=1,\
-		/obj/item/weapon/gun/energy/stunrevolver/pin=1,\
-		/obj/item/weapon/gun/energy/laser/pistol=1)
+		/obj/item/weapon/gun/projectile/revolver/colt6250=1)
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 
 /datum/outfit/bos_knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -548,9 +543,8 @@
 	belt = /obj/item/weapon/storage/belt/military
 	back = /obj/item/weapon/storage/backpack/satchel
 	glasses = /obj/item/clothing/glasses/night
-	backpack_contents = list(/obj/item/ammo_box/magazine/m556 = 6, \
+	backpack_contents = list(/obj/item/ammo_box/magazine/m556 = 3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/storage/firstaid/tactical=1,\
 		/obj/item/weapon/gun/energy/laser/pistol=1)
 
 /datum/outfit/bos_initiate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -574,13 +568,12 @@
 	gloves = /obj/item/clothing/gloves/combat
 	suit = /obj/item/clothing/suit/f13/scribe
 	ears = /obj/item/device/radio/headset/heads/hos/alt
-	suit_store = /obj/item/weapon/gun/energy/stunrevolver/pin
 	belt = /obj/item/weapon/storage/belt/utility/full
 	back = /obj/item/weapon/storage/backpack/satchel
+	suit_store = /obj/item/weapon/gun/projectile/automatic/smg10mm
 	glasses = /obj/item/clothing/glasses/sunglasses/swat
 	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/storage/firstaid/tactical=1,\
 		/obj/item/weapon/gun/energy/laser/pistol=1,\
 		/obj/item/weapon/reagent_containers/stimpak/super=4)
 

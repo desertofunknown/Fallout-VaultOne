@@ -135,7 +135,7 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/mini_uzi
-	name = "\improper 'Type U3' Uzi"
+	name = "Uzi"
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "mini-uzi"
 	origin_tech = "combat=5;materials=2;syndicate=8"
@@ -221,7 +221,7 @@
 	desc = "Based on the classic 'Chicago Typewriter'."
 	icon_state = "tommygun"
 	item_state = "shotgun"
-	w_class = 5
+	w_class = 4
 	slot_flags = 0
 	origin_tech = "combat=5;materials=1;syndicate=2"
 	mag_type = /obj/item/ammo_box/magazine/tommygunm45
@@ -271,9 +271,31 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
+	w_class = 4
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
+
+/obj/item/weapon/gun/projectile/automatic/assault_rifle/infiltrator
+	name = "infiltrator"
+	desc = "A customized R91 assault rifle, with a scope, integrated suppressor, cut down stock and polymer furniture."
+	icon_state = "infiltrator"
+	item_state = "arg"
+	suppressed = 1
+	can_unsuppress = 0
+	zoomable = TRUE
+	zoom_amt = 7
+	damageG=6
+	damageA=0
+	damageS=0
+	rangeG=0
+	fire_sound = 'sound/weapons/Gunshot_large_silenced.ogg'
+
+/obj/item/weapon/gun/projectile/automatic/assault_rifle/infiltrator/New()
+	..()
+	update_icon()
+	src.setgundamage(src.damageG,src.damageA,src.damageS,src.rangeG)
+	return
 
 /obj/item/weapon/gun/projectile/automatic/marksman
 	name = "Marksman Carbine"
@@ -281,6 +303,7 @@
 	icon_state = "marksman_rifle"
 	item_state = "arg"
 	slot_flags = 0
+	w_class = 4
 	origin_tech = "combat=6;materials=1"
 	mag_type = /obj/item/ammo_box/magazine/m556
 	fire_sound = 'sound/f13weapons/marksman_rifle.ogg'
@@ -333,6 +356,7 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	can_suppress = 0
 	burst_size = 3
+	w_class = 4
 
 /obj/item/weapon/gun/projectile/automatic/shotgun/riot
 	name = "riot shotgun"
@@ -344,6 +368,7 @@
 	fire_delay = 2
 	fire_sound = 'sound/f13weapons/riot_shotgun.ogg'
 	mag_type = /obj/item/ammo_box/magazine/d12g
+	w_class = 4
 
 /obj/item/weapon/gun/projectile/automatic/lsw
 	name = "light support weapon"
@@ -361,3 +386,4 @@
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
+	w_class = 5

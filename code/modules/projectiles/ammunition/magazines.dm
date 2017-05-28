@@ -144,6 +144,18 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
 	max_ammo = 6
 
+/obj/item/ammo_box/magazine/internal/shot/grenade
+	name = "china lake internal magazine"
+	max_ammo = 3
+	ammo_type = /obj/item/ammo_casing/a40mm
+	caliber = "40mm"
+
+/obj/item/ammo_box/magazine/internal/shot/improvised10mm
+	name = "improvised internal magazine"
+	max_ammo = 1
+	ammo_type = /obj/item/ammo_casing/c10mm
+	caliber = "10mm"
+
 
 
 

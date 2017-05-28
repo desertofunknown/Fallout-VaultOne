@@ -106,6 +106,8 @@ Legion
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
+	donaters = 1
+	donatorrank = 3
 
 	outfit = /datum/outfit/job/legvex
 
@@ -126,7 +128,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legvexil
 	head = /obj/item/clothing/head/helmet/f13/legvexil
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/revolver/m29
+	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
@@ -135,7 +137,7 @@ Legion
 	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
-	/obj/item/ammo_box/m44=1, \
+	/obj/item/ammo_box/magazine/m556=1, \
 	/obj/item/device/flashlight/flare/torch=1)
 
 //centurion
@@ -148,6 +150,8 @@ Legion
 	status = "Centurion"
 	total_positions = 1
 	spawn_positions = 1
+	donaters = 1
+	donatorrank = 3
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -194,7 +198,7 @@ Legion
 	total_positions = 1
 	spawn_positions = 1
 	donaters = 1
-	donatorrank = 3
+	donatorrank = 4
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -241,8 +245,6 @@ Legion
 	status = "Veteran"
 	total_positions = 10
 	spawn_positions = 6
-	donaters = 1
-	donatorrank = 1
 	supervisors = "the head of security"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7

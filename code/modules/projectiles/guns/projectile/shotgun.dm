@@ -146,7 +146,7 @@
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'
 	pumpsound = 'sound/weapons/boltpump.ogg'
 	loadsound = 'sound/effects/wep_magazines/rifle_load.ogg'
-	w_class = 3
+	w_class = 4
 	zoomable = TRUE
 	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
 /////////////////////////////
@@ -232,7 +232,7 @@
 	desc = "An common over under double barreled shotgun."
 	icon_state = "caravan_shotgun"
 	item_state = "shotgun"
-	w_class = 3
+	w_class = 4
 	force = 15
 	unique_reskin = 0
 	origin_tech = "combat=2;materials=2"
@@ -250,6 +250,26 @@
 	origin_tech = "combat=2;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
+
+/obj/item/weapon/gun/projectile/revolver/zipgun
+	name = "zipgun"
+	desc = "A crudely made single shot 10mm pistol."
+	icon_state = "zipgun"
+	item_state = "gun"
+	w_class = 2
+	origin_tech = "combat=2;materials=2"
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
+
+/obj/item/weapon/gun/projectile/revolver/pipe_rifle
+	name = "pipe rifle"
+	desc = "A crudely made single shot 10mm rifle."
+	icon_state = "pipe_rifle"
+	item_state = "shotgun"
+	w_class = 4
+	origin_tech = "combat=2;materials=2"
+	fire_sound = 'sound/weapons/Gunshot.ogg'
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
 
 // IMPROVISED SHOTGUN //
 

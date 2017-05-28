@@ -625,7 +625,7 @@
 
 /datum/table_recipe/raider_yankee_armor
 	name = "raider yankee armor"
-	result = /obj/item/clothing/suit/armor/f13/yankee
+	result = /obj/item/clothing/suit/armor/f13/raider/yankee
 	reqs = list(/obj/item/stack/sheet/gekkonhide = 1,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
@@ -635,7 +635,7 @@
 
 /datum/table_recipe/raider_supafly_armor
 	name = "raider supa-fly armor"
-	result = /obj/item/clothing/suit/armor/f13/supafly
+	result = /obj/item/clothing/suit/armor/f13/raider
 	reqs = list(/obj/item/stack/sheet/gekkonhide = 1,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
@@ -645,7 +645,7 @@
 
 /datum/table_recipe/raider_supafly_helmet
 	name = "raider supa-fly helmet"
-	result =/obj/item/clothing/head/helmet/f13/supaflyhelmet
+	result =/obj/item/clothing/head/helmet/f13/raider
 	reqs = list(/obj/item/stack/sheet/gekkonhide = 1,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)
@@ -655,7 +655,7 @@
 
 /datum/table_recipe/raider_yankee_helmet
 	name = "raider yankee yankee"
-	result = /obj/item/clothing/head/helmet/f13/yankee
+	result = /obj/item/clothing/head/helmet/f13/raider/yankee
 	reqs = list(/obj/item/stack/sheet/gekkonhide = 1,
 				/obj/item/stack/sheet/metal = 5)
 	tools = list(/obj/item/weapon/screwdriver, /obj/item/weapon/wirecutters)

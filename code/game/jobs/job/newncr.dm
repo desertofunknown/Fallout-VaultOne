@@ -34,7 +34,8 @@ Trooper
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1)
+		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1, \
+		/obj/item/weapon/melee/classic_baton/telescopic=1)
 /datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -70,7 +71,7 @@ Trooper
 	faction = "NCR" // This faction is used for late joins
 	status = "Colonel"
 	total_positions = 1
-	spawn_positions = 1
+	spawn_positions = 4
 	donaters = 1
 	donatorrank = 5
 	supervisors = "nobody"
@@ -94,7 +95,8 @@ Trooper
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
+		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1, \
+		/obj/item/weapon/melee/classic_baton/telescopic=1)
 /datum/outfit/job/ncrcolonel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -139,8 +141,6 @@ Sergeant
 	status = "Sergeant"
 	total_positions = 2
 	spawn_positions = 2
-	donaters = 1
-	donatorrank = 1
 	supervisors = "The NCR Lieutenant"
 	//spawn_point = locate(/obj/effect/landmark/start/ncr/trooper)
 	selection_color = "#ffeeee"
@@ -290,11 +290,12 @@ Veteran Ranger
 	ears = /obj/item/device/radio/headset/headset_ncr
 	suit = /obj/item/clothing/suit/armor/f13/rangercombat
 	head = /obj/item/clothing/head/helmet/f13/rangercombat
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/night
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	backpack_contents = list(/obj/item/weapon/gun/projectile/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
-		/obj/item/weapon/kitchen/knife/combat=1)
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/weapon/melee/classic_baton/telescopic=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 /datum/outfit/job/ncrvetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
@@ -342,7 +343,8 @@ NCR Ranger
 	backpack_contents = list(/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1, \
 		/obj/item/weapon/restraints/handcuffs=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/ammo_box/magazine/d12g=2)
+		/obj/item/ammo_box/magazine/d12g=2, \
+		/obj/item/weapon/melee/classic_baton=1)
 /datum/outfit/job/ncrranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -386,7 +388,8 @@ NCR Ranger
 	/obj/item/stack/coin/coins = 1, \
 	/obj/item/weapon/gun/projectile/revolver/m29=1, \
 	/obj/item/ammo_box/m44=2, \
-	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1)
+	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1, \
+	/obj/item/weapon/melee/classic_baton=1)
 /datum/outfit/job/ncrrecranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name

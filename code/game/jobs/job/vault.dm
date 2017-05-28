@@ -29,6 +29,7 @@
 	gloves = /obj/item/clothing/gloves/pda/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/device/radio/headset/headset_vlt
+	shoes = /obj/item/clothing/shoes/jackboots
 	//gloves = /obj/item/clothing/gloves/color/captain
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	//suit = /obj/item/clothing/suit/armor/vest/capcarapace
@@ -110,7 +111,7 @@
 	gloves = /obj/item/clothing/gloves/pda/medical
 	ears = /obj/item/device/radio/headset/headset_vlt
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	shoes = /obj/item/clothing/shoes/sneakers/white
+	shoes = /obj/item/clothing/shoes/jackboots
 	suit =  /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/regular
 	suit_store = /obj/item/device/flashlight/pen
@@ -141,7 +142,7 @@
 	gloves = /obj/item/clothing/gloves/pda/toxins
 	ears = /obj/item/device/radio/headset/headset_vlt
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	//shoes = /obj/item/clothing/shoes/sneakers/white
+	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
 /datum/job/officer
 	title = "Officer"
@@ -175,7 +176,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	ears = /obj/item/device/radio/headset/headset_vlt
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	//gloves = /obj/item/clothing/gloves/color/black
-	//head = /obj/item/clothing/head/helmet/sec
+	head = /obj/item/clothing/head/helmet/riot/vaultsec
 	suit = /obj/item/clothing/suit/armor/vest
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/device/assembly/flash/handheld
@@ -324,6 +325,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	gloves = /obj/item/clothing/gloves/pda
 	ears = /obj/item/device/radio/headset/headset_vlt
+	shoes = /obj/item/clothing/shoes/jackboots
 /datum/job/proc/check_config_for_sec_maint()
 	if(config.jobs_have_maint_access & SECURITY_HAS_MAINT_ACCESS)
 		return list(access_maint_tunnels)

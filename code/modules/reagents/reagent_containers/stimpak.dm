@@ -51,3 +51,10 @@
 	icon_state = "superstim_15"
 	amount_per_transfer_from_this = 10
 	list_reagents = list("super_stimpak" = 10)
+
+/obj/item/weapon/reagent_containers/stimpak/medx
+	name = "med-x"
+	desc = "Med-X is a potent opiate analgesic that binds to opioid receptors in the brain and central nervous system, reducing the perception of pain as well as the emotional response to pain."
+	icon_state = "medx"
+	amount_per_transfer_from_this = 10
+	list_reagents = list("medx" = 10)

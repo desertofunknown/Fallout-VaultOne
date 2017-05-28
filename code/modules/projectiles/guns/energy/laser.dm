@@ -3,7 +3,7 @@
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
 	item_state = "laser"
-	w_class = 3
+	w_class = 4
 	materials = list(MAT_METAL=2000)
 	origin_tech = "combat=3;magnets=2"
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
@@ -37,6 +37,7 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun)
 	ammo_x_offset = 1
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
+	w_class = 4
 
 /obj/item/weapon/gun/energy/laser/plasma_rifle/multiplas
 	name = "multiplas rifle"
@@ -45,6 +46,7 @@
 	desc = "A plasma rifle designed to fire multiple shots."
 	ammo_type = list(/obj/item/ammo_casing/energy/plasmagun/scatter)
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
+	w_class = 4
 
 /obj/item/weapon/gun/energy/laser/plasma_rifle/pistol
 	name ="plasma pistol"
@@ -102,6 +104,7 @@
 	item_state = "laser"
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
+	w_class = 4
 
 /obj/item/weapon/gun/energy/lasercannon
 	name = "laser cannon"

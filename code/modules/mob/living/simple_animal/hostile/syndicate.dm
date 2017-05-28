@@ -148,11 +148,15 @@
 	icon = 'icons/mob/robots.dmi'
 	icon_state = "secborg"
 	icon_living = "secborg"
-	maxHealth = 400
-	health = 400
+	maxHealth = 500
+	health = 500
+	stat_attack = 1
+	robust_searching = 1
 	a_intent = "harm"
 	armour_penetration = 20
-	attacktext = "saws"
+	attacktext = "saws through"
+	melee_damage_lower = 35
+	melee_damage_upper = 45
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	faction = list("syndicate")
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -160,8 +164,13 @@
 	gold_core_spawnable = 1
 
 /mob/living/simple_animal/hostile/gutsy/death(gibbed)
-	..(gibbed)
-	visible_message("<span class='danger'><b>[src]</b> is smashed into pieces!</span>")
+	..(1)
+	visible_message("<span class='warning'>[src] blows apart!</span>")
+	new /obj/effect/decal/cleanable/robot_debris(src.loc)
+	var/datum/effect_system/spark_spread/s = new /datum/effect_system/spark_spread
+	s.set_up(3, 1, src)
+	s.start()
+	ghostize()
 	qdel(src)
 	return
 
@@ -169,10 +178,7 @@
 	name = "mister gutsy"
 	desc = "Fucking robot, it finna shoot you."
 	ranged = 1
-	rapid = 1
-	a_intent = "harm"
 	retreat_distance = 2
 	minimum_distance = 2
 	projectilesound = 'sound/f13weapons/plasma_rifle.ogg'
-	var/weapon1
-	weapon1 = /obj/item/weapon/gun/energy/laser/plasma_rifle
+	projectiletype = /obj/item/projectile/beam/plasma_beam
