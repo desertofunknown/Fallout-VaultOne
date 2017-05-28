@@ -151,12 +151,12 @@ var/list/wasteland_occupations = list(
 )
 
 var/list/legion_positions = list(
-	"Legionary",
-	"Decan",
-	"Vexillarius",
-	"Centurion",
 	"Legat",
-	"Prime Recruit"
+	"Centurion",
+	"Vexillarius",
+	"Decan",
+	"Veteran",
+	"Legionary"
 )
 
 var/list/ncr_positions = list(

@@ -5,12 +5,12 @@ Legion
 /datum/job/legrecruit
 	title = "Legionary"
 	flag = LEGIONARY
-	department_head = list("Head of Security")
+	department_head = list("Legat")
 	department_flag = LEGION
-	faction = "Desert"
+	faction = "Legion"
 	total_positions = 10
 	spawn_positions = -1
-	supervisors = "the head of security"
+	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
@@ -50,13 +50,13 @@ Legion
 /datum/job/legdecan
 	title = "Decan"
 	flag = LEGDECAN
-	department_head = list("Head of Security")
+	department_head = list("Legat")
 	department_flag = LEGION
 	faction = "Legion"
 	status = "Decan"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the head of security"
+	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
@@ -97,13 +97,13 @@ Legion
 /datum/job/legvex
 	title = "Vexillarius"
 	flag = LEGVEX
-	department_head = list("Head of Security")
+	department_head = list("Legat")
 	department_flag = LEGION
 	faction = "Legion"
 	status = "Vexillarius"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the head of security"
+	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 	donaters = 1
@@ -144,7 +144,7 @@ Legion
 /datum/job/legcenturion
 	title = "Centurion"
 	flag = LEGCENTURION
-	department_head = list("Head of Security")
+	department_head = list("Legat")
 	department_flag = LEGION
 	faction = "Legion"
 	status = "Centurion"
@@ -152,7 +152,7 @@ Legion
 	spawn_positions = 1
 	donaters = 1
 	donatorrank = 3
-	supervisors = "the head of security"
+	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
@@ -191,7 +191,7 @@ Legion
 /datum/job/leglegat
 	title = "Legat"
 	flag = LEGLEGAT
-	department_head = list("Head of Security")
+	department_head = list("Legat")
 	department_flag = LEGION
 	faction = "Legion"
 	status = "Legat"
@@ -199,7 +199,7 @@ Legion
 	spawn_positions = 1
 	donaters = 1
 	donatorrank = 4
-	supervisors = "the head of security"
+	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
@@ -239,13 +239,13 @@ Legion
 /datum/job/legVET
 	title = "Veteran"
 	flag = LEGVET
-	department_head = list("Head of Security")
+	department_head = list("Legat")
 	department_flag = LEGION
 	faction = "Legion"
 	status = "Veteran"
 	total_positions = 10
 	spawn_positions = 6
-	supervisors = "the head of security"
+	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
 
