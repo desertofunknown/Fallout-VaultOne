@@ -12,10 +12,6 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
-#include "_interaction.dm"
-#include "interaction_definitions.dm"
-#include "interaction_interface.dm"
-#include "interaction_mob.dm"
 #include "lootspawners.dm"
 #include "_maps\__MAP_DEFINES.dm"
 #include "_maps\tgstation2.dm"
@@ -867,6 +863,7 @@
 #include "code\modules\admin\holder2.dm"
 #include "code\modules\admin\IsBanned.dm"
 #include "code\modules\admin\NewBan.dm"
+#include "code\modules\admin\output.dm"
 #include "code\modules\admin\player_panel.dm"
 #include "code\modules\admin\secrets.dm"
 #include "code\modules\admin\sql_notes.dm"
@@ -1641,9 +1638,4 @@
 #include "interface\interface.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
-#include "lewd\_lewd.dm"
-#include "lewd\lewd_code.dm"
-#include "lewd\lewd_definitions.dm"
-#include "lewd\lewd_mob.dm"
-#include "lewd\lewd_species.dm"
 // END_INCLUDE

@@ -23,7 +23,7 @@
 /*
 Wastelandwhore
 */
-/datum/job/wastelandwhore
+/*/datum/job/wastelandwhore
 	title = "Whore"
 	flag = WHORE
 	department_flag = WASTELAND
@@ -85,7 +85,7 @@ Wastelandpusher
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/weapon/storage/wallet=1, \
-	/obj/item/stack/coin/coins = 4)
+	/obj/item/stack/coin/coins = 4)*/
 
 
 /datum/outfit/job/wastelander/pre_equip(mob/living/carbon/human/H)
