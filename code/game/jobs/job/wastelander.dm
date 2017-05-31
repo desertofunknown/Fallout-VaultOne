@@ -120,7 +120,7 @@ Chaplain
 	flag = PREACHER
 	//department_head = list("Head of Personnel")
 	department_flag = WASTELAND
-	faction = "Vault"
+	faction = "Wasteland"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "God"
