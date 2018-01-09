@@ -154,6 +154,9 @@ var/list/teleportlocs = list()
 /area/shuttle/mining
 	name = "Mining lift"
 
+/area/shuttle/bos
+	name = "BOS lift"
+
 /area/shuttle/labor
 	name = "Labor Camp Shuttle"
 

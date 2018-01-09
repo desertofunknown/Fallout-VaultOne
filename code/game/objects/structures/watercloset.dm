@@ -9,6 +9,9 @@
 	var/cistern = 0			//if the cistern bit is open
 	var/w_items = 0			//the combined w_class of all the items in the cistern
 	var/mob/living/swirlie = null	//the mob being given a swirlie
+	var/israds=1
+	var/isdrinking
+
 
 
 /obj/structure/toilet/New()
@@ -17,6 +20,21 @@
 
 
 /obj/structure/toilet/attack_hand(mob/living/user)
+	var/selected_area = parse_zone(user.zone_sel.selecting)
+	if(selected_area in list("mouth"))
+		isdrinking = 1
+	if(isdrinking && open)
+		if(user.water>=450)
+			user << "<span class='notice'>[user.name] is full.</span>"
+			return
+		user.water+=5
+		user.reagents.add_reagent("water", 5)
+		user << "<span class='notice'>You drink some water.</span>"
+		playsound(user,'sound/items/drink.ogg', rand(10,50), 1)
+		if(israds==1)
+			user.reagents.add_reagent("radium", 4)
+			user << "<span class='notice'>The water was contaminated and you feel sick.</span>"
+		return
 	if(swirlie)
 		user.changeNext_move(CLICK_CD_MELEE)
 		playsound(src.loc, "swing_hit", 25, 1)
@@ -61,6 +79,8 @@
 			return
 		var/obj/item/weapon/reagent_containers/RG = I
 		RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+		if(israds==1)
+			RG.reagents.add_reagent("uranium", 2)
 		user << "<span class='notice'>You fill [RG] from [src]. Gross.</span>"
 		return
 
@@ -368,6 +388,7 @@
 	desc = "A sink used for washing one's hands and face."
 	anchored = 1
 	var/busy = 0 	//Something's being washed at the moment
+	var/isirradiated=0
 
 
 /obj/structure/sink/attack_hand(mob/living/user)
@@ -378,25 +399,43 @@
 	if(!Adjacent(user))
 		return
 
-	if(busy)
-		user << "<span class='notice'>Someone's already washing here.</span>"
-		return
 	var/selected_area = parse_zone(user.zone_sel.selecting)
 	var/washing_face = 0
-	if(selected_area in list("head", "mouth", "eyes"))
+	var/isdrinking = 0
+	if(selected_area in list("head", "eyes"))
 		washing_face = 1
-	user.visible_message("<span class='notice'>[user] start washing their [washing_face ? "face" : "hands"]...</span>", \
-						"<span class='notice'>You start washing your [washing_face ? "face" : "hands"]...</span>")
+	if(selected_area in list("mouth"))
+		isdrinking = 1
+	if(washing_face)
+		user.visible_message("<span class='notice'>[user] start washing their [washing_face ? "face" : "hands"]...</span>", \
+							"<span class='notice'>You start washing your [washing_face ? "face" : "hands"]...</span>")
+	if(busy)
+		if(washing_face)
+			user << "<span class='notice'>Someone's already washing here.</span>"
+			return
+		if(isdrinking)
+			user << "<span class='notice'>Someone's already drinking from here.</span>"
+			return
 	busy = 1
-
 	if(!do_after(user, 40, target = src))
 		busy = 0
 		return
 
 	busy = 0
-
-	user.visible_message("<span class='notice'>[user] washes their [washing_face ? "face" : "hands"] using [src].</span>", \
-						"<span class='notice'>You wash your [washing_face ? "face" : "hands"] using [src].</span>")
+	if(washing_face)
+		user.visible_message("<span class='notice'>[user] washes their [washing_face ? "face" : "hands"] using [src].</span>", \
+							"<span class='notice'>You wash your [washing_face ? "face" : "hands"] using [src].</span>")
+	if(isdrinking)
+		if(user.water>=450)
+			user << "<span class='notice'>[user.name] is full.</span>"
+			return
+		user.reagents.add_reagent("water", 5)
+		user.water+=5
+		playsound(user,'sound/items/drink.ogg', rand(10,50), 1)
+		user << "<span class='notice'>[user.name] begins drinking the water.</span>"
+		if(isirradiated==1)
+			user.reagents.add_reagent("radium", 4)
+			user << "<span class='notice'>But the water was contaminated and you feel sick.</span>"
 	if(washing_face)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
@@ -477,10 +516,112 @@
 	..()
 	icon_state = "puddle"
 
-/obj/structure/sink/well
+/obj/structure/sink/f13/well
 	name = "well"
 	desc = "A large well, reaching down to pure, unradiated ground water."
 	icon = 'icons/obj/billboard.dmi'
 	icon_state = "well"
 	bound_x = 64
 	bound_y = 64
+
+/obj/structure/sink/f13/well/attackby(obj/item/O, mob/user, params)
+	if(busy)
+		user << "<span class='warning'>Someone's already washing here!</span>"
+		return
+
+	if(istype(O, /obj/item/weapon/reagent_containers))
+		var/obj/item/weapon/reagent_containers/RG = O
+		if(RG.flags & OPENCONTAINER)
+			RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+			RG.reagents.add_reagent("radium", 0.5)
+			user << "<span class='notice'>You fill [RG] from [src] but it is contaminated.</span>"
+			return
+
+	if(istype(O, /obj/item/weapon/melee/baton))
+		var/obj/item/weapon/melee/baton/B = O
+		if(B.bcell)
+			if(B.bcell.charge > 0 && B.status == 1)
+				flick("baton_active", src)
+				var/stunforce = B.stunforce
+				user.Stun(stunforce)
+				user.Weaken(stunforce)
+				user.stuttering = stunforce
+				B.deductcharge(B.hitcost)
+				user.visible_message("<span class='warning'>[user] shocks themself while attempting to wash the active [B.name]!</span>", \
+									"<span class='userdanger'>You unwisely attempt to wash [B] while it's still on.</span>")
+				playsound(src, "sparks", 50, 1)
+				return
+
+	if(istype(O, /obj/item/weapon/mop))
+		O.reagents.add_reagent("water", 5)
+		O.reagents.add_reagent("radium", 0.5)
+		user << "<span class='notice'>You wet [O] in [src] but the water is contaminated.</span>"
+		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+
+	var/obj/item/I = O
+	if(!I || !istype(I))
+		return
+	if(I.flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
+		return
+
+	user << "<span class='notice'>You start washing [I]...</span>"
+	busy = 1
+	if(!do_after(user, 40, target = src))
+		busy = 0
+		return
+	busy = 0
+	O.clean_blood()
+	user.visible_message("<span class='notice'>[user] washes [I] using [src].</span>", \
+						"<span class='notice'>You wash [I] using [src].</span>")
+
+/obj/structure/sink/f13
+	isirradiated=1
+/obj/structure/sink/f13/attackby(obj/item/O, mob/user, params)
+	if(busy)
+		user << "<span class='warning'>Someone's already washing here!</span>"
+		return
+
+	if(istype(O, /obj/item/weapon/reagent_containers))
+		var/obj/item/weapon/reagent_containers/RG = O
+		if(RG.flags & OPENCONTAINER)
+			RG.reagents.add_reagent("water", min(RG.volume - RG.reagents.total_volume, RG.amount_per_transfer_from_this))
+			RG.reagents.add_reagent("radium", 5)
+			user << "<span class='notice'>You fill [RG] from [src] but it is contaminated.</span>"
+			return
+
+	if(istype(O, /obj/item/weapon/melee/baton))
+		var/obj/item/weapon/melee/baton/B = O
+		if(B.bcell)
+			if(B.bcell.charge > 0 && B.status == 1)
+				flick("baton_active", src)
+				var/stunforce = B.stunforce
+				user.Stun(stunforce)
+				user.Weaken(stunforce)
+				user.stuttering = stunforce
+				B.deductcharge(B.hitcost)
+				user.visible_message("<span class='warning'>[user] shocks themself while attempting to wash the active [B.name]!</span>", \
+									"<span class='userdanger'>You unwisely attempt to wash [B] while it's still on.</span>")
+				playsound(src, "sparks", 50, 1)
+				return
+
+	if(istype(O, /obj/item/weapon/mop))
+		O.reagents.add_reagent("water", 5)
+		O.reagents.add_reagent("radium", 4)
+		user << "<span class='notice'>You wet [O] in [src] but the water is contaminated.</span>"
+		playsound(loc, 'sound/effects/slosh.ogg', 25, 1)
+
+	var/obj/item/I = O
+	if(!I || !istype(I))
+		return
+	if(I.flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
+		return
+
+	user << "<span class='notice'>You start washing [I]...</span>"
+	busy = 1
+	if(!do_after(user, 40, target = src))
+		busy = 0
+		return
+	busy = 0
+	O.clean_blood()
+	user.visible_message("<span class='notice'>[user] washes [I] using [src].</span>", \
+						"<span class='notice'>You wash [I] using [src].</span>")

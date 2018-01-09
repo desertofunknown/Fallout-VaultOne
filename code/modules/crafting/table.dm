@@ -5,12 +5,12 @@
 	var/list/categories = list(CAT_WEAPON,CAT_MED,CAT_ARMOR,CAT_AMMO,CAT_ROBOT,CAT_FOOD,CAT_MISC)
 
 
-/obj/structure/table/MouseDrop(atom/over)
+/obj/structure/table/workbench/MouseDrop(atom/over)
 	if(over != usr || !usr.IsAdvancedToolUser())
 		return
 	interact(usr)
 
-/obj/structure/table/proc/check_contents(datum/table_recipe/R)
+/obj/structure/table/workbench/proc/check_contents(datum/table_recipe/R)
 	check_table()
 	main_loop:
 		for(var/A in R.reqs)
@@ -31,7 +31,7 @@
 			return 0
 	return 1
 
-/obj/structure/table/proc/check_table()
+/obj/structure/table/workbench/proc/check_table()
 	table_contents = list()
 	for(var/obj/item/I in loc)
 		if(istype(I, /obj/item/stack))
@@ -45,7 +45,7 @@
 						table_contents[A.type] += A.volume
 			table_contents[I.type] += 1
 
-/obj/structure/table/proc/check_tools(mob/user, datum/table_recipe/R)
+/obj/structure/table/workbench/proc/check_tools(mob/user, datum/table_recipe/R)
 	if(!R.tools.len)
 		return 1
 	var/list/possible_tools = list()
@@ -65,7 +65,7 @@
 			return 0
 	return 1
 
-/obj/structure/table/proc/construct_item(mob/user, datum/table_recipe/R)
+/obj/structure/table/workbench/proc/construct_item(mob/user, datum/table_recipe/R)
 	check_table()
 	var/send_feedback = 1
 	if(check_contents(R))
@@ -100,7 +100,7 @@
 		return ", missing tool."
 	return ", missing component."
 
-/obj/structure/table/proc/del_reqs(datum/table_recipe/R, atom/movable/resultobject)
+/obj/structure/table/workbench/proc/del_reqs(datum/table_recipe/R, atom/movable/resultobject)
 	var/list/Deletion = list()
 	var/amt
 	var/reagenttransfer = 0
@@ -176,7 +176,7 @@
 
 	return Deletion
 
-/obj/structure/table/interact(mob/user)
+/obj/structure/table/workbench/interact(mob/user)
 	if(user.incapacitated() || user.lying || !Adjacent(user))
 		return
 	check_table()
@@ -222,7 +222,7 @@
 	popup.open()
 	return
 
-/obj/structure/table/Topic(href, href_list)
+/obj/structure/table/workbench/Topic(href, href_list)
 	if(usr.stat || !Adjacent(usr) || usr.lying)
 		return
 	if(href_list["make"])
@@ -250,7 +250,7 @@
 	. = viewing_category % categories.len + 1
 
 //Previous can go fuck itself
-/obj/structure/table/proc/prev_cat()
+/obj/structure/table/workbench/proc/prev_cat()
 	if(viewing_category == categories.len)
 		. = viewing_category-1
 	else
@@ -258,7 +258,7 @@
 	if(. <= 0)
 		. = categories.len
 
-/obj/structure/table/proc/build_recipe_text(datum/table_recipe/R)
+/obj/structure/table/workbench/proc/build_recipe_text(datum/table_recipe/R)
 	. = ""
 	var/name_text = ""
 	var/req_text = ""

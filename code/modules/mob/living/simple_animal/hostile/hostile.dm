@@ -117,6 +117,9 @@
 		if(isliving(the_target))
 			var/mob/living/L = the_target
 			var/faction_check = 0
+			if(src.faction==L.faction)
+				faction_check = 1
+				return 0
 			for(var/F in faction)
 				if(F in L.faction)
 					faction_check = 1

@@ -686,6 +686,7 @@
 #include "code\game\objects\items\weapons\kitchen.dm"
 #include "code\game\objects\items\weapons\manuals.dm"
 #include "code\game\objects\items\weapons\mop.dm"
+#include "code\game\objects\items\weapons\newweapons.dm"
 #include "code\game\objects\items\weapons\paint.dm"
 #include "code\game\objects\items\weapons\paiwire.dm"
 #include "code\game\objects\items\weapons\pneumaticCannon.dm"

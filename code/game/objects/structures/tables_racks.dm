@@ -465,7 +465,15 @@
 	desc = "A seedy table for seedy dealings in seedy places."
 	icon_state = "pokertable"
 	buildstack = /obj/item/stack/tile/carpet
-
+/*
+ * Crafting tables
+ */
+/obj/structure/table/workbench
+	name = "Workbench"
+	desc = "A standard work bench for creating things."
+	icon_state = "workbench"
+	var/status = 2
+	buildstack = /obj/item/stack/sheet/plasteel
 /*
  * Reinforced tables
  */

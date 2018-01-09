@@ -20,6 +20,68 @@
 	time = 50
 	category = CAT_WEAPON
 
+/datum/table_recipe/firingpin
+	name = "Firing Pin"
+	result = /obj/item/device/firing_pin
+	parts = list(/obj/item/stack/sheet/metal)
+	tools = list(/obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters)
+	time = 200
+	category = CAT_WEAPON
+
+/datum/table_recipe/piperifle
+	name = "Pipe Rifle"
+	result = /obj/item/weapon/gun/projectile/revolver/pipe_rifle
+	reqs = list(/obj/item/weaponcrafting/reciever = 1,
+				/obj/item/pipe = 1,
+				/obj/item/weaponcrafting/stock = 1,
+				/obj/item/stack/packageWrap = 5,)
+	tools = list(/obj/item/weapon/screwdriver)
+	time = 150
+	category = CAT_WEAPON
+
+/datum/table_recipe/piperifle
+	name = "Pipe Pistol"
+	result = /obj/item/weapon/gun/projectile/revolver/zipgun
+	reqs = list(/obj/item/weaponcrafting/reciever = 1,
+				/obj/item/pipe = 1,
+				/obj/item/weaponcrafting/stock = 1,
+				/obj/item/stack/packageWrap = 5,)
+	tools = list(/obj/item/weapon/screwdriver)
+	time = 150
+	category = CAT_WEAPON
+
+/datum/table_recipe/barbedbat
+	name = "Barbed Bat"
+	result = /obj/item/weapon/barbedbat
+	parts = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal)
+	tools = list(/obj/item/weapon/kitchen/knife, /obj/item/weapon/weldingtool)
+	time = 100
+	category = CAT_WEAPON
+
+/datum/table_recipe/spikedbat
+	name = "Spiked Bat"
+	result = /obj/item/weapon/spikedbat
+	parts = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal, /obj/item/stack/sheet/glass)
+	tools = list(/obj/item/weapon/kitchen/knife, /obj/item/weapon/weldingtool)
+	time = 100
+	category = CAT_WEAPON
+
+/datum/table_recipe/bladedbat
+	name = "Maul Bat"
+	result = /obj/item/weapon/bladedbat
+	parts = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal = 3)
+	tools = list(/obj/item/weapon/kitchen/knife, /obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters)
+	time = 100
+	category = CAT_WEAPON
+
+/datum/table_recipe/serratedmachete
+	name = "Serrated Machete"
+	result = /obj/item/weapon/serratedmachete
+	parts = list(/obj/item/stack/sheet/metal = 2)
+	tools = list(/obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters)
+	time = 100
+	category = CAT_WEAPON
+
 /datum/table_recipe/IED
 	name = "IED"
 	result = /obj/item/weapon/grenade/iedcasing

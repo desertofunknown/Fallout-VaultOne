@@ -54,6 +54,14 @@
 	possible_destinations = "mining_home;mining_away"
 	//no_destination_swap = 1
 
+/obj/machinery/computer/shuttle/bos
+	name = "BOS Elevator"
+	desc = "Used to call and send the bos elevator."
+	circuit = /obj/item/weapon/circuitboard/mining_shuttle
+	shuttleId = "bos"
+	possible_destinations = "bos_upper;bos_lower"
+	//no_destination_swap = 1
+
 /*********************Pickaxe & Drills**************************/
 
 /obj/item/weapon/pickaxe

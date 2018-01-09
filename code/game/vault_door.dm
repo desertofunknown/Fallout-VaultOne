@@ -85,7 +85,7 @@
 
 /obj/machinery/doorButtons/wornvaultButton/proc/activate()
 	for(var/obj/structure/vaultdoor/vdoor in world)
-		if(vdoor.isworn=1)
+		if(vdoor.isworn==1)
 			vdoor.vaultactivate()
 
 /obj/machinery/doorButtons/wornvaultButton/attackby(obj/item/weapon/W, mob/user, params)

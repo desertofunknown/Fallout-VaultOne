@@ -123,7 +123,7 @@ obj
 				gun
 					tier1
 						New()
-							switch(rand(1,5))
+							switch(rand(1,7))
 								if(1)
 									var/obj/item/weapon/gun/projectile/revolver/single_shotgun/lb = new
 									lb.loc=src.loc
@@ -144,9 +144,13 @@ obj
 									var/obj/item/weapon/gun/projectile/revolver/pipe_rifle/lb = new
 									lb.loc=src.loc
 									del src
+								if(6)
+									del src
+								if(7)
+									del src
 					tier2
 						New()
-							switch(rand(1,6))
+							switch(rand(1,8))
 								if(1)
 									var/obj/item/weapon/gun/projectile/revolver/max_sawn_off/lb = new
 									lb.loc=src.loc
@@ -171,9 +175,13 @@ obj
 									var/obj/item/weapon/gun/projectile/shotgun/automatic/hunting/lb = new
 									lb.loc=src.loc
 									del src
+								if(7)
+									del src
+								if(8)
+									del src
 					tier3
 						New()
-							switch(rand(1,10))
+							switch(rand(1,12))
 								if(1)
 									var/obj/item/weapon/gun/projectile/revolver/that_gun/lb = new
 									lb.loc=src.loc
@@ -213,6 +221,10 @@ obj
 								if(10)
 									var/obj/item/weapon/gun/projectile/revolver/colt6250/lb = new
 									lb.loc=src.loc
+									del src
+								if(11)
+									del src
+								if(12)
 									del src
 					tier4
 						New()

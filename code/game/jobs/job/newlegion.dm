@@ -34,7 +34,7 @@ Legion
 	head = /obj/item/clothing/head/helmet/f13/legrecruit
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
 	mask = /obj/item/clothing/mask/bandana/legrecruit
-	suit_store = /obj/item/weapon/gun/projectile/revolver/police
+	suit_store = /obj/spawners/objectspawners/weaponspawners/gun/tier1
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
@@ -80,7 +80,7 @@ Legion
 	head = /obj/item/clothing/head/helmet/f13/legdecan
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
 	mask = /obj/item/clothing/mask/bandana/legdecan
-	suit_store = /obj/item/weapon/gun/projectile/automatic/shotgun/riot
+	suit_store = /obj/spawners/objectspawners/weaponspawners/gun/tier2
 	back = /obj/item/weapon/storage/backpack
 	r_hand = /obj/item/weapon/twohanded/fireaxe
 	backpack = /obj/item/weapon/storage/backpack
@@ -128,7 +128,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legvexil
 	head = /obj/item/clothing/head/helmet/f13/legvexil
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
+	suit_store = /obj/spawners/objectspawners/weaponspawners/gun/tier3
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
@@ -175,7 +175,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/legcenturion
 	head = /obj/item/clothing/head/helmet/f13/legcenturion
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
+	suit_store = /obj/spawners/objectspawners/weaponspawners/gun/tier2
 	back = /obj/item/weapon/storage/backpack
 	r_hand = /obj/item/weapon/claymore/hog
 	backpack = /obj/item/weapon/storage/backpack
@@ -222,7 +222,7 @@ Legion
 	suit = /obj/item/clothing/suit/armor/f13/leglegat
 	head = /obj/item/clothing/head/helmet/f13/leglegat
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
-	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman
+	suit_store = /obj/spawners/objectspawners/weaponspawners/gun/tier2
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	r_hand = /obj/item/weapon/claymore/hog
@@ -269,7 +269,7 @@ Legion
 	head = /obj/item/clothing/head/helmet/f13/legveteran
 	glasses = /obj/item/clothing/glasses/sunglasses/legion
 	mask = /obj/item/clothing/mask/bandana/legvet
-	suit_store = /obj/item/weapon/gun/projectile/shotgun/riot
+	suit_store = /obj/spawners/objectspawners/weaponspawners/gun/tier2
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
