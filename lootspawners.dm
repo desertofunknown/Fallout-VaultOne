@@ -113,6 +113,35 @@ obj
 									lb.loc=src.loc
 									del src
 						drugs
+			misc
+				currency
+					New()
+						switch(rand(1,5))
+							if(1)
+								var/obj/item/stack/caps/lb = new
+								lb.loc=src.loc
+								lb.amount=1
+								lb.icon_state="1"
+								del src
+							if(2)
+								var/obj/item/stack/caps/lb = new
+								lb.loc=src.loc
+								lb.amount=5
+								del src
+							if(3)
+								var/obj/item/stack/caps/lb = new
+								lb.loc=src.loc
+								lb.amount=10
+								lb.icon_state="10"
+								del src
+							if(4)
+								var/obj/item/stack/caps/lb = new
+								lb.loc=src.loc
+								lb.amount=20
+								lb.icon_state="20"
+								del src
+							if(5)
+								del src
 			weaponspawners //1.6
 				melee
 					tier1

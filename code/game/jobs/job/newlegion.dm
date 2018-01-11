@@ -277,6 +277,5 @@ Legion
 	/obj/item/stack/spear/bundle=1, \
 	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
-	/obj/item/weapon/storage/box/lethalshot=1,
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
 	/obj/item/device/flashlight/flare/torch=1)

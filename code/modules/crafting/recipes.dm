@@ -23,6 +23,7 @@
 /datum/table_recipe/firingpin
 	name = "Firing Pin"
 	result = /obj/item/device/firing_pin
+	reqs = list(/obj/item/stack/sheet/metal)
 	parts = list(/obj/item/stack/sheet/metal)
 	tools = list(/obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters)
 	time = 200
@@ -53,6 +54,7 @@
 /datum/table_recipe/barbedbat
 	name = "Barbed Bat"
 	result = /obj/item/weapon/barbedbat
+	reqs = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal)
 	parts = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal)
 	tools = list(/obj/item/weapon/kitchen/knife, /obj/item/weapon/weldingtool)
 	time = 100
@@ -61,6 +63,7 @@
 /datum/table_recipe/spikedbat
 	name = "Spiked Bat"
 	result = /obj/item/weapon/spikedbat
+	reqs = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal, /obj/item/stack/sheet/glass)
 	parts = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal, /obj/item/stack/sheet/glass)
 	tools = list(/obj/item/weapon/kitchen/knife, /obj/item/weapon/weldingtool)
 	time = 100
@@ -69,6 +72,7 @@
 /datum/table_recipe/bladedbat
 	name = "Maul Bat"
 	result = /obj/item/weapon/bladedbat
+	reqs = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal = 3)
 	parts = list(/obj/item/stack/sheet/mineral/wood, /obj/item/stack/sheet/metal = 3)
 	tools = list(/obj/item/weapon/kitchen/knife, /obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters)
 	time = 100
@@ -77,6 +81,7 @@
 /datum/table_recipe/serratedmachete
 	name = "Serrated Machete"
 	result = /obj/item/weapon/serratedmachete
+	reqs = list(/obj/item/stack/sheet/metal = 2)
 	parts = list(/obj/item/stack/sheet/metal = 2)
 	tools = list(/obj/item/weapon/weldingtool, /obj/item/weapon/wirecutters)
 	time = 100

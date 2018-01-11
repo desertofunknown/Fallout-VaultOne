@@ -177,6 +177,7 @@ var/global/list/rockTurfEdgeCache
 
 /turf/simulated/mineral/uranium
 	name = "uranium deposit"
+	icon_state = "rock_Uranium"
 	mineralType = /obj/item/weapon/ore/uranium
 	spreadChance = 5
 	spread = 1
@@ -185,6 +186,7 @@ var/global/list/rockTurfEdgeCache
 
 /turf/simulated/mineral/diamond
 	name = "diamond deposit"
+	icon_state = "rock_Diamond"
 	mineralType = /obj/item/weapon/ore/diamond
 	spreadChance = 0
 	spread = 1
@@ -193,6 +195,7 @@ var/global/list/rockTurfEdgeCache
 
 /turf/simulated/mineral/gold
 	name = "gold deposit"
+	icon_state = "rock_Gold"
 	mineralType = /obj/item/weapon/ore/gold
 	spreadChance = 5
 	spread = 1
@@ -201,6 +204,7 @@ var/global/list/rockTurfEdgeCache
 
 /turf/simulated/mineral/silver
 	name = "silver deposit"
+	icon_state = "rock_Silver"
 	mineralType = /obj/item/weapon/ore/silver
 	spreadChance = 5
 	spread = 1
