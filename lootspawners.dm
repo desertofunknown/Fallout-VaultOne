@@ -73,7 +73,7 @@ obj
 									del src
 					meds
 						New()
-							switch(rand(1,4))
+							switch(rand(1,7))
 								if(1)
 									var/obj/item/weapon/reagent_containers/stimpak/regular/lb = new
 									lb.loc=src.loc
@@ -90,12 +90,42 @@ obj
 									var/obj/item/weapon/storage/pill_bottle/mentats/lb = new
 									lb.loc=src.loc
 									del src
+								if(5)
+									var/obj/item/weapon/reagent_containers/pill/patch/medx/lb = new
+									lb.loc=src.loc
+									del src
+								if(6)
+									var/obj/item/weapon/reagent_containers/stimpak/super/lb = new
+									lb.loc=src.loc
+									del src
+								if(7)
+									del src
 						drugs
+							New()
+								switch(rand(1,5))
+									if(1)
+										var/obj/item/weapon/reagent_containers/pill/patch/jet/lb = new
+										lb.loc=src.loc
+										del src
+									if(2)
+										var/obj/item/weapon/reagent_containers/pill/patch/psycho/lb = new
+										lb.loc=src.loc
+										del src
+									if(3)
+										var/obj/item/weapon/reagent_containers/pill/patch/turbo/lb = new
+										lb.loc=src.loc
+										del src
+									if(4)
+										var/obj/item/weapon/storage/pill_bottle/mentats/lb = new
+										lb.loc=src.loc
+										del src
+									if(5)
+										del src
 				wasteland //1.5
 					equipment
 					meds
 						New()
-							switch(rand(1,4))
+							switch(rand(1,7))
 								if(1)
 									var/obj/item/weapon/reagent_containers/pill/patch/healpowder/lb = new
 									lb.loc=src.loc
@@ -112,8 +142,82 @@ obj
 									var/obj/item/weapon/storage/pill_bottle/mentats/lb = new
 									lb.loc=src.loc
 									del src
+								if(5)
+									var/obj/item/weapon/reagent_containers/pill/patch/medx/lb = new
+									lb.loc=src.loc
+									del src
+								if(6)
+									var/obj/item/weapon/reagent_containers/stimpak/regular/lb = new
+									lb.loc=src.loc
+									del src
+								if(7)
+									del src
 						drugs
+							New()
+								switch(rand(1,5))
+									if(1)
+										var/obj/item/weapon/reagent_containers/pill/patch/jet/lb = new
+										lb.loc=src.loc
+										del src
+									if(2)
+										var/obj/item/weapon/reagent_containers/pill/patch/psycho/lb = new
+										lb.loc=src.loc
+										del src
+									if(3)
+										var/obj/item/weapon/reagent_containers/pill/patch/turbo/lb = new
+										lb.loc=src.loc
+										del src
+									if(4)
+										var/obj/item/weapon/storage/pill_bottle/mentats/lb = new
+										lb.loc=src.loc
+										del src
+									if(5)
+										del src
 			misc
+				food
+					New()
+						switch(rand(1,10))
+							if(1)
+								var/obj/item/weapon/reagent_containers/food/snacks/beans/lb = new
+								lb.loc=src.loc
+								del src
+							if(2)
+								var/obj/item/weapon/reagent_containers/food/snacks/cram/lb = new
+								lb.loc=src.loc
+								del src
+							if(3)
+								var/obj/item/weapon/reagent_containers/food/snacks/craml/lb = new
+								lb.loc=src.loc
+								del src
+							if(4)
+								var/obj/item/weapon/reagent_containers/food/snacks/yumyum/lb = new
+								lb.loc=src.loc
+								del src
+							if(5)
+								var/obj/item/weapon/reagent_containers/food/snacks/fancylads/lb = new
+								lb.loc=src.loc
+								del src
+							if(6)
+								var/obj/item/weapon/reagent_containers/food/snacks/sugarbombs/lb = new
+								lb.loc=src.loc
+								del src
+							if(7)
+								var/obj/item/weapon/reagent_containers/food/snacks/steak/lb = new
+								lb.loc=src.loc
+								del src
+							if(8)
+								var/obj/item/weapon/reagent_containers/food/snacks/dandyapples/lb = new
+								lb.loc=src.loc
+								del src
+							if(9)
+								var/obj/item/weapon/reagent_containers/food/snacks/blamco/lb = new
+								lb.loc=src.loc
+								del src
+							if(10)
+								var/obj/item/weapon/reagent_containers/food/snacks/instamash/lb = new
+								lb.loc=src.loc
+								del src
+				junk
 				currency
 					New()
 						switch(rand(1,5))

@@ -286,6 +286,45 @@
 	..()
 	return
 
+/datum/reagent/consumable/nuka_cola_q
+	name = "Nuka-Cola Quantum"
+	id = "nuka_cola_q"
+	description = "Cola. Cola never changes."
+	color = "#6aa0f7" // rgb: 16, 8, 0
+	water_level = 1
+
+/datum/reagent/consumable/nuka_cola_q/on_mob_life(mob/living/M)
+	M.Jitter(35)
+	M.druggy = max(M.druggy, 35)
+	M.dizziness +=5
+	M.drowsyness = 0
+	M.sleeping = max(0,M.sleeping-2)
+	M.status_flags |= GOTTAGOFAST
+	if (M.bodytemperature > 310)//310 is the normal bodytemp. 310.055
+		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
+	..()
+	return
+/datum/reagent/consumable/sunset_sarsaparilla
+	name = "Sunset Sarsaparilla"
+	id = "sunset_sarsaparilla"
+	description = "Beverage of the West Coast"
+	color = "#f7be6a" // rgb: 16, 8, 0
+	water_level = 1
+
+/datum/reagent/consumable/sunset_sarsaparilla/on_mob_life(mob/living/M)
+	M.Jitter(12)
+	M.dizziness +=5
+	M.drowsyness = 0
+	M.adjustBruteLoss(-0.5)
+	M.adjustFireLoss(-0.5)
+	M.adjustToxLoss(-0.5)
+	M.adjustOxyLoss(-0.5)
+	M.sleeping = max(0,M.sleeping-2)
+	M.status_flags |= GOTTAGOFAST
+	if (M.bodytemperature > 310)//310 is the normal bodytemp. 310.055
+		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
+	..()
+	return
 /datum/reagent/consumable/spacemountainwind
 	name = "SM Wind"
 	id = "spacemountainwind"

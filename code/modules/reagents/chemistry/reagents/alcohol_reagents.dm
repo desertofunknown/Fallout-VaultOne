@@ -12,7 +12,51 @@
 25 = potent mixes
 <15 = deadly toxic
 */
-
+/*fallout*/
+/datum/reagent/consumable/ethanol/whiskey
+	name = "Whiskey"
+	id = "whiskey"
+	description = "A superb and well-aged single-malt whiskey. Damn."
+	color = "#664300" // rgb: 102, 67, 0
+	boozepwr = 35
+/datum/reagent/consumable/ethanol/moonshine
+	name = "Moonshine"
+	id = "moonshine"
+	description = "Moonshine is an alcoholic beverage which has a more pronounced effect on the user's personality, drink with caution."
+	color = "#664300" // rgb: 102, 67, 0
+	boozepwr = 16
+/datum/reagent/consumable/ethanol/rumnnuka
+	name = "Rum & Nuka"
+	id = "rumnnuka"
+	description = "Yohoho and all that. Nuka-Cola with rum."
+	color = "#664300" // rgb: 102, 67, 0
+	boozepwr = 45
+/datum/reagent/consumable/ethanol/beer
+	name = "Beer"
+	id = "beer"
+	description = "An alcoholic beverage made from malted grains, hops, yeast, and water."
+	color = "#664300" // rgb: 102, 67, 0
+	nutriment_factor = 1 * REAGENTS_METABOLISM
+	boozepwr = 55
+/datum/reagent/consumable/ethanol/beer/gammagulpbeer
+	name = "Gamma Gulp Beer"
+	id = "gammagulpbeer"
+	description = "An alcoholic beverage made from malted grains, hops, yeast, and water."
+	boozepwr = 50
+	color = "#A8E61D"
+/datum/reagent/consumable/ethanol/tequila
+	name = "Tequila"
+	id = "tequila"
+	description = "A strong and mildly flavoured, Mexican produced spirit. Feeling thirsty, hombre?"
+	color = "#FFFF91" // rgb: 255, 255, 145
+	boozepwr = 35
+/datum/reagent/consumable/ethanol/tequila/wltequila
+	name = "Large Wasteland Tequila"
+	id = "tequila"
+	description = "It has the same appearance as Scotch for the exception of the label."
+	color = "#FFFF91" // rgb: 255, 255, 145
+	boozepwr = 30
+/*fallout*/
 /datum/reagent/consumable/ethanol
 	name = "Ethanol"
 	id = "ethanol"
@@ -57,20 +101,11 @@
 		M.adjust_fire_stacks(reac_volume / 15)
 	..()
 
-/datum/reagent/consumable/ethanol/beer
-	name = "Beer"
-	id = "beer"
-	description = "An alcoholic beverage made from malted grains, hops, yeast, and water."
-	color = "#664300" // rgb: 102, 67, 0
-	nutriment_factor = 1 * REAGENTS_METABOLISM
-	boozepwr = 55
-
 /datum/reagent/consumable/ethanol/beer/greenbeer
 	name = "Green Beer"
 	id = "greenbeer"
 	description = "An alcoholic beverage made from malted grains, hops, yeast, and water. Dyed a festive green."
 	color = "#A8E61D"
-
 /datum/reagent/consumable/ethanol/kahlua
 	name = "Kahlua"
 	id = "kahlua"
@@ -85,13 +120,6 @@
 	M.Jitter(5)
 	..()
 	return
-
-/datum/reagent/consumable/ethanol/whiskey
-	name = "Whiskey"
-	id = "whiskey"
-	description = "A superb and well-aged single-malt whiskey. Damn."
-	color = "#664300" // rgb: 102, 67, 0
-	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/thirteenloko
 	name = "Thirteen Loko"
@@ -162,12 +190,6 @@
 	color = "#664300" // rgb: 102, 67, 0
 	boozepwr = 45
 
-/datum/reagent/consumable/ethanol/tequila
-	name = "Tequila"
-	id = "tequila"
-	description = "A strong and mildly flavoured, Mexican produced spirit. Feeling thirsty, hombre?"
-	color = "#FFFF91" // rgb: 255, 255, 145
-	boozepwr = 35
 
 /datum/reagent/consumable/ethanol/vermouth
 	name = "Vermouth"
