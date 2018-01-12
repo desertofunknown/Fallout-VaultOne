@@ -8,7 +8,7 @@ AI
 	department_flag = VAULT
 	faction = "Vault"
 	status = "Member"
-	total_positions = 0
+	total_positions = 1
 	spawn_positions = 1
 	selection_color = "#005A20"
 	supervisors = "your laws"
@@ -33,8 +33,8 @@ Cyborg
 	department_flag = VAULT
 	faction = "Vault"
 	status = "Member"
-	total_positions = 0
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	supervisors = "your laws and the AI"	//Nodrak
 	selection_color = "#005A20"
 	minimal_player_age = 21

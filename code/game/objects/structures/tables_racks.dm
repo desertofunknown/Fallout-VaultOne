@@ -470,7 +470,7 @@
  */
 /obj/structure/table/workbench
 	name = "Workbench"
-	desc = "A standard work bench for creating things."
+	desc = "A standard work bench for creating things. Put resource on the table and click drag onto yourself."
 	icon_state = "workbench"
 	var/status = 2
 	buildstack = /obj/item/stack/sheet/plasteel

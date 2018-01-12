@@ -48,7 +48,8 @@ Raider
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1,\
 	/obj/item/weapon/pipe=1, \
 	/obj/item/weapon/storage/wallet=1, \
-	/obj/item/stack/caps = 1)
+	/obj/item/stack/caps = 1, \
+	/obj/item/device/flashlight/flare/torch=1)
 	if (prob(50))
 		glasses = /obj/item/clothing/glasses/sunglasses
 	if (prob(80))

@@ -689,21 +689,21 @@
 		H.transpiration_efficiency = 1.1
 	else if(H.water > THIRST_LEVEL_MIDDLE) //LITLE THIRST
 		if(H.transpiration_efficiency != 1)
-			H << "<span class='notice'>You mouth dry.</span>"
+			H << "<span class='notice'>You are thirsty.</span>"
 		H.transpiration_efficiency = 1
 	else if(H.water > THIRST_LEVEL_HARD) //MIDDLE THIRST
 		if(H.transpiration_efficiency != 0.9)
-			H << "<span class='warning'>Mouth completely dry, you feel weak.</span>"
+			H << "<span class='warning'>Your lips are chapped from thrist.</span>"
 		H.transpiration_efficiency = 0.9
 	else if(H.water > THIRST_LEVEL_DEADLY) //HARD THIRST
 		if(H.transpiration_efficiency != 0.6)
-			H << "<span class='warning'>Thirst is slowly killing you.</span>"
+			H << "<span class='warning'>You are completly dehydrated, you wont last long like this.</span>"
 		if(prob(4))
 			H.AdjustWeakened(5)
 		H.transpiration_efficiency = 0.6
 	else
 		if(H.transpiration_efficiency != 0.1)
-			H << "<span class='warning'>You are dying of thirst.</span>"
+			H << "<span class='warning'>You feel like you could die any moment unless you get a drink</span>"
 		H.adjustOxyLoss(5)
 		H.transpiration_efficiency = 0.1
 		if(prob(10))

@@ -107,7 +107,8 @@ Wastelandpusher
 	/obj/item/weapon/reagent_containers/blood/radaway=2, \
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1, \
-	/obj/item/stack/coin/coins = 1)
+	/obj/item/stack/coin/coins = 1, \
+	/obj/item/device/flashlight/flare/torch=1)
 //	if (prob(80))
 //		l_hand = pick(/obj/item/weapon/kitchen/knife)
 //Due to how large this one is it gets its own file
@@ -136,7 +137,8 @@ Chaplain
 
 	gloves = /obj/item/clothing/gloves/pda/chaplain
 	uniform = /obj/item/clothing/under/f13/vault/v13
-	backpack_contents = list(/obj/item/device/camera/spooky = 1)
+	backpack_contents = list(/obj/item/device/camera/spooky = 1, \
+	/obj/item/device/flashlight/flare/torch=1)
 
 
 /datum/outfit/job/preacher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

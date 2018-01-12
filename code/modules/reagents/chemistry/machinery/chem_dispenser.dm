@@ -395,12 +395,14 @@
 		),
 		list(
 			"turbo",
+			"psycho",
 		),
 		list(
 			"ethanol",
 		),
 		list(
 			"oil",
+			"super_stimpak",
 		)
 	)
 /obj/machinery/chem_dispenser/fchems/despenser/New()

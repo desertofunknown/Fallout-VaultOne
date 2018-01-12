@@ -964,9 +964,9 @@ datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/M)
 	return
 
 datum/reagent/medicine/stimpak
-	name = "stim chemicals"
+	name = "Stimpak Cells"
 	id = "stimpak"
-	description = "Chemicals found in pre-war stimpaks."
+	description = "Stem Cells and other chemicals found in pre-war stimpaks."
 	reagent_state = LIQUID
 	color = "#e50d0d"
 
@@ -977,9 +977,9 @@ datum/reagent/medicine/stimpak
 	..()
 
 datum/reagent/medicine/super_stimpak
-	name = "super stim chemicals"
+	name = "GM Stimpak Cells"
 	id = "super_stimpak"
-	description = "Chemicals found in pre-war stimpaks."
+	description = "Genetically altered stem cells and other chemicals found in pre-war stimpaks."
 	reagent_state = LIQUID
 	color = "#e50d0d"
 
@@ -987,6 +987,9 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	M.adjustBruteLoss(-3*REM)
 	M.adjustFireLoss(-3*REM)
 	M.adjustOxyLoss(-3*REM)
+	M.druggy = max(M.druggy, 30)
+	M.confused = max(M.confused+2,0)
+	M.Dizzy(10)
 	..()
 	return
 
@@ -1008,7 +1011,7 @@ datum/reagent/medicine/super_stimpak/on_mob_life(mob/living/M)
 	return
 
 /datum/reagent/medicine/mentats
-	name = "mentat powder"
+	name = "Mentat Powder"
 	id = "mentats"
 	description = "A powerful and drug that heals and increases the perception of the user."
 	color = "#C8A5DC"

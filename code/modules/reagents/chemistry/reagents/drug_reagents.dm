@@ -17,6 +17,7 @@
 	M.AdjustStunned(-2)
 	M.AdjustWeakened(-2)
 	M.adjustStaminaLoss(-2)
+	M.druggy = max(M.druggy, 15)
 	M.status_flags |= GOTTAGOREALLYFAST
 	M.Jitter(2)
 	M.adjustBrainLoss(0.25)
@@ -65,6 +66,85 @@
 	..()
 	return
 /datum/reagent/drug/turbo/addiction_act_stage4(mob/living/carbon/human/M)
+	if(M.canmove && !istype(M.loc, /atom/movable))
+		for(var/i = 0, i < 8, i++)
+			step(M, pick(cardinal))
+	M.Jitter(20)
+	M.Dizzy(20)
+	if(prob(50))
+		M.emote(pick("twitch","drool","moan"))
+	..()
+	return
+
+/datum/reagent/drug/psycho
+	name = "Psycho"
+	id = "psycho"
+	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
+	reagent_state = LIQUID
+	color = "#60A584" // rgb: 96, 165, 132
+	overdose_threshold = 20
+	addiction_threshold = 10
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+
+/datum/reagent/drug/psycho/on_mob_life(mob/living/M)
+	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
+	if(prob(5))
+		M << "<span class='notice'>[high_message]</span>"
+	M.status_flags |= IGNORESLOWDOWN
+	M.adjustStaminaLoss(-2)
+	M.druggy = max(M.druggy, 30)
+	M.Jitter(2)
+	M.adjustBrainLoss(0.25)
+	M.eye_blurry = 35
+	if(prob(50))
+		M.losebreath++
+		M.adjustOxyLoss(1)
+	..()
+	if(prob(5))
+		M.emote(pick("twitch", "shiver"))
+	..()
+	return
+
+/datum/reagent/drug/psycho/overdose_process(mob/living/M)
+	if(M.canmove && !istype(M.loc, /atom/movable))
+		for(var/i = 0, i < 4, i++)
+			step(M, pick(cardinal))
+	if(prob(20))
+		M.emote("laugh")
+	if(prob(33))
+		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
+		var/obj/item/I = M.get_active_hand()
+		if(I)
+			M.drop_item()
+	..()
+	M.adjustToxLoss(0.5)
+	M.adjustBrainLoss(pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	return
+
+/datum/reagent/drug/psycho/addiction_act_stage1(mob/living/M)
+	M.Jitter(5)
+	if(prob(20))
+		M.emote(pick("twitch","drool","moan"))
+	..()
+	return
+/datum/reagent/drug/psycho/addiction_act_stage2(mob/living/M)
+	M.Jitter(10)
+	M.Dizzy(10)
+	if(prob(30))
+		M.emote(pick("twitch","drool","moan"))
+	..()
+	return
+/datum/reagent/drug/psycho/addiction_act_stage3(mob/living/M)
+	if(M.canmove && !istype(M.loc, /atom/movable))
+		for(var/i = 0, i < 4, i++)
+			step(M, pick(cardinal))
+	M.Jitter(15)
+	M.Dizzy(15)
+	if(prob(40))
+		M.emote(pick("twitch","drool","moan"))
+	..()
+	return
+/datum/reagent/drug/psycho/addiction_act_stage4(mob/living/carbon/human/M)
 	if(M.canmove && !istype(M.loc, /atom/movable))
 		for(var/i = 0, i < 8, i++)
 			step(M, pick(cardinal))

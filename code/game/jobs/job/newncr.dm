@@ -35,7 +35,8 @@ Trooper
 		/obj/item/ammo_box/magazine/m556=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1)
+		/obj/item/weapon/melee/classic_baton/telescopic=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -96,7 +97,8 @@ Trooper
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1)
+		/obj/item/weapon/melee/classic_baton/telescopic=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrcolonel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -120,7 +122,8 @@ Trooper
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1)
+		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrmajor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -162,7 +165,8 @@ Sergeant
 	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556/r20=2, \
-		/obj/item/weapon/kitchen/knife/combat=1)
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -205,7 +209,8 @@ Trooper
 	suit_store = /obj/item/weapon/gun/projectile/automatic/marksman/servicerifle
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556/r20=2, \
-		/obj/item/weapon/kitchen/knife/combat=1)
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -246,7 +251,8 @@ Recruit
 	suit_store = /obj/item/weapon/gun/projectile/shotgun/boltaction
 	backpack_contents = list(/obj/item/ammo_box/a762=3, \
 		/obj/item/clothing/mask/facewrap=1, \
-		/obj/item/weapon/kitchen/knife/combat=1)
+		/obj/item/weapon/kitchen/knife/combat=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 
 /datum/outfit/job/ncrrecruit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
@@ -295,7 +301,8 @@ Veteran Ranger
 	backpack_contents = list(/obj/item/weapon/gun/projectile/revolver/sequoia=1, \
 		/obj/item/ammo_box/c4570=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/melee/classic_baton/telescopic=1)
+		/obj/item/weapon/melee/classic_baton/telescopic=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 /datum/outfit/job/ncrvetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
@@ -344,7 +351,8 @@ NCR Ranger
 		/obj/item/weapon/restraints/handcuffs=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/ammo_box/magazine/d12g=2, \
-		/obj/item/weapon/melee/classic_baton=1)
+		/obj/item/weapon/melee/classic_baton=1, \
+		/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -389,7 +397,8 @@ NCR Ranger
 	/obj/item/weapon/gun/projectile/revolver/m29=1, \
 	/obj/item/ammo_box/m44=2, \
 	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1, \
-	/obj/item/weapon/melee/classic_baton=1)
+	/obj/item/weapon/melee/classic_baton=1, \
+	/obj/item/device/flashlight/flare/torch=1)
 /datum/outfit/job/ncrrecranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
