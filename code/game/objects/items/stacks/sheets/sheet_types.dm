@@ -12,6 +12,7 @@
  * Metal
  */
 var/global/list/datum/stack_recipe/metal_recipes = list ( \
+	new/datum/stack_recipe("Metal Cross", /obj/structure/cross, 10, time = 50, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("stool", /obj/structure/bed/stool, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("chair", /obj/structure/bed/chair, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("office chair", /obj/structure/bed/chair/office/white, 5, one_per_turf = 1, on_floor = 1), \

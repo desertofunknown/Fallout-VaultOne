@@ -45,6 +45,7 @@ Trooper
 		n.name="[H.real_name] ([H.job])"
 		H.status="Lieutenant"
 		n.access = list(67,69,70,71,72,20)
+		H.GenStats()
 
 /datum/job/ncrm
 	title = "Major"
@@ -107,6 +108,7 @@ Trooper
 		n.name="[H.real_name] ([H.job])"
 		H.status="Colonel"
 		n.access = list(67,68,69,70,71,72)
+		H.GenStats()
 
 /datum/outfit/job/ncrmajor
 	id = /obj/item/weapon/card/id/ncr
@@ -132,6 +134,7 @@ Trooper
 		n.name="[H.real_name] ([H.job])"
 		H.status="Major"
 		n.access = list(67,68,69,70,71,72)
+		H.GenStats()
 /*
 Sergeant
 */
@@ -175,6 +178,7 @@ Sergeant
 		n.name="[H.real_name] ([H.job])"
 		H.status="Sergant"
 		n.access = list(67,72)
+		H.GenStats()
 
 /*
 Trooper
@@ -219,6 +223,7 @@ Trooper
 		n.name="[H.real_name] ([H.job])"
 		H.status="Trooper"
 		n.access = list(67)
+		H.GenStats()
 /*
 Recruit
 */
@@ -262,6 +267,7 @@ Recruit
 		n.name="[H.real_name] (NCR Recruit)"
 		H.status="Recruit"
 		n.access = list(67)
+		H.GenStats()
 
 /*
 Veteran Ranger
@@ -312,6 +318,7 @@ Veteran Ranger
 		n.name="[H.real_name] ([H.job])"
 		H.status="Veteran Ranger"
 		n.access = list(67)
+		H.GenStats()
 /*
 NCR Ranger
 */
@@ -361,6 +368,7 @@ NCR Ranger
 		n.name="[H.real_name] ([H.job])"
 		H.status="Ranger"
 		n.access = list(67)
+		H.GenStats()
 /datum/job/ncrrecranger
 	title = "Recruit Ranger"
 	flag = NCRRECRANGER
@@ -407,3 +415,4 @@ NCR Ranger
 		n.name="[H.real_name] ([H.job])"
 		H.status="Recruit Ranger"
 		n.access = list(67)
+		H.GenStats()

@@ -45,6 +45,7 @@ Legion
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/c357/c38=2, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()
 
 //decan
 /datum/job/legdecan
@@ -92,6 +93,7 @@ Legion
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/magazine/d12g=2, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()
 
 //vexillarius
 /datum/job/legvex
@@ -139,6 +141,7 @@ Legion
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/magazine/m556=1, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()
 
 //centurion
 /datum/job/legcenturion
@@ -186,6 +189,7 @@ Legion
 	/obj/item/weapon/powergauntlet = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()
 
 //legat
 /datum/job/leglegat
@@ -234,6 +238,7 @@ Legion
 	/obj/item/weapon/restraints/legcuffs/bola/tribal=2, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()
 
 //prime recruit
 /datum/job/legVET
@@ -279,3 +284,4 @@ Legion
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()

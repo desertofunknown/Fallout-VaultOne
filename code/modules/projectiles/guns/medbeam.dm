@@ -31,21 +31,69 @@
 		on_beam_release(current_target)
 	current_target = null
 
+/obj/item/weapon/gun/medbeam/
+	proc/dofire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override)
+		add_fingerprint(user)
+
+		if(current_target)
+			LoseTarget()
+		if(!isliving(target))
+			return
+
+		current_target = target
+		active = 1
+		current_beam = new(user,current_target,time=6000,beam_icon_state="medbeam",btype=/obj/effect/ebeam/medical)
+		spawn(0)
+			current_beam.Start()
+
+		feedback_add_details("gun_fired","[src.type]")
 /obj/item/weapon/gun/medbeam/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override)
-	add_fingerprint(user)
-
-	if(current_target)
-		LoseTarget()
-	if(!isliving(target))
-		return
-
-	current_target = target
-	active = 1
-	current_beam = new(user,current_target,time=6000,beam_icon_state="medbeam",btype=/obj/effect/ebeam/medical)
-	spawn(0)
-		current_beam.Start()
-
-	feedback_add_details("gun_fired","[src.type]")
+	if(CoolDown("medGunUse",100))
+		switch(user:medicine)
+			if(1)
+				user << "You failed to use [src] because you are not skilled in medicine."
+			if(2)
+				if(prob(80))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(3)
+				if(prob(70))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(4)
+				if(prob(60))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(5)
+				if(prob(50))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(6)
+				if(prob(40))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(7)
+				if(prob(30))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(8)
+				if(prob(20))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(9)
+				if(prob(10))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					dofire(target, user, message, params, zone_override)
+			if(10)
+				dofire(target, user, message, params, zone_override)
 
 /obj/item/weapon/gun/medbeam/process()
 	var/mob/living/carbon/human/H = loc

@@ -67,22 +67,69 @@
 		qdel(src)
 	return
 
-/obj/machinery/sleeper/attackby(obj/item/I, mob/user, params)
-	if(!state_open && !occupant)
-		if(default_deconstruction_screwdriver(user, "sleeper-o", "sleeper", I))
+/obj/machinery/sleeper/
+	proc/repairing(obj/item/I, mob/user, params)
+		if(!state_open && !occupant)
+			if(default_deconstruction_screwdriver(user, "sleeper-o", "sleeper", I))
+				return
+
+		if(default_change_direction_wrench(user, I))
 			return
 
-	if(default_change_direction_wrench(user, I))
-		return
+		if(exchange_parts(user, I))
+			return
 
-	if(exchange_parts(user, I))
-		return
+		if(default_pry_open(I))
+			return
 
-	if(default_pry_open(I))
-		return
-
-	default_deconstruction_crowbar(I)
-
+		default_deconstruction_crowbar(I)
+/obj/machinery/sleeper/attackby(obj/item/I, mob/user, params)
+	if(CoolDown("SleeperRepair",30))
+		switch(user:repair)
+			if(1)
+				user << "You failed to use [src] because you are not skilled in repair."
+			if(2)
+				if(prob(80))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(3)
+				if(prob(70))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(4)
+				if(prob(60))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(5)
+				if(prob(50))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(6)
+				if(prob(40))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(7)
+				if(prob(30))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(8)
+				if(prob(20))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(9)
+				if(prob(10))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(10)
+				repairing(I,user)
 /obj/machinery/sleeper/ex_act(severity, target)
 	go_out()
 	..()
@@ -116,8 +163,52 @@
 /obj/machinery/sleeper/attack_hand(mob/user)
 	if(..())
 		return
-
-	sleeperUI(user)
+	if(CoolDown("SleeperUse",100))
+		switch(user:medicine)
+			if(1)
+				user << "You failed to use [src] because you are not skilled in medicine."
+			if(2)
+				if(prob(80))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(3)
+				if(prob(70))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(4)
+				if(prob(60))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(5)
+				if(prob(50))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(6)
+				if(prob(40))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(7)
+				if(prob(30))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(8)
+				if(prob(20))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(9)
+				if(prob(10))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					sleeperUI(user)
+			if(10)
+				sleeperUI(user)
 
 /obj/machinery/sleeper/proc/sleeperUI(mob/user)
 	var/dat

@@ -320,7 +320,11 @@
 	M.adjustFireLoss(-0.5)
 	M.adjustToxLoss(-0.5)
 	M.adjustOxyLoss(-0.5)
-	M.water -= 150
+	if(M:repair+2<=5)
+		M:repair += 2
+		spawn(50)
+			M:repair -= 2
+	M.water -= 25
 	if (M.bodytemperature > 310)//310 is the normal bodytemp. 310.055
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
 	..()

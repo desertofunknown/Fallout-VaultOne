@@ -54,6 +54,7 @@
 	L.imp_in = H
 	L.implanted = 1
 	H.sec_hud_set_implants()
+	H.GenStats()
 
 /datum/job/engineer
 	title = "Engineer"
@@ -73,7 +74,15 @@
 									access_external_airlocks, access_construction, access_atmospherics, access_tcomsat)
 	minimal_access = list(access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels,
 									access_external_airlocks, access_construction, access_tcomsat)
-
+/datum/outfit/job/engineer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	H.GenStats()
+/datum/outfit/job/doctor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	H.GenStats()
+/datum/outfit/job/scientist/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	..()
+	H.GenStats()
 /datum/outfit/job/engineer
 	name = "Engineer"
 
@@ -135,7 +144,6 @@
 
 	access = list(access_robotics, access_tox, access_tox_storage, access_research, access_xenobiology, access_mineral_storeroom, access_tech_storage, access_genetics)
 	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology, access_mineral_storeroom)
-
 /datum/outfit/job/scientist
 	name = "Scientist"
 
@@ -196,7 +204,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 
 /datum/outfit/job/security/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
-
+	H.GenStats()
 	if(sec_departments.len)
 		department = pick(sec_departments)
 		if(!visualsOnly)
@@ -322,6 +330,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()
+	H.GenStats()
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	gloves = /obj/item/clothing/gloves/pda
 	ears = /obj/item/device/radio/headset/headset_vlt

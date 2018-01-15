@@ -83,7 +83,54 @@
 /obj/machinery/chem_dispenser/interact(mob/user)
 	if(stat & BROKEN)
 		return
-	ui_interact(user)
+	if(CoolDown("ChemdispUse",30))
+		switch(user:medicine)
+			if(1)
+				user << "You failed to use [src] because you are not skilled in medicine."
+			if(2)
+				if(prob(80))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(3)
+				if(prob(70))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(4)
+				if(prob(60))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(5)
+				if(prob(50))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(6)
+				if(prob(40))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(7)
+				if(prob(30))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(8)
+				if(prob(20))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(9)
+				if(prob(10))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					ui_interact(user)
+			if(10)
+				ui_interact(user)
+
+
 
 /obj/machinery/chem_dispenser/ui_interact(mob/user, ui_key = "main", datum/nanoui/ui = null, force_open = 0)
 	ui = SSnano.try_update_ui(user, src, ui_key, ui, force_open = force_open)
@@ -153,39 +200,86 @@
 				overlays.Cut()
 	return 1
 
+/obj/machinery/chem_dispenser/
+	proc/repairing(obj/item/I, mob/user, params)
+		if(default_unfasten_wrench(user, I))
+			return
+
+		if(isrobot(user))
+			return
+
+		var/obj/item/weapon/reagent_containers/B = I // Get a beaker from it?
+		if(!istype(B))
+			return // Not a beaker?
+
+		if(beaker)
+			user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
+			return
+
+		if(!user.drop_item()) // Can't let go?
+			return
+
+		beaker = B
+		beaker.loc = src
+		user << "<span class='notice'>You add the beaker to the machine.</span>"
+
+		if(!icon_beaker)
+			icon_beaker = image('icons/obj/chemical.dmi', src, "disp_beaker") //randomize beaker overlay position.
+		icon_beaker.pixel_x = rand(-10,5)
+		overlays += icon_beaker
 /obj/machinery/chem_dispenser/attackby(obj/item/I, mob/user, params)
-	if(default_unfasten_wrench(user, I))
-		return
-
-	if(isrobot(user))
-		return
-
-	var/obj/item/weapon/reagent_containers/B = I // Get a beaker from it?
-	if(!istype(B))
-		return // Not a beaker?
-
-	if(beaker)
-		user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
-		return
-
-	if(!user.drop_item()) // Can't let go?
-		return
-
-	beaker = B
-	beaker.loc = src
-	user << "<span class='notice'>You add the beaker to the machine.</span>"
-
-	if(!icon_beaker)
-		icon_beaker = image('icons/obj/chemical.dmi', src, "disp_beaker") //randomize beaker overlay position.
-	icon_beaker.pixel_x = rand(-10,5)
-	overlays += icon_beaker
+	if(CoolDown("ChemdispRepair",30))
+		switch(user:repair)
+			if(1)
+				user << "You failed to use [src] because you are not skilled in repair."
+			if(2)
+				if(prob(80))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(3)
+				if(prob(70))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(4)
+				if(prob(60))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(5)
+				if(prob(50))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(6)
+				if(prob(40))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(7)
+				if(prob(30))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(8)
+				if(prob(20))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(9)
+				if(prob(10))
+					user << "You failed to use [src] because you are not skilled in repair."
+				else
+					repairing(I,user)
+			if(10)
+				repairing(I,user)
 
 /obj/machinery/chem_dispenser/attack_hand(mob/user)
 	if (!user)
 		return
 	interact(user)
-
-/obj/machinery/chem_dispenser/constructable
+/*/obj/machinery/chem_dispenser/constructable
 	name = "portable chem dispenser"
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "minidispenser"
@@ -235,12 +329,35 @@
 			"ammonia",
 			"diethylamine"
 		)
+	)*/
+/obj/machinery/chem_dispenser/constructable
+	name = "portable chem dispenser"
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "minidispenser"
+	energy = 10
+	max_energy = 10
+	amount = 5
+	recharge_delay = 30
+	dispensable_reagents = list()
+	var/list/dispensable_reagent_tiers = list(
+		list(
+
+		),
+		list(
+
+		),
+		list(
+
+		),
+		list(
+
+		)
 	)
 
 /obj/machinery/chem_dispenser/constructable/New()
 	..()
 	component_parts = list()
-	component_parts += new /obj/item/weapon/circuitboard/chem_dispenser(null)
+	//component_parts += new /obj/item/weapon/circuitboard/chem_dispenser(null)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(null)
 	component_parts += new /obj/item/weapon/stock_parts/matter_bin(null)
 	component_parts += new /obj/item/weapon/stock_parts/manipulator(null)
@@ -392,6 +509,7 @@
 			"radaway",
 			"mentats",
 			"medx",
+			"sacid",
 		),
 		list(
 			"turbo",

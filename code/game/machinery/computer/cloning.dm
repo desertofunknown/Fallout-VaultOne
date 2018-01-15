@@ -90,7 +90,53 @@
 /obj/machinery/computer/cloning/attack_hand(mob/user)
 	if(..())
 		return
-	interact(user)
+	if(CoolDown("ClonerUse",100))
+		switch(user:medicine)
+			if(1)
+				user << "You failed to use [src] because you are not skilled in medicine."
+			if(2)
+				if(prob(80))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(3)
+				if(prob(70))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(4)
+				if(prob(60))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(5)
+				if(prob(50))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(6)
+				if(prob(40))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(7)
+				if(prob(30))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(8)
+				if(prob(20))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(9)
+				if(prob(10))
+					user << "You failed to use [src] because you are not skilled in medicine."
+				else
+					interact(user)
+			if(10)
+				interact(user)
+
 
 /obj/machinery/computer/cloning/interact(mob/user)
 	user.set_machine(src)

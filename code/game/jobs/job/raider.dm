@@ -45,6 +45,7 @@ Raider
 	back = /obj/item/weapon/storage/backpack
 	backpack = /obj/item/weapon/storage/backpack
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
+	H.GenStats()
 	backpack_contents = list(/obj/item/weapon/restraints/handcuffs=1,\
 	/obj/item/weapon/pipe=1, \
 	/obj/item/weapon/storage/wallet=1, \

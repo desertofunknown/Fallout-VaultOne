@@ -32,6 +32,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/weapon/gun/projectile/shotgun
 	ears = /obj/item/device/radio/headset/headset_den
+	H.GenStats()
 
 /datum/job/settler
 	title = "Settler"
@@ -63,3 +64,4 @@
 		/obj/item/clothing/under/f13/lumberjack,\
 		/obj/item/clothing/under/f13/roving)
 	ears = /obj/item/device/radio/headset/headset_den
+	H.GenStats()
