@@ -1638,8 +1638,9 @@
 #include "code\orphaned procs\dbcore.dm"
 #include "code\orphaned procs\priority_announce.dm"
 #include "code\orphaned procs\statistics.dm"
+#include "goon\code\datums\browseroutput.dm"
 #include "honk\code\game\objects\effects\decals\Cleanable\misc.dm"
-#include "interface\interface.dm"
-#include "interface\stylesheet.dm"
-#include "interface\skin.dmf"
+#include "interface\backup\interface.dm"
+#include "interface\backup\stylesheet.dm"
+#include "interface\backup\skin.dmf"
 // END_INCLUDE

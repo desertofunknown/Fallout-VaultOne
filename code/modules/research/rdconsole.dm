@@ -583,6 +583,8 @@ proc/CallMaterialName(ID)
 /obj/machinery/computer/rdconsole/attack_hand(mob/user)
 	if(..())
 		return
+	if(user:science==10)
+		interact(user)
 	if(CoolDown("rdPCUse",100))
 		switch(user:science)
 			if(1)
@@ -627,8 +629,6 @@ proc/CallMaterialName(ID)
 					user << "You failed to use [src] because you are not skilled in science."
 				else
 					interact(user)
-			if(10)
-				interact(user)
 
 /obj/machinery/computer/rdconsole/interact(mob/user)
 
