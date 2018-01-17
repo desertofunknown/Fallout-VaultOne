@@ -20,7 +20,7 @@
 
 	if(override)	return
 
-	if (dna.species && dna.species.id=="bigmutant")
+	if (dna.species && dna.species.id=="bigmutant" && mutantattack==1)
 		A.attack_hulk(src)
 	else
 		A.attack_hand(src)

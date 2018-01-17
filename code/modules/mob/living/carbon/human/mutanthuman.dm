@@ -1,5 +1,5 @@
 /mob/living/carbon/human/proc/hulk_jump()
-	set name = "Leap Forward(Hulk)"
+	set name = "Leap Forward(Mutant)"
 	set category = "Superpower"
 
 	//src.verbs -= /mob/living/carbon/human/proc/hulk_jump
@@ -101,8 +101,17 @@
 
 	return
 
+/mob/living/carbon/human/proc/mutant_attack()
+	set name = "Dash Forward(Mutant)"
+	set category = "Superpower"
+	if(mutantattack==1)
+		mutantattack=0
+		src << "You will no longer use mutant attacks"
+	else
+		mutantattack=1
+		src << "You will use mutant attacks again."
 /mob/living/carbon/human/proc/hulk_dash()
-	set name = "Dash Forward(Hulk)"
+	set name = "Dash Forward(Mutant)"
 	set category = "Superpower"
 
 	var/turf/T = get_turf(get_step(src,src.dir))
@@ -257,7 +266,7 @@
 	return
 
 /mob/living/carbon/human/proc/hulk_smash()
-	set name = "Smash Ground(Hulk)"
+	set name = "Smash Ground(Mutant)"
 	set category = "Superpower"
 
 	if (src.lying || src.stunned || src.stat)

@@ -324,7 +324,7 @@
 		M:repair += 2
 		spawn(50)
 			M:repair -= 2
-	M.water -= 25
+	M.water -= 1
 	if (M.bodytemperature > 310)//310 is the normal bodytemp. 310.055
 		M.bodytemperature = max(310, M.bodytemperature - (5 * TEMPERATURE_DAMAGE_COEFFICIENT))
 	..()

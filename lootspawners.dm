@@ -64,8 +64,8 @@ obj
 						New()
 							switch(rand(1,2))
 								if(1)
-									var/obj/item/weapon/gun/medbeam/lb = new
-									lb.loc=src.loc
+									//var/obj/item/weapon/gun/medbeam/lb = new
+									//lb.loc=src.loc
 									del src
 								if(2)
 									var/obj/item/weapon/defibrillator/loaded/lb = new

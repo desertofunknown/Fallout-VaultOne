@@ -322,13 +322,13 @@ var/global/list/map_transition_config = MAP_TRANSITION_CONFIG
 
 	s += "<b>[station_name()]</b>";
 	s += " ("
-	s += "<a href=[config.discordurl]>" //Change this to wherever you want the hub to link to.
+	s += "<a href=https://discord.gg/JXUfBUZ>" //Change this to wherever you want the hub to link to.
 //	s += "[game_version]"
 	s += "Discord Channel"  //Replace this with something else. Or ever better, delete it and uncomment the game version.
 	s += "</a>"
 	s += ")<br>"
 	s += "<img src='http://i.imgur.com/bwkdv8N.gif'><br>"
-	s += "Under <b>[config.hostedby]</b> Protectorate"
+	s += "Under <b>U.S.A</b> blessing under god."
 /*
 	var/list/features = list()
 	if(!ticker)

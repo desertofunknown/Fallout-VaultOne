@@ -41,8 +41,8 @@
 
 /obj/item/weapon/reagent_containers/pill/patch/jet
 	name = "Jet"
-	desc = "Jet is a highly addictive drug first synthesized by Myron. It is extracted from brahmin dung fumes and administered via an inhaler."
-	list_reagents = list("stimulants" = 30, "morphine" = 10)
+	desc = "Jet is a highly addictive drug first synthesized by Myron. It is extracted from brahmin dung fumes and administered via an inhaler. It causes healing but it also will make you very sleepy."
+	list_reagents = list("jet" = 10)
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_15"
 	icon_state = "jet"
@@ -50,7 +50,7 @@
 /obj/item/weapon/reagent_containers/pill/patch/psycho
 	name = "Psycho"
 	desc = "Psycho will increase damage resistance, allowing subjects to survive hits more easily."
-	list_reagents = list("psycho")
+	list_reagents = list("psycho" = 10)
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_15"
 	icon_state = "psycho"
@@ -58,7 +58,7 @@
 /obj/item/weapon/reagent_containers/pill/patch/medx
 	name = "Mex-X"
 	desc = "Med-X is a potent opiate analgesic that binds to opioid receptors in the brain and central nervous system, reducing the perception of pain as well as the emotional response to pain. Essentially, it is a painkiller delivered by a hypodermic needle."
-	list_reagents = list("medx")
+	list_reagents = list("medx" = 10)
 	icon = 'icons/obj/syringe.dmi'
 	item_state = "syringe_15"
 	icon_state = "medx"

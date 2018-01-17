@@ -109,6 +109,7 @@ Wastelandpusher
 	/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1, \
 	/obj/item/stack/coin/coins = 1, \
 	/obj/item/device/flashlight/flare/torch=1)
+	H.GenStats()
 //	if (prob(80))
 //		l_hand = pick(/obj/item/weapon/kitchen/knife)
 //Due to how large this one is it gets its own file
@@ -146,7 +147,7 @@ Chaplain
 
 	if(visualsOnly)
 		return
-
+	H.GenStats()
 	var/obj/item/weapon/storage/book/bible/B = new /obj/item/weapon/storage/book/bible/booze(H)
 	var/new_religion = "Christianity"
 	if(H.client && H.client.prefs.custom_names["religion"])

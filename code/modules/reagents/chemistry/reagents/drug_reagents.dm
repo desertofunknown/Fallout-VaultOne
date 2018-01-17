@@ -1,4 +1,96 @@
 /*fallout*/
+/datum/reagent/drug/jet
+	name = "Jet"
+	id = "jet"
+	description = "Heals you and causes an intense downer high be prepared to rest after taking."
+	reagent_state = LIQUID
+	color = "#60A584" // rgb: 96, 165, 132
+	overdose_threshold = 20
+	addiction_threshold = 10
+	metabolization_rate = 0.75 * REAGENTS_METABOLISM
+
+/datum/reagent/drug/jet/on_mob_life(mob/living/M)
+	var/high_message = pick("You feel hyper.", "You feel like you want to just relax.", "You feel like taking a nap.")
+	if(prob(5))
+		M << "<span class='notice'>[high_message]</span>"
+	M.druggy = max(M.druggy, 45)
+	M.Jitter(-5)
+	M.adjustBrainLoss(0.1)
+	M.adjustBruteLoss(-0.5*REM)
+	M.adjustFireLoss(-0.5*REM)
+	M.drowsyness += 1
+	if(prob(5))
+		M.emote(pick("shiver"))
+	..()
+	return
+
+/datum/reagent/drug/jet/overdose_process(mob/living/M)
+	//if(M.canmove && !istype(M.loc, /atom/movable))
+		//for(var/i = 0, i < 4, i++)
+			//step(M, pick(cardinal))
+	if(prob(20))
+		M.emote("moan")
+		M.emote("moan")
+		M.emote("gasp")
+		M.emote("cough")
+		M.emote("gasp")
+	if(prob(65))
+		M.visible_message("<span class='danger'>[M] lays down feeling they could drift off at any moment!</span>")
+		var/obj/item/I = M.get_active_hand()
+		M.lay_down()
+		M.sleeping += 1
+		if(I)
+			M.drop_item()
+	..()
+	M.adjustToxLoss(0.5)
+	M.adjustBrainLoss(pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	return
+
+/datum/reagent/drug/jet/addiction_act_stage1(mob/living/M)
+	M.Jitter(5)
+	M.lay_down()
+	M.drowsyness += 1
+	if(prob(20))
+		M.emote(pick("moan","moan","moan"))
+	..()
+	return
+/datum/reagent/drug/jet/addiction_act_stage2(mob/living/M)
+	M.Jitter(10)
+	M.Dizzy(10)
+	M.lay_down()
+	M.lay_down()
+	M.lay_down()
+	M.drowsyness += 2
+	if(prob(30))
+		M.emote(pick("gasp","drool","moan"))
+	..()
+	return
+/datum/reagent/drug/jet/addiction_act_stage3(mob/living/M)
+	if(M.canmove && !istype(M.loc, /atom/movable))
+		for(var/i = 0, i < 4, i++)
+			step(M, pick(cardinal))
+	M.Jitter(15)
+	M.Dizzy(15)
+	if(prob(40))
+		M.emote(pick("gasp","drool","moan"))
+	..()
+	return
+/datum/reagent/drug/jet/addiction_act_stage4(mob/living/carbon/human/M)
+	if(M.canmove && !istype(M.loc, /atom/movable))
+		for(var/i = 0, i < 8, i++)
+			step(M, pick(cardinal))
+	M.Jitter(45)
+	M.Dizzy(40)
+	M.lay_down()
+	M.lay_down()
+	M.lay_down()
+	M.lay_down()
+	M.drowsyness += 4
+	M.sleeping += 1
+	if(prob(50))
+		M.emote(pick("gasp","drool","moan"))
+	..()
+	return
 /datum/reagent/drug/turbo
 	name = "Turbo"
 	id = "turbo"
@@ -79,7 +171,7 @@
 /datum/reagent/drug/psycho
 	name = "Psycho"
 	id = "psycho"
-	description = "Reduces stun times by about 300%, speeds the user up, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
+	description = "Reduces stun times by about 300%, ignores loss of speed, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
 	reagent_state = LIQUID
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 20
@@ -87,7 +179,7 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/M)
-	var/high_message = pick("You feel hyper.", "You feel like you need to go faster.", "You feel like you can run the world.")
+	var/high_message = pick("You feel an inner strength boiling up.", "You consider mudering people(dont really).", "You want to dance manically laughing.")
 	if(prob(5))
 		M << "<span class='notice'>[high_message]</span>"
 	M.status_flags |= IGNORESLOWDOWN
@@ -101,7 +193,7 @@
 		M.adjustOxyLoss(1)
 	..()
 	if(prob(5))
-		M.emote(pick("twitch", "shiver"))
+		M.emote(pick("twitch","scream"))
 	..()
 	return
 
@@ -111,18 +203,21 @@
 			step(M, pick(cardinal))
 	if(prob(20))
 		M.emote("laugh")
-	if(prob(33))
-		M.visible_message("<span class='danger'>[M]'s hands flip out and flail everywhere!</span>")
+	if(prob(60))
+		M.visible_message("<span class='danger'>[M] begins ripping his own skin from his body!</span>")
+		M.apply_damage(15,"brute",pick("head","chest","groin"))
+		M.say("I AM NOT CRAZY!")
+		M.say("EAT MY PENIS BITCH LICK MY PUSSY WHORE!")
 		var/obj/item/I = M.get_active_hand()
 		if(I)
 			M.drop_item()
 	..()
-	M.adjustToxLoss(0.5)
-	M.adjustBrainLoss(pick(0.5, 0.6, 0.7, 0.8, 0.9, 1))
+	M.adjustToxLoss(0.1)
 	return
 
 /datum/reagent/drug/psycho/addiction_act_stage1(mob/living/M)
 	M.Jitter(5)
+	M.say("I need my fix man!")
 	if(prob(20))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -130,6 +225,7 @@
 /datum/reagent/drug/psycho/addiction_act_stage2(mob/living/M)
 	M.Jitter(10)
 	M.Dizzy(10)
+	M.say("I'll suck dick for a fix!")
 	if(prob(30))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -140,6 +236,7 @@
 			step(M, pick(cardinal))
 	M.Jitter(15)
 	M.Dizzy(15)
+	M.say("I'M A WHORE! WHERE IS MY MOTHERFUKIN PSYCO!")
 	if(prob(40))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -150,6 +247,9 @@
 			step(M, pick(cardinal))
 	M.Jitter(20)
 	M.Dizzy(20)
+	M.visible_message("<span class='danger'>[M] begins ripping his own skin from his body!</span>")
+	M.apply_damage(15,"brute",pick("head","chest","groin"))
+	M.say("FUCK ME FUCK ME I NEED MORE!")
 	if(prob(50))
 		M.emote(pick("twitch","drool","moan"))
 	..()

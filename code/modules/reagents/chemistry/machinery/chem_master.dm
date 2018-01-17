@@ -36,35 +36,35 @@
 		if(default_unfasten_wrench(user, I))
 			return
 
-		if(istype(I, /obj/item/weapon/reagent_containers/glass))
-			if(isrobot(user))
-				return
-			if(beaker)
-				user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
-				return
-			if(!user.drop_item())
-				return
-
-			beaker = I
-			beaker.loc = src
-			user << "<span class='notice'>You add the beaker to the machine.</span>"
-			src.updateUsrDialog()
-			icon_state = "mixer1"
-
-		else if(!condi && istype(I, /obj/item/weapon/storage/pill_bottle))
-			if(bottle)
-				user << "<span class='warning'>A pill bottle is already loaded into the machine!</span>"
-				return
-			if(!user.drop_item())
-				return
-
-			bottle = I
-			bottle.loc = src
-			user << "<span class='notice'>You add the pill bottle into the dispenser slot.</span>"
-			src.updateUsrDialog()
-
 		return
 /obj/machinery/chem_master/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/weapon/reagent_containers/glass))
+		if(isrobot(user))
+			return
+		if(beaker)
+			user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
+			return
+		if(!user.drop_item())
+			return
+
+		beaker = I
+		beaker.loc = src
+		user << "<span class='notice'>You add the beaker to the machine.</span>"
+		src.updateUsrDialog()
+		icon_state = "mixer1"
+
+	else if(!condi && istype(I, /obj/item/weapon/storage/pill_bottle))
+		if(bottle)
+			user << "<span class='warning'>A pill bottle is already loaded into the machine!</span>"
+			return
+		if(!user.drop_item())
+			return
+
+		bottle = I
+		bottle.loc = src
+		user << "<span class='notice'>You add the pill bottle into the dispenser slot.</span>"
+		src.updateUsrDialog()
+
 	if(CoolDown("ChemRepair",100))
 		switch(user:repair)
 			if(1)

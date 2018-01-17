@@ -208,26 +208,27 @@
 		if(isrobot(user))
 			return
 
-		var/obj/item/weapon/reagent_containers/B = I // Get a beaker from it?
-		if(!istype(B))
-			return // Not a beaker?
 
-		if(beaker)
-			user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
-			return
-
-		if(!user.drop_item()) // Can't let go?
-			return
-
-		beaker = B
-		beaker.loc = src
-		user << "<span class='notice'>You add the beaker to the machine.</span>"
-
-		if(!icon_beaker)
-			icon_beaker = image('icons/obj/chemical.dmi', src, "disp_beaker") //randomize beaker overlay position.
-		icon_beaker.pixel_x = rand(-10,5)
-		overlays += icon_beaker
 /obj/machinery/chem_dispenser/attackby(obj/item/I, mob/user, params)
+	var/obj/item/weapon/reagent_containers/B = I // Get a beaker from it?
+	if(!istype(B))
+		return // Not a beaker?
+
+	if(beaker)
+		user << "<span class='warning'>A beaker is already loaded into the machine!</span>"
+		return
+
+	if(!user.drop_item()) // Can't let go?
+		return
+
+	beaker = B
+	beaker.loc = src
+	user << "<span class='notice'>You add the beaker to the machine.</span>"
+
+	if(!icon_beaker)
+		icon_beaker = image('icons/obj/chemical.dmi', src, "disp_beaker") //randomize beaker overlay position.
+	icon_beaker.pixel_x = rand(-10,5)
+	overlays += icon_beaker
 	if(CoolDown("ChemdispRepair",30))
 		switch(user:repair)
 			if(1)
@@ -514,6 +515,7 @@
 		list(
 			"turbo",
 			"psycho",
+			"jet",
 		),
 		list(
 			"ethanol",

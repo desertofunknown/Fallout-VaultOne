@@ -125,7 +125,7 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 	brutemod = 0.2
 	burnmod = 0.25
 	speedmod = 3
-	armor = 20
+	armor = 25
 	specflags = list(EYECOLOR)
 	mutant_bodyparts = list()
 	default_features = list("mcolor" = "FFF")
@@ -154,14 +154,18 @@ datum/species/human/spec_death(gibbed, mob/living/carbon/human/H)
 
 
 /datum/species/bigmutant/spec_life(mob/living/carbon/human/H)
+	if(H.stat == DEAD)
+		return
 	H.verbs += /mob/living/carbon/human/proc/hulk_jump
 	H.verbs += /mob/living/carbon/human/proc/hulk_dash
 	H.verbs += /mob/living/carbon/human/proc/hulk_smash
-	if (canshout==0)
-		H.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
-		canshout = rand(50, 100)
-	else
-		canshout = canshout - 1
+	H.verbs += /mob/living/carbon/human/proc/mutant_attack
+	if(H.stat != DEAD)
+		if (canshout==0)
+			H.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ))
+			canshout = rand(50, 100)
+		else
+			canshout = canshout - 1
 
 
 

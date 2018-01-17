@@ -5,6 +5,7 @@
 	icon = 'icons/mob/human.dmi'
 	icon_state = "caucasian1_m_s"
 	var/hulk_cd
+	var/mutantattack=0
 
 
 
