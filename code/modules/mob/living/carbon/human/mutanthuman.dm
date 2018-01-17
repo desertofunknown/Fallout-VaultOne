@@ -102,8 +102,9 @@
 	return
 
 /mob/living/carbon/human/proc/mutant_attack()
-	set name = "Dash Forward(Mutant)"
+	set name = "Attack Switch(Mutant)"
 	set category = "Superpower"
+
 	if(mutantattack==1)
 		mutantattack=0
 		src << "You will no longer use mutant attacks"

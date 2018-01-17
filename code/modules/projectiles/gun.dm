@@ -242,33 +242,53 @@
 	return
 
 /obj/item/weapon/gun/proc/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override)
-	add_fingerprint(user)
-
-	if(semicd)
+	if (user:dna.species && user:dna.species.id=="bigmutant")
+		user << "Dont know how us this."
 		return
+	else
+		add_fingerprint(user)
 
-	if(heavy_weapon)
-		if(user.get_inactive_hand())
-			recoil = 4 //one-handed kick
-		else
-			recoil = initial(recoil)
+		if(semicd)
+			return
 
-	if(burst_size > 1)
-		for(var/i = 1 to burst_size)
-			if(!user)
-				break
-			if(!issilicon(user))
-				if( i>1 && !(src in get_both_hands(user))) //for burst firing
+		if(heavy_weapon)
+			if(user.get_inactive_hand())
+				recoil = 4 //one-handed kick
+			else
+				recoil = initial(recoil)
+
+		if(burst_size > 1)
+			for(var/i = 1 to burst_size)
+				if(!user)
 					break
-			if(chambered)
-				var/sprd = 0
-				if(randomspread)
-					sprd = round((rand() - 0.5) * spread)
-				else //Smart spread
-					sprd = round((i / burst_size - 0.5) * spread)
-				if(!chambered.fire(target, user, params, suppressed, zone_override, sprd))
+				if(!issilicon(user))
+					if( i>1 && !(src in get_both_hands(user))) //for burst firing
+						break
+				if(chambered)
+					var/sprd = 0
+					if(randomspread)
+						sprd = round((rand() - 0.5) * spread)
+					else //Smart spread
+						sprd = round((i / burst_size - 0.5) * spread)
+					if(!chambered.fire(target, user, params, suppressed, zone_override, sprd))
+						shoot_with_empty_chamber(user)
+						break
+					else
+						if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
+							shoot_live_shot(user, 1, target, message)
+						else
+							shoot_live_shot(user, 0, target, message)
+				else
 					shoot_with_empty_chamber(user)
 					break
+				process_chamber()
+				update_icon()
+				sleep(fire_delay)
+		else
+			if(chambered)
+				if(!chambered.fire(target, user, params, suppressed, zone_override, spread))
+					shoot_with_empty_chamber(user)
+					return
 				else
 					if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
 						shoot_live_shot(user, 1, target, message)
@@ -276,35 +296,19 @@
 						shoot_live_shot(user, 0, target, message)
 			else
 				shoot_with_empty_chamber(user)
-				break
+				return
 			process_chamber()
 			update_icon()
-			sleep(fire_delay)
-	else
-		if(chambered)
-			if(!chambered.fire(target, user, params, suppressed, zone_override, spread))
-				shoot_with_empty_chamber(user)
-				return
-			else
-				if(get_dist(user, target) <= 1) //Making sure whether the target is in vicinity for the pointblank shot
-					shoot_live_shot(user, 1, target, message)
-				else
-					shoot_live_shot(user, 0, target, message)
-		else
-			shoot_with_empty_chamber(user)
-			return
-		process_chamber()
-		update_icon()
-		semicd = 1
-		spawn(fire_delay)
-			semicd = 0
+			semicd = 1
+			spawn(fire_delay)
+				semicd = 0
 
-	if(user)
-		if(user.hand)
-			user.update_inv_l_hand()
-		else
-			user.update_inv_r_hand()
-	feedback_add_details("gun_fired","[src.type]")
+		if(user)
+			if(user.hand)
+				user.update_inv_l_hand()
+			else
+				user.update_inv_r_hand()
+		feedback_add_details("gun_fired","[src.type]")
 
 /obj/item/weapon/gun/attack(mob/M as mob, mob/user)
 	if(user.a_intent == "harm") //Flogging
