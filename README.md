@@ -44,7 +44,7 @@ http://www.mediafire.com/download/fdlmc67zwwyw26d/Fallout13OST.zip
 Note: This is not associated with Bethesda Softworks in any way! Fallout 13 is neither a trademark, nor a commercial product.
 2016 Bethesda Softworks LLC. Trademarks belong to their respective owners.
 
-All code is under a GNU GPL v3 license (http://www.gnu.org/licenses/gpl.html),
+All code is under a GNU AGPL v3 license (http://www.gnu.org/licenses/agpl.html),
 including tools unless their readme specifies otherwise.
 All content including icons and sound is under a Creative Commons 3.0 BY-SA
 license (http://creativecommons.org/licenses/by-sa/3.0/).<BR>
