@@ -3,6 +3,7 @@
     desc = "accurate weapon"
     burst_size = 1
     fire_delay = 15
+    big_gun=1
     mag_type = /obj/item/ammo_box/magazine/m556
     slot_flags = SLOT_BACK
 

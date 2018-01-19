@@ -35,7 +35,8 @@ var/const/BOSP			=(1<<55)*/
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 	mask = /obj/item/clothing/mask/gas/syndicate
 	r_hand = /obj/item/weapon/gun/projectile/shotgun/boltaction/scoped
-
+/datum/outfit/messiah/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	H.GenStats()
 //SourcePony
 /datum/job/slimeman
 	title = "Mercenary"
@@ -66,7 +67,8 @@ var/const/BOSP			=(1<<55)*/
 	glasses = /obj/item/clothing/glasses/sunglasses
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	backpack_contents = list(/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
-
+/datum/outfit/Mercenary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	H.GenStats()
 //SEPERATED
 
 /datum/job/bosinitiate

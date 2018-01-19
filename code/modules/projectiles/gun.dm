@@ -35,6 +35,9 @@
 	var/fire_delay = 0					//rate of fire for burst firing and semi auto
 	var/semicd = 0						//cooldown handler
 	var/heavy_weapon = 0
+	var/small_gun = 0
+	var/big_gun = 0
+	var/energy_gun = 0
 
 /*
 	var/safetyposition = 1				//the safety position you see not the one you have 0 = off
@@ -241,7 +244,124 @@
 /obj/item/weapon/gun/proc/newshot()
 	return
 
+/obj/item/weapon/gun/proc/gunroll(src,mob/user)
+	if(src:small_gun)
+		switch(user:small_guns)
+			if(1)
+				user << "You are not skilled in small guns so you cant fire [src]"
+				return 1
+			if(2)
+				if(prob(80))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+
+			if(3)
+				if(prob(70))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+			if(4)
+				if(prob(60))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+			if(5)
+				if(prob(50))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+			if(6)
+				if(prob(40))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+			if(7)
+				if(prob(30))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+			if(8)
+				if(prob(20))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+			if(9)
+				if(prob(10))
+					user << "You failed to fire [src] you are not skilled with small guns."
+					return 1
+	if(src:big_gun)
+		switch(user:big_guns)
+			if(1)
+				user << "You are not skilled in big guns so you cant fire [src]"
+				return 1
+			if(2)
+				if(prob(80))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+
+			if(3)
+				if(prob(70))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+			if(4)
+				if(prob(60))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+			if(5)
+				if(prob(50))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+			if(6)
+				if(prob(40))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+			if(7)
+				if(prob(30))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+			if(8)
+				if(prob(20))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+			if(9)
+				if(prob(10))
+					user << "You failed to fire [src] you are not skilled with big guns."
+					return 1
+	if(src:energy_gun)
+		switch(user:energy_weapons)
+			if(1)
+				user << "You are not skilled in energy guns so you cant fire [src]"
+				return 1
+			if(2)
+				if(prob(80))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+
+			if(3)
+				if(prob(70))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+			if(4)
+				if(prob(60))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+			if(5)
+				if(prob(50))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+			if(6)
+				if(prob(40))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+			if(7)
+				if(prob(30))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+			if(8)
+				if(prob(20))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
+			if(9)
+				if(prob(10))
+					user << "You failed to fire [src] you are not skilled with energy guns."
+					return 1
 /obj/item/weapon/gun/proc/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override)
+	if(gunroll(src,user))
+		return
 	if (user:dna.species && user:dna.species.id=="bigmutant")
 		user << "Dont know how us this."
 		return

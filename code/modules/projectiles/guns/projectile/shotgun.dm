@@ -16,6 +16,7 @@
 	mag_load_sound = null
 	mag_unload_sound = null		//Shotguns have their own procs related to loading, unloading, etc.
 	chamber_sound = null
+	big_gun=1
 
 /obj/item/weapon/gun/projectile/shotgun/attackby(obj/item/A, mob/user, params)
 	var/num_loaded = magazine.attackby(A, user, params, 1)
@@ -82,6 +83,7 @@
 	damageA=0
 	damageS=0
 	rangeG=0
+	big_gun=1
 
 /obj/item/weapon/gun/projectile/shotgun/riot/New()
 	..()
@@ -149,6 +151,7 @@
 	w_class = 4
 	zoomable = TRUE
 	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
+	big_gun=1
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
 /////////////////////////////
@@ -167,6 +170,7 @@
 	sawn_desc = "Omar's coming!"
 	unique_rename = 1
 	unique_reskin = 1
+	big_gun=1
 
 /obj/item/weapon/gun/projectile/revolver/doublebarrel/New()
 	..()
@@ -220,6 +224,7 @@
 	damageA=0
 	damageS=0
 	rangeG=0
+	big_gun=1
 
 /obj/item/weapon/gun/projectile/revolver/max_sawn_off/New()
 	..()
@@ -235,6 +240,7 @@
 	w_class = 4
 	force = 15
 	unique_reskin = 0
+	big_gun=1
 	origin_tech = "combat=2;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/mad
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -247,6 +253,7 @@
 	w_class = 3
 	force = 15
 	unique_reskin = 0
+	big_gun=1
 	origin_tech = "combat=2;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised
 	fire_sound = 'sound/f13weapons/caravan_shotgun.ogg'
@@ -257,6 +264,7 @@
 	icon_state = "zipgun"
 	item_state = "gun"
 	w_class = 2
+	small_gun=1
 	origin_tech = "combat=2;materials=2"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
@@ -267,9 +275,11 @@
 	icon_state = "pipe_rifle"
 	item_state = "shotgun"
 	w_class = 4
+	big_gun=1
 	origin_tech = "combat=2;materials=2"
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/improvised10mm
+
 
 // IMPROVISED SHOTGUN //
 
@@ -286,6 +296,7 @@
 	sawn_desc = "I'm just here for the gasoline."
 	unique_rename = 0
 	unique_reskin = 0
+	big_gun=1
 
 /obj/item/weapon/gun/projectile/revolver/doublebarrel/improvised/attackby(obj/item/A, mob/user, params)
 	..()
@@ -360,6 +371,7 @@
 	fire_sound = 'sound/weapons/Gunshot.ogg'
 	can_suppress = 0
 	burst_size = 1
+	big_gun=1
 	fire_delay = 0
 	pin = /obj/item/device/firing_pin/implant/pindicate
 	action_button_name = null
@@ -401,6 +413,7 @@
 	icon_state = "cshotgun"
 	origin_tech = "combat=5;materials=2"
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com
+	big_gun=1
 	w_class = 5
 
 /obj/item/weapon/gun/projectile/shotgun/automatic/hunting
@@ -408,6 +421,7 @@
 	desc = "A Colt Rangemaster semi-automatic rifle chambered in .308. Single-shot only."
 	icon_state = "rangemaster"
 	origin_tech = "combat=2;materials=2"
+	big_gun=1
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	w_class = 4
 	fire_sound = 'sound/f13weapons/hunting_rifle.ogg'

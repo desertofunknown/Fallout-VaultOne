@@ -92,6 +92,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	fire_delay = 2
 	burst_size = 2
+	big_gun=1
 	damageG=10
 	damageA=0
 	damageS=5
@@ -123,6 +124,7 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	fire_delay = 2
+	big_gun=1
 	can_suppress = 0
 	burst_size = 0
 
@@ -139,6 +141,7 @@
 	desc = "A lightweight, burst-fire submachine gun, for when you really want someone dead. Uses 9mm rounds."
 	icon_state = "mini-uzi"
 	origin_tech = "combat=5;materials=2;syndicate=8"
+	small_gun=1
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
 
@@ -154,6 +157,7 @@
 	var/obj/item/weapon/gun/projectile/revolver/grenadelauncher/underbarrel
 	burst_size = 3
 	fire_delay = 2
+	big_gun=1
 	pin = /obj/item/device/firing_pin/implant/pindicate
 
 /obj/item/weapon/gun/projectile/automatic/m90/New()
@@ -228,6 +232,7 @@
 	fire_sound = 'sound/weapons/Gunshot_smg.ogg'
 	can_suppress = 0
 	burst_size = 4
+	big_gun=1
 	fire_delay = 1
 
 /obj/item/weapon/gun/projectile/automatic/ar
@@ -242,6 +247,7 @@
 	can_suppress = 0
 	burst_size = 3
 	fire_delay = 1
+	big_gun=1
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
@@ -257,6 +263,7 @@
 	fire_sound = 'sound/f13weapons/10mm_fire_03.ogg'
 	can_suppress = 0
 	burst_size = 3
+	big_gun=1
  	//fire_delay = 1
 
 /obj/item/weapon/gun/projectile/automatic/assault_rifle
@@ -272,6 +279,7 @@
 	burst_size = 3
 	fire_delay = 1
 	w_class = 4
+	big_gun=1
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
@@ -312,6 +320,7 @@
 	fire_delay = 2
 	zoomable = TRUE
 	zoom_amt = 7
+	big_gun=1
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
@@ -356,6 +365,7 @@
 	mag_type = /obj/item/ammo_box/magazine/d12g
 	can_suppress = 0
 	burst_size = 3
+	big_gun=1
 	w_class = 4
 
 /obj/item/weapon/gun/projectile/automatic/shotgun/riot
@@ -383,6 +393,7 @@
 	burst_size = 10
 	heavy_weapon = 1
 	fire_delay = 1
+	big_gun=1
 	mag_load_sound = 'sound/effects/wep_magazines/ar_load.ogg'
 	mag_unload_sound = 'sound/effects/wep_magazines/ar_unload.ogg'
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'

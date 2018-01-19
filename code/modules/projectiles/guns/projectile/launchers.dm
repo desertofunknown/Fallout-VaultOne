@@ -9,6 +9,7 @@
 	mag_type = /obj/item/ammo_box/magazine/internal/grenadelauncher
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	w_class = 3
+	big_gun=1
 	pin = /obj/item/device/firing_pin/implant/pindicate
 
 /obj/item/weapon/gun/projectile/revolver/grenadelauncher/unrestricted
@@ -23,6 +24,7 @@
 	name = "China Lake Grenade Launcher"
 	desc = "A pump-action three shot, one in the chamber grenade launcher."
 	icon_state = "china_lake"
+	big_gun=1
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/grenade
 
 /obj/item/weapon/gun/projectile/revolver/grenadelauncher/cyborg
@@ -32,6 +34,7 @@
 	icon_state = "mecha_grenadelnchr"
 	mag_type = /obj/item/ammo_box/magazine/internal/cylinder/grenademulti
 	pin = /obj/item/device/firing_pin
+	big_gun=1
 
 /obj/item/weapon/gun/projectile/revolver/grenadelauncher/cyborg/attack_self()
 	return
@@ -45,6 +48,7 @@
 	mag_type = /obj/item/ammo_box/magazine/m75
 	burst_size = 1
 	fire_delay = 0
+	small_gun=1
 	action_button_name = null
 
 /obj/item/weapon/gun/projectile/automatic/gyropistol/process_chamber(eject_casing = 0, empty_chamber = 1)
@@ -67,6 +71,7 @@
 	fire_sound = 'sound/weapons/grenadelaunch.ogg'
 	burst_size = 1
 	fire_delay = 0
+	small_gun=1
 	select = 0
 	action_button_name = null
 

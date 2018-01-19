@@ -5,6 +5,7 @@
 	item_state = "l6closedmag"
 	w_class = 5
 	slot_flags = 0
+	big_gun=1
 	origin_tech = "combat=5;materials=1;syndicate=2"
 	mag_type = /obj/item/ammo_box/magazine/m762
 	heavy_weapon = 1

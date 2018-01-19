@@ -8,6 +8,7 @@
 	can_suppress = 1
 	burst_size = 1
 	fire_delay = 0
+	small_gun=1
 	action_button_name = null
 
 /obj/item/weapon/gun/projectile/automatic/pistol/update_icon()

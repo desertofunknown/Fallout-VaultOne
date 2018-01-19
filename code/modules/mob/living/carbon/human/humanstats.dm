@@ -33,14 +33,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(7,10)
+				big_guns = rand(1,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,10)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(1,10)
 				repair = 1
 				science = 2
 				sneak = 2
@@ -54,14 +54,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,2)
+				big_guns = rand(1,2)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(1,2)
 				repair = 10
 				science = 2
 				sneak = 2
@@ -75,10 +75,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,2)
+				big_guns = rand(1,2)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 10
@@ -96,10 +96,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,2)
+				big_guns = rand(1,2)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 3
@@ -117,14 +117,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 4
+				small_guns = rand(1,10)
+				big_guns = rand(1,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(5,10)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(3,6)
 				repair = 1
 				science = 2
 				sneak = 2
@@ -138,14 +138,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 2
-				big_guns = 2
+				small_guns = rand(2,3)
+				big_guns = rand(2,3)
 				barter = 2
-				energy_weapons = 2
+				energy_weapons = rand(3,4)
 				explosives = 2
 				lockpick = 2
 				medicine = 2
-				melee_weapons = 2
+				melee_weapons = rand(2,3)
 				repair = 3
 				science = 3
 				sneak = 3
@@ -160,14 +160,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,10)
+				big_guns = rand(1,2)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 2
-				melee_weapons = 5
+				melee_weapons = rand(1,10)
 				repair = 3
 				science = 2
 				sneak = 2
@@ -181,14 +181,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(4,10)
+				big_guns = rand(1,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 2
-				melee_weapons = 5
+				melee_weapons = rand(1,5)
 				repair = 3
 				science = 2
 				sneak = 2
@@ -203,14 +203,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,7)
+				big_guns = rand(1,3)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,3)
 				explosives = 1
 				lockpick = 1
 				medicine = 2
-				melee_weapons = 5
+				melee_weapons = rand(1,7)
 				repair = 2
 				science = 2
 				sneak = 2
@@ -224,14 +224,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
+				small_guns = rand(1,2)
 				big_guns = 1
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
-				medicine = 4
-				melee_weapons = 5
+				medicine = rand(6,10)
+				melee_weapons = rand(1,2)
 				repair = 1
 				science = 1
 				sneak = 2
@@ -245,14 +245,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(4,10)
+				big_guns = rand(4,10)
 				barter = 1
 				energy_weapons = 5
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(4,10)
 				repair = 1
 				science = 1
 				sneak = 2
@@ -267,14 +267,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,2)
+				big_guns = rand(1,2)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = 1
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(7,10)
 				repair = rand(1,2)
 				science = rand(1,2)
 				sneak = 2
@@ -288,14 +288,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,2)
+				big_guns = rand(1,2)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = 1
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(7,10)
 				repair = 8
 				science = 2
 				sneak = 2
@@ -309,10 +309,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,5)
+				big_guns = rand(1,4)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
@@ -330,14 +330,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,4)
+				big_guns = rand(1,4)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,2)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(5,10)
 				repair = 5
 				science = rand(1,2)
 				sneak = rand(1,2)
@@ -351,14 +351,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(5,10)
+				big_guns = rand(5,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,10)
 				explosives = 1
 				lockpick = 1
 				medicine = 4
-				melee_weapons = 5
+				melee_weapons = rand(7,10)
 				repair = 10
 				science = rand(1,2)
 				sneak = 2
@@ -372,14 +372,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,6)
+				big_guns = rand(1,6)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,4)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(7,10)
 				repair = 1
 				science = 2
 				sneak = 2
@@ -394,10 +394,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(7,10)
+				big_guns = rand(5,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(5,10)
 				explosives = 1
 				lockpick = 1
 				medicine = rand(1,2)
@@ -415,10 +415,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(7,10)
+				big_guns = rand(5,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(5,10)
 				explosives = 1
 				lockpick = 1
 				medicine = rand(1,2)
@@ -436,10 +436,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(7,10)
+				big_guns = rand(7,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(7,10)
 				explosives = 1
 				lockpick = 1
 				medicine = rand(1,2)
@@ -457,14 +457,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(5,10)
+				big_guns = rand(5,10)
 				barter = 1
 				energy_weapons = 5
 				explosives = 1
 				lockpick = 1
 				medicine = rand(4,6)
-				melee_weapons = 5
+				melee_weapons = rand(1,10)
 				repair = 1
 				science = 2
 				sneak = 2
@@ -478,14 +478,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(3,10)
+				big_guns = rand(6,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(3,10)
 				explosives = 1
 				lockpick = 1
 				medicine = rand(1,2)
-				melee_weapons = 5
+				melee_weapons = rand(1,10)
 				repair = rand(1,2)
 				science = 2
 				sneak = 2
@@ -499,10 +499,10 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(1,10)
+				big_guns = rand(4,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,10)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
@@ -520,14 +520,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(8,10)
+				big_guns = rand(8,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,10)
 				explosives = 1
 				lockpick = 1
 				medicine = 2
-				melee_weapons = 5
+				melee_weapons = rand(1,2)
 				repair = 4
 				science = 2
 				sneak = 2
@@ -541,14 +541,14 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(6,10)
+				big_guns = rand(6,10)
 				barter = 1
-				energy_weapons = 5
+				energy_weapons = rand(1,10)
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(1,2)
 				repair = 1
 				science = 2
 				sneak = 2
@@ -562,14 +562,140 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = 7
-				big_guns = 1
+				small_guns = rand(4,10)
+				big_guns = rand(5,10)
 				barter = 1
 				energy_weapons = 5
 				explosives = 1
 				lockpick = 1
 				medicine = 1
-				melee_weapons = 5
+				melee_weapons = rand(1,2)
+				repair = 1
+				science = 2
+				sneak = 2
+				speech = 10
+				unarmed = 5
+			if("Messiah")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(2,3)
+				big_guns = rand(2,3)
+				barter = 1
+				energy_weapons = rand(2,3)
+				explosives = 1
+				lockpick = 1
+				medicine = 1
+				melee_weapons = rand(6,10)
+				repair = 1
+				science = 2
+				sneak = 2
+				speech = 10
+				unarmed = 5
+			if("Mercenary")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(4,10)
+				big_guns = rand(5,10)
+				barter = 1
+				energy_weapons = rand(1,10)
+				explosives = 1
+				lockpick = 1
+				medicine = 1
+				melee_weapons = rand(5,10)
+				repair = 1
+				science = 2
+				sneak = 2
+				speech = 10
+				unarmed = 5
+			if("Initiate")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(1,10)
+				big_guns = rand(1,10)
+				barter = 1
+				energy_weapons = rand(5,10)
+				explosives = 1
+				lockpick = 1
+				medicine = 1
+				melee_weapons = rand(1,2)
+				repair = 1
+				science = 2
+				sneak = 2
+				speech = 10
+				unarmed = 5
+			if("Scribe")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(1,10)
+				big_guns = rand(1,10)
+				barter = 1
+				energy_weapons = rand(6,10)
+				explosives = 1
+				lockpick = 1
+				medicine = rand(3,6)
+				melee_weapons = rand(1,2)
+				repair = 1
+				science = rand(3,6)
+				sneak = 2
+				speech = 10
+				unarmed = 5
+			if("Knight")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(4,10)
+				big_guns = rand(5,10)
+				barter = 1
+				energy_weapons = rand(8,10)
+				explosives = 1
+				lockpick = 1
+				medicine = 1
+				melee_weapons = rand(1,2)
+				repair = 1
+				science = 2
+				sneak = 2
+				speech = 10
+				unarmed = 5
+			if("Paladin")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(4,10)
+				big_guns = rand(5,10)
+				barter = 1
+				energy_weapons = 5
+				explosives = 1
+				lockpick = 1
+				medicine = 1
+				melee_weapons = rand(1,2)
 				repair = 1
 				science = 2
 				sneak = 2

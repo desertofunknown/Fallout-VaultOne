@@ -15,6 +15,7 @@
 	var/selfcharge = 0
 	var/charge_tick = 0
 	var/charge_delay = 4
+	energy_gun=1
  	//var/charge_cost = 200 //How much energy is needed to fire.
  	//var/max_shots = 10 //Determines the capacity of the weapon's power cell. Specifying a cell_type overrides this value.
  	//var/max_shots = 10

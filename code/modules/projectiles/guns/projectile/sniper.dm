@@ -15,6 +15,7 @@
 	zoomable = TRUE
 	zoom_amt = 7 //Long range, enough to see in front of you, but no tiles behind you.
 	slot_flags = SLOT_BACK
+	big_gun=1
 
 
 /obj/item/weapon/gun/projectile/sniper_rifle/update_icon()

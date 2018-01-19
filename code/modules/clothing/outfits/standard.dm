@@ -498,6 +498,7 @@
 	W.access += get_centcom_access("BoS Paladin")
 	W.assignment = "BoS Paladin"
 	W.update_label()
+	H.GenStats()
 
 /datum/outfit/bos_knight
 	name = "BoS Knight"
@@ -529,6 +530,7 @@
 	W.access += get_centcom_access("BoS Knight")
 	W.assignment = "BoS Knight"
 	W.update_label()
+	H.GenStats()
 
 /datum/outfit/bos_initiate
 	name = "BoS Initiate"
@@ -559,6 +561,7 @@
 	W.access += get_centcom_access("BoS Initiate")
 	W.assignment = "BoS Initiate"
 	W.update_label()
+	H.GenStats()
 
 /datum/outfit/bos_scribe
 	name = "BoS Scribe"
@@ -589,6 +592,7 @@
 	W.access += get_centcom_access("BoS Scribe")
 	W.assignment = "BoS Scribe"
 	W.update_label()
+	H.GenStats()
 
 
 
