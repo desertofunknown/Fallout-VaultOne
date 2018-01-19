@@ -94,7 +94,28 @@
 			return 1
 	return 0
 
-
+/*/mob/living/carbon/human/setmeleebonus(obj/item/I, mob/living/user, def_zone)
+	switch(user:melee_weapons)
+		if(1)
+			dammod -= 10
+		if(2)
+			dammod -= 5
+		if(3)
+			dammod += 0
+		if(4)
+			dammod += rand(1,5)
+		if(5)
+			dammod += rand(6,7)
+		if(6)
+			dammod += rand(8,10)
+		if(7)
+			dammod += rand(11,12)
+		if(8)
+			dammod += rand(12,13)
+		if(9)
+			dammod += 13
+		if(10)
+			dammod += 15*/
 /mob/living/carbon/human/attacked_by(obj/item/I, mob/living/user, def_zone)
 	if(!I || !user)	return 0
 
@@ -108,6 +129,28 @@
 	var/mob/living/carbon/human/humanUser = user
 	if (istype(humanUser) && humanUser.dna && humanUser.dna.species && humanUser.dna.species.id=="bigmutant")
 		dammod = 15
+	switch(user:melee_weapons)
+		if(1)
+			dammod -= 10
+		if(2)
+			dammod -= 5
+		if(3)
+			dammod += 0
+		if(4)
+			dammod += rand(1,5)
+		if(5)
+			dammod += rand(6,7)
+		if(6)
+			dammod += rand(8,10)
+		if(7)
+			dammod += rand(11,12)
+		if(8)
+			dammod += rand(12,13)
+		if(9)
+			dammod += 13
+		if(10)
+			dammod += 15
+	//setmeleebonus(I,user,def_zone)
 	// the attacked_by code varies among species
 	return dna.species.spec_attacked_by(I,user,def_zone,affecting,hit_area,src.a_intent,target_limb,target_area,src, dammod)
 
