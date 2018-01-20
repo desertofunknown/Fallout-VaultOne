@@ -96,7 +96,7 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = rand(1,2)
+				small_guns = rand(2,5)
 				big_guns = rand(1,2)
 				barter = 1
 				energy_weapons = rand(1,2)
