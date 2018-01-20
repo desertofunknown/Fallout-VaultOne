@@ -1034,7 +1034,27 @@
 				return 1
 			else
 				M.do_attack_animation(H)
-
+				switch(M:unarmed)
+					if(1)
+						punchmod = -10
+					if(2)
+						punchmod = -5
+					if(3)
+						punchmod = 0
+					if(4)
+						punchmod = rand(1,5)
+					if(5)
+						punchmod = rand(6,7)
+					if(6)
+						punchmod = rand(8,10)
+					if(7)
+						punchmod = rand(11,12)
+					if(8)
+						punchmod = rand(12,13)
+					if(9)
+						punchmod = 13
+					if(10)
+						punchmod = 15
 				var/atk_verb = M.dna.species.attack_verb
 				if(H.lying)
 					atk_verb = "kick"
