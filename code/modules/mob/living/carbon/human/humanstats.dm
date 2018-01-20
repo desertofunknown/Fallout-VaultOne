@@ -45,7 +45,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Engineer")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -66,7 +66,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Doctor")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -87,7 +87,7 @@
 				science = 3
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Scientist")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -108,7 +108,7 @@
 				science = 10
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Officer")
 				strength=rand(7,8)
 				agility=rand(5,6)
@@ -129,7 +129,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Dweller")
 				strength=rand(4,5)
 				agility=rand(4,5)
@@ -150,7 +150,7 @@
 				science = 3
 				sneak = 3
 				speech = 3
-				unarmed = 3
+				unarmed = rand(1,10)
 			/*den*/
 			if("Settler")
 				strength=rand(8,7)
@@ -172,7 +172,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Sheriff")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -193,7 +193,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			/*wastelander*/
 			if("Wastelander")
 				strength=rand(8,7)
@@ -215,7 +215,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Preacher")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -236,7 +236,7 @@
 				science = 1
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Raider")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -257,7 +257,7 @@
 				science = 1
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			/*legion*/
 			if("Legionary")
 				strength=rand(8,7)
@@ -279,7 +279,7 @@
 				science = rand(1,2)
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Decan")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -300,7 +300,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Vexillarius")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -321,7 +321,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Centurion")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -342,7 +342,7 @@
 				science = rand(1,2)
 				sneak = rand(1,2)
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Legat")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -363,7 +363,7 @@
 				science = rand(1,2)
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Veteran")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -384,7 +384,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			/*ncr*/
 			if("Lieutenant")
 				strength=rand(8,7)
@@ -406,7 +406,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Major")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -427,7 +427,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Colonel")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -448,7 +448,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Sergeant")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -469,7 +469,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Trooper")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -490,7 +490,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Recruit")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -511,7 +511,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Veteran Ranger")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -532,7 +532,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Ranger")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -553,7 +553,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Recruit Ranger")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -574,7 +574,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Messiah")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -595,7 +595,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Mercenary")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -616,7 +616,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Initiate")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -637,7 +637,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Scribe")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -658,7 +658,7 @@
 				science = rand(3,6)
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Knight")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -679,7 +679,7 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
 			if("Paladin")
 				strength=rand(8,7)
 				agility=rand(4,5)
@@ -700,4 +700,4 @@
 				science = 2
 				sneak = 2
 				speech = 10
-				unarmed = 5
+				unarmed = rand(1,10)
