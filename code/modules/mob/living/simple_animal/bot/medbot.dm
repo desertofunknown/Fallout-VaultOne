@@ -86,7 +86,7 @@
 		if(skin)
 			overlays += image('icons/obj/aibots.dmi', "medskin_[skin]")
 
-		var/datum/job/doctor/J = new/datum/job/doctor
+		var/datum/job/vault/doctor/J = new/datum/job/vault/doctor
 		access_card.access += J.get_access()
 		prev_access = access_card.access
 

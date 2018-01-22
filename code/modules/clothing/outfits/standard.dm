@@ -483,7 +483,8 @@
 	glasses = /obj/item/clothing/glasses/night
 	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/revolver/colt6250=1)
+		/obj/item/weapon/gun/projectile/revolver/colt6250=1, \
+		/obj/item/weapon/special)
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 
 /datum/outfit/bos_paladin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -515,7 +516,8 @@
 	glasses = /obj/item/clothing/glasses/night
 	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/projectile/revolver/colt6250=1)
+		/obj/item/weapon/gun/projectile/revolver/colt6250=1, \
+		/obj/item/weapon/special)
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 
 /datum/outfit/bos_knight/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -547,7 +549,8 @@
 	glasses = /obj/item/clothing/glasses/night
 	backpack_contents = list(/obj/item/ammo_box/magazine/m556 = 3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/weapon/gun/energy/laser/pistol=1)
+		/obj/item/weapon/gun/energy/laser/pistol=1, \
+		/obj/item/weapon/special)
 
 /datum/outfit/bos_initiate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -578,7 +581,8 @@
 	backpack_contents = list(/obj/item/weapon/stock_parts/cell/device/laser/hyper = 2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/energy/laser/pistol=1,\
-		/obj/item/weapon/reagent_containers/stimpak/super=4)
+		/obj/item/weapon/reagent_containers/stimpak/super=4, \
+		/obj/item/weapon/special)
 
 /datum/outfit/bos_scribe/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)

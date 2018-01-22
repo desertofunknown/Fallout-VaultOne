@@ -2,7 +2,7 @@
 Legion
 */
 //recruit
-/datum/job/legrecruit
+/datum/job/legion/legrecruit
 	title = "Legionary"
 	flag = LEGIONARY
 	department_head = list("Legat")
@@ -44,11 +44,12 @@ Legion
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/c357/c38=2, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()
 
 //decan
-/datum/job/legdecan
+/datum/job/legion/legdecan
 	title = "Decan"
 	flag = LEGDECAN
 	department_head = list("Legat")
@@ -92,11 +93,12 @@ Legion
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/magazine/d12g=2, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()
 
 //vexillarius
-/datum/job/legvex
+/datum/job/legion/legvex
 	title = "Vexillarius"
 	flag = LEGVEX
 	department_head = list("Legat")
@@ -140,11 +142,12 @@ Legion
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder=1, \
 	/obj/item/ammo_box/magazine/m556=1, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()
 
 //centurion
-/datum/job/legcenturion
+/datum/job/legion/legcenturion
 	title = "Centurion"
 	flag = LEGCENTURION
 	department_head = list("Legat")
@@ -188,11 +191,12 @@ Legion
 	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/powergauntlet = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()
 
 //legat
-/datum/job/leglegat
+/datum/job/legion/leglegat
 	title = "Legat"
 	flag = LEGLEGAT
 	department_head = list("Legat")
@@ -237,11 +241,12 @@ Legion
 	/obj/item/ammo_box/magazine/m556=3, \
 	/obj/item/weapon/restraints/legcuffs/bola/tribal=2, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()
 
 //prime recruit
-/datum/job/legVET
+/datum/job/legion/legVET
 	title = "Veteran"
 	flag = LEGVET
 	department_head = list("Legat")
@@ -283,5 +288,6 @@ Legion
 	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/machete = 1, \
 	/obj/item/weapon/reagent_containers/pill/patch/healpowder = 2, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()

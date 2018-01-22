@@ -1,4 +1,4 @@
-/datum/job/sheriff
+/datum/job/den/sheriff
 	title = "Sheriff"
 	flag = SHERIFF
 	department_flag = DEN
@@ -31,10 +31,11 @@
 	suit_store = /obj/item/weapon/gun/projectile/automatic/pistol/m1911
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/weapon/gun/projectile/shotgun
+	r_hand = /obj/item/weapon/special
 	ears = /obj/item/device/radio/headset/headset_den
 	H.GenStats()
 
-/datum/job/settler
+/datum/job/den/settler
 	title = "Settler"
 	flag = SETTLER
 	department_flag = DEN
@@ -63,5 +64,6 @@
 		/obj/item/clothing/under/f13/machinist,\
 		/obj/item/clothing/under/f13/lumberjack,\
 		/obj/item/clothing/under/f13/roving)
+	l_hand = /obj/item/weapon/special
 	ears = /obj/item/device/radio/headset/headset_den
 	H.GenStats()

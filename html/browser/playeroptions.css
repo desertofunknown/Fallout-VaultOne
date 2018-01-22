@@ -1,15 +1,51 @@
 .jobs
 {
 	width: 400px;
-	margin: 0 auto;
+	margin: auto;
 }
 
-.jobsColumn
+.sentance
 {
-	float: left;
-	width: 200px;
-	text-align: center;
+	border: 1px solid red;
+	clear: both;
 }
+
+.jobsWastelandColumn
+{
+    width: 100px;
+	column-count: 1;
+}
+
+.jobsVaultColumn
+{
+    width: 100px;
+	column-count: 1;
+}
+
+.jobsDenColumn
+{
+    width: 100px;
+	column-count: 1;
+}
+
+.jobsBosColumn
+{
+    width: 100px;
+	column-count: 1;
+}
+
+.jobsNcrColumn
+{
+    width: 100px;
+	column-count: 1;
+}
+
+.jobsLegionColumn
+{
+    width: 100px;
+	column-count: 1;
+}
+
 
 .commandPosition
 {

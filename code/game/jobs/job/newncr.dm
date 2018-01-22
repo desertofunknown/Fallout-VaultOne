@@ -1,7 +1,7 @@
 /*
 Trooper
 */
-/datum/job/ncrlieutenant
+/datum/job/ncr/ncrlieutenant
 	title = "Lieutenant"
 	flag = NCRLIEUTENANT
 	department_head = list("NCR Lieutenant")
@@ -36,7 +36,8 @@ Trooper
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/deagle=1, \
 		/obj/item/weapon/melee/classic_baton/telescopic=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 /datum/outfit/job/ncrlieutenant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -47,7 +48,7 @@ Trooper
 		n.access = list(67,69,70,71,72,20)
 		H.GenStats()
 
-/datum/job/ncrm
+/datum/job/ncr/ncrm
 	title = "Major"
 	flag = NCRMAJOR
 	department_head = list("NCR Major")
@@ -65,7 +66,7 @@ Trooper
 	minimal_access = list(67,68,69,70,71,72,20)
 	outfit = /datum/outfit/job/ncrmajor
 
-/datum/job/ncrc
+/datum/job/ncr/ncrc
 	title = "Colonel"
 	flag = NCRCOLONEL
 	department_head = list("NCR Major")
@@ -99,7 +100,8 @@ Trooper
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1, \
 		/obj/item/weapon/melee/classic_baton/telescopic=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 /datum/outfit/job/ncrcolonel/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -138,7 +140,7 @@ Trooper
 /*
 Sergeant
 */
-/datum/job/ncrsergeant
+/datum/job/ncr/ncrsergeant
 	title = "Sergeant"
 	flag = NCRSERGEANT
 	department_head = list("NCR Lieutenant")
@@ -169,7 +171,8 @@ Sergeant
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556/r20=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 /datum/outfit/job/ncrsergeant/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -183,7 +186,7 @@ Sergeant
 /*
 Trooper
 */
-/datum/job/ncrtrooper
+/datum/job/ncr/ncrtrooper
 	title = "Trooper"
 	flag = NCRTROOPER
 	department_head = list("NCR Sergeant")
@@ -214,7 +217,8 @@ Trooper
 	backpack_contents = list(/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/ammo_box/magazine/m556/r20=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 /datum/outfit/job/ncrtrooper/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -227,7 +231,7 @@ Trooper
 /*
 Recruit
 */
-/datum/job/ncrrecruit
+/datum/job/ncr/ncrrecruit
 	title = "Recruit"
 	flag = NCRRECRUIT
 	department_head = list("NCR Sergeant")
@@ -257,7 +261,8 @@ Recruit
 	backpack_contents = list(/obj/item/ammo_box/a762=3, \
 		/obj/item/clothing/mask/facewrap=1, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 
 /datum/outfit/job/ncrrecruit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
@@ -272,7 +277,7 @@ Recruit
 /*
 Veteran Ranger
 */
-/datum/job/ncrvetranger
+/datum/job/ncr/ncrvetranger
 	title = "Veteran Ranger"
 	flag = NCRVETRANGER
 	department_head = list("NCR Sergeant")
@@ -308,7 +313,8 @@ Veteran Ranger
 		/obj/item/ammo_box/c4570=2, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/melee/classic_baton/telescopic=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 	mask = /obj/item/clothing/mask/gas/sechailer
 /datum/outfit/job/ncrvetranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
@@ -322,7 +328,7 @@ Veteran Ranger
 /*
 NCR Ranger
 */
-/datum/job/ncrranger
+/datum/job/ncr/ncrranger
 	title = "Ranger"
 	flag = NCRRANGER
 	department_head = list("NCR Sergeant")
@@ -359,7 +365,8 @@ NCR Ranger
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/ammo_box/magazine/d12g=2, \
 		/obj/item/weapon/melee/classic_baton=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 /datum/outfit/job/ncrranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name
@@ -369,7 +376,7 @@ NCR Ranger
 		H.status="Ranger"
 		n.access = list(67)
 		H.GenStats()
-/datum/job/ncrrecranger
+/datum/job/ncr/ncrrecranger
 	title = "Recruit Ranger"
 	flag = NCRRECRANGER
 	department_flag = NCR
@@ -406,7 +413,8 @@ NCR Ranger
 	/obj/item/ammo_box/m44=2, \
 	/obj/item/weapon/gun/projectile/revolver/caravan_shotgun=1, \
 	/obj/item/weapon/melee/classic_baton=1, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 /datum/outfit/job/ncrrecranger/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name

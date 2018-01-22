@@ -1,7 +1,7 @@
 /*
 Raider
 */
-/datum/job/raider
+/datum/job/wasteland/raider
 	title = "Raider"
 	flag = RAIDER
 	department_flag = WASTELAND
@@ -50,7 +50,8 @@ Raider
 	/obj/item/weapon/pipe=1, \
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/stack/caps = 1, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	if (prob(50))
 		glasses = /obj/item/clothing/glasses/sunglasses
 	if (prob(80))

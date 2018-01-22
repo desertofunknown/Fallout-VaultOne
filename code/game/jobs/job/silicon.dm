@@ -27,7 +27,7 @@ AI
 /*
 Cyborg
 */
-/datum/job/cyborg
+/datum/job/vault/cyborg
 	title = "Cyborg"
 	flag = CYBORG
 	department_flag = VAULT

@@ -5,7 +5,7 @@ var/const/BOSK			=(1<<53)
 var/const/BOSS			=(1<<54)
 var/const/BOSP			=(1<<55)*/
 //SourcePony
-/datum/job/messiah
+/datum/job/wasteland/messiah
 	title = "Messiah"
 	flag = CULTLEADER
 	department_head = list("nobody")
@@ -31,6 +31,7 @@ var/const/BOSP			=(1<<55)*/
 	uniform = /obj/item/clothing/under/rank/chaplain
 	shoes = /obj/item/clothing/shoes/combat/swat
 	suit = /obj/item/clothing/shoes/jackboots
+	l_hand = /obj/item/weapon/special
 	backpack_contents = list(/obj/item/ammo_box/a762=2, \
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 	mask = /obj/item/clothing/mask/gas/syndicate
@@ -38,7 +39,7 @@ var/const/BOSP			=(1<<55)*/
 /datum/outfit/messiah/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	H.GenStats()
 //SourcePony
-/datum/job/slimeman
+/datum/job/wasteland/slimeman
 	title = "Mercenary"
 	flag = MERCENARY
 	department_head = list("nobody")
@@ -66,12 +67,13 @@ var/const/BOSP			=(1<<55)*/
 	head = /obj/item/clothing/head/helmet/f13/metalmask/mk2
 	glasses = /obj/item/clothing/glasses/sunglasses
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
+	r_hand = /obj/item/weapon/special
 	backpack_contents = list(/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 /datum/outfit/Mercenary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	H.GenStats()
 //SEPERATED
 
-/datum/job/bosinitiate
+/datum/job/bos/bosinitiate
 	title = "Initiate"
 	flag = INITIATE
 	department_head = list("Paladin")
@@ -93,7 +95,7 @@ var/const/BOSP			=(1<<55)*/
 
 //SourcePony
 
-/datum/job/bosscribe
+/datum/job/bos/bosscribe
 	title = "Scribe"
 	flag = SCRIBE
 	department_head = list("Paladin")
@@ -112,7 +114,7 @@ var/const/BOSP			=(1<<55)*/
 	access = list(73)
 	minimal_access = list(73)
 
-/datum/job/bosknight
+/datum/job/bos/bosknight
 	title = "Knight"
 	flag = KNIGHT
 	department_head = list("Paladin")
@@ -131,7 +133,7 @@ var/const/BOSP			=(1<<55)*/
 	access = list(73)
 	minimal_access = list(73)
 
-/datum/job/bospaladin
+/datum/job/bos/bospaladin
 	title = "Paladin"
 	flag = PALADIN
 	department_head = list("Paladin")

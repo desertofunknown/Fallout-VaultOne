@@ -9,7 +9,7 @@
 	anchored = 0
 	health = 25
 	maxHealth = 25
-	
+
 	radio_channel = "Engineering"
 	bot_type = FLOOR_BOT
 	model = "Floorbot"
@@ -41,7 +41,7 @@
 /mob/living/simple_animal/bot/floorbot/New()
 	..()
 	update_icon()
-	var/datum/job/engineer/J = new/datum/job/engineer
+	var/datum/job/vault/engineer/J = new/datum/job/vault/engineer
 	access_card.access += J.get_access()
 	prev_access = access_card.access
 
@@ -120,7 +120,7 @@
 /mob/living/simple_animal/bot/floorbot/Topic(href, href_list)
 	if(..())
 		return 1
-	
+
 	switch(href_list["operation"])
 		if("replace")
 			replacetiles = !replacetiles

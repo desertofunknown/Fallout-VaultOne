@@ -1,4 +1,4 @@
-/datum/job/wastelander
+/datum/job/wasteland/wastelander
 	title = "Wastelander"
 	flag = WASTELANDER
 	department_flag = WASTELAND
@@ -108,7 +108,8 @@ Wastelandpusher
 	/obj/item/weapon/storage/wallet=1, \
 	/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1, \
 	/obj/item/stack/coin/coins = 1, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 	H.GenStats()
 //	if (prob(80))
 //		l_hand = pick(/obj/item/weapon/kitchen/knife)
@@ -139,7 +140,8 @@ Chaplain
 	gloves = /obj/item/clothing/gloves/pda/chaplain
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	backpack_contents = list(/obj/item/device/camera/spooky = 1, \
-	/obj/item/device/flashlight/flare/torch=1)
+	/obj/item/device/flashlight/flare/torch=1, \
+	/obj/item/weapon/special=1)
 
 
 /datum/outfit/job/preacher/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)

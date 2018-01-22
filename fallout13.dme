@@ -565,6 +565,7 @@
 #include "code\game\objects\objs.dm"
 #include "code\game\objects\radiation.dm"
 #include "code\game\objects\sheet_types.dm"
+#include "code\game\objects\specialbook.dm"
 #include "code\game\objects\structures.dm"
 #include "code\game\objects\weapons.dm"
 #include "code\game\objects\effects\aliens.dm"

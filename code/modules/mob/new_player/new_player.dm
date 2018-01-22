@@ -427,16 +427,24 @@
 		if(SHUTTLE_CALL)
 			if(!SSshuttle.canRecall())
 				dat += "<div class='notice red'>The station is currently undergoing evacuation procedures.</div><br>"
-
-	/*var/available_job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
-		if(job && IsJobAvailable(job.title))
-			available_job_count++;*/
-
-	dat += "<div class='clearBoth'>Spawn as a wasteland role:</div><br>"
-	dat += "<div class='jobs'><div class='jobsColumn'>"
-	/*var/job_count = 0
-	for(var/datum/job/job in SSjob.occupations)
+	/*dat += "<head>"
+	dat += "<meta charset='utf-8'>"
+	dat += "<meta name='viewport' content='width=device-width, initial-scale=1'>"
+	dat += "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>"
+	dat += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>"
+	dat += "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>"
+	dat += "<script src=.'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>"
+	dat += "</head>"
+	dat += "<body>"*/
+	dat += "<div class='clearBoth'>Choose a role in the categories below</div><br>"
+	dat += "<div class='ul'>"
+	//dat += "<div class='ul'><li><div class='jobsWastelandColumn', &text=1></li>"
+	//dat += "<li><div class='jobsVaultColumn', text=2></li>"
+	//dat += "<li><div class='jobsDenColumn', text=3></li>"
+	//dat += "<li><div class='jobsBosColumn', text=4></li>"
+	//dat += "<li><div class='jobsNcrColumn', text=5></li>"
+	//dat += "<li><div class='jobsLegionColumn', text=6></li>"
+	/*for(var/datum/job/job in SSjob.occupations)
 		if(job && IsJobAvailable(job.title))
 			job_count++;
 			if (job_count > round(available_job_count / 2))
@@ -450,19 +458,55 @@
 			if(job.title != "Assistant") continue
 			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([job.current_positions])</a><br>"
 			break*/
-
-	for(var/datum/job/job in SSjob.desert_occupations)
-		var/J_opPos = html_encode(job.total_positions - (job.total_positions - job.current_positions))
-		if(job.donaters && src.donator==1 && src.donatorrank>=job.donatorrank)
-			//dat += "<div class='clearBoth'>Spawn as a whitelist role:</div><br>"
-			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a><br>"
-		if(job.donaters==0)
-			//dat += "<div class='clearBoth'>Spawn as a wasteland role:</div><br>"
-			dat += "<a class='otherPosition' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a><br>"
-		//break
-
-	dat += "</div></div>"
-
+	dat += "<div class='sentance'>Wasteland Jobs</div>"
+	for(var/datum/job/wasteland/job in SSjob.desert_occupations)
+		var/J_opPos = html_encode(job.total_positions - job.current_positions)
+		if(job && IsJobAvailable(job.title))
+			if (job.current_positions >= job.total_positions)
+				dat += "</div><div class='jobsWastelandColumn'>"
+			else
+				dat += "<a class='jobsWastelandColumn' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a>"
+	dat += "<div class='sentance'>Vault Jobs</div>"
+	for(var/datum/job/vault/job in SSjob.vault_occupations)
+		var/J_opPos = html_encode(job.total_positions - job.current_positions)
+		if(job && IsJobAvailable(job.title))
+			if (job.current_positions >= job.total_positions)
+				dat += "</div><div class='jobsVaultColumn'>"
+			else
+				dat += "<a class='jobsVaultColumn' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a>"
+	dat += "<div class='sentance'>Den Jobs</div>"
+	for(var/datum/job/den/job in SSjob.den_occupations)
+		var/J_opPos = html_encode(job.total_positions - job.current_positions)
+		if(job && IsJobAvailable(job.title))
+			if (job.current_positions >= job.total_positions)
+				dat += "</div><div class='jobsDenColumn'>"
+			else
+				dat += "<a class='jobsDenColumn' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a>"
+	dat += "<div class='sentance'>BOS Jobs</div>"
+	for(var/datum/job/bos/job in SSjob.bos_occupations)
+		var/J_opPos = html_encode(job.total_positions - job.current_positions)
+		if(job && IsJobAvailable(job.title))
+			if (job.current_positions >= job.total_positions)
+				dat += "</div><div class='jobsBosColumn'>"
+			else
+				dat += "<a class='jobsBosColumn' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a>"
+	dat += "<div class='sentance'>NCR Jobs</div>"
+	for(var/datum/job/ncr/job in SSjob.ncr_occupations)
+		var/J_opPos = html_encode(job.total_positions - job.current_positions)
+		if(job && IsJobAvailable(job.title))
+			if (job.current_positions >= job.total_positions)
+				dat += "</div><div class='jobsNcrColumn'>"
+			else
+				dat += "<a class='jobsNcrColumn' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a>"
+	dat += "<div class='sentance'>Legion Jobs</div>"
+	for(var/datum/job/legion/job in SSjob.legion_occupations)
+		var/J_opPos = html_encode(job.total_positions - job.current_positions)
+		if(job && IsJobAvailable(job.title))
+			if (job.current_positions >= job.total_positions)
+				dat += "</div><div class='jobsLegionColumn'>"
+			else
+				dat += "<a class='jobsLegionColumn' href='byond://?src=\ref[src];SelectedJob=[job.title]'>[job.title] ([J_opPos])</a>"
+	//dat += "</div> </div>"
 	// Removing the old window method but leaving it here for reference
 	//src << browse(dat, "window=latechoices;size=300x640;can_close=1")
 

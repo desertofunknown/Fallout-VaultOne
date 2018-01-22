@@ -6,6 +6,11 @@ var/datum/subsystem/job/SSjob
 
 	var/list/occupations = list()		//List of all jobs
 	var/list/desert_occupations = list() //List of all desert 'jobs'
+	var/list/vault_occupations = list()
+	var/list/ncr_occupations = list()
+	var/list/legion_occupations = list()
+	var/list/den_occupations = list()
+	var/list/bos_occupations = list()
 	var/list/unassigned = list()		//Players who need jobs
 	var/list/job_debug = list()			//Debug info
 	var/initial_players_to_assign = 0 	//used for checking against population caps
@@ -38,9 +43,9 @@ var/datum/subsystem/job/SSjob
 
 /datum/subsystem/job/proc/SetupDesertOccupations()
 	desert_occupations = list()
-	var/list/all_jobs = subtypesof(/datum/job)
+	var/list/all_jobs = subtypesof(/datum/job/wasteland)
 	for (var/J in all_jobs)
-		var/datum/job/job = new J()
+		var/datum/job/wasteland/job = new J()
 		if(!job)
 			continue
 		var/datum/f13_faction/faction = get_faction_datum(job.faction)
@@ -48,9 +53,73 @@ var/datum/subsystem/job/SSjob
 			continue
 		desert_occupations += job
 
+/datum/subsystem/job/proc/SetupNcrOccupations()
+	ncr_occupations = list()
+	var/list/all_jobs = subtypesof(/datum/job/ncr)
+	for (var/J in all_jobs)
+		var/datum/job/ncr/job = new J()
+		if(!job)
+			continue
+		var/datum/f13_faction/faction = get_faction_datum(job.faction)
+		if(faction == null || !faction.late_join)
+			continue
+		ncr_occupations += job
+
+/datum/subsystem/job/proc/SetupLegionOccupations()
+	legion_occupations = list()
+	var/list/all_jobs = subtypesof(/datum/job/legion)
+	for (var/J in all_jobs)
+		var/datum/job/legion/job = new J()
+		if(!job)
+			continue
+		var/datum/f13_faction/faction = get_faction_datum(job.faction)
+		if(faction == null || !faction.late_join)
+			continue
+		legion_occupations += job
+
+/datum/subsystem/job/proc/SetupVaultOccupations()
+	vault_occupations = list()
+	var/list/all_jobs = subtypesof(/datum/job/vault)
+	for (var/J in all_jobs)
+		var/datum/job/vault/job = new J()
+		if(!job)
+			continue
+		var/datum/f13_faction/faction = get_faction_datum(job.faction)
+		if(faction == null || !faction.late_join)
+			continue
+		vault_occupations += job
+
+/datum/subsystem/job/proc/SetupDenOccupations()
+	den_occupations = list()
+	var/list/all_jobs = subtypesof(/datum/job/den)
+	for (var/J in all_jobs)
+		var/datum/job/den/job = new J()
+		if(!job)
+			continue
+		var/datum/f13_faction/faction = get_faction_datum(job.faction)
+		if(faction == null || !faction.late_join)
+			continue
+		den_occupations += job
+
+/datum/subsystem/job/proc/SetupBosOccupations()
+	bos_occupations = list()
+	var/list/all_jobs = subtypesof(/datum/job/bos)
+	for (var/J in all_jobs)
+		var/datum/job/bos/job = new J()
+		if(!job)
+			continue
+		var/datum/f13_faction/faction = get_faction_datum(job.faction)
+		if(faction == null || !faction.late_join)
+			continue
+		bos_occupations += job
 
 /datum/subsystem/job/proc/SetupOccupations()
 	SetupDesertOccupations()
+	SetupBosOccupations()
+	SetupNcrOccupations()
+	SetupLegionOccupations()
+	SetupVaultOccupations()
+	SetupDenOccupations()
 	occupations = list()
 	var/list/all_jobs = subtypesof(/datum/job)
 	if(!all_jobs.len)
@@ -86,6 +155,31 @@ var/datum/subsystem/job/SSjob
 	if(!rank)
 		return null
 	for(var/datum/job/J in desert_occupations)
+		if(!J)
+			continue
+		if(J.title == rank)
+			return J
+	for(var/datum/job/J in vault_occupations)
+		if(!J)
+			continue
+		if(J.title == rank)
+			return J
+	for(var/datum/job/J in den_occupations)
+		if(!J)
+			continue
+		if(J.title == rank)
+			return J
+	for(var/datum/job/J in bos_occupations)
+		if(!J)
+			continue
+		if(J.title == rank)
+			return J
+	for(var/datum/job/J in ncr_occupations)
+		if(!J)
+			continue
+		if(J.title == rank)
+			return J
+	for(var/datum/job/J in legion_occupations)
 		if(!J)
 			continue
 		if(J.title == rank)

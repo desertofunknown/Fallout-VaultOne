@@ -1,4 +1,4 @@
-/datum/job/captain
+/datum/job/vault/captain
 	title = "Overseer"
 	flag = OVERSEER
 	department_head = list("Centcom")
@@ -36,7 +36,8 @@
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	//head = /obj/item/clothing/head/caphat
 	backpack_contents = list(/obj/item/weapon/storage/box/ids=1,\
-		/obj/item/weapon/melee/classic_baton/telescopic=1)
+		/obj/item/weapon/melee/classic_baton/telescopic=1,\
+		/obj/item/weapon/special)
 
 	//backpack = /obj/item/weapon/storage/backpack/captain
 	//satchel = /obj/item/weapon/storage/backpack/satchel_cap
@@ -56,7 +57,7 @@
 	H.sec_hud_set_implants()
 	H.GenStats()
 
-/datum/job/engineer
+/datum/job/vault/engineer
 	title = "Engineer"
 	flag = ENGINEER
 	department_head = list("Chief Engineer")
@@ -92,12 +93,12 @@
 	shoes = /obj/item/clothing/shoes/workboots
 	head = /obj/item/clothing/head/hardhat
 	r_pocket = /obj/item/device/t_scanner
-
+	r_hand = /obj/item/weapon/special
 	backpack = /obj/item/weapon/storage/backpack/industrial
 	satchel = /obj/item/weapon/storage/backpack/satchel_eng
 	box = /obj/item/weapon/storage/box/engineer
 	pda_slot = slot_l_store
-/datum/job/doctor
+/datum/job/vault/doctor
 	title = "Doctor"
 	flag = DOCTOR
 	department_head = list("Chief Medical Officer")
@@ -123,12 +124,13 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit =  /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/weapon/storage/firstaid/regular
+	r_hand = /obj/item/weapon/special
 	suit_store = /obj/item/device/flashlight/pen
 
 	backpack = /obj/item/weapon/storage/backpack/medic
 	satchel = /obj/item/weapon/storage/backpack/satchel_med
 
-/datum/job/scientist
+/datum/job/vault/scientist
 	title = "Scientist"
 	flag = SCIENTIST
 	department_head = list("Research Director")
@@ -152,7 +154,7 @@
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
-/datum/job/officer
+/datum/job/vault/officer
 	title = "Officer"
 	flag = OFFICER
 	department_head = list("Overseer")
@@ -296,7 +298,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	keyslot = new /obj/item/device/encryptionkey/headset_sec
 	keyslot2 = new /obj/item/device/encryptionkey/headset_sci
 
-/datum/job/assistant
+/datum/job/vault/assistant
 	title = "Dweller"
 	flag = DWELLER
 	department_flag = VAULT
@@ -335,6 +337,7 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	gloves = /obj/item/clothing/gloves/pda
 	ears = /obj/item/device/radio/headset/headset_vlt
 	shoes = /obj/item/clothing/shoes/jackboots
+	r_hand = /obj/item/weapon/special
 /datum/job/proc/check_config_for_sec_maint()
 	if(config.jobs_have_maint_access & SECURITY_HAS_MAINT_ACCESS)
 		return list(access_maint_tunnels)
