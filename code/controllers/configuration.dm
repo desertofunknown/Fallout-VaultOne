@@ -180,7 +180,7 @@
 
 	var/reactionary_explosions = 0 //If we use reactionary explosions, explosions that react to walls and doors
 
-	var/autoconvert_notes = 0 //if all connecting player's notes should attempt to be converted to the database
+	var/autoconvert_notes = 1 //if all connecting player's notes should attempt to be converted to the database
 
 	var/announce_admin_logout = 0
 	var/announce_admin_login = 0

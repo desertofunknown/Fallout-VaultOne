@@ -13,6 +13,7 @@
  */
 var/global/list/datum/stack_recipe/metal_recipes = list ( \
 	new/datum/stack_recipe("Metal Cross", /obj/structure/cross, 10, time = 50, one_per_turf = 1, on_floor = 1), \
+	new/datum/stack_recipe("Workshop Table", /obj/structure/table/workbench, 10, time = 80, one_per_turf = 1), \
 	new/datum/stack_recipe("stool", /obj/structure/bed/stool, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("chair", /obj/structure/bed/chair, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("office chair", /obj/structure/bed/chair/office/white, 5, one_per_turf = 1, on_floor = 1), \
@@ -73,8 +74,7 @@ var/global/list/datum/stack_recipe/metal_recipes = list ( \
  * Plasteel
  */
 var/global/list/datum/stack_recipe/plasteel_recipes = list ( \
-	new/datum/stack_recipe("AI core", /obj/structure/AIcore, 4, time = 50, one_per_turf = 1), \
-	new/datum/stack_recipe("Workshop Table", /obj/structure/table/workbench, 10, time = 80, one_per_turf = 1), \
+	new/datum/stack_recipe("AI core", /obj/structure/AIcore, 4, time = 50, one_per_turf = 1)
 	)
 
 /obj/item/stack/sheet/plasteel

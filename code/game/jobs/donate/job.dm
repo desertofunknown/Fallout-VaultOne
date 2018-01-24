@@ -27,6 +27,7 @@ var/const/BOSP			=(1<<55)*/
 /datum/outfit/job/messiah
 	name = "Messiah"
 	id = null
+	ears = /obj/item/device/radio/headset/headset_den
 	gloves = /obj/item/clothing/gloves/fingerless
 	uniform = /obj/item/clothing/under/rank/chaplain
 	shoes = /obj/item/clothing/shoes/combat/swat
@@ -36,7 +37,7 @@ var/const/BOSP			=(1<<55)*/
 		/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
 	mask = /obj/item/clothing/mask/gas/syndicate
 	r_hand = /obj/item/weapon/gun/projectile/shotgun/boltaction/scoped
-/datum/outfit/messiah/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/messiah/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	H.GenStats()
 //SourcePony
 /datum/job/wasteland/slimeman
@@ -61,6 +62,7 @@ var/const/BOSP			=(1<<55)*/
 /datum/outfit/job/slimeman
 	name = "Mercenary"
 	id = null
+	ears = /obj/item/device/radio/headset/headset_den
 	uniform = /obj/item/clothing/under/f13/mercadv
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/armor/fluff/chestplate/mk2
@@ -69,7 +71,7 @@ var/const/BOSP			=(1<<55)*/
 	suit_store = /obj/item/weapon/gun/projectile/automatic/assault_rifle
 	r_hand = /obj/item/weapon/special
 	backpack_contents = list(/obj/item/weapon/reagent_containers/food/drinks/flask/survival=1)
-/datum/outfit/Mercenary/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/job/slimeman/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	H.GenStats()
 //SEPERATED
 

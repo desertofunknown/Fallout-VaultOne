@@ -160,7 +160,7 @@
 				luck=rand(1,2)
 				dexterity=rand(3,4)
 
-				small_guns = rand(1,10)
+				small_guns = rand(5,10)
 				big_guns = rand(1,2)
 				barter = 1
 				energy_weapons = rand(1,2)
@@ -170,6 +170,48 @@
 				melee_weapons = rand(1,10)
 				repair = 3
 				science = rand(1,10)
+				sneak = 2
+				speech = 10
+				unarmed = rand(1,10)
+			if("Den Medic")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(5,10)
+				big_guns = rand(1,2)
+				barter = 1
+				energy_weapons = rand(1,2)
+				explosives = 1
+				lockpick = 1
+				medicine = rand(7,10)
+				melee_weapons = rand(1,10)
+				repair = rand(4,10)
+				science = rand(3,10)
+				sneak = 2
+				speech = 10
+				unarmed = rand(1,10)
+			if("Den Mechanic")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(5,10)
+				big_guns = rand(1,2)
+				barter = rand(1,10)
+				energy_weapons = rand(1,2)
+				explosives = 1
+				lockpick = 1
+				medicine = rand(3,10)
+				melee_weapons = rand(1,10)
+				repair = rand(7,10)
+				science = rand(4,10)
 				sneak = 2
 				speech = 10
 				unarmed = rand(1,10)
@@ -213,6 +255,48 @@
 				melee_weapons = rand(1,7)
 				repair = rand(1,10)
 				science = rand(1,10)
+				sneak = rand(1,10)
+				speech = rand(1,10)
+				unarmed = rand(1,10)
+			if("Waster Mechanic")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(1,7)
+				big_guns = rand(1,3)
+				barter = rand(1,10)
+				energy_weapons = rand(1,3)
+				explosives = rand(1,10)
+				lockpick = rand(1,10)
+				medicine = rand(3,10)
+				melee_weapons = rand(1,7)
+				repair = rand(7,10)
+				science = rand(4,10)
+				sneak = rand(1,10)
+				speech = rand(1,10)
+				unarmed = rand(1,10)
+			if("Waster Medic")
+				strength=rand(8,7)
+				agility=rand(4,5)
+				preception=rand(5,6)
+				intelligence=rand(8,9)
+				luck=rand(1,2)
+				dexterity=rand(3,4)
+
+				small_guns = rand(1,7)
+				big_guns = rand(1,3)
+				barter = rand(1,10)
+				energy_weapons = rand(1,3)
+				explosives = rand(1,10)
+				lockpick = rand(1,10)
+				medicine = rand(7,10)
+				melee_weapons = rand(1,7)
+				repair = rand(1,10)
+				science = rand(4,10)
 				sneak = rand(1,10)
 				speech = rand(1,10)
 				unarmed = rand(1,10)

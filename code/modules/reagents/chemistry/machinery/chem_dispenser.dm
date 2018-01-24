@@ -229,7 +229,7 @@
 		icon_beaker = image('icons/obj/chemical.dmi', src, "disp_beaker") //randomize beaker overlay position.
 	icon_beaker.pixel_x = rand(-10,5)
 	overlays += icon_beaker
-	if(CoolDown("ChemdispRepair",30))
+	if(CoolDown("ChemdispRepair",100))
 		switch(user:repair)
 			if(1)
 				user << "You failed to use [src] because you are not skilled in repair."
@@ -427,23 +427,7 @@
 		"tomatojuice"
 	)
 
-/obj/machinery/chem_dispenser/drinks/attackby(obj/item/I, mob/user)
-	if(default_unfasten_wrench(user, I))
-		return
 
-	if (istype(I, /obj/item/weapon/reagent_containers/glass) || \
-		istype(I, /obj/item/weapon/reagent_containers/food/drinks/drinkingglass) || \
-		istype(I, /obj/item/weapon/reagent_containers/food/drinks/shaker))
-
-		if (beaker)
-			return 1
-		else
-			if(!user.drop_item())
-				return 1
-			src.beaker =  I
-			beaker.loc = src
-			update_icon()
-			return
 
 /obj/machinery/chem_dispenser/drinks/beer
 	name = "booze dispenser"
@@ -469,31 +453,7 @@
 		"cognac",
 		"ale"
 	)
-/obj/machinery/chem_dispenser/drinks/fbeer
-	name = "Buddy dispenser"
-	anchored = 1
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "booze_dispenser"
-	dispensable_reagents = list(
-		"gammagulpbeer",
-		"whiskey",
-		"wine",
-		"vodka",
-		"rumnnuka",
-		"wltequila",
-		"moonshine",
-	)
-/obj/machinery/chem_dispenser/drinks/fsoda
-	name = "Soda fountain"
-	anchored = 1
-	icon = 'icons/obj/chemical.dmi'
-	icon_state = "soda_dispenser"
-	amount = 10
-	dispensable_reagents = list(
-		"nuka_cola",
-		"nuka_cola_q",
-		"sunset_sarsaparilla",
-	)
+
 /obj/machinery/chem_dispenser/fchems/despenser
 	name = "Medical dispenser"
 	icon = 'icons/obj/chemical.dmi'

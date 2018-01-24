@@ -127,7 +127,8 @@ Trooper
 		/obj/item/ammo_box/magazine/d12g=3, \
 		/obj/item/weapon/kitchen/knife/combat=1, \
 		/obj/item/weapon/gun/projectile/automatic/pistol/m1911/compact=1, \
-		/obj/item/device/flashlight/flare/torch=1)
+		/obj/item/device/flashlight/flare/torch=1, \
+		/obj/item/weapon/special=1)
 /datum/outfit/job/ncrmajor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	for(var/obj/item/weapon/card/id/ncr/n in H.contents)
 		n.registered_name = H.real_name

@@ -37,7 +37,7 @@
 	//head = /obj/item/clothing/head/caphat
 	backpack_contents = list(/obj/item/weapon/storage/box/ids=1,\
 		/obj/item/weapon/melee/classic_baton/telescopic=1,\
-		/obj/item/weapon/special)
+		/obj/item/weapon/special=1)
 
 	//backpack = /obj/item/weapon/storage/backpack/captain
 	//satchel = /obj/item/weapon/storage/backpack/satchel_cap
@@ -154,6 +154,7 @@
 	uniform = /obj/item/clothing/under/f13/vault/v13
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit = /obj/item/clothing/suit/toggle/labcoat/science
+	l_hand = /obj/item/weapon/special
 /datum/job/vault/officer
 	title = "Officer"
 	flag = OFFICER
@@ -192,7 +193,8 @@ var/list/sec_departments = list("engineering", "supply", "medical", "science")
 	l_pocket = /obj/item/device/assembly/flash/handheld
 	suit_store = /obj/item/weapon/gun/projectile/automatic/pistol/n99
 	backpack_contents = list(/obj/item/weapon/melee/classic_baton/telescopic=1,\
-		/obj/item/weapon/restraints/handcuffs=1)
+		/obj/item/weapon/restraints/handcuffs=1, \
+		/obj/item/weapon/special=1)
 
 	backpack = /obj/item/weapon/storage/backpack/security
 	satchel = /obj/item/weapon/storage/backpack/satchel_sec

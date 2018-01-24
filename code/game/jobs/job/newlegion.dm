@@ -236,7 +236,7 @@ Legion
 	r_hand = /obj/item/weapon/claymore/hog
 	satchel = /obj/item/weapon/storage/backpack/satchel_norm
 	backpack_contents = list(/obj/item/stack/spear/bundle=1, \
-	/obj/item/stack/caps = 100, \
+	/obj/item/stack/caps = 1, \
 	/obj/item/weapon/powergauntlet = 1,\
 	/obj/item/ammo_box/magazine/m556=3, \
 	/obj/item/weapon/restraints/legcuffs/bola/tribal=2, \

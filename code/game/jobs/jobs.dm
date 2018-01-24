@@ -147,7 +147,9 @@ var/list/wasteland_occupations = list(
 	"Raider",
 	//"Whore",
 	//"Pusher",
-	"Preacher"
+	"Preacher",
+	"Waster Mechanic",
+	"Waster Doctor"
 )
 
 var/list/legion_positions = list(
@@ -189,7 +191,9 @@ var/list/bos_occupations = list(
 
 var/list/den_occupations = list(
 	"Sheriff",
-	"Settler"
+	"Settler",
+	"Den Mechanic",
+	"Den Doctor"
 )
 
 var/list/enclave_occupations = list()
