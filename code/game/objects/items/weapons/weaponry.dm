@@ -132,12 +132,12 @@
 	item_state = "katana"
 	flags = CONDUCT
 	slot_flags = SLOT_BELT | SLOT_BACK
-	force = 40
+	force = 45
 	throwforce = 10
 	w_class = 3
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
-	block_chance = 50
+	block_chance = 25
 	sharpness = IS_SHARP
 	drawsound = 'sound/items/unholster_sword02.ogg'
 
