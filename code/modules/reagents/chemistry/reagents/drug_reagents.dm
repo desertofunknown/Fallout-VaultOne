@@ -171,7 +171,7 @@
 /datum/reagent/drug/psycho
 	name = "Psycho"
 	id = "psycho"
-	description = "Reduces stun times by about 300%, ignores loss of speed, and allows the user to quickly recover stamina while dealing a small amount of Brain damage. If overdosed the subject will move randomly, laugh randomly, drop items and suffer from Brain damage. If addicted the subject will constantly jitter and drool, before becoming dizzy and losing motor control and eventually suffer heavy toxin damage."
+	description = "Increases Strength by 500% (Do not quote us at Vault tec about that), For the ultimate EDGE IN BODY BUILDING COMPETITIONS! Side effects include: Homocidal rage, self harm, heavy addiction, possible gateway to other drugs."
 	reagent_state = LIQUID
 	color = "#60A584" // rgb: 96, 165, 132
 	overdose_threshold = 20
@@ -179,7 +179,7 @@
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 
 /datum/reagent/drug/psycho/on_mob_life(mob/living/M)
-	var/high_message = pick("You feel an inner strength boiling up.", "You consider mudering people(dont really).", "You want to dance manically laughing.")
+	var/high_message = pick("You feel an inner strength boiling up.", "You consider murdering people(Dont do it or you'll be banned).", "You want to dance manically laughing.", "You Feel like FUCKING KILLING EVERYONE IN THIS FUCKING PLACE (dont actually okay?).")
 	if(prob(5))
 		M << "<span class='notice'>[high_message]</span>"
 	M.status_flags |= IGNORESLOWDOWN
@@ -207,7 +207,7 @@
 		M.visible_message("<span class='danger'>[M] begins ripping his own skin from his body!</span>")
 		M.apply_damage(15,"brute",pick("head","chest","groin"))
 		M.say("I AM NOT CRAZY!")
-		M.say("EAT MY PENIS BITCH LICK MY PUSSY WHORE!")
+		M.say("FUCK YOU PIECE OF SHIT COCK!")
 		var/obj/item/I = M.get_active_hand()
 		if(I)
 			M.drop_item()
@@ -225,7 +225,7 @@
 /datum/reagent/drug/psycho/addiction_act_stage2(mob/living/M)
 	M.Jitter(10)
 	M.Dizzy(10)
-	M.say("I'll suck dick for a fix!")
+	M.say("Give me some, you motherfucker!")
 	if(prob(30))
 		M.emote(pick("twitch","drool","moan"))
 	..()
@@ -236,7 +236,7 @@
 			step(M, pick(cardinal))
 	M.Jitter(15)
 	M.Dizzy(15)
-	M.say("I'M A WHORE! WHERE IS MY MOTHERFUKIN PSYCO!")
+	M.say("GIVE ME SOME FUCKING PSYCHO BEFORE I SMASH YOUR BRAINS OUT SHITWEED!")
 	if(prob(40))
 		M.emote(pick("twitch","drool","moan"))
 	..()
