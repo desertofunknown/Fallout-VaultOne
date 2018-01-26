@@ -1,7 +1,5 @@
 
 var/global/BSACooldown = 0
-var/global/floorIsLava = 0
-
 
 ////////////////////////////////
 /proc/message_admins(msg)
@@ -10,12 +8,6 @@ var/global/floorIsLava = 0
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
-
-/datum/admins/proc/clear_blood()
-	set category = "Admin"
-	set name = "Clear Blood"
-	for(var/obj/effect/decal/cleanable/C in world)
-		qdel(C)
 
 /datum/admins/proc/show_player_panel(mob/M in mob_list)
 	set category = "Admin"
@@ -159,11 +151,11 @@ var/global/floorIsLava = 0
 			body += "<A href='?_src_=holder;simplemake=shade;mob=\ref[M]'>Shade</A>"
 			body += "<br>"
 
-	body += "<br><br>"
-	body += "<b>Other actions:</b>"
-	body += "<br>"
-	body += "<A href='?_src_=holder;forcespeech=\ref[M]'>Forcesay</A> | "
 	if (M.client)
+		body += "<br><br>"
+		body += "<b>Other actions:</b>"
+		body += "<br>"
+		body += "<A href='?_src_=holder;forcespeech=\ref[M]'>Forcesay</A> | "
 		body += "<A href='?_src_=holder;tdome1=\ref[M]'>Thunderdome 1</A> | "
 		body += "<A href='?_src_=holder;tdome2=\ref[M]'>Thunderdome 2</A> | "
 		body += "<A href='?_src_=holder;tdomeadmin=\ref[M]'>Thunderdome Admin</A> | "

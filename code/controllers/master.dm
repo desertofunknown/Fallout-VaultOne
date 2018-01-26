@@ -8,7 +8,6 @@
   * All core systems are subsystems.
   * They are process()'d by this Master Controller.
  **/
-
 var/global/datum/controller/master/Master = new()
 
 /datum/controller/master
@@ -63,30 +62,33 @@ var/global/datum/controller/master/Master = new()
 
 	subsystems = Master.subsystems
 
-/datum/controller/master/proc/Setup(zlevel = 0)
-	set background = 1
-
-	preloadTemplates()
-	// Pick a random away mission.
-	//createRandomZlevel()
-	// Generate wasteland.
-	//make_mining_wasteland_secrets()
-	// Set up Z-level transistions.
-	setup_map_transitions()
-
-	world << "<span class='boldannounce'>Initializing subsystems...</span>"
-	sortTim(subsystems, /proc/cmp_subsystem_priority)
-
+/datum/controller/master/proc/Setup(zlevel)
 	// Per-Z-level subsystems.
 	if (zlevel && zlevel > 0 && zlevel <= world.maxz)
 		for(var/datum/subsystem/SS in subsystems)
 			SS.Initialize(world.timeofday, zlevel)
 			sleep(-1)
-	else
-		for(var/datum/subsystem/SS in subsystems)
-			SS.Initialize(world.timeofday, zlevel)
-			sleep(-1)
+		return
+	world << "<span class='boldannounce'>Initializing subsystems...</span>"
 
+	// Pick a random away mission.
+	createRandomZlevel()
+	// Generate asteroid.
+	make_mining_asteroid_secrets()
+	// Set up Z-level transistions.
+	setup_map_transitions()
+
+	// Sort subsystems by priority, so they initialize in the correct order.
+	sortTim(subsystems, /proc/cmp_subsystem_priority)
+
+	// Initialize subsystems.
+	for(var/datum/subsystem/SS in subsystems)
+		SS.Initialize(world.timeofday, zlevel)
+		sleep(-1)
+
+	world << "<span class='boldannounce'>Initializations complete!</span>"
+
+	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)
 
 	// Set world options.
@@ -94,6 +96,7 @@ var/global/datum/controller/master/Master = new()
 	world.fps = config.fps
 
 	sleep(-1)
+
 	// Loop.
 	Master.process()
 
@@ -192,3 +195,4 @@ var/global/datum/controller/master/Master = new()
 		statclick = new/obj/effect/statclick/debug("Initializing...", src)
 
 	stat("Master Controller:", statclick.update("[round(Master.cost, 0.001)]ds (Interval: [Master.processing_interval] | Iteration:[Master.iteration])"))
+
