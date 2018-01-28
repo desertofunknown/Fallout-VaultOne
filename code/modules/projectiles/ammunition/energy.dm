@@ -20,7 +20,7 @@
 /obj/item/projectile/beam/plasma_scatter
 	name = "plasma scatter"
 	icon_state = "plasma_beam"
-	damage = 13
+	damage = 50
 
 /obj/item/projectile/beam/plasma_pistol
 	name = "plasma beam"
@@ -77,8 +77,8 @@
 
 /obj/item/ammo_casing/energy/laser/scatter
 	projectile_type = /obj/item/projectile/beam/scatter
-	pellets = 3
-	variance = 25
+	pellets = 5
+	variance = 30
 	select_name = "fire"
 	fire_sound = 'sound/f13weapons/laser_rifle.ogg'
 

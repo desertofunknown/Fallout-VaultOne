@@ -101,7 +101,9 @@
 	name = "tribeam laser rifle"
 	desc = "A laser gun equipped with a refraction kit that spreads bolts."
 	icon_state = "tribeam"
+	force = 10
 	item_state = "laser"
+	selfcharge = 1
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter)
 	cell_type = /obj/item/weapon/stock_parts/cell/device/laser
 	w_class = 4

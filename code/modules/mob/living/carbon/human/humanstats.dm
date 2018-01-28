@@ -775,7 +775,7 @@
 				small_guns = rand(4,10)
 				big_guns = rand(5,10)
 				barter = rand(1,10)
-				energy_weapons = 5
+				energy_weapons = rand(7,10)
 				explosives = rand(1,10)
 				lockpick = rand(1,10)
 				medicine = rand(1,10)

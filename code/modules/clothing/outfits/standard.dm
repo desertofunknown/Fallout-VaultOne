@@ -476,6 +476,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 	ears = /obj/item/device/radio/headset/heads/hos/alt
 	suit = /obj/item/clothing/suit/armor/f13/power_armor/t51b
+	/obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
 	head = /obj/item/clothing/head/helmet/power_armor/f13/t51b
 	suit_store = /obj/item/weapon/gun/energy/laser/scatter
 	belt = /obj/item/weapon/storage/belt/military

@@ -447,7 +447,7 @@
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list(melee = 50, bullet = 20, laser = 10, energy = 10, bomb = 20, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 50, laser = 40, energy = 40, bomb = 40, bio = 20, rad = 40)
 	put_on_delay = 60
 	strip_delay = 60
 
@@ -457,7 +457,7 @@
 	icon_state = "legvexil"
 	item_state = "legvexil"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list(melee = 60, bullet = 30, laser = 20, energy = 10, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 49, bullet = 50, laser = 40, energy = 40, bomb = 40, bio = 20, rad = 40)
 	put_on_delay = 60
 	strip_delay = 60
 
@@ -467,7 +467,7 @@
 	icon_state = "legcenturion"
 	item_state = "legcenturion"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 70, bullet = 40, laser = 30, energy = 20, bomb = 20, bio = 0, rad = 30)
+	armor = list(melee = 40, bullet = 70, laser = 30, energy = 20, bomb = 20, bio = 0, rad = 30)
 	put_on_delay = 60
 	strip_delay = 60
 
@@ -477,7 +477,7 @@
 	icon_state = "leglegat"
 	item_state = "leglegat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 80, bullet = 50, laser = 40, energy = 30, bomb = 30, bio = 0, rad = 40)
+	armor = list(melee = 50, bullet = 85, laser = 50, energy = 35, bomb = 30, bio = 0, rad = 45)
 	put_on_delay = 60
 	strip_delay = 60
 
@@ -490,6 +490,7 @@
 	armor = list(melee = 60, bullet = 50, laser = 20, energy = 20, bomb = 20, bio = 0, rad = 0)
 	put_on_delay = 60
 	strip_delay = 60
+	slowdown = 1
 
 /obj/item/clothing/suit/armor/f13/rangercombat
 	name = "ranger combat armor"
@@ -500,6 +501,7 @@
 	armor = list(melee = 70, bullet = 60, laser = 40, energy = 40, bomb = 40, bio = 0, rad = 80)
 	put_on_delay = 60
 	strip_delay = 60
+	slowdown = 1
 
 /obj/item/clothing/suit/armor/f13/ncrarmor
 	name = "NCR combat armor"
@@ -510,10 +512,12 @@
 	armor = list(melee = 60, bullet = 40, laser = 30, energy = 20, bomb = 20, bio = 0, rad = 40)
 	put_on_delay = 60
 	strip_delay = 60
+	slowdown = 1
 
 /obj/item/clothing/suit/armor/f13/power_armor
 	unacidable = 1
 	slowdown = 1
+	ispowerarmor=1
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS
@@ -528,21 +532,25 @@
 	item_state = "t45bpowerarmor"
 	armor = list(melee = 70, bullet = 60, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 60)
 	slowdown = 2
+	ispowerarmor=1
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45b/salvaged
 	name = "Salvaged T-45b power armor"
 	desc = "It's a set of T-45d power armor recovered by the NCR during the NCR-Brotherhood War.<br>NCR technicians have restored it to working order by replacing the back-mounted cylinders with a custom air conditioning module and stripping out the joint servomotors.<br>Due to the lack of servomotors in the limbs, this armor is so heavy that it feels like you're carrying a brahmin on your back!"
 	icon_state = "t45bpowerarmor"
 	item_state = "t45bpowerarmor"
-	armor = list(melee = 60, bullet = 50, laser = 50, energy = 50, bomb = 50, bio = 100, rad = 80)
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 40, bomb = 50, bio = 100, rad = 50)
 	slowdown = 3
+	ispowerarmor=1
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d
 	name = "T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle."
 	icon_state = "t45dpowerarmor"
 	item_state = "t45dpowerarmor"
-	armor = list(melee = 70, bullet = 60, laser = 60, energy = 60, bomb = 60, bio = 100, rad = 70)
+	armor = list(melee = 50, bullet = 50, laser = 50, energy = 50, bomb = 60, bio = 100, rad = 70)
+	slowdown = 3
+	ispowerarmor=1
 
 /obj/item/clothing/suit/armor/f13/power_armor/t45d/salvaged
 	name = "Salvaged T-45d power armor"
@@ -550,30 +558,36 @@
 	item_state = "t45dpowerarmor"
 	name = "Salvaged T-45d power armor"
 	desc = "Originally developed and manufactured for the United States Army by American defense contractor West Tek, the T-45d power armor was the first version of power armor to be successfully deployed in battle. This suit appears worn and battered."
-	armor = list(melee = 60, bullet = 50, laser = 50, energy = 50, bomb = 60, bio = 100, rad = 80)
+	armor = list(melee = 40, bullet = 40, laser = 40, energy = 40, bomb = 60, bio = 100, rad = 50)
 	slowdown = 3
+	ispowerarmor=1
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced
 	name = "Advanced power armor"
 	desc = "An advanced suit of armor typically used by the Enclave.<br>It is composed of lightweight metal alloys, reinforced with ceramic castings at key stress points.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
 	icon_state = "advpowerarmor"
 	item_state = "advpowerarmor"
-	armor = list(melee = 80, bullet = 70, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 80)
+	slowdown = 2
+	armor = list(melee = 60, bullet = 50, laser = 70, energy = 70, bomb = 70, bio = 100, rad = 80)
+	ispowerarmor=1
 
 /obj/item/clothing/suit/armor/f13/power_armor/advanced/mk2
 	name = "Advanced power armor MKII"
 	desc = "It's an improved model of advanced power armor used exclusively by the Enclave military forces, developed after the Great War.<br>Like its older brother, the standard advanced power armor, it's matte black with a menacing appearance, but with a few significant differences - it appears to be composed entirely of lightweight ceramic composites rather than the usual combination of metal and ceramic plates.<br>Additionally, like the T-51b power armor, it includes a recycling system that can convert human waste into drinkable water, and an air conditioning system for it's user's comfort."
 	icon_state = "advpowerarmor"
 	item_state = "advpowerarmor"
+	slowdown = 2
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
 	armor = list(melee = 90, bullet = 80, laser = 80, energy = 80, bomb = 80, bio = 100, rad = 90)
+	ispowerarmor=1
 
 /obj/item/clothing/suit/armor/f13/power_armor/t51b
 	name = "T-51b power armor"
 	desc = "The pinnacle of pre-war technology. This suit of power armor provides substantial protection to the wearer."
 	icon_state = "t51bpowerarmor"
 	item_state = "t51bpowerarmor"
-	armor = list(melee = 85, bullet = 65, laser = 65, energy = 65, bomb = 65, bio = 100, rad = 100)
+	armor = list(melee = 65, bullet = 50, laser = 85, energy = 85, bomb = 65, bio = 100, rad = 90)
+	ispowerarmor=1
 
 //Fallout 13
 
@@ -616,13 +630,13 @@
 	icon_state = "legrecruit"
 	item_state = "legrecruit"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list(melee = 55, bullet = 25, laser = 15, energy = 10, bomb = 40, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 50, laser = 40, energy = 40, bomb = 40, bio = 20, rad = 40)
 	put_on_delay = 60
 	strip_delay = 60
 
 /obj/item/clothing/suit/armor/f13/legrecruit/vet
 	name = "legion veteran armor"
-	armor = list (melee = 60, bullet = 30, laser = 15, energy = 10, bomb = 20, bio = 0, rad = 0)
+	armor = list (melee = 60, bullet = 50, laser = 45, energy = 35, bomb = 20, bio = 20, rad = 40)
 
 /obj/item/clothing/suit/armor/f13/legvexil
 	name = "Legion vexillarius armor"
@@ -630,9 +644,10 @@
 	icon_state = "legvexil"
 	item_state = "legvexil"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET
-	armor = list(melee = 60, bullet = 30, laser = 15, energy = 10, bomb = 20, bio = 0, rad = 0)
+	armor = list(melee = 30, bullet = 50, laser = 40, energy = 40, bomb = 40, bio = 20, rad = 40)
 	put_on_delay = 60
 	strip_delay = 60
+
 
 /obj/item/clothing/suit/armor/f13/legcenturion
 	name = "Legion centurion armor"
@@ -640,7 +655,7 @@
 	icon_state = "legcenturion"
 	item_state = "legcenturion"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 80, bullet = 40, laser = 35, energy = 20, bomb = 20, bio = 0, rad = 35)
+	armor = list(melee = 30, bullet = 350, laser = 40, energy = 40, bomb = 40, bio = 20, rad = 40)
 	put_on_delay = 60
 	strip_delay = 60
 
@@ -650,7 +665,7 @@
 	icon_state = "leglegat"
 	item_state = "leglegat"
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS
-	armor = list(melee = 85, bullet = 50, laser = 35, energy = 30, bomb = 30, bio = 0, rad = 45)
+	armor = list(melee = 50, bullet = 85, laser = 50, energy = 35, bomb = 30, bio = 0, rad = 45)
 	put_on_delay = 60
 	strip_delay = 60
 
