@@ -77,6 +77,7 @@ var/list/teleportlocs = list()
 /*-----------------------------------------------------------------------------*/
 
 /area/enclave/base1
+	requires_power = 0
 	name = "Gunners"
 	icon_state = "security"
 /area/city1
@@ -654,6 +655,7 @@ var/list/teleportlocs = list()
 	icon_state = "engine"
 
 /area/engine/gravity_generator
+	requires_power = 0
 	name = "Gravity Generator Room"
 	icon_state = "blue"
 /area/engine/Power_Plant

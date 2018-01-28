@@ -254,112 +254,164 @@
 			if(2)
 				if(prob(65))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(3)
 				if(prob(60))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(4)
 				if(prob(55))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(5)
 				if(prob(50))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(6)
 				if(prob(40))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(7)
 				if(prob(30))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(8)
 				if(prob(20))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(9)
 				if(prob(10))
 					user << "You failed to fire [src] you are not skilled with small guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 	if(src:big_gun)
 		switch(user:big_guns)
 			if(1)
 				if(prob(70))
 					user << "You are not skilled in big guns so you cant fire [src]"
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(2)
 				if(prob(65))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 
 			if(3)
 				if(prob(60))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(4)
 				if(prob(55))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(5)
 				if(prob(50))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(6)
 				if(prob(40))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(7)
 				if(prob(30))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(8)
 				if(prob(20))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(9)
 				if(prob(10))
 					user << "You failed to fire [src] you are not skilled with big guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 	if(src:energy_gun)
 		switch(user:energy_weapons)
 			if(1)
 				if(prob(70))
 					user << "You are not skilled in energy guns so you cant fire [src]"
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(2)
 				if(prob(65))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 
 			if(3)
 				if(prob(60))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(4)
 				if(prob(55))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(5)
 				if(prob(50))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(6)
 				if(prob(40))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(7)
 				if(prob(30))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(8)
 				if(prob(20))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 			if(9)
 				if(prob(10))
 					user << "You failed to fire [src] you are not skilled with energy guns."
+					user << "<span class='danger'>*click*</span>"
+					playsound(user, 'sound/weapons/empty.ogg', 100, 1)
 					return 1
 /obj/item/weapon/gun/proc/process_fire(atom/target as mob|obj|turf, mob/living/user as mob|obj, message = 1, params, zone_override)
 	if(gunroll(src,user))
