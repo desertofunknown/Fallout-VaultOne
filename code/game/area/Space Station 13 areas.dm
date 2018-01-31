@@ -80,6 +80,14 @@ var/list/teleportlocs = list()
 	requires_power = 0
 	name = "Gunners"
 	icon_state = "security"
+/area/bos_upper
+	requires_power = 1
+	name = "Brotherhood of Steel Upper Level"
+	icon_state = "security"
+/area/bos_lower
+	requires_power = 1
+	name = "Brotherhood of Steel Lower Level"
+	icon_state = "security"
 /area/city1
 	name = "Sunny Dale"
 	icon_state = "centcom"

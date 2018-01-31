@@ -17,7 +17,7 @@
 	harm_intent_damage = 10
 	melee_damage_lower = 20
 	melee_damage_upper = 20
-	attacktext = "scratche"
+	attacktext = "scratches"
 	attack_sound = 'sound/weapons/bite.ogg'
 
 	minbodytemp = 0

@@ -57,7 +57,7 @@
 
 /obj/item/weapon/serratedmachete
 	name = "Serraded Machete"
-	desc = "This fearsome serrated mechete was handcrafted, isnt she lovely."
+	desc = "This fearsome serrated machete was handcrafted, isn't she lovely."
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "serratedmachete"
 	item_state = "machete"
@@ -69,6 +69,7 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	block_chance = 20
+	sharpness = IS_SHARP
 	drawsound = 'sound/items/unholster_sword03.ogg'
 
 /obj/item/weapon/shockingmachete
