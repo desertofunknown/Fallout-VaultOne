@@ -24,9 +24,9 @@
 		src << "<span class='danger'>The wiki URL is not set in the server configuration.</span>"
 	return
 
-/client/verb/vk()
-	set name = "VK"
-	set desc = "Visit the VK."
+/client/verb/forum()
+	set name = "Forums"
+	set desc = "Visit the Forums."
 	set hidden = 1
 	if(config.forumurl)
 		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
@@ -36,33 +36,23 @@
 		src << "<span class='danger'>The forum URL is not set in the server configuration.</span>"
 	return
 
+
+
 /client/verb/rules()
 	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = 1
-	getFiles(
-		'html/ru_rules.html',
-		'html/eng_rules.html',
-		'html/ru.gif',
-		'html/en.gif'
-	)
-	src << browse('html/rules.html', "size=320x640;window=rules")
+	src << browse({"<html><body onload="document.location.href='https://fallout13.us/forums/forum/fallout-13/administration/rules/';">&nbsp;</body></html>"})
 	return
-/*
+
 /client/verb/github()
 	set name = "Bug Tracker"
 	set desc = "Tell us about bugs"
 	set hidden = 1
-	if(config.githuburl)
-		if(alert("This will open the Github repository in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.githuburl)
-	else
-		src << "<span class='danger'>The Github URL is not set in the server configuration.</span>"
+	src << link("https://github.com/desertofunknown/Fallout-VaultOne")
 	return
-*/
-/client/verb/reportissue()
-	set name = "Report issue"
+/*/client/verb/reportissue()
+	set name = "Report an issue"
 	set desc = "Report an issue"
 	set hidden = 1
 	if(config.githuburl)
@@ -71,7 +61,7 @@
 		src << link("[config.githuburl]")
 	else
 		src << "<span class='danger'>The BitBucket URL is not set in the server configuration.</span>"
-	return
+	return*/
 
 /client/verb/hotkeys_help()
 	set name = "hotkeys-help"

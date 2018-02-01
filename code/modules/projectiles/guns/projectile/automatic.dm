@@ -12,7 +12,7 @@
 	chamber_sound = 'sound/effects/wep_magazines/smg_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/proto
-	name = "\improper NanoTrasen Saber SMG"
+	name = "/improper SABR SG-T"
 	desc = "A prototype three-round burst 9mm submachine gun, designated 'SABR'. Has a threaded barrel for suppressors."
 	icon_state = "saber"
 	mag_type = /obj/item/ammo_box/magazine/smgm9mm
@@ -118,15 +118,15 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/wt550
-	name = "security auto rifle"
-	desc = "An outdated personal defence weapon. Uses 4.6x30mm rounds and is designated the WT-550 Automatic Rifle."
+	name = "/improper General Arms SDW"
+	desc = "A light weight tactical SMG. Uses 4.6x30mm rounds and is designated as a self defense weapon. Has a GA logo stamped into the reciever."
 	icon_state = "wt550"
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
-	fire_delay = 2
 	big_gun=1
-	can_suppress = 0
-	burst_size = 0
+	fire_delay = 1.5
+	can_suppress = 1
+	burst_size = 3
 
 /obj/item/weapon/gun/projectile/automatic/wt550/ui_action_click()
 	return
@@ -221,7 +221,7 @@
 	return
 
 /obj/item/weapon/gun/projectile/automatic/tommygun
-	name = "\improper Thompson SMG"
+	name = "Thompson M1A1"
 	desc = "Based on the classic 'Chicago Typewriter'."
 	icon_state = "tommygun"
 	item_state = "shotgun"
@@ -253,8 +253,8 @@
 	chamber_sound = 'sound/effects/wep_magazines/ar_chamber.ogg'
 
 /obj/item/weapon/gun/projectile/automatic/smg10mm
-	name = "10-mm submachine gun"
-	desc = "Submachine gun H&K MP9 (10-mm caliber variant). The average sub-machine gun, can operate in both single and automatic fire."
+	name = "10mm submarine gun"
+	desc = "A select fire open bolt 10mm submachine gun. The serial number and manufactuer markings have been scratched off."
 	icon_state = "smg10mm"
 	item_state = "smg10mm"
 	slot_flags = 0
