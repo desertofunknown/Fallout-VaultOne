@@ -802,7 +802,7 @@ window "mainwindow"
 		size = 634x416
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = none
+		background-color = #008080
 		saved-params = "splitter"
 		right = "rpane"
 		is-vert = true
@@ -846,6 +846,7 @@ window "mapwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -887,6 +888,10 @@ window "outputwindow"
 		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
+		font-family = "@MS Gothic"
+		font-style = "bold"
+		text-color = #ffffff
+		background-color = #004040
 		is-default = true
 		saved-params = "max-lines"
 		style = ".system {color:#ff0000;}"
@@ -904,7 +909,7 @@ window "rpane"
 	elem "rpanewindow"
 		type = CHILD
 		pos = 0,0
-		size = 638x455
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #004040
@@ -913,8 +918,8 @@ window "rpane"
 		is-vert = false
 	elem "reportissueb"
 		type = BUTTON
-		pos = 476,0
-		size = 88x14
+		pos = 475,0
+		size = 87x13
 		anchor1 = 75,0
 		anchor2 = 89,3
 		font-family = "@MS Gothic"
@@ -927,8 +932,8 @@ window "rpane"
 		group = "rpanemode"
 	elem "discordb"
 		type = BUTTON
-		pos = 328,0
-		size = 65x14
+		pos = 327,0
+		size = 64x13
 		anchor1 = 52,0
 		anchor2 = 62,3
 		font-family = "@MS Gothic"
@@ -941,8 +946,8 @@ window "rpane"
 		group = "rpanemode"
 	elem "rulesb"
 		type = BUTTON
-		pos = 262,0
-		size = 60x14
+		pos = 261,0
+		size = 60x13
 		anchor1 = 41,0
 		anchor2 = 51,3
 		font-family = "@MS Gothic"
@@ -955,8 +960,8 @@ window "rpane"
 		group = "rpanemode"
 	elem "changelogb"
 		type = BUTTON
-		pos = 402,0
-		size = 65x14
+		pos = 401,0
+		size = 64x13
 		anchor1 = 63,0
 		anchor2 = 74,3
 		font-family = "@MS Gothic"
@@ -969,8 +974,8 @@ window "rpane"
 		group = "rpanemode"
 	elem "forumb"
 		type = BUTTON
-		pos = 196,0
-		size = 62x14
+		pos = 195,0
+		size = 63x13
 		anchor1 = 31,0
 		anchor2 = 40,3
 		font-family = "@MS Gothic"
@@ -979,12 +984,12 @@ window "rpane"
 		background-color = #004040
 		saved-params = "is-checked"
 		text = "Forums"
-		command = "forum"
+		command = "forums"
 		group = "rpanemode"
 	elem "wikib"
 		type = BUTTON
 		pos = 132,0
-		size = 60x14
+		size = 60x13
 		anchor1 = 21,0
 		anchor2 = 30,3
 		font-family = "@MS Gothic"
@@ -998,7 +1003,7 @@ window "rpane"
 	elem "textb"
 		type = BUTTON
 		pos = 0,0
-		size = 60x14
+		size = 60x13
 		anchor1 = 0,0
 		anchor2 = 9,3
 		font-family = "@MS Gothic"
@@ -1015,7 +1020,7 @@ window "rpane"
 	elem "infob"
 		type = BUTTON
 		pos = 66,0
-		size = 60x14
+		size = 60x13
 		anchor1 = 10,0
 		anchor2 = 20,3
 		font-family = "@MS Gothic"
@@ -1036,7 +1041,6 @@ window "browserwindow"
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
 		title = "Browser"
 		is-pane = true
@@ -1066,12 +1070,13 @@ window "infowindow"
 	elem "info"
 		type = INFO
 		pos = 0,0
-		size = 638x475
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		text-color = #ffffff
 		background-color = #004040
 		is-default = true
+		border = line
 		saved-params = ""
 		highlight-color = #8000ff
 		tab-text-color = #ffffff

@@ -4,12 +4,7 @@
 	set name = "Discord"
 	set desc = "Visit the discord."
 	set hidden = 1
-	if(config.discordurl)
-		if(alert("This will open the discord in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.discordurl)
-	else
-		src << "<span class='danger'>The wiki URL is not set in the server configuration.</span>"
+	src << link("https://discord.gg/JXUfBUZ")
 	return
 
 /client/verb/wiki()
@@ -28,12 +23,7 @@
 	set name = "Forums"
 	set desc = "Visit the Forums."
 	set hidden = 1
-	if(config.forumurl)
-		if(alert("This will open the forum in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.forumurl)
-	else
-		src << "<span class='danger'>The forum URL is not set in the server configuration.</span>"
+	src << browse({"<html><body onload="document.location.href='https://fallout13.us/forums/forum/fallout-13/';">&nbsp;</body></html>"})
 	return
 
 
@@ -46,10 +36,10 @@
 	return
 
 /client/verb/github()
-	set name = "Bug Tracker"
+	set name = "Github"
 	set desc = "Tell us about bugs"
 	set hidden = 1
-	src << link("https://github.com/desertofunknown/Fallout-VaultOne")
+	src << browse({"<html><body onload="document.location.href='https://github.com/desertofunknown/Fallout-VaultOne';">&nbsp;</body></html>"})
 	return
 /*/client/verb/reportissue()
 	set name = "Report an issue"
