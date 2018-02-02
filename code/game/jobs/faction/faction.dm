@@ -72,7 +72,7 @@ mob/proc/begin_head_voting()
 		return 0
 	//VOTE BEGIN
 
-	say("Let's choice new [F.head_status].")
+	say("Let's choose a new [F.head_status].")
 	var/list/choices = list()
 
 	F.voting = 1
@@ -84,7 +84,7 @@ mob/proc/begin_head_voting()
 		spawn(0)
 			var/choice = input(M,"Make a choice") in correct_candidates
 			if(choice == M)
-				M.say(pick("I'm voting for myself", "I'm gonna be the new [F.head_status]!", "No one other but myself is worthy."))
+				M.say(pick("I'm voting for myself", "I'm gonna be the new [F.head_status]!", "No one but myself is worthy."))
 			else
 				if(prob(1))
 					if(prob(50))
