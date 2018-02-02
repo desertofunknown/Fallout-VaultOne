@@ -5,7 +5,7 @@
 	anchored = 1
 	density = 1
 
-/obj/structure/signpost/attackby(obj/item/weapon/W, mob/user, params)
+/*/obj/structure/signpost/attackby(obj/item/weapon/W, mob/user, params)
 	return attack_hand(user)
 
 /obj/structure/signpost/attack_hand(mob/user)
@@ -15,6 +15,6 @@
 			user.loc.loc.Exited(user)
 			user.loc = pick(latejoin)
 		if("No")
-			return
+			return*/
 
 
