@@ -126,8 +126,6 @@ update_label("John Doe", "Clowny")
 	desc = "A golden card which shows power and might."
 	icon_state = "gold"
 	item_state = "gold_id"
-	New()
-		access = get_all_accesses()
 
 /obj/item/weapon/card/id/syndicate
 	name = "agent card"
