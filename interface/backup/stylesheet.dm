@@ -80,15 +80,15 @@ h1.alert, h2.alert		{color: #ffa3a3;}
 .narsie					{color: #960000; font-weight: bold; font-size: 15;}
 .purple					{color: #c55eff;}
 
-.revennotice			{color: #1d2953;}
-.revenboldnotice		{color: #1d2953;	font-weight: bold;}
-.revenbignotice			{color: #1d2953;	font-weight: bold; font-size: 3;}
-.revenminor				{color: #823abb}
-.revenwarning			{color: #760fbb;	font-style: italic;}
-.revendanger			{color: #760fbb;	font-weight: bold; font-size: 3;}
+.revennotice			{color: #5a7efc;}
+.revenboldnotice		{color: #5a7efc;	font-weight: bold;}
+.revenbignotice			{color: #5a7efc;	font-weight: bold; font-size: 3;}
+.revenminor				{color: #ab4cf7}
+.revenwarning			{color: #9e11fc;	font-style: italic;}
+.revendanger			{color: #9e11fc;	font-weight: bold; font-size: 3;}
 
-.newscaster				{color: #800000;}
-.ghostalert				{color: #5c00e6;	font-style: italic; font-weight: bold;}
+.newscaster				{color: #ff0000;}
+.ghostalert				{color: #e3d1ff;	font-style: italic; font-weight: bold;}
 
 .alien					{color: #543354;}
 .noticealien			{color: #00c000;}
