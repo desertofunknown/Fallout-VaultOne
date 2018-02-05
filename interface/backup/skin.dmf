@@ -860,6 +860,8 @@ window "outputwindow"
 		background-color = #004040
 		is-default = true
 		saved-params = "max-lines"
+		link-color = #008080
+		visited-color = #ff0080
 		style = ".system {color:#ff0000;}"
 	elem "hotkey_toggle"
 		type = BUTTON
