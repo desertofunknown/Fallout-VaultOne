@@ -358,9 +358,9 @@ mob/proc/begin_head_voting()
 
 /datum/f13_faction/neutral
 	name = "Neutral"
-	//full_name = "Independent Wastelanders"
+	first_spawn = 1
+	late_join = 1
 	welcome_text = "<b>Alignment: True Neutral</b><br>Wastelanders - A catch-all term for anyone living in the wasteland who are not affiliated with any other groups.<br>They make a subsistence living off the land, trade with local settlements, and try not to be ravaged by the abundant (and usually hostile) wildlife, or bands of roaming raider gangs and slavers.<br><i>Home, home on the wastes...</i>"
-	//id = "none"
 
 /datum/f13_faction/city
 	name = "Den"

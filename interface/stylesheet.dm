@@ -26,7 +26,7 @@ em						{font-style: normal;	font-weight: bold;}
 
 .say					{}
 .deadsay				{color: #3c1478;}
-.radio					{color: #553800;}
+.radio					{color: #adadad;}
 .sciradio				{color: #001760;}
 .comradio				{color: #193a7a;}
 .secradio				{color: #425919;}
@@ -37,12 +37,12 @@ em						{font-style: normal;	font-weight: bold;}
 .syndradio				{color: #6d3f40;}
 .centcomradio			{color: #603800;}
 .aiprivradio			{color: #ad9658;}
-.ncr					{color: #425919;}
+.ncr					{color: #84b233;}
 .legion					{color: #6d3f40;}
-.den					{color: #193a7a;}
+.den					{color: #77a5ff;}
 .town					{color: #001760;}
 .enclave				{color: #6d3f40;}
-.brotherhood			{color: #6b4819;}
+.brotherhood			{color: #ffa935;}
 
 .yell					{					font-weight: bold;}
 
@@ -52,9 +52,9 @@ h1.alert, h2.alert		{color: #000000;}
 .emote					{					font-style: italic;}
 .selecteddna			{color: #ffffff; 	background-color: #001B1B}
 
-.attack					{color: #990000;}
-.disarm					{color: #7e0707;}
-.passive				{color: #660000;}
+.attack					{color: #ffd37c;}
+.disarm					{color: #9bffd5;}
+.passive				{color: #ffff9b;}
 
 .userdanger				{color: #7e0707;	font-weight: bold; font-size: 3;}
 .danger					{color: #7e0707;}
@@ -64,9 +64,9 @@ h1.alert, h2.alert		{color: #000000;}
 .boldannounce			{color: #77ca00;	font-weight: bold;}
 .greenannounce			{color: #03ff03;	font-weight: bold;}
 .rose					{color: #6d3f40;}
-.info					{color: #2c2c56;}
-.notice					{color: #00484b;}
-.boldnotice				{color: #00484b;	font-weight: bold;}
+.info					{color: #7777ff;}
+.notice					{color: #c1fcff;}
+.boldnotice				{color: #c1fcff;	font-weight: bold;}
 .adminnotice			{color: #77ca00;}
 .unconscious			{color: #6d3f40;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}

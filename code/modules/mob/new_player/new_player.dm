@@ -380,6 +380,21 @@
 							continue
 
 			character.loc = D
+		if("Acolytes")
+			var/D = pick(latejoinw)
+			if(!D)
+				for(var/turf/T in get_area_turfs(/area/shuttle/arrival))
+					if(!T.density)
+						var/clear = 1
+						for(var/obj/O in T)
+							if(O.density)
+								clear = 0
+								break
+						if(clear)
+							D = T
+							continue
+
+			character.loc = D
 		if("Raiders")
 			var/D = pick(latejoinw)
 			if(!D)

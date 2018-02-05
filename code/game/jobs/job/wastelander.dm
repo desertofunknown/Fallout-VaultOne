@@ -124,7 +124,7 @@ Chaplain
 	faction = "Neutral" //desert faction shall disable appearing as scavenger after readying
 	status = "Wastelander"
 	total_positions = 2
-	spawn_positions = -1 //does not matter for late join
+	spawn_positions = 2 //does not matter for late join
 	supervisors = "nobody"
 	selection_color = "#dddddd"
 	access = list()
@@ -170,7 +170,7 @@ Chaplain
 	faction = "Neutral" //desert faction shall disable appearing as scavenger after readying
 	status = "Wastelander"
 	total_positions = 2
-	spawn_positions = -1 //does not matter for late join
+	spawn_positions = 2 //does not matter for late join
 	supervisors = "nobody"
 	selection_color = "#dddddd"
 	access = list()

@@ -19,8 +19,8 @@ em						{font-style: normal;	font-weight: bold;}
 .adminobserverooc		{color: #0b575e;	font-weight: bold;}
 .adminooc				{color: #77ca00;	font-weight: bold;}
 
-.adminobserver			{color: #19654b;	font-weight: bold;}
-.admin					{color: #920034;	font-weight: bold;}
+.adminobserver			{color: #37e577;	font-weight: bold;}
+.admin					{color: #ff5e97;	font-weight: bold;}
 
 .name					{					font-weight: bold;}
 
@@ -65,10 +65,10 @@ h1.alert, h2.alert		{color: #ffffff;}
 .announce 				{color: #20c920;	font-weight: bold;}
 .boldannounce			{color: #77ca00;	font-weight: bold;}
 .greenannounce			{color: #03ff03;	font-weight: bold;}
-.rose					{color: #6d3f40;}
-.info					{color: #2c2c56;}
-.notice					{color: #00484b;}
-.boldnotice				{color: #00484b;	font-weight: bold;}
+.rose					{color: #ff96b2;}
+.info					{color: #8787ff;}
+.notice					{color: #00ffd8;}
+.boldnotice				{color: #00ffd8;	font-weight: bold;}
 .adminnotice			{color: #77ca00;}
 .unconscious			{color: #6d3f40;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}

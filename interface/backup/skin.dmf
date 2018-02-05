@@ -1057,7 +1057,7 @@ window "infowindow"
 		type = CHILD
 		pos = 0,32
 		size = 640x448
-		anchor1 = 0,0
+		anchor1 = 0,7
 		anchor2 = 100,100
 		background-color = #008080
 		saved-params = "splitter"
@@ -1076,8 +1076,8 @@ window "statwindow"
 		saved-params = "pos;size;is-minimized;is-maximized"
 	elem "info"
 		type = INFO
-		pos = 0,16
-		size = 640x424
+		pos = 0,0
+		size = 640x480
 		anchor1 = 0,0
 		anchor2 = 100,100
 		text-color = #ffffff

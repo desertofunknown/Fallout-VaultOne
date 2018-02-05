@@ -145,8 +145,6 @@ var/list/wasteland_occupations = list(
 	"Cult Leader",
 	"Wastelander",
 	"Raider",
-	//"Whore",
-	//"Pusher",
 	"Preacher",
 	"Waster Mechanic",
 	"Waster Doctor"
