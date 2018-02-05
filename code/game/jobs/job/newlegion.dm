@@ -8,8 +8,11 @@ Legion
 	department_head = list("Legat")
 	department_flag = LEGION
 	faction = "Legion"
+	status = "Legionary"
 	total_positions = 10
-	spawn_positions = -1
+	spawn_positions = 10
+	donaters = 1
+	donatorrank = 4
 	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -253,8 +256,10 @@ Legion
 	department_flag = LEGION
 	faction = "Legion"
 	status = "Veteran"
-	total_positions = 10
-	spawn_positions = 6
+	total_positions = 4
+	spawn_positions = 4
+	donaters = 1
+	donatorrank = 4
 	supervisors = "Legat"
 	selection_color = "#ffeeee"
 	minimal_player_age = 7
@@ -291,6 +296,3 @@ Legion
 	/obj/item/device/flashlight/flare/torch=1, \
 	/obj/item/weapon/special=1)
 	H.GenStats()
-
-/datum/outfit/job/legvet/post_equip(mob/living/carbon/human/H)
-	H.faction = "Legion"

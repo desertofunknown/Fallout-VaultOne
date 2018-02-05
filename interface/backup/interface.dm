@@ -11,19 +11,15 @@
 	set name = "Wiki"
 	set desc = "Visit the wiki."
 	set hidden = 1
-	if(config.wikiurl)
-		if(alert("This will open the wiki in your browser. Are you sure?",,"Yes","No")=="No")
-			return
-		src << link(config.wikiurl)
-	else
-		src << "<span class='danger'>The wiki URL is not set in the server configuration.</span>"
+	src << link("https://fallout13.us/")
 	return
 
 /client/verb/forum()
 	set name = "Forums"
 	set desc = "Visit the Forums."
 	set hidden = 1
-	src << browse({"<html><body onload="document.location.href='https://fallout13.us/forums/forum/fallout-13/';">&nbsp;</body></html>"})
+	//src << browse({"<html><body onload="document.location.href='https://fallout13.us/forums/forum/fallout-13/';">&nbsp;</body></html>"})
+	src << link("https://fallout13.us/forums/forum/fallout-13/")
 	return
 
 
@@ -32,14 +28,16 @@
 	set name = "Rules"
 	set desc = "Show Server Rules."
 	set hidden = 1
-	src << browse({"<html><body onload="document.location.href='https://fallout13.us/forums/forum/fallout-13/administration/rules/';">&nbsp;</body></html>"})
+	//src << browse({"<html><body onload="document.location.href='https://fallout13.us/forums/forum/fallout-13/administration/rules/';">&nbsp;</body></html>"})
+	src << link("https://fallout13.us/forums/forum/fallout-13/administration/rules/")
 	return
 
 /client/verb/github()
 	set name = "Github"
 	set desc = "Tell us about bugs"
 	set hidden = 1
-	src << browse({"<html><body onload="document.location.href='https://github.com/desertofunknown/Fallout-VaultOne';">&nbsp;</body></html>"})
+	//src << browse({"<html><body onload="document.location.href='https://github.com/desertofunknown/Fallout-VaultOne';">&nbsp;</body></html>"})
+	src << link("https://github.com/desertofunknown/Fallout-VaultOne")
 	return
 /*/client/verb/reportissue()
 	set name = "Report an issue"

@@ -77,7 +77,7 @@
 		ooc_allowed = !ooc_allowed
 	world << "<B>The OOC channel has been globally [ooc_allowed ? "enabled" : "disabled"].</B>"
 
-var/global/normal_ooc_colour = "#002eb8"
+var/global/normal_ooc_colour = "#9fcddd"
 
 /client/proc/set_ooc(newColor as color)
 	set name = "Set Player OOC Color"
@@ -264,7 +264,7 @@ var/global/normal_ooc_colour = "#002eb8"
 						display_name = "[holder.fakekey]/([src.key])"
 					else
 						display_name = holder.fakekey
-			C << "<font color='#3399ff'><span class='ooc'><span class='prefix'>LOOC:</span> <EM>[mob.name]:</EM> <span class='message'>[msg]</span></span></font>"
+			C << "<font color='#afc6c6'><span class='ooc'><span class='prefix'>LOOC:</span> <EM>[mob.name]:</EM> <span class='message'>[msg]</span></span></font>"
 
 /mob/proc/get_looc_source()
 	return src

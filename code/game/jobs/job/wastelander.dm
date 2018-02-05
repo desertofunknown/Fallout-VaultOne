@@ -2,7 +2,7 @@
 	title = "Wastelander"
 	flag = WASTELANDER
 	department_flag = WASTELAND
-	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
+	faction = "Neutral" //desert faction shall disable appearing as scavenger after readying
 	status = "Wastelander"
 	total_positions = 2
 	spawn_positions = -1 //does not matter for late join
@@ -121,7 +121,7 @@ Chaplain
 	title = "Waster Medic"
 	flag = WASTELANDER
 	department_flag = WASTELAND
-	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
+	faction = "Neutral" //desert faction shall disable appearing as scavenger after readying
 	status = "Wastelander"
 	total_positions = 2
 	spawn_positions = -1 //does not matter for late join
@@ -167,7 +167,7 @@ Chaplain
 	title = "Waster Mechanic"
 	flag = WASTELANDER
 	department_flag = WASTELAND
-	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
+	faction = "Neutral" //desert faction shall disable appearing as scavenger after readying
 	status = "Wastelander"
 	total_positions = 2
 	spawn_positions = -1 //does not matter for late join
@@ -214,7 +214,8 @@ Chaplain
 	flag = PREACHER
 	//department_head = list("Head of Personnel")
 	department_flag = WASTELAND
-	faction = "Wasteland"
+	faction = "Neutral"
+	status = "Wastelander"
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "God"

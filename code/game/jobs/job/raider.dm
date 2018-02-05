@@ -5,8 +5,8 @@ Raider
 	title = "Raider"
 	flag = RAIDER
 	department_flag = WASTELAND
-	faction = "Wasteland" //desert faction shall disable appearing as scavenger after readying
-	status = "Raider"
+	faction = "Raiders" //desert faction shall disable appearing as scavenger after readying
+	status = "gangleader"
 	total_positions = 3
 	donaters = 1
 	donatorrank = 1

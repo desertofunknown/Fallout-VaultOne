@@ -186,7 +186,7 @@ macro "borghotkeymode"
 macro "macro"
 	elem 
 		name = "Tab"
-		command = ".winset \"mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0\""
+		command = ".winset \"mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#004040\""
 	elem 
 		name = "Center+REP"
 		command = ".center"
@@ -328,52 +328,52 @@ macro "macro"
 
 macro "hotkeymode"
 	elem 
-		name = "TAB"
-		command = ".winset \"mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#D3B5B5\""
+		name = "Tab"
+		command = ".winset \"mainwindow.macro=macro hotkey_toggle.is-checked=false input.focus=true input.background-color=#004040\""
 	elem 
-		name = "CENTER+REP"
+		name = "Center+REP"
 		command = ".center"
 	elem 
-		name = "NORTHEAST"
+		name = "Northeast"
 		command = ".northeast"
 	elem 
-		name = "SOUTHEAST"
+		name = "Southeast"
 		command = ".southeast"
 	elem 
-		name = "SOUTHWEST"
+		name = "Southwest"
 		command = ".southwest"
 	elem 
-		name = "NORTHWEST"
+		name = "Northwest"
 		command = ".northwest"
 	elem 
-		name = "CTRL+WEST"
+		name = "CTRL+West"
 		command = "westface"
 	elem 
-		name = "WEST+REP"
+		name = "West+REP"
 		command = ".west"
 	elem 
-		name = "CTRL+NORTH"
+		name = "CTRL+North"
 		command = "northface"
 	elem 
-		name = "NORTH+REP"
+		name = "North+REP"
 		command = ".north"
 	elem 
-		name = "CTRL+EAST"
+		name = "CTRL+East"
 		command = "eastface"
 	elem 
-		name = "EAST+REP"
+		name = "East+REP"
 		command = ".east"
 	elem 
-		name = "CTRL+SOUTH"
+		name = "CTRL+South"
 		command = "southface"
 	elem 
-		name = "SOUTH+REP"
+		name = "South+REP"
 		command = ".south"
 	elem 
-		name = "INSERT"
+		name = "Insert"
 		command = "a-intent right"
 	elem 
-		name = "DELETE"
+		name = "Delete"
 		command = "delete-key-pressed"
 	elem 
 		name = "1"
@@ -771,11 +771,10 @@ window "mainwindow"
 		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Space Station 13"
+		title = "Fallout 13"
 		is-maximized = true
 		icon = 'icons\\ss13_64.png'
 		macro = "macro"
-		menu = "menu"
 	elem "asset_cache_browser"
 		type = BROWSER
 		pos = 424,208
@@ -785,48 +784,17 @@ window "mainwindow"
 		background-color = none
 		is-visible = false
 		saved-params = ""
-	elem "hotkey_toggle"
-		type = BUTTON
-		pos = 560,420
-		size = 80x20
-		anchor1 = 100,100
-		anchor2 = none
-		background-color = none
-		saved-params = ""
-		text = "Hotkey Toggle"
-		command = ".winset \"mainwindow.macro!=macro ? mainwindow.macro=macro hotkey_toggle.is-checked=false input.background-color=#D3B5B5 : mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#F0F0F0\""
-		button-type = pushbox
 	elem "mainvsplit"
 		type = CHILD
-		pos = 3,0
-		size = 634x416
+		pos = 0,0
+		size = 638x435
 		anchor1 = 0,0
 		anchor2 = 100,100
 		background-color = #008080
 		saved-params = "splitter"
-		right = "rpane"
+		left = "mapwindow"
+		right = "infowindow"
 		is-vert = true
-	elem "input"
-		type = INPUT
-		pos = 3,420
-		size = 517x20
-		anchor1 = 0,100
-		anchor2 = 100,100
-		background-color = #d3b5b5
-		is-default = true
-		border = sunken
-		saved-params = "command"
-	elem "saybutton"
-		type = BUTTON
-		pos = 520,420
-		size = 40x20
-		anchor1 = 100,100
-		anchor2 = none
-		background-color = none
-		saved-params = "is-checked"
-		text = "Chat"
-		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
-		button-type = pushbox
 	elem "tooltip"
 		type = BROWSER
 		pos = 0,0
@@ -871,10 +839,10 @@ window "outputwindow"
 	elem "outputwindow"
 		type = MAIN
 		pos = 281,0
-		size = 640x480
+		size = 640x447
 		anchor1 = none
 		anchor2 = none
-		background-color = none
+		background-color = #004040
 		saved-params = "pos;size;is-minimized;is-maximized"
 		titlebar = false
 		statusbar = false
@@ -885,19 +853,52 @@ window "outputwindow"
 	elem "output"
 		type = OUTPUT
 		pos = 0,0
-		size = 640x480
+		size = 640x424
 		anchor1 = 0,0
-		anchor2 = 100,100
-		font-family = "@MS Gothic"
-		font-style = "bold"
+		anchor2 = 100,95
 		text-color = #ffffff
 		background-color = #004040
 		is-default = true
 		saved-params = "max-lines"
 		style = ".system {color:#ff0000;}"
+	elem "hotkey_toggle"
+		type = BUTTON
+		pos = 359,424
+		size = 80x20
+		anchor1 = 56,95
+		anchor2 = 69,99
+		text-color = #ffffff
+		background-color = #004040
+		saved-params = ""
+		text = "Hotkey Toggle"
+		command = ".winset \"mainwindow.macro!=macro ? mainwindow.macro=macro hotkey_toggle.is-checked=false input.background-color=#D3B5B5 : mainwindow.macro=hotkeymode hotkey_toggle.is-checked=true mapwindow.map.focus=true input.background-color=#004040\""
+		button-type = pushbox
+	elem "input"
+		type = INPUT
+		pos = 0,424
+		size = 320x20
+		anchor1 = 0,95
+		anchor2 = 50,99
+		text-color = #ffffff
+		background-color = #004040
+		is-default = true
+		border = sunken
+		saved-params = "command"
+	elem "saybutton"
+		type = BUTTON
+		pos = 319,424
+		size = 40x20
+		anchor1 = 50,95
+		anchor2 = 56,99
+		text-color = #ffffff
+		background-color = #004040
+		saved-params = "is-checked"
+		text = "Chat"
+		command = ".winset \"saybutton.is-checked=true?input.command=\"!say \\\"\" macrobutton.is-checked=false:input.command=\""
+		button-type = pushbox
 
-window "rpane"
-	elem "rpane"
+window "browserwindow"
+	elem "browserwindow"
 		type = MAIN
 		pos = 281,0
 		size = 640x480
@@ -905,23 +906,42 @@ window "rpane"
 		anchor2 = none
 		background-color = none
 		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Browser"
 		is-pane = true
-	elem "rpanewindow"
-		type = CHILD
+	elem "browser"
+		type = BROWSER
 		pos = 0,0
-		size = 640x480
+		size = 640x499
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = #ffffff
+		is-default = true
+		saved-params = ""
+		on-show = ".winset\"rpane.infob.is-visible=true?rpane.infob.pos=130,0;rpane.textb.is-visible=true;rpane.browseb.is-visible=true;rpane.browseb.is-checked=true;rpane.rpanewindow.pos=0,30;rpane.rpanewindow.size=0x0;rpane.rpanewindow.left=browserwindow\""
+		on-hide = ".winset\"rpane.infob.is-visible=true?rpane.infob.is-checked=true rpane.infob.pos=65,0 rpane.rpanewindow.left=infowindow:rpane.rpanewindow.left=textwindow rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0\""
+
+window "infowindow"
+	elem "infowindow"
+		type = MAIN
+		pos = 281,0
+		size = 640x480
+		anchor1 = none
+		anchor2 = none
 		background-color = #004040
-		saved-params = "splitter"
-		right = "outputwindow"
-		is-vert = false
+		saved-params = "pos;size;is-minimized;is-maximized"
+		title = "Info"
+		titlebar = false
+		statusbar = false
+		can-close = false
+		can-minimize = false
+		can-resize = false
+		is-pane = true
 	elem "reportissueb"
 		type = BUTTON
 		pos = 475,0
 		size = 87x13
-		anchor1 = 75,0
-		anchor2 = 89,3
+		anchor1 = 74,0
+		anchor2 = 88,3
 		font-family = "@MS Gothic"
 		font-style = "bold"
 		text-color = #ffffff
@@ -934,8 +954,8 @@ window "rpane"
 		type = BUTTON
 		pos = 327,0
 		size = 64x13
-		anchor1 = 52,0
-		anchor2 = 62,3
+		anchor1 = 51,0
+		anchor2 = 61,3
 		font-family = "@MS Gothic"
 		font-style = "bold"
 		text-color = #ffffff
@@ -949,7 +969,7 @@ window "rpane"
 		pos = 261,0
 		size = 60x13
 		anchor1 = 41,0
-		anchor2 = 51,3
+		anchor2 = 50,3
 		font-family = "@MS Gothic"
 		font-style = "bold"
 		text-color = #ffffff
@@ -963,7 +983,7 @@ window "rpane"
 		pos = 401,0
 		size = 64x13
 		anchor1 = 63,0
-		anchor2 = 74,3
+		anchor2 = 73,3
 		font-family = "@MS Gothic"
 		font-style = "bold"
 		text-color = #ffffff
@@ -976,7 +996,7 @@ window "rpane"
 		type = BUTTON
 		pos = 195,0
 		size = 63x13
-		anchor1 = 31,0
+		anchor1 = 30,0
 		anchor2 = 40,3
 		font-family = "@MS Gothic"
 		font-style = "bold"
@@ -1033,44 +1053,31 @@ window "rpane"
 		command = ".winset \"rpanewindow.left=infowindow\""
 		group = "rpanemode"
 		button-type = pushbox
-
-window "browserwindow"
-	elem "browserwindow"
-		type = MAIN
-		pos = 281,0
-		size = 640x480
-		anchor1 = none
-		anchor2 = none
-		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Browser"
-		is-pane = true
-	elem "browser"
-		type = BROWSER
-		pos = 0,0
-		size = 640x499
+	elem "info"
+		type = CHILD
+		pos = 0,32
+		size = 640x448
 		anchor1 = 0,0
 		anchor2 = 100,100
-		background-color = #ffffff
-		is-default = true
-		saved-params = ""
-		on-show = ".winset\"rpane.infob.is-visible=true?rpane.infob.pos=130,0;rpane.textb.is-visible=true;rpane.browseb.is-visible=true;rpane.browseb.is-checked=true;rpane.rpanewindow.pos=0,30;rpane.rpanewindow.size=0x0;rpane.rpanewindow.left=browserwindow\""
-		on-hide = ".winset\"rpane.infob.is-visible=true?rpane.infob.is-checked=true rpane.infob.pos=65,0 rpane.rpanewindow.left=infowindow:rpane.rpanewindow.left=textwindow rpane.textb.is-visible=true rpane.rpanewindow.pos=0,30 rpane.rpanewindow.size=0x0\""
+		background-color = #008080
+		saved-params = "splitter"
+		left = "statwindow"
+		right = "outputwindow"
+		is-vert = false
 
-window "infowindow"
-	elem "infowindow"
+window "statwindow"
+	elem "statwindow"
 		type = MAIN
 		pos = 281,0
 		size = 640x480
 		anchor1 = none
 		anchor2 = none
-		background-color = none
+		background-color = #004040
 		saved-params = "pos;size;is-minimized;is-maximized"
-		title = "Info"
-		is-pane = true
 	elem "info"
 		type = INFO
-		pos = 0,0
-		size = 640x480
+		pos = 0,16
+		size = 640x424
 		anchor1 = 0,0
 		anchor2 = 100,100
 		text-color = #ffffff
