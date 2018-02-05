@@ -16,7 +16,7 @@ em						{font-style: normal;	font-weight: bold;}
 .prefix					{					font-weight: bold;}
 
 .ooc					{					font-weight: bold;}
-.adminobserverooc		{color: #0b575e;	font-weight: bold;}
+.adminobserverooc		{color: #1de4f7;	font-weight: bold;}
 .adminooc				{color: #77ca00;	font-weight: bold;}
 
 .adminobserver			{color: #37e577;	font-weight: bold;}
@@ -24,7 +24,7 @@ em						{font-style: normal;	font-weight: bold;}
 
 .name					{					font-weight: bold;}
 
-.say					{}
+.say					{color: #f7eedc;}
 .deadsay				{color: #d9fcc7;}
 .radio					{color: #553800;}
 .sciradio				{color: #001760;}
@@ -49,7 +49,7 @@ em						{font-style: normal;	font-weight: bold;}
 .yell					{					font-weight: bold;}
 
 .alert					{color: #42e5bc;}
-h1.alert, h2.alert		{color: #ffffff;}
+h1.alert, h2.alert		{color: #ffa3a3;}
 
 .emote					{					font-style: italic;}
 .selecteddna			{color: #ffffff; 	background-color: #001B1B}
@@ -70,7 +70,7 @@ h1.alert, h2.alert		{color: #ffffff;}
 .notice					{color: #00ffd8;}
 .boldnotice				{color: #00ffd8;	font-weight: bold;}
 .adminnotice			{color: #77ca00;}
-.unconscious			{color: #6d3f40;	font-weight: bold;}
+.unconscious			{color: #ea8587;	font-weight: bold;}
 .suicide				{color: #ff5050;	font-style: italic;}
 .green					{color: #03ff03;}
 .shadowling				{color: #3b2769;}
@@ -78,7 +78,7 @@ h1.alert, h2.alert		{color: #ffffff;}
 .cultitalic				{color: #960000;	font-style: italic;}
 .cultlarge				{color: #960000; font-weight: bold; font-size: 3;}
 .narsie					{color: #960000; font-weight: bold; font-size: 15;}
-.purple					{color: #5e2d79;}
+.purple					{color: #c55eff;}
 
 .revennotice			{color: #1d2953;}
 .revenboldnotice		{color: #1d2953;	font-weight: bold;}
